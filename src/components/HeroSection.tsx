@@ -49,26 +49,28 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
-        {/* Illustration — full height, subtle blue tint */}
+        {/* Illustration — full height, overlaps behind sidebar for seamless blend */}
         <motion.div
-          className="relative flex-1 overflow-hidden"
+          className="relative flex-1 overflow-hidden md:-ml-24 lg:-ml-32"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
           {/* Subtle blue overlay */}
-          <div className="absolute inset-0 z-10 mix-blend-color opacity-25" style={{ backgroundColor: 'hsl(220, 45%, 40%)' }} />
+          <div className="absolute inset-0 z-10 mix-blend-color opacity-25 pointer-events-none" style={{ backgroundColor: 'hsl(220, 45%, 40%)' }} />
 
-          {/* Left edge fade — wide cinematic atmospheric blend */}
+          {/* Left edge fade — extra wide, non-linear for atmospheric seamless blend */}
           <div
-            className="absolute inset-y-0 left-0 w-36 md:w-44 lg:w-56 z-30 pointer-events-none"
+            className="absolute inset-y-0 left-0 w-48 md:w-64 lg:w-80 z-30 pointer-events-none"
             style={{
               backgroundImage: `linear-gradient(to right,
                 hsl(222, 28%, 8%) 0%,
-                hsl(222, 28%, 8% / 0.85) 15%,
-                hsl(222, 28%, 8% / 0.55) 35%,
+                hsl(222, 28%, 8% / 0.92) 10%,
+                hsl(222, 28%, 8% / 0.75) 22%,
+                hsl(222, 28%, 8% / 0.5) 38%,
                 hsl(222, 28%, 8% / 0.25) 55%,
-                hsl(222, 28%, 8% / 0.08) 75%,
+                hsl(222, 28%, 8% / 0.1) 72%,
+                hsl(222, 28%, 8% / 0.03) 85%,
                 transparent 100%)`,
             }}
           />
