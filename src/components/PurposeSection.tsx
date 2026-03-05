@@ -72,13 +72,13 @@ const PurposeSection = () => {
           >
             <div
               className="relative overflow-hidden w-full"
-              style={{ borderRadius: '16px', aspectRatio: '3 / 4' }}
+              style={{ borderRadius: '16px', aspectRatio: '4 / 5' }}
             >
               <img
                 src={purposeImage}
                 alt="Renaissance-style still life with microscope, open book, fruit bowl, and disco ball — symbolising the intersection of science and culture"
                 className="w-full h-full object-cover"
-                style={{ borderRadius: '16px', objectPosition: 'center center' }}
+                style={{ borderRadius: '16px', objectPosition: 'center 60%', filter: 'sepia(0.12) saturate(1.1) brightness(0.95)' }}
               />
               {/* Subtle inset vignette */}
               <div
