@@ -30,7 +30,7 @@ const AboutSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="font-serif text-4xl md:text-5xl lg:text-6xl mb-10 text-foreground leading-tight"
+          className="text-4xl md:text-5xl lg:text-6xl mb-10 text-foreground leading-tight font-light tracking-wide"
         >
           Resonance Labs
         </motion.h2>

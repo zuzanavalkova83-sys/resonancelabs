@@ -24,7 +24,7 @@ const Navbar = () => {
       }`}
     >
       <div className="section-padding flex items-center justify-between">
-        <button onClick={() => scrollTo("hero")} className="font-serif text-xl tracking-widest text-foreground hover:text-primary transition-colors">
+        <button onClick={() => scrollTo("hero")} className="text-xl tracking-widest text-foreground hover:text-primary transition-colors font-medium">
           RESONANCE LABS
         </button>
         <div className="hidden md:flex items-center gap-8 text-sm tracking-wide">

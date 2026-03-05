@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import decorPlanet from "@/assets/decor-planet.png";
 
 const PurposeSection = () => {
   const ref = useRef(null);
@@ -7,7 +8,7 @@ const PurposeSection = () => {
 
   return (
     <section id="purpose" className="py-28 md:py-40 section-padding gradient-cosmic relative overflow-hidden" ref={ref}>
-      {/* Decorative stars */}
+      {/* Stars */}
       {Array.from({ length: 20 }).map((_, i) => (
         <div
           key={i}
@@ -21,12 +22,21 @@ const PurposeSection = () => {
         />
       ))}
 
+      {/* Decorative planet */}
+      <motion.img
+        src={decorPlanet}
+        alt=""
+        className="absolute top-16 right-16 w-20 md:w-28 opacity-40 pointer-events-none"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+      />
+
       <div className="max-w-3xl mx-auto text-center relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="font-serif text-5xl md:text-6xl lg:text-7xl mb-16 gradient-gold-text"
+          className="text-5xl md:text-6xl lg:text-7xl mb-16 gradient-gold-text font-light tracking-wide"
         >
           Our Purpose
         </motion.h2>

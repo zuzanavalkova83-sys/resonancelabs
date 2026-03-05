@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import teamZuzana from "@/assets/team-zuzana.jpg";
 import teamMartin from "@/assets/team-martin.jpg";
 import teamIna from "@/assets/team-ina.jpg";
@@ -33,7 +33,6 @@ const team = [
 ];
 
 const TeamCard = ({ member, index }: { member: typeof team[0]; index: number }) => {
-  const [hovered, setHovered] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -43,41 +42,23 @@ const TeamCard = ({ member, index }: { member: typeof team[0]; index: number }) 
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: index * 0.15 }}
-      className="group relative"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      className="flex flex-col"
     >
-      <div className="relative overflow-hidden rounded-2xl glass-card">
-        <div className="aspect-[3/4] overflow-hidden">
-          <motion.img
-            src={member.photo}
-            alt={member.name}
-            className="w-full h-full object-cover"
-            animate={{ scale: hovered ? 1.05 : 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          />
-          {/* Gradient overlay */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"
-            animate={{ opacity: hovered ? 1 : 0.6 }}
-            transition={{ duration: 0.4 }}
-          />
-        </div>
-
-        {/* Info overlay */}
-        <div className="absolute bottom-0 left-0 right-0 p-6">
-          <h3 className="font-serif text-2xl text-foreground mb-1">{member.name}</h3>
-          <p className="text-sm tracking-widest uppercase text-primary mb-3">{member.role}</p>
-          <motion.p
-            className="text-sm text-foreground/70 leading-relaxed"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: hovered ? 1 : 0, height: hovered ? "auto" : 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            {member.bio}
-          </motion.p>
-        </div>
+      {/* Photo */}
+      <div className="overflow-hidden rounded-xl mb-5">
+        <img
+          src={member.photo}
+          alt={member.name}
+          className="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-700"
+        />
       </div>
+
+      {/* Info — always visible, high contrast */}
+      <h3 className="text-xl font-semibold text-foreground mb-1">{member.name}</h3>
+      <p className="text-sm tracking-widest uppercase text-primary mb-3 font-medium">{member.role}</p>
+      <p className="text-sm text-foreground/75 leading-relaxed">
+        {member.bio}
+      </p>
     </motion.div>
   );
 };
@@ -97,10 +78,10 @@ const TeamSection = () => {
         <p className="text-sm tracking-widest uppercase text-muted-foreground mb-4">
           We draw from the sensibilities of journalism, art, advertising and science.
         </p>
-        <h2 className="font-serif text-4xl md:text-5xl text-foreground">Our Team</h2>
+        <h2 className="text-4xl md:text-5xl font-light tracking-wide text-foreground">Our Team</h2>
       </motion.div>
 
-      <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+      <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
         {team.map((member, i) => (
           <TeamCard key={member.name} member={member} index={i} />
         ))}
