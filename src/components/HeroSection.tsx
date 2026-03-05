@@ -9,7 +9,7 @@ const HeroSection = () => {
         {/* Brand panel on the left */}
         <motion.div
           className="flex flex-col justify-center items-start px-8 md:px-14 lg:px-20 py-12 md:py-0 md:w-[38%] lg:w-[35%] shrink-0 z-10"
-          style={{ backgroundColor: 'hsl(220, 30%, 8%)' }}
+          style={{ backgroundColor: 'hsl(220, 28%, 12%)' }}
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
