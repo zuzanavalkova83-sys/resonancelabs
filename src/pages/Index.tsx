@@ -16,6 +16,7 @@ const Index = () => {
       <TeamSection />
       <PurposeSection />
       <ServicesSection />
+      <EditorialDivider />
       <FooterSection />
     </div>
   );
