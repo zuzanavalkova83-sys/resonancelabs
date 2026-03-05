@@ -24,7 +24,7 @@ const EditorialDivider = () => {
           alt=""
           className="w-full block"
           style={{
-            filter: 'saturate(0.85) brightness(0.88) sepia(0.08)',
+            filter: 'saturate(1.15) brightness(0.92) sepia(0.05)',
           }}
         />
 
