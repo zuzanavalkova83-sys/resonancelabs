@@ -74,7 +74,7 @@ const TeamSection = () => {
         <h2 className="text-4xl md:text-5xl font-light tracking-wide text-foreground">Our Team</h2>
       </motion.div>
 
-      <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
+      <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto">
         {team.map((member, i) => (
           <TeamCard key={member.name} member={member} index={i} />
         ))}
