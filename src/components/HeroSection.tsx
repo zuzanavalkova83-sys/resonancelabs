@@ -9,7 +9,12 @@ const HeroSection = () => {
 
         {/* Brand panel — editorial left sidebar */}
         <motion.div
-          className="relative flex flex-col justify-center items-start md:w-[36%] lg:w-[35%] shrink-0 z-10 px-8 py-12 md:px-16 md:py-0"
+          className="relative flex flex-col justify-center items-start md:w-[30%] shrink-0 z-10 px-8 py-12 md:px-16 md:py-0"
+          style={{
+            background: 'linear-gradient(180deg, hsl(220, 30%, 10%) 0%, hsl(222, 28%, 8%) 100%)',
+            minWidth: '340px',
+            maxWidth: '460px',
+          }}
           style={{
             background: 'linear-gradient(180deg, hsl(220, 30%, 10%) 0%, hsl(222, 28%, 8%) 100%)',
           }}
