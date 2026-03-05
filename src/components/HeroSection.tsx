@@ -61,13 +61,26 @@ const HeroSection = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
           {/* Subtle blue overlay */}
-          <div className="absolute inset-0 z-10 mix-blend-color opacity-30" style={{ backgroundColor: 'hsl(220, 45%, 40%)' }} />
+          <div className="absolute inset-0 z-10 mix-blend-color opacity-25" style={{ backgroundColor: 'hsl(220, 45%, 40%)' }} />
 
-          {/* Left edge fade — seamless blend into sidebar */}
+          {/* Left edge fade — cinematic atmospheric blend into sidebar */}
           <div
-            className="absolute inset-y-0 left-0 w-32 z-30"
-            style={{ backgroundImage: 'linear-gradient(to right, hsl(222, 28%, 8%) 0%, hsl(222, 28%, 8% / 0.5) 45%, transparent 100%)' }}
+            className="absolute inset-y-0 left-0 w-24 md:w-32 lg:w-36 z-30"
+            style={{
+              backgroundImage: 'linear-gradient(to right, hsl(222, 28%, 8%) 0%, hsl(222, 28%, 8% / 0.7) 30%, hsl(222, 28%, 8% / 0.35) 55%, hsl(222, 28%, 8% / 0.1) 80%, transparent 100%)',
+            }}
           />
+          {/* Noise grain in blend zone to prevent banding */}
+          <div
+            className="absolute inset-y-0 left-0 w-24 md:w-32 lg:w-36 z-30 opacity-[0.03] pointer-events-none"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+              backgroundRepeat: 'repeat',
+            }}
+          />
+
+          {/* Top safe area — prevents rocket tip from competing with nav */}
+          <div className="absolute inset-x-0 top-0 h-6 md:h-8 z-30 bg-gradient-to-b from-background/40 to-transparent" />
 
           {/* Bottom fade */}
           <div className="absolute inset-x-0 bottom-0 h-20 z-30 bg-gradient-to-t from-background to-transparent" />
@@ -75,7 +88,8 @@ const HeroSection = () => {
           <img
             src={heroIllustration}
             alt="Cosmic collage with rocket launch, astronaut, moon, and surreal botanical elements"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: 'center 58%' }}
           />
 
           {/* Interactive element */}
