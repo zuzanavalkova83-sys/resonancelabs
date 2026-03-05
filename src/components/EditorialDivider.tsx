@@ -22,9 +22,8 @@ const EditorialDivider = () => {
         <img
           src={dividerImage}
           alt=""
-          className="w-full h-full object-cover"
+          className="w-full block"
           style={{
-            objectPosition: 'center 40%',
             filter: 'saturate(0.85) brightness(0.88) sepia(0.08)',
           }}
         />

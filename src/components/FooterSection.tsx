@@ -9,14 +9,6 @@ const FooterSection = () => {
 
   return (
     <footer className="relative overflow-hidden" ref={ref}>
-      {/* Footer banner image */}
-      <div className="relative h-40 md:h-56 overflow-hidden">
-        <img
-          src={footerBanner}
-          alt="Resonance Labs footer illustration"
-          className="w-full h-full object-cover opacity-70"
-        />
-      </div>
 
       <div className="relative py-16 section-padding bg-cosmic-deep border-t border-border/30">
         {/* Stars */}
