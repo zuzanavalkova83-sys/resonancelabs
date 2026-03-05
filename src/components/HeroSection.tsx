@@ -16,8 +16,7 @@ const HeroSection = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 1.8, ease: "easeOut" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/30 via-transparent to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background/80" />
       </div>
 
       {/* Floating decorative icons */}

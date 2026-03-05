@@ -2,7 +2,6 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import teamZuzana from "@/assets/team-zuzana.jpg";
 import teamMartin from "@/assets/team-martin.jpg";
-import teamIna from "@/assets/team-ina.jpg";
 import teamMaria from "@/assets/team-maria.jpg";
 
 const team = [
