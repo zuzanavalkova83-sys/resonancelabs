@@ -61,7 +61,7 @@ const TeamSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="team" className="py-28 md:py-40 section-padding bg-cosmic-deep" ref={ref}>
+    <section id="team" className="py-28 md:py-40 section-padding bg-cosmic-deep section-divider" ref={ref}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
