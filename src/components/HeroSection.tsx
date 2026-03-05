@@ -5,11 +5,11 @@ import decorButterfly from "@/assets/decor-butterfly.png";
 const HeroSection = () => {
   return (
     <section id="hero" className="relative w-full bg-background min-h-[100vh] pt-16">
-      <div className="relative w-full min-h-[calc(100vh-4rem)] md:min-h-[740px] lg:min-h-[800px] flex flex-col md:flex-row items-stretch">
+      <div className="relative w-full min-h-[calc(100vh-4rem)] md:min-h-[740px] lg:min-h-[800px] flex flex-col md:flex-row items-stretch overflow-hidden">
 
         {/* Brand panel — editorial left sidebar */}
         <motion.div
-          className="relative flex flex-col justify-center items-start md:w-[30%] shrink-0 z-10 px-8 py-12 md:px-16 md:py-0"
+          className="relative flex flex-col justify-center items-start md:w-[30%] shrink-0 z-20 px-8 py-12 md:px-16 md:py-0"
           style={{
             background: 'linear-gradient(180deg, hsl(220, 30%, 10%) 0%, hsl(222, 28%, 8%) 100%)',
             minWidth: '340px',
@@ -49,32 +49,34 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
-        {/* Illustration — full height, subtle blue tint */}
+        {/* Illustration — full height, overlaps behind sidebar for seamless blend */}
         <motion.div
-          className="relative flex-1 overflow-hidden"
+          className="relative flex-1 overflow-hidden md:-ml-24 lg:-ml-32"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
           {/* Subtle blue overlay */}
-          <div className="absolute inset-0 z-10 mix-blend-color opacity-25" style={{ backgroundColor: 'hsl(220, 45%, 40%)' }} />
+          <div className="absolute inset-0 z-10 mix-blend-color opacity-25 pointer-events-none" style={{ backgroundColor: 'hsl(220, 45%, 40%)' }} />
 
-          {/* Left edge fade — wide cinematic atmospheric blend */}
+          {/* Left edge fade — extra wide, non-linear for atmospheric seamless blend */}
           <div
-            className="absolute inset-y-0 left-0 w-36 md:w-44 lg:w-56 z-30 pointer-events-none"
+            className="absolute inset-y-0 left-0 w-48 md:w-64 lg:w-80 z-30 pointer-events-none"
             style={{
               backgroundImage: `linear-gradient(to right,
                 hsl(222, 28%, 8%) 0%,
-                hsl(222, 28%, 8% / 0.85) 15%,
-                hsl(222, 28%, 8% / 0.55) 35%,
+                hsl(222, 28%, 8% / 0.92) 10%,
+                hsl(222, 28%, 8% / 0.75) 22%,
+                hsl(222, 28%, 8% / 0.5) 38%,
                 hsl(222, 28%, 8% / 0.25) 55%,
-                hsl(222, 28%, 8% / 0.08) 75%,
+                hsl(222, 28%, 8% / 0.1) 72%,
+                hsl(222, 28%, 8% / 0.03) 85%,
                 transparent 100%)`,
             }}
           />
           {/* Noise grain in blend zone — matches sidebar texture */}
           <div
-            className="absolute inset-y-0 left-0 w-36 md:w-44 lg:w-56 z-30 opacity-[0.035] pointer-events-none"
+            className="absolute inset-y-0 left-0 w-48 md:w-64 lg:w-80 z-30 opacity-[0.035] pointer-events-none"
             style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
               backgroundRepeat: 'repeat',
