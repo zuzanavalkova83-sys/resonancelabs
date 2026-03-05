@@ -28,10 +28,10 @@ const HeroSection = () => {
             }}
           />
 
-          {/* Right-side hairline border */}
+         {/* Right-side hairline highlight — ultra subtle */}
           <div
             className="absolute top-0 right-0 bottom-0 w-px hidden md:block"
-            style={{ backgroundColor: 'hsl(220, 25%, 25% / 0.2)' }}
+            style={{ backgroundColor: 'hsl(220, 30%, 40% / 0.12)' }}
           />
 
           {/* Text block — positioned slightly above center */}
