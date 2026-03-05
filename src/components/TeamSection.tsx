@@ -2,7 +2,6 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import teamZuzana from "@/assets/team-zuzana.jpg";
 import teamMartin from "@/assets/team-martin.jpg";
-import teamIna from "@/assets/team-ina.jpg";
 import teamMaria from "@/assets/team-maria.jpg";
 
 const team = [
@@ -17,12 +16,6 @@ const team = [
     role: "Creative Director",
     photo: teamMartin,
     bio: "In advertising, he has worked on everything from automobiles to election campaigns, fancy creams to tech. A former creative director at multinational agencies, he works from a simple premise: that while the world of research is unique, it is not exempt from the rules of what moves people.",
-  },
-  {
-    name: "Ina Palacká",
-    role: "Comms Director",
-    photo: teamIna,
-    bio: "A scholar who has spent a decade nurturing the voices of fellow academics and bringing their research into the spotlight. Former researcher and science journalist at Český rozhlas, who translates complex concepts into accessible narratives without sacrificing their intellectual integrity.",
   },
   {
     name: "Maria Michopulu",
@@ -68,7 +61,7 @@ const TeamSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="team" className="py-28 md:py-40 section-padding bg-cosmic-deep" ref={ref}>
+    <section id="team" className="py-28 md:py-40 section-padding bg-cosmic-deep section-divider" ref={ref}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -81,7 +74,7 @@ const TeamSection = () => {
         <h2 className="text-4xl md:text-5xl font-light tracking-wide text-foreground">Our Team</h2>
       </motion.div>
 
-      <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
+      <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto">
         {team.map((member, i) => (
           <TeamCard key={member.name} member={member} index={i} />
         ))}

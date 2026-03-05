@@ -24,7 +24,7 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-28 md:py-40 section-padding gradient-cosmic" ref={ref}>
+    <section id="about" className="py-28 md:py-40 section-padding gradient-cosmic section-divider" ref={ref}>
       <div className="max-w-4xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

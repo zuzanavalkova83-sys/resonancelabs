@@ -14,9 +14,8 @@ const FooterSection = () => {
         <img
           src={footerBanner}
           alt="Resonance Labs footer illustration"
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-70"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
       </div>
 
       <div className="relative py-16 section-padding bg-cosmic-deep border-t border-border/30">
