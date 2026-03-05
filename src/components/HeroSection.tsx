@@ -6,27 +6,49 @@ const HeroSection = () => {
   return (
     <section id="hero" className="relative w-full bg-background min-h-screen pt-16">
       <div className="relative w-full h-[calc(100vh-4rem)] flex flex-col md:flex-row items-stretch">
-        {/* Brand panel on the left */}
+
+        {/* Brand panel — editorial left sidebar */}
         <motion.div
-          className="flex flex-col justify-center items-start px-8 md:px-14 lg:px-20 py-12 md:py-0 md:w-[38%] lg:w-[35%] shrink-0 z-10"
-          style={{ backgroundColor: 'hsl(220, 28%, 12%)' }}
-          initial={{ opacity: 0, x: -30 }}
+          className="relative flex flex-col justify-center items-start md:w-[36%] lg:w-[35%] shrink-0 z-10 px-8 py-12 md:px-16 md:py-0"
+          style={{
+            background: 'linear-gradient(180deg, hsl(220, 30%, 10%) 0%, hsl(222, 28%, 8%) 100%)',
+          }}
+          initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] mb-6 text-foreground font-light tracking-wide">
-            Resonance
-            <br />
-            Labs.
-          </h1>
-          <p className="text-2xl md:text-3xl lg:text-4xl font-light mb-8 leading-tight tracking-wide" style={{ color: 'hsl(30, 75%, 55%)' }}>
-            Science,
-            <br />
-            Amplified.
-          </p>
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-light max-w-sm">
-            In an age defined by the industrial production of noise, we protect your voice.
-          </p>
+          {/* Noise texture overlay for depth */}
+          <div
+            className="absolute inset-0 opacity-[0.03] pointer-events-none"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+              backgroundRepeat: 'repeat',
+            }}
+          />
+
+          {/* Right-side hairline border */}
+          <div
+            className="absolute top-0 right-0 bottom-0 w-px hidden md:block"
+            style={{ backgroundColor: 'hsl(220, 25%, 25% / 0.2)' }}
+          />
+
+          {/* Text block — positioned slightly above center */}
+          <div className="relative md:-mt-12">
+            <h1 className="font-heading text-[40px] md:text-[56px] lg:text-[62px] font-light leading-[1.05] tracking-[-0.02em] text-foreground mb-6">
+              Resonance Labs.
+            </h1>
+
+            <p
+              className="font-heading text-[24px] md:text-[28px] lg:text-[30px] font-medium leading-[1.2] tracking-[-0.01em] mb-8"
+              style={{ color: 'hsl(28, 65%, 52%)' }}
+            >
+              Science, Amplified.
+            </p>
+
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.65] font-normal max-w-[320px]" style={{ color: 'hsl(215, 20%, 62%)' }}>
+              In an age defined by the industrial production of noise, we protect your voice.
+            </p>
+          </div>
         </motion.div>
 
         {/* Illustration — full height, subtle blue tint */}
@@ -36,10 +58,15 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          {/* Subtle blue overlay — low opacity to let original colors through */}
+          {/* Subtle blue overlay */}
           <div className="absolute inset-0 z-10 mix-blend-color opacity-30" style={{ backgroundColor: 'hsl(220, 45%, 40%)' }} />
-          {/* Left edge fade — lighter */}
-          <div className="absolute inset-y-0 left-0 w-32 z-30" style={{ backgroundImage: 'linear-gradient(to right, hsl(220, 28%, 12%) 0%, hsl(220, 28%, 12% / 0.6) 40%, transparent 100%)' }} />
+
+          {/* Left edge fade — seamless blend into sidebar */}
+          <div
+            className="absolute inset-y-0 left-0 w-32 z-30"
+            style={{ backgroundImage: 'linear-gradient(to right, hsl(222, 28%, 8%) 0%, hsl(222, 28%, 8% / 0.5) 45%, transparent 100%)' }}
+          />
+
           {/* Bottom fade */}
           <div className="absolute inset-x-0 bottom-0 h-20 z-30 bg-gradient-to-t from-background to-transparent" />
 
@@ -49,7 +76,7 @@ const HeroSection = () => {
             className="w-full h-full object-cover object-center"
           />
 
-          {/* Interactive butterfly */}
+          {/* Interactive element */}
           <motion.img
             src={decorButterfly}
             alt=""
@@ -58,7 +85,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.6 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            whileHover={{ scale: 1.2, rotate: 8 }}
+            whileHover={{ scale: 1.15, rotate: 6 }}
             drag
             dragConstraints={{ top: -80, bottom: 80, left: -80, right: 80 }}
             dragElastic={0.3}
