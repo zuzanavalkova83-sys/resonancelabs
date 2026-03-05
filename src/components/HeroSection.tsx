@@ -11,22 +11,31 @@ const HeroSection = () => {
         <motion.div
           className="relative flex flex-col justify-center items-start md:w-[30%] shrink-0 z-20 px-8 py-12 md:px-16 md:py-0"
           style={{
-            background: 'linear-gradient(180deg, hsl(220, 30%, 10%) 0%, hsl(222, 28%, 8%) 100%)',
             minWidth: '340px',
             maxWidth: '460px',
-            maskImage: 'linear-gradient(to right, black 70%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to right, black 70%, transparent 100%)',
           }}
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
+          {/* Background layer with soft right edge */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: 'linear-gradient(180deg, hsl(220, 30%, 10%) 0%, hsl(222, 28%, 8%) 100%)',
+              maskImage: 'linear-gradient(to right, black 70%, transparent 100%)',
+              WebkitMaskImage: 'linear-gradient(to right, black 70%, transparent 100%)',
+            }}
+          />
+
           {/* Noise texture overlay for depth */}
           <div
             className="absolute inset-0 opacity-[0.03] pointer-events-none"
             style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
               backgroundRepeat: 'repeat',
+              maskImage: 'linear-gradient(to right, black 70%, transparent 100%)',
+              WebkitMaskImage: 'linear-gradient(to right, black 70%, transparent 100%)',
             }}
           />
 
