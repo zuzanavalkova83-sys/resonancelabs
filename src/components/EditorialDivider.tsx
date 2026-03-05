@@ -17,7 +17,7 @@ const EditorialDivider = () => {
         animate={isInView ? { opacity: 1 } : {}}
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="relative w-full"
-        style={{ height: 'clamp(300px, 65vh, 800px)' }}
+        style={{ height: 'auto' }}
       >
         <img
           src={dividerImage}
