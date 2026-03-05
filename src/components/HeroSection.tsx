@@ -5,7 +5,7 @@ import decorButterfly from "@/assets/decor-butterfly.png";
 const HeroSection = () => {
   return (
     <section id="hero" className="relative w-full bg-background min-h-[100vh] pt-16">
-      <div className="relative w-full min-h-[calc(100vh-4rem)] md:min-h-[740px] lg:min-h-[800px] flex flex-col md:flex-row items-stretch">
+      <div className="relative w-full min-h-[calc(100vh-4rem)] md:min-h-[740px] lg:min-h-[800px] flex flex-col md:flex-row items-stretch overflow-hidden">
 
         {/* Brand panel — editorial left sidebar */}
         <motion.div
