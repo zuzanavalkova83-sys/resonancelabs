@@ -20,14 +20,17 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "glass-nav py-4" : "py-6 bg-transparent"
+        scrolled ? "glass-nav py-4" : "py-5 bg-transparent"
       }`}
     >
       <div className="section-padding flex items-center justify-between">
-        <button onClick={() => scrollTo("hero")} className="text-xl tracking-widest text-foreground hover:text-primary transition-colors font-medium">
+        <button
+          onClick={() => scrollTo("hero")}
+          className="font-heading text-[12px] tracking-[0.14em] uppercase font-medium text-foreground/70 hover:text-foreground/90 transition-opacity duration-300"
+        >
           RESONANCE LABS
         </button>
-        <div className="hidden md:flex items-center gap-8 text-sm tracking-wide">
+        <div className="hidden md:flex items-center gap-10">
           {[
             { label: "About", id: "about" },
             { label: "Team", id: "team" },
@@ -37,7 +40,7 @@ const Navbar = () => {
             <button
               key={item.id}
               onClick={() => scrollTo(item.id)}
-              className="text-muted-foreground hover:text-foreground transition-colors duration-300 uppercase tracking-widest text-xs"
+              className="font-heading text-[12px] tracking-[0.12em] uppercase font-normal text-foreground/50 hover:text-foreground/80 transition-opacity duration-300"
             >
               {item.label}
             </button>

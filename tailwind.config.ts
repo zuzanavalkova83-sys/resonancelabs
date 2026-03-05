@@ -15,6 +15,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Raleway", "sans-serif"],
+        heading: ["Space Grotesk", "sans-serif"],
+        body: ["Inter", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
