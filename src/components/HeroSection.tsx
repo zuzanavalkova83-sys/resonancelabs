@@ -14,6 +14,8 @@ const HeroSection = () => {
             background: 'linear-gradient(180deg, hsl(220, 30%, 10%) 0%, hsl(222, 28%, 8%) 100%)',
             minWidth: '340px',
             maxWidth: '460px',
+            maskImage: 'linear-gradient(to right, black 70%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to right, black 70%, transparent 100%)',
           }}
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
