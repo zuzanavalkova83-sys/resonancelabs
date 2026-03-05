@@ -18,7 +18,7 @@ const HeroSection = () => {
             <br />
             Labs.
           </h1>
-          <p className="text-2xl md:text-3xl lg:text-4xl text-primary font-light mb-8 leading-tight tracking-wide">
+          <p className="text-2xl md:text-3xl lg:text-4xl font-light mb-8 leading-tight tracking-wide" style={{ color: 'hsl(30, 75%, 55%)' }}>
             Science,
             <br />
             Amplified.
@@ -38,7 +38,7 @@ const HeroSection = () => {
           {/* Subtle blue overlay — low opacity to let original colors through */}
           <div className="absolute inset-0 z-10 mix-blend-color opacity-30" style={{ backgroundColor: 'hsl(220, 45%, 40%)' }} />
           {/* Left edge fade — lighter */}
-          <div className="absolute inset-y-0 left-0 w-28 z-30 bg-gradient-to-r from-background/80 to-transparent" />
+          <div className="absolute inset-y-0 left-0 w-28 z-30 bg-gradient-to-r from-background/50 to-transparent" />
           {/* Bottom fade */}
           <div className="absolute inset-x-0 bottom-0 h-20 z-30 bg-gradient-to-t from-background to-transparent" />
 
