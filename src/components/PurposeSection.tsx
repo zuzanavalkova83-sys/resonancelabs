@@ -71,14 +71,14 @@ const PurposeSection = () => {
             className="flex justify-center md:justify-end"
           >
             <div
-              className="relative overflow-hidden w-full max-w-[560px]"
-              style={{ borderRadius: '16px' }}
+              className="relative overflow-hidden w-full"
+              style={{ borderRadius: '16px', aspectRatio: '3 / 4' }}
             >
               <img
                 src={purposeImage}
                 alt="Renaissance-style still life with microscope, open book, fruit bowl, and disco ball — symbolising the intersection of science and culture"
-                className="w-full h-auto object-cover"
-                style={{ borderRadius: '16px' }}
+                className="w-full h-full object-cover"
+                style={{ borderRadius: '16px', objectPosition: 'center center' }}
               />
               {/* Subtle inset vignette */}
               <div
