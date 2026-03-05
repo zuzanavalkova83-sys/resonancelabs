@@ -9,7 +9,7 @@ const HeroSection = () => {
         {/* Brand panel on the left */}
         <motion.div
           className="flex flex-col justify-center items-start px-8 md:px-14 lg:px-20 py-12 md:py-0 md:w-[38%] lg:w-[35%] shrink-0 z-10"
-          style={{ backgroundColor: 'hsl(220, 30%, 8%)' }}
+          style={{ backgroundColor: 'hsl(220, 28%, 12%)' }}
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -39,7 +39,7 @@ const HeroSection = () => {
           {/* Subtle blue overlay — low opacity to let original colors through */}
           <div className="absolute inset-0 z-10 mix-blend-color opacity-30" style={{ backgroundColor: 'hsl(220, 45%, 40%)' }} />
           {/* Left edge fade — lighter */}
-          <div className="absolute inset-y-0 left-0 w-20 z-30 bg-gradient-to-r to-transparent" style={{ backgroundImage: 'linear-gradient(to right, hsl(220, 30%, 8%) 0%, transparent 100%)' }} />
+          <div className="absolute inset-y-0 left-0 w-32 z-30" style={{ backgroundImage: 'linear-gradient(to right, hsl(220, 28%, 12%) 0%, hsl(220, 28%, 12% / 0.6) 40%, transparent 100%)' }} />
           {/* Bottom fade */}
           <div className="absolute inset-x-0 bottom-0 h-20 z-30 bg-gradient-to-t from-background to-transparent" />
 
