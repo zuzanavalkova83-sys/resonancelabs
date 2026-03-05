@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import heroIllustration from "@/assets/hero-illustration.png";
+import decorButterfly from "@/assets/decor-butterfly.png";
 
 const HeroSection = () => {
   return (
@@ -17,7 +18,7 @@ const HeroSection = () => {
             <br />
             Labs.
           </h1>
-          <p className="text-2xl md:text-3xl lg:text-4xl gradient-gold-text font-normal italic mb-8 leading-tight">
+          <p className="text-2xl md:text-3xl lg:text-4xl text-primary font-light mb-8 leading-tight tracking-wide">
             Science,
             <br />
             Amplified.
@@ -27,25 +28,40 @@ const HeroSection = () => {
           </p>
         </motion.div>
 
-        {/* Illustration — full height, blue-shifted */}
+        {/* Illustration — full height, subtle blue tint */}
         <motion.div
           className="relative flex-1 overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          {/* Blue hue overlay */}
-          <div className="absolute inset-0 z-10 mix-blend-color" style={{ backgroundColor: 'hsl(220, 50%, 35%)' }} />
-          <div className="absolute inset-0 z-20 mix-blend-soft-light" style={{ backgroundColor: 'hsl(220, 40%, 20%)' }} />
-          {/* Left edge fade into background */}
-          <div className="absolute inset-y-0 left-0 w-32 z-30 bg-gradient-to-r from-background to-transparent" />
+          {/* Subtle blue overlay — low opacity to let original colors through */}
+          <div className="absolute inset-0 z-10 mix-blend-color opacity-30" style={{ backgroundColor: 'hsl(220, 45%, 40%)' }} />
+          {/* Left edge fade — lighter */}
+          <div className="absolute inset-y-0 left-0 w-28 z-30 bg-gradient-to-r from-background/80 to-transparent" />
           {/* Bottom fade */}
-          <div className="absolute inset-x-0 bottom-0 h-24 z-30 bg-gradient-to-t from-background to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-20 z-30 bg-gradient-to-t from-background to-transparent" />
 
           <img
             src={heroIllustration}
             alt="Cosmic collage with rocket launch, astronaut, moon, and surreal botanical elements"
             className="w-full h-full object-cover object-center"
+          />
+
+          {/* Interactive butterfly */}
+          <motion.img
+            src={decorButterfly}
+            alt=""
+            className="absolute z-20 w-16 md:w-24 lg:w-28 drop-shadow-lg"
+            style={{ top: '18%', left: '12%' }}
+            initial={{ opacity: 0, scale: 0.6 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+            whileHover={{ scale: 1.2, rotate: 8 }}
+            drag
+            dragConstraints={{ top: -80, bottom: 80, left: -80, right: 80 }}
+            dragElastic={0.3}
+            dragTransition={{ bounceStiffness: 300, bounceDamping: 15 }}
           />
         </motion.div>
       </div>
