@@ -5,6 +5,7 @@ import bubble2 from "@/assets/service-bubble-2.jpg";
 import bubble3 from "@/assets/service-bubble-3.jpg";
 import bubble4 from "@/assets/service-bubble-4.jpg";
 import bubble5 from "@/assets/service-bubble-5.jpg";
+import decorJellyfish from "@/assets/decor-jellyfish.png";
 
 const services = [
   { name: "Communication Strategies", image: bubble1 },
@@ -22,14 +23,23 @@ const ServicesSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="py-28 md:py-40 section-padding bg-cosmic-deep" ref={ref}>
+    <section id="services" className="py-28 md:py-40 section-padding bg-cosmic-deep relative overflow-hidden" ref={ref}>
+      {/* Decorative jellyfish */}
+      <motion.img
+        src={decorJellyfish}
+        alt=""
+        className="absolute bottom-12 left-8 w-16 md:w-24 opacity-30 pointer-events-none"
+        animate={{ y: [0, -8, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+      />
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7 }}
         className="text-center mb-16"
       >
-        <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-4">
+        <h2 className="text-4xl md:text-5xl text-foreground mb-4 font-light tracking-wide">
           What We Do to Make Science Matter More
         </h2>
       </motion.div>
@@ -50,7 +60,7 @@ const ServicesSection = () => {
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
             </div>
-            <h3 className="font-serif text-base md:text-lg text-foreground group-hover:text-primary transition-colors duration-300">
+            <h3 className="text-base md:text-lg text-foreground group-hover:text-primary transition-colors duration-300 font-medium">
               {service.name}
             </h3>
           </motion.div>
