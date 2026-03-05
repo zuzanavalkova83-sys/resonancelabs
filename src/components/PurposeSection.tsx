@@ -71,7 +71,7 @@ const PurposeSection = () => {
             className="flex justify-center md:justify-end"
           >
             <div
-              className="relative overflow-hidden w-full max-w-[480px]"
+              className="relative overflow-hidden w-full max-w-[560px]"
               style={{ borderRadius: '16px' }}
             >
               <img
