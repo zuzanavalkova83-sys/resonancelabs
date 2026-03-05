@@ -15,9 +15,6 @@ const HeroSection = () => {
             minWidth: '340px',
             maxWidth: '460px',
           }}
-          style={{
-            background: 'linear-gradient(180deg, hsl(220, 30%, 10%) 0%, hsl(222, 28%, 8%) 100%)',
-          }}
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
