@@ -5,7 +5,6 @@ import bubble2 from "@/assets/service-bubble-2.jpg";
 import bubble3 from "@/assets/service-bubble-3.jpg";
 import bubble4 from "@/assets/service-bubble-4.jpg";
 import bubble5 from "@/assets/service-bubble-5.jpg";
-import decorJellyfish from "@/assets/decor-jellyfish.png";
 
 const services = [
   { name: "Communication Strategies", image: bubble1 },
@@ -23,48 +22,106 @@ const ServicesSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="py-28 md:py-40 section-padding bg-cosmic-deep relative overflow-hidden section-divider" ref={ref}>
-      {/* Decorative jellyfish */}
-      <motion.img
-        src={decorJellyfish}
-        alt=""
-        className="absolute bottom-12 left-8 w-16 md:w-24 opacity-30 pointer-events-none"
-        animate={{ y: [0, -8, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      />
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.7 }}
-        className="text-center mb-16"
-      >
-        <h2 className="text-4xl md:text-5xl text-foreground mb-4 font-light tracking-wide">
-          What We Do to Make Science Matter More
-        </h2>
-      </motion.div>
-
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-        {services.map((service, i) => (
-          <motion.div
-            key={service.name}
-            initial={{ opacity: 0, y: 30 }}
+    <section
+      id="services"
+      className="py-28 md:py-40 section-padding section-divider"
+      ref={ref}
+      style={{ backgroundColor: 'hsl(222, 28%, 8%)' }}
+    >
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
+        {/* Section header */}
+        <div className="text-center mb-20">
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: i * 0.08 }}
-            className="group glass-card rounded-2xl p-5 flex flex-col items-center text-center hover:border-primary/30 transition-all duration-500 shimmer"
+            transition={{ duration: 0.6 }}
+            className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.14em] font-medium mb-8"
+            style={{ color: 'hsl(215, 20%, 50%)' }}
           >
-            <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden mb-5 ring-2 ring-border group-hover:ring-primary/40 transition-all duration-500 glow-gold group-hover:shadow-[0_0_30px_hsl(38_60%_65%/0.2)]">
-              <img
-                src={service.image}
-                alt={service.name}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              />
-            </div>
-            <h3 className="text-base md:text-lg text-foreground group-hover:text-primary transition-colors duration-300 font-medium">
-              {service.name}
-            </h3>
+            Services
+          </motion.p>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="font-heading text-[32px] md:text-[40px] lg:text-[46px] font-light leading-[1.08] tracking-[-0.02em] text-foreground mb-6"
+          >
+            What We Do to Make Science Matter More
+          </motion.h2>
+
+          {/* Hairline divider */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative mx-auto"
+            style={{ maxWidth: '80px' }}
+          >
+            <div className="h-px w-full" style={{ backgroundColor: 'hsl(220, 20%, 30% / 0.4)' }} />
+            <div
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[5px] h-[5px] rounded-full"
+              style={{ backgroundColor: 'hsl(32, 55%, 58%)' }}
+            />
           </motion.div>
-        ))}
+        </div>
+
+        {/* Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
+          {services.map((service, i) => (
+            <motion.div
+              key={service.name}
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 + i * 0.06 }}
+              className="group flex flex-col items-center text-center p-6 rounded-xl transition-all duration-400"
+              style={{
+                border: '1px solid hsl(220, 20%, 25% / 0.2)',
+                backgroundColor: 'hsl(220, 20%, 12% / 0.15)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'hsl(32, 55%, 58% / 0.3)';
+                e.currentTarget.style.backgroundColor = 'hsl(220, 20%, 12% / 0.3)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'hsl(220, 20%, 25% / 0.2)';
+                e.currentTarget.style.backgroundColor = 'hsl(220, 20%, 12% / 0.15)';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
+            >
+              {/* Image circle */}
+              <div
+                className="w-20 h-20 md:w-[88px] md:h-[88px] rounded-full overflow-hidden mb-5 relative"
+                style={{
+                  border: '1px solid hsl(220, 20%, 30% / 0.25)',
+                }}
+              >
+                <img
+                  src={service.image}
+                  alt={service.name}
+                  className="w-full h-full object-cover"
+                  style={{ filter: 'saturate(0.7) contrast(0.95) brightness(0.9)' }}
+                />
+                {/* Subtle tint overlay */}
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background: 'radial-gradient(circle, transparent 40%, hsl(222, 28%, 8% / 0.35) 100%)',
+                  }}
+                />
+              </div>
+
+              {/* Service name */}
+              <h3
+                className="font-heading text-[15px] md:text-[16px] font-medium leading-[1.3] tracking-[-0.01em] transition-colors duration-300"
+                style={{ color: 'hsl(215, 15%, 78%)' }}
+              >
+                {service.name}
+              </h3>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
