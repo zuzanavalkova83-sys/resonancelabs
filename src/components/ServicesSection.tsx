@@ -23,7 +23,7 @@ const ServicesSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="py-28 md:py-40 section-padding bg-cosmic-deep relative overflow-hidden" ref={ref}>
+    <section id="services" className="py-28 md:py-40 section-padding bg-cosmic-deep relative overflow-hidden section-divider" ref={ref}>
       {/* Decorative jellyfish */}
       <motion.img
         src={decorJellyfish}

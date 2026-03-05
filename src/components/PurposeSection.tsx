@@ -7,7 +7,7 @@ const PurposeSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="purpose" className="py-28 md:py-40 section-padding gradient-cosmic relative overflow-hidden" ref={ref}>
+    <section id="purpose" className="py-28 md:py-40 section-padding gradient-cosmic relative overflow-hidden section-divider" ref={ref}>
       {/* Stars */}
       {Array.from({ length: 20 }).map((_, i) => (
         <div
