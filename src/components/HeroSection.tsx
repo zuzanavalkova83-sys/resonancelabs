@@ -18,7 +18,7 @@ const HeroSection = () => {
             <br />
             Labs.
           </h1>
-          <p className="text-2xl md:text-3xl lg:text-4xl text-primary font-light mb-8 leading-tight tracking-wide">
+          <p className="text-2xl md:text-3xl lg:text-4xl font-light mb-8 leading-tight tracking-wide" style={{ color: 'hsl(30, 75%, 55%)' }}>
             Science,
             <br />
             Amplified.
