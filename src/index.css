@@ -102,12 +102,11 @@
   }
 
   .gradient-cosmic {
-    background: linear-gradient(
-      180deg,
-      hsl(var(--cosmic-deep)) 0%,
-      hsl(var(--cosmic-navy)) 50%,
-      hsl(var(--cosmic-deep)) 100%
-    );
+    background-color: hsl(var(--cosmic-navy));
+  }
+
+  .section-divider {
+    border-top: 1px solid hsl(var(--glass-border) / 0.5);
   }
 
   .gradient-gold-text {
