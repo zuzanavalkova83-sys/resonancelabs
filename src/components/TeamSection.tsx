@@ -19,12 +19,6 @@ const team = [
     bio: "In advertising, he has worked on everything from automobiles to election campaigns, fancy creams to tech. A former creative director at multinational agencies, he works from a simple premise: that while the world of research is unique, it is not exempt from the rules of what moves people.",
   },
   {
-    name: "Ina Palacká",
-    role: "Comms Director",
-    photo: teamIna,
-    bio: "A scholar who has spent a decade nurturing the voices of fellow academics and bringing their research into the spotlight. Former researcher and science journalist at Český rozhlas, who translates complex concepts into accessible narratives without sacrificing their intellectual integrity.",
-  },
-  {
     name: "Maria Michopulu",
     role: "Graphic Designer",
     photo: teamMaria,
