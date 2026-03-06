@@ -17,6 +17,8 @@ const fields = [
   { name: "Philosophy", url: "https://www.marwick.cz/rozhovor/co-zbude-z-cloveka" },
   { name: "Pharma", url: "https://www.cb21pharma.com/" },
   { name: "Arts", url: "https://archiv.hn.cz/c1-66342840-na-hranici-poznani" },
+  { name: "Tech Transfer" },
+  { name: "Biotech" },
 ];
 
 const AboutSection = () => {
