@@ -107,44 +107,6 @@ const HeroSection = () => {
             style={{ objectPosition: 'center 50%' }}
           />
 
-          {/* Animated rocket flame */}
-          <div
-            className="absolute z-40 pointer-events-none"
-            style={{ bottom: '11%', left: '50%', transform: 'translateX(-50%)', width: '80px', height: '140px' }}
-          >
-            {/* Core flame */}
-            <motion.div
-              className="absolute inset-x-0 bottom-0 mx-auto rounded-full"
-              style={{
-                width: '18px',
-                height: '60px',
-                background: 'linear-gradient(to bottom, hsl(45, 100%, 85%) 0%, hsl(35, 100%, 60%) 40%, hsl(15, 100%, 50%) 70%, transparent 100%)',
-                filter: 'blur(3px)',
-              }}
-              animate={{
-                scaleY: [1, 1.25, 0.9, 1.15, 1],
-                scaleX: [1, 0.85, 1.1, 0.9, 1],
-                opacity: [0.9, 1, 0.85, 1, 0.9],
-              }}
-              transition={{ duration: 0.4, repeat: Infinity, ease: 'easeInOut' }}
-            />
-            {/* Outer glow */}
-            <motion.div
-              className="absolute inset-x-0 bottom-0 mx-auto rounded-full"
-              style={{
-                width: '40px',
-                height: '80px',
-                background: 'radial-gradient(ellipse at center bottom, hsl(25, 100%, 55% / 0.5) 0%, hsl(15, 100%, 45% / 0.2) 40%, transparent 70%)',
-                filter: 'blur(8px)',
-              }}
-              animate={{
-                scaleY: [1, 1.15, 0.95, 1.2, 1],
-                opacity: [0.6, 0.8, 0.5, 0.75, 0.6],
-              }}
-              transition={{ duration: 0.5, repeat: Infinity, ease: 'easeInOut' }}
-            />
-          </div>
-
           {/* Interactive element */}
           <motion.img
             src={decorButterfly}
