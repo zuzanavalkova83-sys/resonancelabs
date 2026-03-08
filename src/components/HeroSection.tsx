@@ -109,8 +109,8 @@ const HeroSection = () => {
 
           {/* Animated rocket flame */}
           <div
-            className="absolute z-20 pointer-events-none"
-            style={{ bottom: '5%', left: '50%', transform: 'translateX(-50%)', width: '80px', height: '140px' }}
+            className="absolute z-40 pointer-events-none"
+            style={{ bottom: '10%', left: '50%', transform: 'translateX(-50%)', width: '80px', height: '140px' }}
           >
             {/* Core flame */}
             <motion.div
