@@ -4,6 +4,7 @@ import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
 
 const PurposeSection = () => {
   const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const glitch = useGlitch(9000, 500, 2500);
 
   return (
