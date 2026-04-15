@@ -1,10 +1,13 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import purposeImage from "@/assets/purpose-stilllife.png";
+import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
+
+const keywords = ["NOISE", "DISTORTION", "CLARITY", "MEANING", "SIGNAL", "TRUTH"];
 
 const PurposeSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const glitch = useGlitch(8000, 500, 2500);
 
   return (
     <section
@@ -33,20 +36,133 @@ const PurposeSection = () => {
           </h2>
         </motion.div>
 
-        {/* Illustration — full width, contained */}
+        {/* Visual element — editorial signal constellation */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 1, delay: 0.15 }}
           className="relative overflow-hidden mb-16 md:mb-20"
-          style={{ maxHeight: '420px' }}
+          style={{ height: '320px', backgroundColor: 'hsl(var(--wine-deep))' }}
         >
-          <img
-            src={purposeImage}
-            alt="Renaissance-style still life with microscope, open book, fruit bowl, and disco ball"
-            className="w-full h-full object-cover"
-            style={{ objectPosition: 'center 55%' }}
+          {/* Noise texture */}
+          <div
+            className="absolute inset-0 opacity-[0.04] pointer-events-none"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+              backgroundRepeat: 'repeat',
+            }}
           />
+
+          {/* Wine accent circle */}
+          <motion.div
+            className="absolute"
+            initial={{ scale: 0.6, opacity: 0 }}
+            animate={isInView ? { scale: 1, opacity: 1 } : {}}
+            transition={{ duration: 1.2, delay: 0.3 }}
+            style={{
+              width: '200px',
+              height: '200px',
+              top: '50%',
+              left: '12%',
+              transform: 'translateY(-50%)',
+              borderRadius: '50%',
+              background: 'hsl(var(--wine))',
+              boxShadow: '0 20px 80px -10px hsl(var(--wine) / 0.5)',
+            }}
+          />
+
+          {/* Breathing ring */}
+          <motion.div
+            className="absolute"
+            animate={{
+              scale: [1, 1.08, 1],
+              opacity: [0.15, 0.3, 0.15],
+            }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            style={{
+              width: '300px',
+              height: '300px',
+              top: '50%',
+              left: '12%',
+              transform: 'translateY(-50%) translateX(-50px)',
+              borderRadius: '50%',
+              border: '1px solid hsl(var(--wine-glow) / 0.3)',
+            }}
+          />
+
+          {/* Brass dot */}
+          <motion.div
+            className="absolute"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={isInView ? { scale: 1, opacity: 0.7 } : {}}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            style={{
+              width: '10px',
+              height: '10px',
+              top: '30%',
+              left: '28%',
+              borderRadius: '50%',
+              background: 'hsl(var(--brass))',
+              boxShadow: '0 0 12px 3px hsl(var(--brass) / 0.3)',
+            }}
+          />
+
+          {/* Vertical line */}
+          <motion.div
+            className="absolute"
+            initial={{ scaleY: 0 }}
+            animate={isInView ? { scaleY: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            style={{
+              width: '1px',
+              height: '120px',
+              top: '25%',
+              left: '35%',
+              background: 'hsl(var(--brass) / 0.15)',
+              transformOrigin: 'top',
+            }}
+          />
+
+          {/* Floating keywords — scattered typographic accents */}
+          {keywords.map((word, i) => (
+            <motion.span
+              key={word}
+              className="absolute font-mono uppercase pointer-events-none select-none"
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : {}}
+              transition={{ duration: 0.6, delay: 0.4 + i * 0.1 }}
+              style={{
+                fontSize: i === 3 ? '11px' : '9px',
+                letterSpacing: '0.25em',
+                color: i === 3
+                  ? 'hsl(var(--brass) / 0.6)'
+                  : 'hsl(var(--foreground) / 0.12)',
+                top: `${18 + (i * 13) % 65}%`,
+                right: `${8 + (i * 17) % 45}%`,
+                ...(glitch && i === 0 ? glitchStyle(true, "subtle") : {}),
+              }}
+            >
+              {word}
+            </motion.span>
+          ))}
+
+          {/* Horizontal editorial line */}
+          <motion.div
+            className="absolute"
+            initial={{ scaleX: 0 }}
+            animate={isInView ? { scaleX: 1 } : {}}
+            transition={{ duration: 1, delay: 0.6 }}
+            style={{
+              width: '40%',
+              height: '1px',
+              top: '70%',
+              right: '10%',
+              background: 'linear-gradient(90deg, transparent, hsl(var(--brass) / 0.15), transparent)',
+              transformOrigin: 'right',
+            }}
+          />
+
+          {/* Edge vignette */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{ boxShadow: 'inset 0 0 60px 15px hsl(340, 40%, 10% / 0.5)' }}
