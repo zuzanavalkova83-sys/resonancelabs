@@ -61,7 +61,7 @@ const HeroSection = () => {
 
         {/* Main heading */}
         <motion.h1
-          className="font-display text-[72px] md:text-[100px] lg:text-[130px] tracking-wider leading-[0.82] text-foreground mb-10"
+          className="font-display text-[5.5rem] sm:text-[7rem] md:text-[9rem] tracking-wider leading-[0.82] text-foreground mb-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -95,15 +95,12 @@ const HeroSection = () => {
           transition={{ duration: 0.7, delay: 0.55 }}
           className="max-w-xl mb-16 md:mb-20"
         >
-          <p className="font-heading text-[19px] md:text-[22px] font-medium leading-[1.35] tracking-[-0.01em] text-foreground mb-4">
+          <p className="text-xl sm:text-2xl leading-relaxed text-foreground/50 mb-4">
             Protecting{" "}
             <span className="inline-block" style={glitchStyle(glitch)}>meaning</span>
             {" "}where research meets public life.
           </p>
-          <p
-            className="font-body text-[15px] md:text-[16px] leading-[1.75] font-normal max-w-[48ch]"
-            style={{ color: 'hsl(var(--muted-foreground))' }}
-          >
+          <p className="text-base leading-relaxed text-foreground/40 max-w-md">
             We help serious ideas survive noise, distortion, and the distance
             between expertise and understanding.
           </p>
