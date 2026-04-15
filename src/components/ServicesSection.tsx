@@ -24,9 +24,8 @@ const ServicesSection = () => {
   return (
     <section
       id="services"
-      className="py-28 md:py-40 section-padding section-divider"
+      className="py-28 md:py-40 section-padding section-divider bg-teal-deep"
       ref={ref}
-      style={{ backgroundColor: 'hsl(222, 28%, 8%)' }}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         {/* Section header */}

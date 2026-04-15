@@ -24,7 +24,7 @@ const TeamSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="team" className="py-24 md:py-32 section-padding bg-cosmic-deep section-divider" ref={ref}>
+    <section id="team" className="py-24 md:py-32 section-padding bg-teal-deep section-divider" ref={ref}>
       <div className="max-w-6xl mx-auto px-6 md:px-12">
 
         {/* Section header */}

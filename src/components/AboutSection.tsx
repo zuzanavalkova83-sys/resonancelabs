@@ -41,7 +41,7 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-20 md:py-28 section-padding gradient-cosmic section-divider" ref={ref}>
+    <section id="about" className="py-20 md:py-28 section-padding bg-oxblood section-divider" ref={ref}>
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
