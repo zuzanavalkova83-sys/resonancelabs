@@ -9,7 +9,7 @@ const PurposeSection = () => {
   return (
     <section
       id="purpose"
-      className="py-28 md:py-40 section-padding section-divider bg-oxblood"
+      className="py-32 md:py-44 section-padding section-divider bg-cosmic-deep"
       ref={ref}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12">

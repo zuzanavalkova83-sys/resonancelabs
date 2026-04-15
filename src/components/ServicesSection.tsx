@@ -24,7 +24,7 @@ const ServicesSection = () => {
   return (
     <section
       id="services"
-      className="py-28 md:py-40 section-padding section-divider bg-teal-deep"
+      className="py-32 md:py-44 section-padding section-divider bg-teal-deep"
       ref={ref}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12">
