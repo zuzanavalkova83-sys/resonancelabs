@@ -24,7 +24,7 @@ const TeamSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="team" className="py-24 md:py-32 section-padding bg-cosmic-deep section-divider" ref={ref}>
+    <section id="team" className="py-24 md:py-32 section-padding bg-teal-deep section-divider" ref={ref}>
       <div className="max-w-6xl mx-auto px-6 md:px-12">
 
         {/* Section header */}
@@ -67,14 +67,14 @@ const TeamSection = () => {
               className="absolute inset-0 pointer-events-none"
               style={{
                 borderRadius: '16px',
-                boxShadow: 'inset 0 0 50px 10px hsl(222, 28%, 6% / 0.35)',
+                boxShadow: 'inset 0 0 50px 10px hsl(170, 30%, 5% / 0.35)',
               }}
             />
             <div
               className="absolute inset-0 pointer-events-none"
               style={{
                 borderRadius: '16px',
-                border: '1px solid hsl(220, 20%, 30% / 0.2)',
+                border: '1px solid hsl(170, 18%, 25% / 0.2)',
               }}
             />
           </div>
@@ -130,7 +130,7 @@ const TeamSection = () => {
         >
           <div
             className="h-px w-full mb-10"
-            style={{ backgroundColor: 'hsl(220, 20%, 20% / 0.3)' }}
+            style={{ backgroundColor: 'hsl(170, 18%, 18% / 0.3)' }}
           />
           <p
             className="font-body text-[15px] md:text-[16px] leading-[1.6] font-normal max-w-[56ch]"

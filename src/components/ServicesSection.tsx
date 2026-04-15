@@ -24,9 +24,8 @@ const ServicesSection = () => {
   return (
     <section
       id="services"
-      className="py-28 md:py-40 section-padding section-divider"
+      className="py-28 md:py-40 section-padding section-divider bg-teal-deep"
       ref={ref}
-      style={{ backgroundColor: 'hsl(222, 28%, 8%)' }}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         {/* Section header */}
@@ -76,17 +75,17 @@ const ServicesSection = () => {
               transition={{ duration: 0.5, delay: 0.2 + i * 0.06 }}
               className="group flex flex-col items-center text-center p-6 rounded-xl transition-all duration-400"
               style={{
-                border: '1px solid hsl(220, 20%, 25% / 0.2)',
-                backgroundColor: 'hsl(220, 20%, 12% / 0.15)',
+                border: '1px solid hsl(170, 20%, 20% / 0.25)',
+                backgroundColor: 'hsl(170, 18%, 12% / 0.2)',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = 'hsl(32, 55%, 58% / 0.3)';
-                e.currentTarget.style.backgroundColor = 'hsl(220, 20%, 12% / 0.3)';
+                e.currentTarget.style.backgroundColor = 'hsl(170, 18%, 14% / 0.35)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'hsl(220, 20%, 25% / 0.2)';
-                e.currentTarget.style.backgroundColor = 'hsl(220, 20%, 12% / 0.15)';
+                e.currentTarget.style.borderColor = 'hsl(170, 20%, 20% / 0.25)';
+                e.currentTarget.style.backgroundColor = 'hsl(170, 18%, 12% / 0.2)';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
@@ -107,7 +106,7 @@ const ServicesSection = () => {
                 <div
                   className="absolute inset-0 pointer-events-none"
                   style={{
-                    background: 'radial-gradient(circle, transparent 40%, hsl(222, 28%, 8% / 0.35) 100%)',
+                    background: 'radial-gradient(circle, transparent 40%, hsl(170, 30%, 9% / 0.35) 100%)',
                   }}
                 />
               </div>

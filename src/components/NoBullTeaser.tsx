@@ -30,8 +30,7 @@ const NoBullTeaser = () => {
   return (
     <section
       ref={ref}
-      className="py-28 md:py-40 section-padding relative overflow-hidden"
-      style={{ backgroundColor: "hsl(222, 28%, 7%)" }}
+      className="py-28 md:py-40 section-padding relative overflow-hidden bg-cosmic-deep"
     >
       {/* Burgundy ambient glow */}
       <div
