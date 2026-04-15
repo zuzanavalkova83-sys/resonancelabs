@@ -21,27 +21,52 @@ const HeroSection = () => {
         }}
       />
 
-      {/* Ambient glow */}
-      <div
-        className="absolute pointer-events-none"
+      {/* Wine accent circle — NoBull style */}
+      <motion.div
+        className="absolute pointer-events-none hidden md:block"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
         style={{
-          width: '600px',
-          height: '600px',
-          top: '-10%',
-          right: '-5%',
-          background: 'radial-gradient(circle, hsl(348 45% 18% / 0.4) 0%, transparent 70%)',
-          filter: 'blur(80px)',
+          width: '280px',
+          height: '280px',
+          top: '12%',
+          right: '6%',
+          borderRadius: '50%',
+          background: 'hsl(var(--wine))',
+          boxShadow: '0 20px 80px -10px hsl(var(--wine) / 0.4)',
         }}
       />
-      <div
-        className="absolute pointer-events-none"
+
+      {/* Small brass dot accent */}
+      <motion.div
+        className="absolute pointer-events-none hidden md:block"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 0.6 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
         style={{
-          width: '400px',
-          height: '400px',
-          bottom: '10%',
-          left: '-5%',
-          background: 'radial-gradient(circle, hsl(30 15% 68% / 0.08) 0%, transparent 70%)',
-          filter: 'blur(60px)',
+          width: '12px',
+          height: '12px',
+          top: '28%',
+          right: '32%',
+          borderRadius: '50%',
+          background: 'hsl(var(--brass))',
+        }}
+      />
+
+      {/* Vertical editorial line */}
+      <motion.div
+        className="absolute pointer-events-none hidden md:block"
+        initial={{ scaleY: 0 }}
+        animate={{ scaleY: 1 }}
+        transition={{ duration: 1, delay: 0.6 }}
+        style={{
+          width: '1px',
+          height: '120px',
+          top: '15%',
+          right: '28%',
+          background: 'hsl(var(--brass) / 0.2)',
+          transformOrigin: 'top',
         }}
       />
 
