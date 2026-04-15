@@ -139,8 +139,8 @@ const AboutSection = () => {
                 <div
                   className="rounded-lg overflow-hidden"
                   style={{
-                    border: '1px solid hsl(220, 20%, 20% / 0.3)',
-                    backgroundColor: 'hsl(220, 22%, 10% / 0.4)',
+                    border: '1px solid hsl(345, 20%, 22% / 0.3)',
+                    backgroundColor: 'hsl(345, 18%, 12% / 0.3)',
                   }}
                 >
                   {cat.fields.map((field, i) => {
@@ -160,7 +160,7 @@ const AboutSection = () => {
                           }`}
                           style={{
                             color: 'hsl(215, 15%, 55%)',
-                            ...(!isLast ? { borderBottom: '1px solid hsl(220, 20%, 20% / 0.25)' } : {}),
+                            ...(!isLast ? { borderBottom: '1px solid hsl(345, 18%, 22% / 0.25)' } : {}),
                           }}
                         >
                           {field.name}
