@@ -49,12 +49,12 @@ const HeroSection = () => {
 
             <p
               className="font-heading text-[24px] md:text-[28px] lg:text-[30px] font-medium leading-[1.2] tracking-[-0.01em] mb-8"
-              style={{ color: 'hsl(32, 55%, 58%)' }}
+              style={{ color: 'hsl(30, 15%, 58%)' }}
             >
               Science, Amplified.
             </p>
 
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.65] font-normal max-w-[320px]" style={{ color: 'hsl(215, 20%, 62%)' }}>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.65] font-normal max-w-[320px]" style={{ color: 'hsl(30, 12%, 55%)' }}>
               In an age defined by the industrial production of noise, we protect your voice.
             </p>
           </div>

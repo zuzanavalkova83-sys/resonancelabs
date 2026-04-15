@@ -35,7 +35,7 @@ const ServicesSection = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.14em] font-medium mb-8"
-            style={{ color: 'hsl(215, 20%, 50%)' }}
+            style={{ color: 'hsl(30, 15%, 55%)' }}
           >
             Services
           </motion.p>
@@ -60,7 +60,7 @@ const ServicesSection = () => {
             <div className="h-px w-full" style={{ backgroundColor: 'hsl(220, 20%, 30% / 0.4)' }} />
             <div
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[5px] h-[5px] rounded-full"
-              style={{ backgroundColor: 'hsl(32, 55%, 58%)' }}
+              style={{ backgroundColor: 'hsl(30, 15%, 55%)' }}
             />
           </motion.div>
         </div>
@@ -75,17 +75,17 @@ const ServicesSection = () => {
               transition={{ duration: 0.5, delay: 0.2 + i * 0.06 }}
               className="group flex flex-col items-center text-center p-6 rounded-xl transition-all duration-400"
               style={{
-                border: '1px solid hsl(170, 20%, 20% / 0.25)',
-                backgroundColor: 'hsl(170, 18%, 12% / 0.2)',
+                border: '1px solid hsl(170, 18%, 18% / 0.3)',
+                backgroundColor: 'hsl(170, 15%, 12% / 0.25)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'hsl(32, 55%, 58% / 0.3)';
-                e.currentTarget.style.backgroundColor = 'hsl(170, 18%, 14% / 0.35)';
+                e.currentTarget.style.borderColor = 'hsl(30, 15%, 55% / 0.3)';
+                e.currentTarget.style.backgroundColor = 'hsl(170, 15%, 14% / 0.35)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'hsl(170, 20%, 20% / 0.25)';
-                e.currentTarget.style.backgroundColor = 'hsl(170, 18%, 12% / 0.2)';
+                e.currentTarget.style.borderColor = 'hsl(170, 18%, 18% / 0.3)';
+                e.currentTarget.style.backgroundColor = 'hsl(170, 15%, 12% / 0.25)';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
@@ -114,7 +114,7 @@ const ServicesSection = () => {
               {/* Service name */}
               <h3
                 className="font-heading text-[15px] md:text-[16px] font-medium leading-[1.3] tracking-[-0.01em] transition-colors duration-300"
-                style={{ color: 'hsl(215, 15%, 78%)' }}
+                style={{ color: 'hsl(35, 15%, 75%)' }}
               >
                 {service.name}
               </h3>
