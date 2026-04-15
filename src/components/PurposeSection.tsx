@@ -45,13 +45,21 @@ const PurposeSection = () => {
           {/* Large watermark text */}
           <motion.span
             className="font-display tracking-[0.15em] uppercase select-none pointer-events-none text-center"
-            animate={{ opacity: [0.04, 0.07, 0.04] }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            animate={{
+              opacity: glitch ? [0.12, 0.18, 0.12] : [0.04, 0.07, 0.04],
+            }}
+            transition={glitch
+              ? { duration: 0.15, repeat: 3, repeatDelay: 0.05 }
+              : { duration: 8, repeat: Infinity, ease: "easeInOut" }
+            }
             style={{
               fontSize: 'clamp(100px, 18vw, 260px)',
               lineHeight: 1,
               color: 'hsl(var(--foreground))',
-              ...glitchStyle(glitch, "subtle"),
+              ...(glitch ? {
+                textShadow: '4px 0 hsl(340 75% 55% / 0.6), -4px 0 hsl(180 80% 50% / 0.4)',
+                transform: 'translate(2px, -1px)',
+              } : {}),
             }}
           >
             MEANING
