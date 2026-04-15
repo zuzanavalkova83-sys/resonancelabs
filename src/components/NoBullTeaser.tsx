@@ -32,17 +32,17 @@ const NoBullTeaser = () => {
       ref={ref}
       className="py-32 md:py-44 section-padding relative overflow-hidden bg-oxblood"
     >
-      {/* Burgundy ambient glow */}
+      {/* Accent circle — echoing NoBull */}
       <div
-        className="absolute pointer-events-none"
+        className="absolute pointer-events-none hidden md:block"
         style={{
-          width: "500px",
-          height: "500px",
-          top: "-150px",
-          right: "-100px",
+          width: "280px",
+          height: "280px",
+          top: "8rem",
+          right: "-3rem",
           borderRadius: "50%",
-          background:
-            "radial-gradient(circle, hsl(345, 40%, 18% / 0.15) 0%, transparent 70%)",
+          background: "hsl(340, 40%, 22%)",
+          boxShadow: "0 20px 60px -10px hsl(340 40% 22% / 0.3)",
         }}
       />
 
@@ -50,15 +50,20 @@ const NoBullTeaser = () => {
         {/* Top — copy */}
         <div className="max-w-2xl mb-16 md:mb-20">
           {/* Eyebrow */}
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.14em] font-medium mb-8"
-            style={{ color: "hsl(215, 20%, 50%)" }}
+            className="flex items-center gap-4 mb-8"
           >
-            Building NoBull
-          </motion.p>
+            <div className="w-10 h-px" style={{ background: "hsl(30, 15%, 45%)" }} />
+            <p
+              className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.14em] font-medium"
+              style={{ color: "hsl(30, 15%, 55%)" }}
+            >
+              Building NoBull
+            </p>
+          </motion.div>
 
           {/* Heading */}
           <motion.h2
@@ -70,7 +75,7 @@ const NoBullTeaser = () => {
             The Usual Suspects
           </motion.h2>
 
-          {/* Burgundy rule */}
+          {/* Brass rule */}
           <motion.div
             initial={{ scaleX: 0 }}
             animate={isInView ? { scaleX: 1 } : {}}
@@ -79,7 +84,7 @@ const NoBullTeaser = () => {
             style={{
               width: "48px",
               height: "2px",
-              backgroundColor: "hsl(345, 40%, 35%)",
+              backgroundColor: "hsl(30, 15%, 55%)",
             }}
           />
 
@@ -89,7 +94,7 @@ const NoBullTeaser = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.16 }}
             className="font-body text-[18px] md:text-[20px] leading-[1.55] font-normal mb-6"
-            style={{ color: "hsl(215, 18%, 72%)" }}
+            style={{ color: "hsl(35, 20%, 72%)" }}
           >
             A field guide to the recurring ways science gets twisted in public.
           </motion.p>
@@ -100,7 +105,7 @@ const NoBullTeaser = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.24 }}
             className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal max-w-[54ch]"
-            style={{ color: "hsl(215, 15%, 55%)" }}
+            style={{ color: "hsl(30, 12%, 52%)" }}
           >
             We collect and group the familiar plots that keep turning research
             into panic, miracle, scandal, ideology, or noise. The point is
@@ -124,45 +129,38 @@ const NoBullTeaser = () => {
               transition={{ duration: 0.5, delay: 0.35 + i * 0.08 }}
               className="flex flex-col justify-between p-6 rounded-lg"
               style={{
-                backgroundColor: "hsl(345, 20%, 12% / 0.35)",
-                border: "1px solid hsl(345, 25%, 22% / 0.25)",
+                backgroundColor: "hsl(340, 38%, 16% / 0.5)",
+                border: "1px solid hsl(340, 30%, 25% / 0.3)",
                 minHeight: "210px",
               }}
             >
               <div>
-                {/* Frame code */}
                 <p
                   className="font-mono text-[12px] tracking-[0.12em] uppercase mb-4"
-                  style={{ color: "hsl(345, 20%, 45%)" }}
+                  style={{ color: "hsl(30, 15%, 48%)" }}
                 >
                   {frame.code}
                 </p>
-
-                {/* Title */}
                 <h3
                   className="font-heading text-[17px] md:text-[18px] font-medium leading-[1.25] tracking-[-0.01em] mb-3"
-                  style={{ color: "hsl(215, 15%, 82%)" }}
+                  style={{ color: "hsl(35, 25%, 85%)" }}
                 >
                   {frame.title}
                 </h3>
-
-                {/* Description */}
                 <p
                   className="font-body text-[13px] md:text-[14px] leading-[1.6]"
-                  style={{ color: "hsl(215, 15%, 50%)" }}
+                  style={{ color: "hsl(30, 12%, 50%)" }}
                 >
                   {frame.desc}
                 </p>
               </div>
-
-              {/* Tag */}
               <div className="mt-5">
                 <span
-                  className="inline-block font-heading text-[10px] tracking-[0.14em] uppercase px-2.5 py-1 rounded"
+                  className="inline-block font-heading text-[10px] tracking-[0.14em] uppercase px-2.5 py-1"
                   style={{
-                    color: "hsl(215, 15%, 55%)",
-                    backgroundColor: "hsl(220, 20%, 15% / 0.6)",
-                    border: "1px solid hsl(220, 20%, 22% / 0.3)",
+                    color: "hsl(30, 12%, 58%)",
+                    backgroundColor: "hsl(340, 35%, 18% / 0.5)",
+                    border: "1px solid hsl(340, 25%, 25% / 0.3)",
                   }}
                 >
                   {frame.tag}
@@ -180,8 +178,8 @@ const NoBullTeaser = () => {
           className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
         >
           <p
-            className="font-body text-[14px] md:text-[15px] leading-[1.6] italic max-w-[48ch]"
-            style={{ color: "hsl(215, 15%, 45%)" }}
+            className="font-body text-[14px] md:text-[15px] leading-[1.6] max-w-[48ch]"
+            style={{ color: "hsl(30, 10%, 45%)" }}
           >
             The library is part of NoBull, a narrative-mapping tool currently
             being developed within Resonance Labs.
@@ -191,9 +189,9 @@ const NoBullTeaser = () => {
             href="#"
             className="inline-flex items-center gap-3 px-5 py-3 rounded-lg font-heading text-[14px] tracking-[0.04em] font-medium transition-all duration-200 hover:brightness-110 group shrink-0"
             style={{
-              color: "hsl(32, 55%, 62%)",
-              backgroundColor: "hsl(345, 35%, 18% / 0.3)",
-              border: "1px solid hsl(345, 30%, 28% / 0.3)",
+              color: "hsl(30, 15%, 68%)",
+              backgroundColor: "hsl(340, 35%, 20% / 0.4)",
+              border: "1px solid hsl(340, 30%, 28% / 0.35)",
             }}
           >
             Explore the field guide
@@ -201,12 +199,6 @@ const NoBullTeaser = () => {
           </a>
         </motion.div>
       </div>
-
-      {/* Bottom hairline */}
-      <div
-        className="max-w-6xl mx-auto mt-28 md:mt-40 h-px"
-        style={{ backgroundColor: "hsl(220, 20%, 20% / 0.3)" }}
-      />
     </section>
   );
 };
