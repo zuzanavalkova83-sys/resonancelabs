@@ -109,6 +109,22 @@
     background-color: hsl(var(--cosmic-navy));
   }
 
+  .bg-oxblood {
+    background-color: hsl(var(--oxblood));
+  }
+
+  .bg-oxblood-light {
+    background-color: hsl(var(--oxblood-light));
+  }
+
+  .bg-teal-deep {
+    background-color: hsl(var(--teal-deep));
+  }
+
+  .bg-teal-mid {
+    background-color: hsl(var(--teal-mid));
+  }
+
   .gradient-cosmic {
     background-color: hsl(var(--cosmic-navy));
   }
