@@ -1,7 +1,40 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useMemo } from "react";
 
-/* Slow-drifting ambient orbs to add depth to the flat background */
+const categories = [
+  {
+    label: "Industry & Transfer",
+    fields: [
+      { name: "Tech Transfer", url: "https://iocbtech.cz/about-us" },
+      { name: "Biotech" },
+      { name: "Pharma", url: "https://www.cb21pharma.com/" },
+    ],
+  },
+  {
+    label: "Life Sciences",
+    fields: [
+      { name: "Biology", url: "https://iocbboston.org/" },
+      { name: "Biochemistry", url: "https://www.uochb.cz/en" },
+      { name: "Chemistry", url: "https://canneff.com/" },
+      { name: "Virology", url: "https://www.finmag.cz/technologie/429480-krausslich-touzime-po-odpovedich-jenze-veda-miluje-otazky" },
+    ],
+  },
+  {
+    label: "Humanities & Social Sciences",
+    fields: [
+      { name: "Linguistics", url: "https://www.finmag.cz/firemni-kultura/422164-druha-vlna-pandemie-do-medii-jeste-nedorazila" },
+      { name: "Psychology", url: "https://www.novinky.cz/clanek/veda-skoly-kulturni-valky-univerzitam-skodi-se-stevenem-pinkerem-o-ochrane-mensin-a-svobode-vedeckeho-badani-40505116" },
+      { name: "Economics", url: "https://www.respekt.cz/rozhovor/strach-politiku-z-vycitek-verejnosti-nas-stahuje-hloubeji-do-krize" },
+      { name: "Political Science", url: "https://vikend.hn.cz/c1-65531180-svetlana-alexijevicova-zinkovi-chlapci-kniha-rozhovor" },
+      { name: "Philosophy", url: "https://www.marwick.cz/rozhovor/co-zbude-z-cloveka" },
+      { name: "Anthropology", url: "https://www.finmag.cz/firemni-kultura/411054-antropologie-bolesti-podle-martina-soukupa" },
+      { name: "Philology", url: "https://www.respekt.cz/rozhovor/o-nejvetsim-dramatu-sve-doby-shakespeare-nikdy-nepsal" },
+      { name: "Sociology" },
+      { name: "Arts", url: "https://archiv.hn.cz/c1-66342840-na-hranici-poznani" },
+    ],
+  },
+];
+
 const AmbientOrbs = () => {
   const orbs = useMemo(() => [
     { x: "10%", y: "15%", size: 350, color: "hsl(348, 45%, 20%)", dur: 20, dx: 5, dy: 3 },
@@ -45,6 +78,100 @@ const AmbientOrbs = () => {
         }}
       />
     </div>
+  );
+};
+
+const AboutSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <section id="about" className="relative py-32 md:py-44 section-padding bg-burgundy-mid overflow-hidden" ref={ref}>
+      <AmbientOrbs />
+      <div className="relative max-w-6xl mx-auto px-6 md:px-12">
+
+        {/* Header row */}
+        <motion.div
+          initial={{ opacity: 0, x: -10 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="flex items-center gap-4 mb-8"
+        >
+          <div className="w-10 h-px" style={{ background: 'hsl(30, 15%, 45%)' }} />
+          <p className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium" style={{ color: 'hsl(30, 15%, 55%)' }}>
+            Why We Exist
+          </p>
+        </motion.div>
+
+        {/* Title */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="font-display text-[48px] md:text-[60px] lg:text-[72px] tracking-wider leading-[0.88] text-foreground mb-10"
+        >
+          Resonance Labs
+        </motion.h2>
+
+        {/* Manifesto — two balanced columns */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 lg:gap-24 mb-12"
+        >
+          <div className="space-y-5">
+            <p className="font-body text-[17px] md:text-[19px] leading-[1.55] font-normal" style={{ color: 'hsl(35, 20%, 72%)' }}>
+              Science does not enter public life alone.
+            </p>
+            <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: 'hsl(30, 12%, 52%)' }}>
+              Once outside the lab, clinic, or institution, it meets emotion, incentives, grievance, distortion, and noise. Careful research can be flattened into panic, miracle, ideology, or nonsense long before it is properly understood.
+            </p>
+          </div>
+          <div className="space-y-5">
+            <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: 'hsl(30, 12%, 52%)' }}>
+              Resonance Labs helps scientific and research-led organisations communicate with clarity, judgment, and narrative discipline in contested public space.
+            </p>
+            <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: 'hsl(30, 12%, 52%)' }}>
+              The goal is not to add more noise. It is to help serious ideas survive contact with the world.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Explore link */}
+        <motion.a
+          href="#services"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.35 }}
+          className="inline-block font-heading text-[13px] tracking-[0.12em] uppercase font-medium transition-opacity duration-200 hover:opacity-100 mb-20"
+          style={{ color: 'hsl(30, 15%, 68%)', opacity: 0.8 }}
+        >
+          Explore services →
+        </motion.a>
+
+        {/* Divider */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={isInView ? { scaleX: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="h-px w-full origin-left mb-16"
+          style={{ background: 'hsl(340, 22%, 22% / 0.4)' }}
+        />
+
+        {/* Fields of practice — 3-column grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.45 }}
+        >
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-8 h-px" style={{ background: 'hsl(30, 15%, 40%)' }} />
+            <p className="font-heading text-[11px] md:text-[12px] uppercase tracking-[0.2em] font-medium" style={{ color: 'hsl(30, 15%, 50%)' }}>
+              Fields of practice
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {categories.map((cat, catIdx) => (
               <div key={cat.label}>
