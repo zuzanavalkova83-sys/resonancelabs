@@ -40,7 +40,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-10">
           {[
             { label: "About", id: "about" },
-            { label: "Team", id: "team" },
+            { label: "Founder", id: "team" },
             { label: "Purpose", id: "purpose" },
             { label: "Services", id: "services" },
           ].map((item) => (
