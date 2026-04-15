@@ -26,7 +26,7 @@ const Navbar = () => {
       <div className="section-padding flex items-center justify-between">
         <button
           onClick={() => scrollTo("hero")}
-          className="font-heading text-[12px] tracking-[0.14em] uppercase font-medium text-foreground/70 hover:text-foreground/90 transition-opacity duration-300"
+          className="font-heading text-[11px] tracking-[0.2em] uppercase font-medium text-foreground/70 hover:text-foreground/90 transition-opacity duration-300"
         >
           RESONANCE LABS
         </button>
@@ -40,7 +40,7 @@ const Navbar = () => {
             <button
               key={item.id}
               onClick={() => scrollTo(item.id)}
-              className="font-heading text-[12px] tracking-[0.12em] uppercase font-normal text-foreground/50 hover:text-foreground/80 transition-opacity duration-300"
+              className="font-heading text-[11px] tracking-[0.15em] uppercase font-normal text-foreground/50 hover:text-foreground/80 transition-opacity duration-300"
             >
               {item.label}
             </button>
