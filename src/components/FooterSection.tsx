@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const FooterSection = () => {
   const ref = useRef(null);
@@ -31,6 +32,12 @@ const FooterSection = () => {
                 {item}
               </button>
             ))}
+            <Link
+              to="/the-usual-suspects"
+              className="hover:text-foreground transition-colors duration-300"
+            >
+              NoBull Library
+            </Link>
           </div>
 
           <div className="editorial-rule mb-8" />
