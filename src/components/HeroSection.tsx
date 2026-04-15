@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
+import { useState, useEffect } from "react";
 
 const signals = [
   { code: "S01", label: "Narrative Strategy", desc: "Shaping how research enters public conversation." },
@@ -9,6 +10,18 @@ const signals = [
 
 const HeroSection = () => {
   const glitch = useGlitch(10000, 600, 3000);
+  const [dotGlitch, setDotGlitch] = useState(false);
+
+  useEffect(() => {
+    const trigger = () => {
+      setDotGlitch(true);
+      setTimeout(() => setDotGlitch(false), 400);
+    };
+    const interval = setInterval(() => {
+      if (Math.random() > 0.5) trigger();
+    }, 8000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section id="hero" className="relative w-full bg-background min-h-[100vh] pt-16 overflow-hidden">
@@ -21,25 +34,33 @@ const HeroSection = () => {
         }}
       />
 
-      {/* Hot pink accent circle — shared with NoBull */}
+      {/* Hot pink accent dot — breathing + glitch */}
       <motion.div
         className="absolute pointer-events-none hidden md:block"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        style={{ top: '12%', right: '6%' }}
+        style={{ top: '14%', right: '8%' }}
       >
         <motion.div
-          animate={{ y: [0, -8, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          animate={{
+            y: [0, -6, 0],
+            scale: [1, 1.06, 1],
+          }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         >
           <div
             style={{
-              width: '280px',
-              height: '280px',
+              width: '160px',
+              height: '160px',
               borderRadius: '50%',
               background: 'hsl(340 75% 55%)',
-              boxShadow: '0 20px 60px -10px hsl(340 75% 55% / 0.35)',
+              boxShadow: '0 16px 50px -8px hsl(340 75% 55% / 0.35)',
+              transition: dotGlitch ? 'none' : 'transform 0.3s, box-shadow 0.3s',
+              ...(dotGlitch ? {
+                transform: 'translate(3px, -2px) skew(-1deg)',
+                boxShadow: '4px 0 20px -4px hsl(340 75% 55% / 0.5), -4px 0 20px -4px hsl(180 80% 50% / 0.3)',
+              } : {}),
             }}
           />
         </motion.div>
@@ -93,7 +114,7 @@ const HeroSection = () => {
 
         {/* Main heading */}
         <motion.h1
-          className="font-display text-[4rem] sm:text-[7rem] md:text-[9rem] tracking-wider leading-[0.82] text-foreground mb-10"
+          className="font-display text-[3.2rem] sm:text-[5.5rem] md:text-[7rem] tracking-wider leading-[0.82] text-foreground mb-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
