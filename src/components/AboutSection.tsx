@@ -41,7 +41,7 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-20 md:py-28 section-padding bg-oxblood section-divider" ref={ref}>
+    <section id="about" className="py-32 md:py-44 section-padding bg-cosmic-deep section-divider" ref={ref}>
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
@@ -139,8 +139,8 @@ const AboutSection = () => {
                 <div
                   className="rounded-lg overflow-hidden"
                   style={{
-                    border: '1px solid hsl(345, 20%, 22% / 0.3)',
-                    backgroundColor: 'hsl(345, 18%, 12% / 0.3)',
+                    border: '1px solid hsl(220, 20%, 18% / 0.4)',
+                    backgroundColor: 'hsl(220, 22%, 8% / 0.5)',
                   }}
                 >
                   {cat.fields.map((field, i) => {
@@ -160,7 +160,7 @@ const AboutSection = () => {
                           }`}
                           style={{
                             color: 'hsl(215, 15%, 55%)',
-                            ...(!isLast ? { borderBottom: '1px solid hsl(345, 18%, 22% / 0.25)' } : {}),
+                            ...(!isLast ? { borderBottom: '1px solid hsl(220, 18%, 18% / 0.35)' } : {}),
                           }}
                         >
                           {field.name}
