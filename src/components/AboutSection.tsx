@@ -26,7 +26,7 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-28 md:py-40 section-padding gradient-cosmic section-divider" ref={ref}>
+    <section id="about" className="py-20 md:py-28 section-padding gradient-cosmic section-divider" ref={ref}>
       <div className="max-w-[58ch] mx-auto text-center">
 
         {/* Section eyebrow */}
@@ -34,7 +34,7 @@ const AboutSection = () => {
           initial={{ opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.14em] font-medium mb-10"
+          className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.14em] font-medium mb-6"
           style={{ color: 'hsl(215, 20%, 50%)' }}
         >
           Why We Exist
@@ -44,7 +44,7 @@ const AboutSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-heading text-[36px] md:text-[44px] lg:text-[50px] font-light leading-[1.08] tracking-[-0.02em] text-foreground mb-12"
+          className="font-heading text-[36px] md:text-[44px] lg:text-[50px] font-light leading-[1.08] tracking-[-0.02em] text-foreground mb-8"
         >
           Resonance Labs
         </motion.h2>
@@ -53,7 +53,7 @@ const AboutSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="font-body text-[19px] md:text-[21px] leading-[1.55] font-normal mb-10"
+          className="font-body text-[19px] md:text-[21px] leading-[1.55] font-normal mb-7"
           style={{ color: 'hsl(215, 18%, 72%)' }}
         >
           Science does not enter public life alone.
@@ -63,7 +63,7 @@ const AboutSection = () => {
           initial={{ opacity: 0, scaleX: 0 }}
           animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="relative mx-auto mb-10"
+          className="relative mx-auto mb-7"
           style={{ maxWidth: '120px' }}
         >
           <div className="h-px w-full" style={{ backgroundColor: 'hsl(220, 20%, 30% / 0.4)' }} />
@@ -77,7 +77,7 @@ const AboutSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="space-y-6 mb-14"
+          className="space-y-5 mb-10"
         >
           <p
             className="font-body text-[16px] md:text-[17px] leading-[1.65] font-normal text-left md:text-center"
@@ -104,7 +104,7 @@ const AboutSection = () => {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.45 }}
-          className="font-heading text-[12px] tracking-[0.12em] uppercase font-medium mb-6"
+          className="font-heading text-[12px] tracking-[0.12em] uppercase font-medium mb-4"
           style={{ color: 'hsl(215, 20%, 46%)' }}
         >
           As communicators, consultants, writers, or teachers, we have been active in:
@@ -115,7 +115,7 @@ const AboutSection = () => {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.7, delay: 0.55 }}
-          className="flex flex-wrap justify-center gap-2 mb-12"
+          className="flex flex-wrap justify-center gap-2 mb-8"
         >
           {fields.map((field, i) => {
             const Tag = field.url ? "a" : "span";
