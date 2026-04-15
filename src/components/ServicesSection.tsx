@@ -24,17 +24,16 @@ const ServicesSection = () => {
   return (
     <section
       id="services"
-      className="py-32 md:py-44 section-padding section-divider bg-teal-deep"
+      className="py-32 md:py-44 section-padding bg-background"
       ref={ref}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12">
-        {/* Section header */}
         <div className="text-center mb-20">
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.14em] font-medium mb-8"
+            className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium mb-8"
             style={{ color: 'hsl(30, 15%, 55%)' }}
           >
             Services
@@ -44,12 +43,11 @@ const ServicesSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-heading text-[32px] md:text-[40px] lg:text-[46px] font-light leading-[1.08] tracking-[-0.02em] text-foreground mb-6"
+            className="font-display text-[48px] md:text-[60px] lg:text-[72px] tracking-wider leading-[0.88] text-foreground mb-6"
           >
-            What We Do to Make Science Matter More
+            What We Do
           </motion.h2>
 
-          {/* Hairline divider */}
           <motion.div
             initial={{ opacity: 0, scaleX: 0 }}
             animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
@@ -57,15 +55,14 @@ const ServicesSection = () => {
             className="relative mx-auto"
             style={{ maxWidth: '80px' }}
           >
-            <div className="h-px w-full" style={{ backgroundColor: 'hsl(220, 20%, 30% / 0.4)' }} />
+            <div className="h-px w-full" style={{ backgroundColor: 'hsl(30, 15%, 40% / 0.4)' }} />
             <div
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[5px] h-[5px] rounded-full"
-              style={{ backgroundColor: 'hsl(30, 15%, 55%)' }}
+              style={{ backgroundColor: 'hsl(30, 15%, 68%)' }}
             />
           </motion.div>
         </div>
 
-        {/* Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
           {services.map((service, i) => (
             <motion.div
@@ -73,28 +70,25 @@ const ServicesSection = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 + i * 0.06 }}
-              className="group flex flex-col items-center text-center p-6 rounded-xl transition-all duration-400"
+              className="group flex flex-col items-center text-center p-6 transition-all duration-400"
               style={{
-                border: '1px solid hsl(170, 18%, 18% / 0.3)',
-                backgroundColor: 'hsl(170, 15%, 12% / 0.25)',
+                border: '1px solid hsl(340, 22%, 22% / 0.3)',
+                backgroundColor: 'hsl(340, 30%, 13% / 0.3)',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = 'hsl(30, 15%, 55% / 0.3)';
-                e.currentTarget.style.backgroundColor = 'hsl(170, 15%, 14% / 0.35)';
+                e.currentTarget.style.backgroundColor = 'hsl(340, 30%, 15% / 0.4)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'hsl(170, 18%, 18% / 0.3)';
-                e.currentTarget.style.backgroundColor = 'hsl(170, 15%, 12% / 0.25)';
+                e.currentTarget.style.borderColor = 'hsl(340, 22%, 22% / 0.3)';
+                e.currentTarget.style.backgroundColor = 'hsl(340, 30%, 13% / 0.3)';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              {/* Image circle */}
               <div
                 className="w-20 h-20 md:w-[88px] md:h-[88px] rounded-full overflow-hidden mb-5 relative"
-                style={{
-                  border: '1px solid hsl(220, 20%, 30% / 0.25)',
-                }}
+                style={{ border: '1px solid hsl(340, 22%, 25% / 0.3)' }}
               >
                 <img
                   src={service.image}
@@ -102,19 +96,15 @@ const ServicesSection = () => {
                   className="w-full h-full object-cover"
                   style={{ filter: 'saturate(0.7) contrast(0.95) brightness(0.9)' }}
                 />
-                {/* Subtle tint overlay */}
                 <div
                   className="absolute inset-0 pointer-events-none"
-                  style={{
-                    background: 'radial-gradient(circle, transparent 40%, hsl(170, 30%, 9% / 0.35) 100%)',
-                  }}
+                  style={{ background: 'radial-gradient(circle, transparent 40%, hsl(340, 45%, 10% / 0.35) 100%)' }}
                 />
               </div>
 
-              {/* Service name */}
               <h3
                 className="font-heading text-[15px] md:text-[16px] font-medium leading-[1.3] tracking-[-0.01em] transition-colors duration-300"
-                style={{ color: 'hsl(35, 15%, 75%)' }}
+                style={{ color: 'hsl(35, 20%, 78%)' }}
               >
                 {service.name}
               </h3>

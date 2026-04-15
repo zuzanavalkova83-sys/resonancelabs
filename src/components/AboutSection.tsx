@@ -41,11 +41,11 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-32 md:py-44 section-padding bg-cosmic-deep" ref={ref}>
+    <section id="about" className="py-32 md:py-44 section-padding bg-burgundy-mid" ref={ref}>
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-          {/* Left column — mission statement */}
+          {/* Left column */}
           <div className="text-left">
             <motion.div
               initial={{ opacity: 0, x: -10 }}
@@ -53,11 +53,8 @@ const AboutSection = () => {
               transition={{ duration: 0.6 }}
               className="flex items-center gap-4 mb-8"
             >
-              <div className="w-10 h-px" style={{ background: 'hsl(30, 15%, 40%)' }} />
-              <p
-                className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.14em] font-medium"
-                style={{ color: 'hsl(30, 15%, 55%)' }}
-              >
+              <div className="w-10 h-px" style={{ background: 'hsl(30, 15%, 45%)' }} />
+              <p className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium" style={{ color: 'hsl(30, 15%, 55%)' }}>
                 Why We Exist
               </p>
             </motion.div>
@@ -66,7 +63,7 @@ const AboutSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-heading text-[32px] md:text-[40px] lg:text-[46px] font-light leading-[1.08] tracking-[-0.02em] text-foreground mb-7"
+              className="font-display text-[48px] md:text-[60px] lg:text-[72px] tracking-wider leading-[0.88] text-foreground mb-7"
             >
               Resonance Labs
             </motion.h2>
@@ -87,22 +84,13 @@ const AboutSection = () => {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="space-y-5 mb-8 max-w-[52ch]"
             >
-              <p
-                className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal"
-                style={{ color: 'hsl(30, 10%, 52%)' }}
-              >
+              <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: 'hsl(30, 12%, 52%)' }}>
                 Once outside the lab, clinic, or institution, it meets emotion, incentives, grievance, distortion, and noise. Careful research can be flattened into panic, miracle, ideology, or nonsense long before it is properly understood.
               </p>
-              <p
-                className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal"
-                style={{ color: 'hsl(30, 10%, 52%)' }}
-              >
+              <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: 'hsl(30, 12%, 52%)' }}>
                 Resonance Labs helps scientific and research-led organisations communicate with clarity, judgment, and narrative discipline in contested public space.
               </p>
-              <p
-                className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal"
-                style={{ color: 'hsl(30, 10%, 52%)' }}
-              >
+              <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: 'hsl(30, 12%, 52%)' }}>
                 The goal is not to add more noise. It is to help serious ideas survive contact with the world.
               </p>
             </motion.div>
@@ -112,14 +100,14 @@ const AboutSection = () => {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.45 }}
-              className="inline-block font-heading text-[14px] tracking-[0.04em] font-medium transition-opacity duration-200 hover:opacity-100"
+              className="inline-block font-heading text-[13px] tracking-[0.12em] uppercase font-medium transition-opacity duration-200 hover:opacity-100"
               style={{ color: 'hsl(30, 15%, 68%)', opacity: 0.8 }}
             >
               Explore services →
             </motion.a>
           </div>
 
-          {/* Right column — disciplines grouped */}
+          {/* Right column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -127,28 +115,22 @@ const AboutSection = () => {
             className="lg:pt-1 space-y-8"
           >
             <div className="flex items-center gap-4 mb-2">
-              <div className="w-8 h-px" style={{ background: 'hsl(30, 15%, 35%)' }} />
-              <p
-                className="font-heading text-[11px] md:text-[12px] uppercase tracking-[0.14em] font-medium"
-                style={{ color: 'hsl(30, 15%, 50%)' }}
-              >
+              <div className="w-8 h-px" style={{ background: 'hsl(30, 15%, 40%)' }} />
+              <p className="font-heading text-[11px] md:text-[12px] uppercase tracking-[0.2em] font-medium" style={{ color: 'hsl(30, 15%, 50%)' }}>
                 Fields of practice
               </p>
             </div>
 
             {categories.map((cat, catIdx) => (
               <div key={cat.label}>
-                <p
-                  className="font-heading text-[11px] uppercase tracking-[0.1em] font-medium mb-3"
-                  style={{ color: 'hsl(30, 15%, 58%)' }}
-                >
+                <p className="font-heading text-[11px] uppercase tracking-[0.12em] font-medium mb-3" style={{ color: 'hsl(30, 15%, 58%)' }}>
                   {cat.label}
                 </p>
                 <div
-                  className="rounded-lg overflow-hidden"
+                  className="overflow-hidden"
                   style={{
-                    border: '1px solid hsl(220, 20%, 15% / 0.5)',
-                    backgroundColor: 'hsl(220, 22%, 8% / 0.5)',
+                    border: '1px solid hsl(340, 22%, 22% / 0.4)',
+                    backgroundColor: 'hsl(340, 30%, 12% / 0.4)',
                   }}
                 >
                   {cat.fields.map((field, i) => {
@@ -167,8 +149,8 @@ const AboutSection = () => {
                             field.url ? "cursor-pointer hover:text-foreground/80" : ""
                           }`}
                           style={{
-                            color: 'hsl(30, 10%, 52%)',
-                            ...(!isLast ? { borderBottom: '1px solid hsl(220, 18%, 15% / 0.4)' } : {}),
+                            color: 'hsl(30, 12%, 55%)',
+                            ...(!isLast ? { borderBottom: '1px solid hsl(340, 22%, 22% / 0.3)' } : {}),
                           }}
                         >
                           {field.name}
