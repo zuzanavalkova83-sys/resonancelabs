@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
-import heroIllustration from "@/assets/hero-illustration.png";
 
 const signals = [
   { code: "S01", label: "Narrative Strategy", desc: "Shaping how research enters public conversation." },
@@ -22,31 +21,22 @@ const HeroSection = () => {
         }}
       />
 
-      {/* Illustration — right side, blending into background */}
+      {/* Wine accent circle — NoBull style */}
       <motion.div
-        className="absolute top-0 right-0 bottom-0 w-[45%] pointer-events-none hidden md:block"
-        initial={{ opacity: 0, x: 40 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url(${heroIllustration})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center right',
-            maskImage: 'linear-gradient(to right, transparent 0%, black 30%, black 100%)',
-            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 30%, black 100%)',
-          }}
-        />
-        {/* Subtle overlay to unify with background tone */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(to right, hsl(var(--background)) 0%, transparent 35%)',
-          }}
-        />
-      </motion.div>
+        className="absolute pointer-events-none hidden md:block"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
+        style={{
+          width: '280px',
+          height: '280px',
+          top: '12%',
+          right: '6%',
+          borderRadius: '50%',
+          background: 'hsl(var(--wine))',
+          boxShadow: '0 20px 80px -10px hsl(var(--wine) / 0.4)',
+        }}
+      />
 
       {/* Small brass dot accent */}
       <motion.div
@@ -141,30 +131,12 @@ const HeroSection = () => {
           </p>
         </motion.div>
 
-        {/* Mobile illustration */}
-        <motion.div
-          className="md:hidden mb-10 -mx-6 relative overflow-hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <img
-            src={heroIllustration}
-            alt="Resonance Labs illustration"
-            className="w-full h-48 object-cover object-right"
-            style={{
-              maskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)',
-              WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)',
-            }}
-          />
-        </motion.div>
-
         {/* Signal cards — editorial grid */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-px md:max-w-[60%]"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-px"
           style={{ backgroundColor: 'hsl(var(--border) / 0.3)' }}
         >
           {signals.map((s, i) => (
