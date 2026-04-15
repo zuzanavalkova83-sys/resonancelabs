@@ -1,21 +1,78 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import bubble1 from "@/assets/service-bubble-1.jpg";
-import bubble2 from "@/assets/service-bubble-2.jpg";
-import bubble3 from "@/assets/service-bubble-3.jpg";
-import bubble4 from "@/assets/service-bubble-4.jpg";
-import bubble5 from "@/assets/service-bubble-5.jpg";
+import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
 
 const services = [
-  { name: "Communication Strategies", image: bubble1 },
-  { name: "Communication Audits", image: bubble2 },
-  { name: "Knowledge Transfer", image: bubble3 },
-  { name: "Brand Building", image: bubble4 },
-  { name: "Crisis Communication", image: bubble5 },
-  { name: "Impact Storytelling", image: bubble2 },
-  { name: "Media Trainings", image: bubble1 },
-  { name: "Creative Writing Workshops", image: bubble3 },
+  { name: "Communication Strategies" },
+  { name: "Communication Audits" },
+  { name: "Knowledge Transfer" },
+  { name: "Brand Building" },
+  { name: "Crisis Communication" },
+  { name: "Impact Storytelling" },
+  { name: "Media Trainings" },
+  { name: "Creative Writing Workshops" },
 ];
+
+const GlitchCircle = ({ delay }: { delay: number }) => {
+  const glitch = useGlitch(6000 + delay * 800, 500, 2000 + delay * 600);
+
+  return (
+    <div className="w-20 h-20 md:w-[88px] md:h-[88px] rounded-full relative mb-5 flex items-center justify-center overflow-hidden">
+      {/* Base circle */}
+      <div
+        className="absolute inset-0 rounded-full"
+        style={{
+          background: 'radial-gradient(circle at 35% 35%, hsl(340 55% 45% / 0.6), hsl(348 50% 28% / 0.8))',
+          border: '1px solid hsl(340 45% 40% / 0.3)',
+        }}
+      />
+      {/* Chromatic split layers */}
+      {glitch && (
+        <>
+          <motion.div
+            className="absolute inset-0 rounded-full"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 0.7, 0] }}
+            transition={{ duration: 0.15, repeat: 3, repeatDelay: 0.05 }}
+            style={{
+              background: 'radial-gradient(circle at 40% 40%, hsl(340 80% 55% / 0.5), transparent 70%)',
+              transform: 'translate(3px, -1px)',
+              mixBlendMode: 'screen',
+            }}
+          />
+          <motion.div
+            className="absolute inset-0 rounded-full"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 0.5, 0] }}
+            transition={{ duration: 0.12, repeat: 2, repeatDelay: 0.08 }}
+            style={{
+              background: 'radial-gradient(circle at 40% 40%, hsl(180 70% 50% / 0.4), transparent 70%)',
+              transform: 'translate(-3px, 1px)',
+              mixBlendMode: 'screen',
+            }}
+          />
+        </>
+      )}
+      {/* Breathing pulse */}
+      <motion.div
+        className="absolute inset-0 rounded-full"
+        animate={{ scale: [1, 1.06, 1], opacity: [0.3, 0.5, 0.3] }}
+        transition={{ duration: 4 + delay * 0.5, repeat: Infinity, ease: "easeInOut" }}
+        style={{
+          background: 'radial-gradient(circle, hsl(340 60% 50% / 0.25), transparent 70%)',
+        }}
+      />
+      {/* Inner glow dot */}
+      <div
+        className="w-2 h-2 rounded-full relative z-10"
+        style={{
+          background: 'hsl(340 55% 65%)',
+          boxShadow: '0 0 12px 4px hsl(340 55% 50% / 0.4)',
+        }}
+      />
+    </div>
+  );
+};
 
 const ServicesSection = () => {
   const ref = useRef(null);
@@ -86,21 +143,7 @@ const ServicesSection = () => {
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              <div
-                className="w-20 h-20 md:w-[88px] md:h-[88px] rounded-full overflow-hidden mb-5 relative"
-                style={{ border: '1px solid hsl(340, 22%, 25% / 0.3)' }}
-              >
-                <img
-                  src={service.image}
-                  alt={service.name}
-                  className="w-full h-full object-cover"
-                  style={{ filter: 'saturate(0.7) contrast(0.95) brightness(0.9)' }}
-                />
-                <div
-                  className="absolute inset-0 pointer-events-none"
-                  style={{ background: 'radial-gradient(circle, transparent 40%, hsl(340, 45%, 10% / 0.35) 100%)' }}
-                />
-              </div>
+              <GlitchCircle delay={i} />
 
               <h3
                 className="font-heading text-[15px] md:text-[16px] font-medium leading-[1.3] tracking-[-0.01em] transition-colors duration-300"
