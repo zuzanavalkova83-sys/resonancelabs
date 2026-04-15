@@ -40,7 +40,6 @@ const AboutSection = () => {
           Why We Exist
         </motion.p>
 
-        {/* Headline — slightly smaller than hero to respect hierarchy */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -50,18 +49,16 @@ const AboutSection = () => {
           Resonance Labs
         </motion.h2>
 
-        {/* Pull-quote — italic, higher contrast, generous spacing */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="font-body text-[19px] md:text-[21px] italic leading-[1.55] font-normal mb-10"
+          className="font-body text-[19px] md:text-[21px] leading-[1.55] font-normal mb-10"
           style={{ color: 'hsl(215, 18%, 72%)' }}
         >
-          When unmoored from context, facts drift, sometimes causing irreparable damage.
+          Science does not enter public life alone.
         </motion.p>
 
-        {/* Hairline divider with micro orange accent */}
         <motion.div
           initial={{ opacity: 0, scaleX: 0 }}
           animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
@@ -76,7 +73,6 @@ const AboutSection = () => {
           />
         </motion.div>
 
-        {/* Body text — split into two paragraphs for rhythm */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -87,13 +83,19 @@ const AboutSection = () => {
             className="font-body text-[16px] md:text-[17px] leading-[1.65] font-normal text-left md:text-center"
             style={{ color: 'hsl(215, 15%, 58%)' }}
           >
-            Science does not exist in a vacuum; it lives within the myths we inherit and the stories we tell. We recognize why these narratives endure and how they shape our world.
+            Once outside the lab, clinic, or institution, it meets emotion, incentives, grievance, distortion, and noise. Careful research can be flattened into panic, miracle, ideology, or nonsense long before it is properly understood.
           </p>
           <p
             className="font-body text-[16px] md:text-[17px] leading-[1.65] font-normal text-left md:text-center"
             style={{ color: 'hsl(215, 15%, 58%)' }}
           >
-            Our work is not to fight volume with volume, but to guard the integrity of your message—to find the frequency where complex truths become common ground.
+            Resonance Labs helps scientific and research-led organisations communicate with clarity, judgment, and narrative discipline in contested public space.
+          </p>
+          <p
+            className="font-body text-[16px] md:text-[17px] leading-[1.65] font-normal text-left md:text-center"
+            style={{ color: 'hsl(215, 15%, 58%)' }}
+          >
+            The goal is not to add more noise. It is to help serious ideas survive contact with the world.
           </p>
         </motion.div>
 
