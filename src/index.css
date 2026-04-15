@@ -54,6 +54,14 @@
     --cream: 40 30% 90%;
     --glass-bg: 220 25% 12%;
     --glass-border: 220 20% 22%;
+
+    /* Section palette */
+    --oxblood: 345 38% 14%;
+    --oxblood-light: 345 30% 18%;
+    --oxblood-glow: 345 40% 22%;
+    --teal-deep: 170 30% 9%;
+    --teal-mid: 170 22% 13%;
+    --teal-glow: 170 28% 18%;
   }
 }
 
