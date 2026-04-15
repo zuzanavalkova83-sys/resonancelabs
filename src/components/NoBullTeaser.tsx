@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const sampleFrames = [
   {
@@ -161,8 +162,8 @@ const NoBullTeaser = () => {
             being developed within Resonance Labs.
           </p>
 
-          <a
-            href="#"
+          <Link
+            to="/the-usual-suspects"
             className="inline-flex items-center gap-3 px-6 py-3 font-heading text-[13px] tracking-[0.1em] uppercase font-medium transition-all duration-200 hover:brightness-110 group shrink-0"
             style={{
               color: "hsl(35, 25%, 92%)",
@@ -171,7 +172,7 @@ const NoBullTeaser = () => {
           >
             Explore the field guide
             <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
