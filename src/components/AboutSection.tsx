@@ -104,10 +104,12 @@ const AboutSection = () => {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.45 }}
-          className="font-heading text-[12px] tracking-[0.12em] uppercase font-medium mb-4"
-          style={{ color: 'hsl(215, 20%, 46%)' }}
+          className="font-body text-[15px] md:text-[16px] leading-[1.5] font-normal mb-5"
+          style={{ color: 'hsl(215, 15%, 50%)' }}
         >
-          As communicators, consultants, writers, or teachers, we have been active in:
+          As communicators, consultants, writers, and teachers,
+          <br className="hidden md:inline" />
+          {' '}we have been active in:
         </motion.p>
 
         {/* Discipline chips — catalog tags */}
