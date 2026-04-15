@@ -3,6 +3,7 @@ import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import Navbar from "@/components/Navbar";
 
 const frames = [
   {
@@ -59,28 +60,7 @@ const UsualSuspects = () => {
 
   return (
     <div className="bg-background text-foreground min-h-screen">
-      {/* Nav */}
-      <motion.nav
-        initial={{ y: -80 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="fixed top-0 left-0 right-0 z-50 glass-nav py-4"
-      >
-        <div className="section-padding flex items-center justify-between">
-          <Link
-            to="/"
-            className="font-heading text-[11px] tracking-[0.2em] uppercase font-medium text-foreground/70 hover:text-foreground/90 transition-opacity duration-300"
-          >
-            RESONANCE LABS
-          </Link>
-          <Link
-            to="/"
-            className="font-heading text-[11px] tracking-[0.15em] uppercase font-normal text-foreground/50 hover:text-foreground/80 transition-opacity duration-300"
-          >
-            Back to home
-          </Link>
-        </div>
-      </motion.nav>
+      <Navbar />
 
       {/* ─── HERO ─── */}
       <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 section-padding overflow-hidden">
