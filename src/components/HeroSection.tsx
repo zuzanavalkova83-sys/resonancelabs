@@ -86,7 +86,7 @@ const HeroSection = () => {
 
         {/* Main heading */}
         <motion.h1
-          className="font-display text-[5.5rem] sm:text-[7rem] md:text-[9rem] tracking-wider leading-[0.82] text-foreground mb-10"
+          className="font-display text-[4rem] sm:text-[7rem] md:text-[9rem] tracking-wider leading-[0.82] text-foreground mb-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -120,7 +120,7 @@ const HeroSection = () => {
           transition={{ duration: 0.7, delay: 0.55 }}
           className="max-w-xl mb-16 md:mb-20"
         >
-          <p className="text-xl sm:text-2xl leading-relaxed text-foreground/50 mb-4 whitespace-nowrap">
+          <p className="text-lg sm:text-2xl leading-relaxed text-foreground/50 mb-4 sm:whitespace-nowrap">
             Protecting{" "}
             <span className="inline-block" style={glitchStyle(glitch)}>meaning</span>
             {" "}where research meets public life.
