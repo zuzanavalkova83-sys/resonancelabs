@@ -126,8 +126,8 @@ const HeroSection = () => {
             {" "}where research meets public life.
           </p>
           <p className="text-base leading-relaxed text-foreground/40 max-w-md">
-            We help serious ideas survive noise, distortion, and the distance
-            between expertise and understanding.
+            We help serious ideas survive noise, distortion,<br />
+            and the distance between expertise and understanding.
           </p>
         </motion.div>
 
