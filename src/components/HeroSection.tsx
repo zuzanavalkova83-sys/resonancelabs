@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import heroIllustration from "@/assets/hero-illustration-v2.jpg";
+import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
 
 const HeroSection = () => {
+  const glitch = useGlitch(10000, 600, 3000);
+
   return (
     <section id="hero" className="relative w-full bg-background min-h-[100vh] pt-16">
       <div className="relative w-full min-h-[calc(100vh-4rem)] md:min-h-[740px] lg:min-h-[800px] flex flex-col md:flex-row items-stretch overflow-hidden">
@@ -44,9 +47,17 @@ const HeroSection = () => {
             </p>
 
             <h1 className="font-display text-[52px] md:text-[68px] lg:text-[80px] tracking-wider leading-[0.82] text-foreground mb-10">
-              Resonance
+              <motion.span
+                animate={{ opacity: [0.92, 1, 0.92] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="inline-block"
+              >
+                Resonance
+              </motion.span>
               <br />
-              Labs.
+              <span className="inline-block" style={glitchStyle(glitch, "subtle")}>
+                Labs.
+              </span>
             </h1>
 
             <div className="w-10 h-px mb-8" style={{ backgroundColor: 'hsl(var(--brass) / 0.35)' }} />
@@ -54,7 +65,9 @@ const HeroSection = () => {
             <p
               className="font-heading text-[17px] md:text-[19px] font-medium leading-[1.35] tracking-[-0.01em] text-foreground mb-5 max-w-[320px]"
             >
-              Protecting meaning where
+              Protecting{" "}
+              <span className="inline-block" style={glitchStyle(glitch)}>meaning</span>
+              {" "}where
               <br />
               research meets public life.
             </p>
