@@ -1,6 +1,55 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef, useMemo } from "react";
+
+/* Slow-drifting ambient orbs to add depth to the flat background */
+const AmbientOrbs = () => {
+  const orbs = useMemo(() => [
+    { cx: "15%", cy: "20%", r: 180, color: "hsl(348, 45%, 18%)", dur: 18, dx: 40, dy: 25 },
+    { cx: "75%", cy: "60%", r: 220, color: "hsl(340, 35%, 14%)", dur: 22, dx: -35, dy: 30 },
+    { cx: "50%", cy: "85%", r: 160, color: "hsl(30, 15%, 16%)", dur: 26, dx: 30, dy: -20 },
+    { cx: "85%", cy: "15%", r: 140, color: "hsl(340, 40%, 16%)", dur: 20, dx: -25, dy: 35 },
+  ], []);
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+        <defs>
+          <filter id="about-blur">
+            <feGaussianBlur stdDeviation="60" />
+          </filter>
+        </defs>
+        {orbs.map((orb, i) => (
+          <motion.circle
+            key={i}
+            cx={orb.cx}
+            cy={orb.cy}
+            r={orb.r}
+            fill={orb.color}
+            filter="url(#about-blur)"
+            opacity={0.5}
+            animate={{
+              cx: [`${parseFloat(orb.cx)}%`, `${parseFloat(orb.cx) + orb.dx / 10}%`, `${parseFloat(orb.cx)}%`],
+              cy: [`${parseFloat(orb.cy)}%`, `${parseFloat(orb.cy) + orb.dy / 10}%`, `${parseFloat(orb.cy)}%`],
+            }}
+            transition={{
+              duration: orb.dur,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+      </svg>
+      {/* Film grain */}
+      <div
+        className="absolute inset-0 mix-blend-overlay opacity-[0.03]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          backgroundSize: '128px 128px',
+        }}
+      />
+    </div>
+  );
+};
 
 const categories = [
   {
