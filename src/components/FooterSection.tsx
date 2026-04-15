@@ -22,7 +22,7 @@ const FooterSection = () => {
             Science, Amplified.
           </p>
 
-          <div className="flex justify-center gap-8 mb-10 text-[11px] tracking-[0.2em] uppercase" style={{ color: 'hsl(30, 12%, 50%)' }}>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 sm:gap-8 mb-10 text-[11px] tracking-[0.2em] uppercase" style={{ color: 'hsl(30, 12%, 50%)' }}>
             {["About", "Team", "Purpose", "Services"].map((item) => (
               <button
                 key={item}
