@@ -28,11 +28,10 @@ const TeamSection = () => {
       id="team"
       className="py-32 md:py-44 section-padding"
       ref={ref}
-      style={{ backgroundColor: "hsl(35, 22%, 88%)" }}
+      style={{ backgroundColor: "hsl(35, 30%, 92%)" }}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12">
 
-        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -40,30 +39,23 @@ const TeamSection = () => {
           className="mb-16 md:mb-20"
         >
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-10 h-px" style={{ background: "hsl(30, 12%, 72%)" }} />
-            <p
-              className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.14em] font-medium"
-              style={{ color: "hsl(30, 10%, 50%)" }}
-            >
+            <div className="w-10 h-px" style={{ background: "hsl(30, 12%, 75%)" }} />
+            <p className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium" style={{ color: "hsl(30, 10%, 55%)" }}>
               People
             </p>
           </div>
-          <h2
-            className="font-heading text-[32px] md:text-[40px] lg:text-[46px] font-light leading-[1.08] tracking-[-0.02em]"
-            style={{ color: "hsl(340, 30%, 18%)" }}
-          >
+          <h2 className="font-display text-[48px] md:text-[60px] lg:text-[72px] tracking-wider leading-[0.88]" style={{ color: "hsl(340, 30%, 22%)" }}>
             Who's behind Resonance Labs
           </h2>
         </motion.div>
 
-        {/* Founder */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.15 }}
           className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 lg:gap-20 items-start mb-20 md:mb-28"
         >
-          <div className="relative overflow-hidden" style={{ borderRadius: "16px" }}>
+          <div className="relative overflow-hidden" style={{ borderRadius: "4px" }}>
             <img
               src={teamZuzana}
               alt="Zuzana Válková"
@@ -74,22 +66,13 @@ const TeamSection = () => {
 
           <div className="flex flex-col justify-center md:py-6">
             <div className="flex items-center gap-2.5 mb-4">
-              <span
-                className="w-[5px] h-[5px] rounded-full shrink-0"
-                style={{ backgroundColor: "hsl(340, 40%, 35%)" }}
-              />
-              <p
-                className="font-heading text-[11px] md:text-[12px] tracking-[0.12em] uppercase font-medium"
-                style={{ color: "hsl(340, 40%, 35%)" }}
-              >
+              <span className="w-[5px] h-[5px] rounded-full shrink-0" style={{ backgroundColor: "hsl(340, 40%, 35%)" }} />
+              <p className="font-heading text-[11px] md:text-[12px] tracking-[0.15em] uppercase font-medium" style={{ color: "hsl(340, 40%, 35%)" }}>
                 Founder
               </p>
             </div>
 
-            <h3
-              className="font-heading text-[26px] md:text-[32px] lg:text-[36px] font-light leading-[1.12] tracking-[-0.02em] mb-6"
-              style={{ color: "hsl(340, 30%, 18%)" }}
-            >
+            <h3 className="font-display text-[32px] md:text-[40px] lg:text-[48px] tracking-wider leading-[0.9] mb-6" style={{ color: "hsl(340, 30%, 22%)" }}>
               Zuzana Válková
             </h3>
 
@@ -107,7 +90,6 @@ const TeamSection = () => {
           </div>
         </motion.div>
 
-        {/* Divider */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
@@ -115,12 +97,11 @@ const TeamSection = () => {
           className="mb-10"
         >
           <div className="h-px w-full mb-10" style={{ backgroundColor: "hsl(30, 12%, 78%)" }} />
-          <p className="font-body text-[15px] md:text-[16px] leading-[1.6] font-normal max-w-[56ch]" style={{ color: "hsl(30, 8%, 45%)" }}>
+          <p className="font-body text-[15px] md:text-[16px] leading-[1.6] font-normal max-w-[56ch]" style={{ color: "hsl(30, 8%, 48%)" }}>
             Resonance Labs works with a flexible network of collaborators across design, storytelling, and communications.
           </p>
         </motion.div>
 
-        {/* Collaborators */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 max-w-3xl">
           {collaborators.map((person, i) => (
             <motion.div
@@ -130,17 +111,17 @@ const TeamSection = () => {
               transition={{ duration: 0.6, delay: 0.4 + i * 0.1 }}
               className="flex gap-5"
             >
-              <div className="shrink-0 overflow-hidden" style={{ borderRadius: "12px", width: "72px", height: "88px" }}>
+              <div className="shrink-0 overflow-hidden" style={{ borderRadius: "4px", width: "72px", height: "88px" }}>
                 <img src={person.photo} alt={person.name} className="w-full h-full object-cover" />
               </div>
               <div className="min-w-0">
-                <h4 className="font-heading text-[16px] md:text-[17px] font-medium tracking-[-0.01em] mb-1" style={{ color: "hsl(340, 25%, 18%)" }}>
+                <h4 className="font-heading text-[16px] md:text-[17px] font-medium tracking-[-0.01em] mb-1" style={{ color: "hsl(340, 25%, 20%)" }}>
                   {person.name}
                 </h4>
-                <p className="font-heading text-[11px] tracking-[0.1em] uppercase font-medium mb-2.5" style={{ color: "hsl(30, 10%, 50%)" }}>
+                <p className="font-heading text-[11px] tracking-[0.12em] uppercase font-medium mb-2.5" style={{ color: "hsl(30, 10%, 55%)" }}>
                   {person.role}
                 </p>
-                <p className="font-body text-[13px] md:text-[14px] leading-[1.6] font-normal" style={{ color: "hsl(30, 8%, 45%)" }}>
+                <p className="font-body text-[13px] md:text-[14px] leading-[1.6] font-normal" style={{ color: "hsl(30, 8%, 48%)" }}>
                   {person.bio}
                 </p>
               </div>
