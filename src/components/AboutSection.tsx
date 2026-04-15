@@ -90,8 +90,9 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-32 md:py-44 section-padding bg-burgundy-mid" ref={ref}>
-      <div className="max-w-6xl mx-auto px-6 md:px-12">
+    <section id="about" className="relative py-32 md:py-44 section-padding bg-burgundy-mid overflow-hidden" ref={ref}>
+      <AmbientOrbs />
+      <div className="relative max-w-6xl mx-auto px-6 md:px-12">
 
         {/* Header row */}
         <motion.div
