@@ -126,7 +126,7 @@ const HeroSection = () => {
             src={heroIllustration}
             alt="Cosmic collage with rocket launch, astronaut, moon, and surreal botanical elements"
             className="w-full h-full object-cover"
-            style={{ objectPosition: 'center 50%' }}
+            style={{ objectPosition: 'center 50%', filter: 'saturate(0.85) brightness(0.95) hue-rotate(-8deg)' }}
           />
 
           <motion.img
