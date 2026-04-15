@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -11,7 +14,11 @@ const Navbar = () => {
   }, []);
 
   const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    if (isHome) {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.href = `/#${id}`;
+    }
   };
 
   return (
@@ -24,12 +31,12 @@ const Navbar = () => {
       }`}
     >
       <div className="section-padding flex items-center justify-between">
-        <button
-          onClick={() => scrollTo("hero")}
+        <Link
+          to="/"
           className="font-heading text-[11px] tracking-[0.2em] uppercase font-medium text-foreground/70 hover:text-foreground/90 transition-opacity duration-300"
         >
           RESONANCE LABS
-        </button>
+        </Link>
         <div className="hidden md:flex items-center gap-10">
           {[
             { label: "About", id: "about" },
@@ -45,6 +52,12 @@ const Navbar = () => {
               {item.label}
             </button>
           ))}
+          <Link
+            to="/the-usual-suspects"
+            className="font-heading text-[11px] tracking-[0.15em] uppercase font-normal text-foreground/50 hover:text-foreground/80 transition-opacity duration-300"
+          >
+            NoBull Library
+          </Link>
         </div>
       </div>
     </motion.nav>
