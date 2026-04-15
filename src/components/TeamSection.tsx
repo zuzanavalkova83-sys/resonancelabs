@@ -103,13 +103,19 @@ const TeamSection = () => {
                 className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal"
                 style={{ color: 'hsl(215, 15%, 58%)' }}
               >
-                A journalist by craft, Zuzana has interviewed voices such as Svetlana Alexievich, Azar Nafisi, Steven Pinker, and Hans-Georg Kräusslich. Her writing draws on science to add depth to social commentary, bridging the gap between research and narrative.
+                Her work sits at the intersection of journalism, science, technology transfer, public commentary, and cultural intuition. She has interviewed voices such as Svetlana Alexievich, Azar Nafisi, Steven Pinker, and Hans-Georg Kräusslich. Zuzana has also worked across pharma, academia, the non-profit sector, FMCG, the arts, and the media, including as spokesperson for the Faculty of Arts at Charles University.
               </p>
               <p
                 className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal"
                 style={{ color: 'hsl(215, 15%, 58%)' }}
               >
-                Formerly the spokesperson for the Faculty of Arts at Charles University, she now leads Resonance Labs as a consultant, writer, and lecturer.
+                Over the past fifteen years, she has written for major Czech national outlets, appeared on television and public radio, and spent a great deal of time thinking about what happens when serious ideas meet minds in search of attention.
+              </p>
+              <p
+                className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal"
+                style={{ color: 'hsl(215, 15%, 58%)' }}
+              >
+                She currently consults for IOCB Tech, IOCB Boston, and IOCB Prague, while also running to and fro to the kindergarten.
               </p>
             </div>
           </div>
