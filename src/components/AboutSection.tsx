@@ -2,23 +2,38 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
-const fields = [
-  { name: "Tech Transfer", url: "https://iocbtech.cz/about-us" },
-  { name: "Biotech" },
-  { name: "Pharma", url: "https://www.cb21pharma.com/" },
-  { name: "Biology", url: "https://iocbboston.org/" },
-  { name: "Biochemistry", url: "https://www.uochb.cz/en" },
-  { name: "Chemistry", url: "https://canneff.com/" },
-  { name: "Virology", url: "https://www.finmag.cz/technologie/429480-krausslich-touzime-po-odpovedich-jenze-veda-miluje-otazky" },
-  { name: "Linguistics", url: "https://www.finmag.cz/firemni-kultura/422164-druha-vlna-pandemie-do-medii-jeste-nedorazila" },
-  { name: "Psychology", url: "https://www.novinky.cz/clanek/veda-skoly-kulturni-valky-univerzitam-skodi-se-stevenem-pinkerem-o-ochrane-mensin-a-svobode-vedeckeho-badani-40505116" },
-  { name: "Economics", url: "https://www.respekt.cz/rozhovor/strach-politiku-z-vycitek-verejnosti-nas-stahuje-hloubeji-do-krize" },
-  { name: "Political Science", url: "https://vikend.hn.cz/c1-65531180-svetlana-alexijevicova-zinkovi-chlapci-kniha-rozhovor" },
-  { name: "Philosophy", url: "https://www.marwick.cz/rozhovor/co-zbude-z-cloveka" },
-  { name: "Anthropology", url: "https://www.finmag.cz/firemni-kultura/411054-antropologie-bolesti-podle-martina-soukupa" },
-  { name: "Philology", url: "https://www.respekt.cz/rozhovor/o-nejvetsim-dramatu-sve-doby-shakespeare-nikdy-nepsal" },
-  { name: "Sociology" },
-  { name: "Arts", url: "https://archiv.hn.cz/c1-66342840-na-hranici-poznani" },
+const categories = [
+  {
+    label: "Industry & Transfer",
+    fields: [
+      { name: "Tech Transfer", url: "https://iocbtech.cz/about-us" },
+      { name: "Biotech" },
+      { name: "Pharma", url: "https://www.cb21pharma.com/" },
+    ],
+  },
+  {
+    label: "Life Sciences",
+    fields: [
+      { name: "Biology", url: "https://iocbboston.org/" },
+      { name: "Biochemistry", url: "https://www.uochb.cz/en" },
+      { name: "Chemistry", url: "https://canneff.com/" },
+      { name: "Virology", url: "https://www.finmag.cz/technologie/429480-krausslich-touzime-po-odpovedich-jenze-veda-miluje-otazky" },
+    ],
+  },
+  {
+    label: "Humanities & Social Sciences",
+    fields: [
+      { name: "Linguistics", url: "https://www.finmag.cz/firemni-kultura/422164-druha-vlna-pandemie-do-medii-jeste-nedorazila" },
+      { name: "Psychology", url: "https://www.novinky.cz/clanek/veda-skoly-kulturni-valky-univerzitam-skodi-se-stevenem-pinkerem-o-ochrane-mensin-a-svobode-vedeckeho-badani-40505116" },
+      { name: "Economics", url: "https://www.respekt.cz/rozhovor/strach-politiku-z-vycitek-verejnosti-nas-stahuje-hloubeji-do-krize" },
+      { name: "Political Science", url: "https://vikend.hn.cz/c1-65531180-svetlana-alexijevicova-zinkovi-chlapci-kniha-rozhovor" },
+      { name: "Philosophy", url: "https://www.marwick.cz/rozhovor/co-zbude-z-cloveka" },
+      { name: "Anthropology", url: "https://www.finmag.cz/firemni-kultura/411054-antropologie-bolesti-podle-martina-soukupa" },
+      { name: "Philology", url: "https://www.respekt.cz/rozhovor/o-nejvetsim-dramatu-sve-doby-shakespeare-nikdy-nepsal" },
+      { name: "Sociology" },
+      { name: "Arts", url: "https://archiv.hn.cz/c1-66342840-na-hranici-poznani" },
+    ],
+  },
 ];
 
 const AboutSection = () => {
