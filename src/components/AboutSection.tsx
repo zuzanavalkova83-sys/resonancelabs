@@ -107,45 +107,43 @@ const AboutSection = () => {
             className="lg:pt-12"
           >
             <p
-              className="font-heading text-[11px] md:text-[12px] uppercase tracking-[0.14em] font-medium mb-6"
+              className="font-heading text-[11px] md:text-[12px] uppercase tracking-[0.14em] font-medium mb-5"
               style={{ color: 'hsl(215, 20%, 42%)' }}
             >
               Fields of practice
             </p>
 
-            <div className="space-y-0">
+            <div className="flex flex-wrap gap-2">
               {fields.map((field, i) => {
                 const Tag = field.url ? "a" : "span";
                 return (
                   <motion.div
                     key={field.name}
-                    initial={{ opacity: 0, x: 10 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.3, delay: 0.35 + i * 0.03 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.25, delay: 0.35 + i * 0.03 }}
                   >
                     <Tag
                       {...(field.url ? { href: field.url, target: "_blank", rel: "noopener noreferrer" } : {})}
-                      className={`block py-2.5 font-body text-[14px] md:text-[15px] tracking-[0.01em] border-b transition-colors duration-200 ${
+                      className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg font-body text-[13px] md:text-[14px] tracking-[0.01em] border transition-colors duration-200 ${
                         field.url
                           ? "cursor-pointer hover:text-foreground/90"
                           : ""
                       }`}
                       style={{
-                        borderColor: 'hsl(220, 20%, 20% / 0.3)',
+                        borderColor: 'hsl(220, 20%, 22% / 0.4)',
+                        backgroundColor: 'hsl(220, 20%, 12% / 0.35)',
                         color: 'hsl(215, 15%, 55%)',
                       }}
                     >
-                      <span className="flex items-center justify-between">
-                        {field.name}
-                        {field.url && (
-                          <span
-                            className="text-[12px] font-heading tracking-[0.06em] uppercase"
-                            style={{ color: 'hsl(215, 15%, 38%)' }}
-                          >
-                            ↗
-                          </span>
-                        )}
-                      </span>
+                      {field.name}
+                      {field.url && (
+                        <span
+                          className="text-[11px] opacity-40"
+                        >
+                          ↗
+                        </span>
+                      )}
                     </Tag>
                   </motion.div>
                 );
