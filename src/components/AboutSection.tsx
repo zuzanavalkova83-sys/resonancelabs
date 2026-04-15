@@ -2,23 +2,38 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
-const fields = [
-  { name: "Tech Transfer", url: "https://iocbtech.cz/about-us" },
-  { name: "Biotech" },
-  { name: "Pharma", url: "https://www.cb21pharma.com/" },
-  { name: "Biology", url: "https://iocbboston.org/" },
-  { name: "Biochemistry", url: "https://www.uochb.cz/en" },
-  { name: "Chemistry", url: "https://canneff.com/" },
-  { name: "Virology", url: "https://www.finmag.cz/technologie/429480-krausslich-touzime-po-odpovedich-jenze-veda-miluje-otazky" },
-  { name: "Linguistics", url: "https://www.finmag.cz/firemni-kultura/422164-druha-vlna-pandemie-do-medii-jeste-nedorazila" },
-  { name: "Psychology", url: "https://www.novinky.cz/clanek/veda-skoly-kulturni-valky-univerzitam-skodi-se-stevenem-pinkerem-o-ochrane-mensin-a-svobode-vedeckeho-badani-40505116" },
-  { name: "Economics", url: "https://www.respekt.cz/rozhovor/strach-politiku-z-vycitek-verejnosti-nas-stahuje-hloubeji-do-krize" },
-  { name: "Political Science", url: "https://vikend.hn.cz/c1-65531180-svetlana-alexijevicova-zinkovi-chlapci-kniha-rozhovor" },
-  { name: "Philosophy", url: "https://www.marwick.cz/rozhovor/co-zbude-z-cloveka" },
-  { name: "Anthropology", url: "https://www.finmag.cz/firemni-kultura/411054-antropologie-bolesti-podle-martina-soukupa" },
-  { name: "Philology", url: "https://www.respekt.cz/rozhovor/o-nejvetsim-dramatu-sve-doby-shakespeare-nikdy-nepsal" },
-  { name: "Sociology" },
-  { name: "Arts", url: "https://archiv.hn.cz/c1-66342840-na-hranici-poznani" },
+const categories = [
+  {
+    label: "Industry & Transfer",
+    fields: [
+      { name: "Tech Transfer", url: "https://iocbtech.cz/about-us" },
+      { name: "Biotech" },
+      { name: "Pharma", url: "https://www.cb21pharma.com/" },
+    ],
+  },
+  {
+    label: "Life Sciences",
+    fields: [
+      { name: "Biology", url: "https://iocbboston.org/" },
+      { name: "Biochemistry", url: "https://www.uochb.cz/en" },
+      { name: "Chemistry", url: "https://canneff.com/" },
+      { name: "Virology", url: "https://www.finmag.cz/technologie/429480-krausslich-touzime-po-odpovedich-jenze-veda-miluje-otazky" },
+    ],
+  },
+  {
+    label: "Humanities & Social Sciences",
+    fields: [
+      { name: "Linguistics", url: "https://www.finmag.cz/firemni-kultura/422164-druha-vlna-pandemie-do-medii-jeste-nedorazila" },
+      { name: "Psychology", url: "https://www.novinky.cz/clanek/veda-skoly-kulturni-valky-univerzitam-skodi-se-stevenem-pinkerem-o-ochrane-mensin-a-svobode-vedeckeho-badani-40505116" },
+      { name: "Economics", url: "https://www.respekt.cz/rozhovor/strach-politiku-z-vycitek-verejnosti-nas-stahuje-hloubeji-do-krize" },
+      { name: "Political Science", url: "https://vikend.hn.cz/c1-65531180-svetlana-alexijevicova-zinkovi-chlapci-kniha-rozhovor" },
+      { name: "Philosophy", url: "https://www.marwick.cz/rozhovor/co-zbude-z-cloveka" },
+      { name: "Anthropology", url: "https://www.finmag.cz/firemni-kultura/411054-antropologie-bolesti-podle-martina-soukupa" },
+      { name: "Philology", url: "https://www.respekt.cz/rozhovor/o-nejvetsim-dramatu-sve-doby-shakespeare-nikdy-nepsal" },
+      { name: "Sociology" },
+      { name: "Arts", url: "https://archiv.hn.cz/c1-66342840-na-hranici-poznani" },
+    ],
+  },
 ];
 
 const AboutSection = () => {
@@ -99,56 +114,66 @@ const AboutSection = () => {
             </motion.a>
           </div>
 
-          {/* Right column — disciplines */}
+          {/* Right column — disciplines grouped */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="lg:pt-12"
+            className="lg:pt-1 space-y-8"
           >
             <p
-              className="font-heading text-[11px] md:text-[12px] uppercase tracking-[0.14em] font-medium mb-5"
+              className="font-heading text-[11px] md:text-[12px] uppercase tracking-[0.14em] font-medium"
               style={{ color: 'hsl(215, 20%, 42%)' }}
             >
               Fields of practice
             </p>
 
-            <div className="flex flex-wrap gap-2">
-              {fields.map((field, i) => {
-                const Tag = field.url ? "a" : "span";
-                return (
-                  <motion.div
-                    key={field.name}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ duration: 0.25, delay: 0.35 + i * 0.03 }}
-                  >
-                    <Tag
-                      {...(field.url ? { href: field.url, target: "_blank", rel: "noopener noreferrer" } : {})}
-                      className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg font-body text-[13px] md:text-[14px] tracking-[0.01em] border transition-colors duration-200 ${
-                        field.url
-                          ? "cursor-pointer hover:text-foreground/90"
-                          : ""
-                      }`}
-                      style={{
-                        borderColor: 'hsl(220, 20%, 22% / 0.4)',
-                        backgroundColor: 'hsl(220, 20%, 12% / 0.35)',
-                        color: 'hsl(215, 15%, 55%)',
-                      }}
-                    >
-                      {field.name}
-                      {field.url && (
-                        <span
-                          className="text-[11px] opacity-40"
+            {categories.map((cat, catIdx) => (
+              <div key={cat.label}>
+                <p
+                  className="font-heading text-[11px] uppercase tracking-[0.1em] font-medium mb-3"
+                  style={{ color: 'hsl(32, 45%, 55%)' }}
+                >
+                  {cat.label}
+                </p>
+                <div
+                  className="rounded-lg overflow-hidden"
+                  style={{
+                    border: '1px solid hsl(220, 20%, 20% / 0.3)',
+                    backgroundColor: 'hsl(220, 22%, 10% / 0.4)',
+                  }}
+                >
+                  {cat.fields.map((field, i) => {
+                    const Tag = field.url ? "a" : "span";
+                    const isLast = i === cat.fields.length - 1;
+                    return (
+                      <motion.div
+                        key={field.name}
+                        initial={{ opacity: 0 }}
+                        animate={isInView ? { opacity: 1 } : {}}
+                        transition={{ duration: 0.3, delay: 0.4 + catIdx * 0.1 + i * 0.03 }}
+                      >
+                        <Tag
+                          {...(field.url ? { href: field.url, target: "_blank", rel: "noopener noreferrer" } : {})}
+                          className={`flex items-center justify-between px-4 py-2.5 font-body text-[13px] md:text-[14px] tracking-[0.01em] transition-colors duration-200 ${
+                            field.url ? "cursor-pointer hover:text-foreground/80" : ""
+                          }`}
+                          style={{
+                            color: 'hsl(215, 15%, 55%)',
+                            ...(!isLast ? { borderBottom: '1px solid hsl(220, 20%, 20% / 0.25)' } : {}),
+                          }}
                         >
-                          ↗
-                        </span>
-                      )}
-                    </Tag>
-                  </motion.div>
-                );
-              })}
-            </div>
+                          {field.name}
+                          {field.url && (
+                            <span className="text-[11px] opacity-35">↗</span>
+                          )}
+                        </Tag>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
           </motion.div>
         </div>
       </div>
