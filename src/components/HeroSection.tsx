@@ -120,7 +120,7 @@ const HeroSection = () => {
           transition={{ duration: 0.7, delay: 0.55 }}
           className="max-w-xl mb-16 md:mb-20"
         >
-          <p className="text-xl sm:text-2xl leading-relaxed text-foreground/50 mb-4">
+          <p className="text-xl sm:text-2xl leading-relaxed text-foreground/50 mb-4 whitespace-nowrap">
             Protecting{" "}
             <span className="inline-block" style={glitchStyle(glitch)}>meaning</span>
             {" "}where research meets public life.
