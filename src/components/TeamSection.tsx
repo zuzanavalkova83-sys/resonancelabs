@@ -1,20 +1,16 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import teamZuzana from "@/assets/team-zuzana.jpg";
-import teamMartin from "@/assets/team-martin.jpg";
-import teamMaria from "@/assets/team-maria.jpg";
 
 const collaborators = [
   {
     name: "Martin Paur",
     role: "Creative Direction",
-    photo: teamMartin,
     bio: "Former creative director at multinational agencies. Works from a simple premise: the world of research is unique, but not exempt from the rules of what moves people.",
   },
   {
     name: "Maria Michopulu",
     role: "Design",
-    photo: teamMaria,
     bio: "Visual artist and graphic designer, alumna of Emily Carr University of Art and Design. Responsible for visual identity and everything that makes science look as good as it deserves.",
   },
 ];
@@ -109,22 +105,16 @@ const TeamSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 + i * 0.1 }}
-              className="flex gap-5"
             >
-              <div className="shrink-0 overflow-hidden" style={{ borderRadius: "4px", width: "72px", height: "88px" }}>
-                <img src={person.photo} alt={person.name} className="w-full h-full object-cover" />
-              </div>
-              <div className="min-w-0">
-                <h4 className="font-heading text-[16px] md:text-[17px] font-medium tracking-[-0.01em] mb-1" style={{ color: "hsl(340, 25%, 20%)" }}>
-                  {person.name}
-                </h4>
-                <p className="font-heading text-[11px] tracking-[0.12em] uppercase font-medium mb-2.5" style={{ color: "hsl(30, 10%, 55%)" }}>
-                  {person.role}
-                </p>
-                <p className="font-body text-[13px] md:text-[14px] leading-[1.6] font-normal" style={{ color: "hsl(30, 8%, 48%)" }}>
-                  {person.bio}
-                </p>
-              </div>
+              <h4 className="font-heading text-[16px] md:text-[17px] font-medium tracking-[-0.01em] mb-1" style={{ color: "hsl(340, 25%, 20%)" }}>
+                {person.name}
+              </h4>
+              <p className="font-heading text-[11px] tracking-[0.12em] uppercase font-medium mb-2.5" style={{ color: "hsl(30, 10%, 55%)" }}>
+                {person.role}
+              </p>
+              <p className="font-body text-[13px] md:text-[14px] leading-[1.6] font-normal" style={{ color: "hsl(30, 8%, 48%)" }}>
+                {person.bio}
+              </p>
             </motion.div>
           ))}
         </div>
