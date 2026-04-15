@@ -119,15 +119,15 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <motion.span
-            animate={{ opacity: [0.92, 1, 0.92] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="inline-block"
-          >
-            Resonance
-          </motion.span>
+           <span className="text-foreground">Resonance</span>
           <br />
-          <span className="inline-block" style={glitchStyle(glitch, "subtle")}>
+          <span
+            className="inline-block"
+            style={{
+              color: 'hsl(var(--brass))',
+              ...glitchStyle(glitch),
+            }}
+          >
             Labs.
           </span>
         </motion.h1>
