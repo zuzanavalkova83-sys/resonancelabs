@@ -2,6 +2,12 @@ import { motion } from "framer-motion";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
 import { useState, useEffect } from "react";
 
+const signals = [
+  { code: "S01", label: "Narrative Strategy", desc: "Shaping how research enters public conversation." },
+  { code: "S02", label: "Distortion Mapping", desc: "Tracking how findings get twisted between lab and headline." },
+  { code: "S03", label: "Clarity Under Pressure", desc: "Holding meaning steady when the stakes are high." },
+];
+
 const HeroSection = () => {
   const glitch = useGlitch(9000, 800, 2500);
   const [dotGlitch, setDotGlitch] = useState(false);
@@ -29,19 +35,19 @@ const HeroSection = () => {
         }}
       />
 
-      {/* ── Pink accent dot — overlaps where Resonance meets Labs ── */}
+      {/* ── Pink accent dot — overlaps title area ── */}
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute pointer-events-none right-[-1rem] top-[6rem] sm:right-auto sm:left-[26%] sm:top-[22%]"
+        transition={{ duration: 0.8, delay: 1, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute pointer-events-none left-[38%] top-[28%] sm:left-[32%] sm:top-[24%]"
       >
         <motion.div
           animate={{ y: [0, -6, 0], scale: [1, 1.05, 1] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         >
           <div
-            className="w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full"
+            className="w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 rounded-full"
             style={{
               background: 'hsl(340 75% 55%)',
               boxShadow: '0 12px 40px -8px hsl(340 75% 55% / 0.45), 0 0 60px -12px hsl(340 75% 55% / 0.2)',
@@ -55,37 +61,38 @@ const HeroSection = () => {
         </motion.div>
       </motion.div>
 
-      {/* Diagonal accent line */}
+      {/* Vertical accent line — editorial divider between left and right */}
       <motion.div
         initial={{ scaleY: 0 }}
         animate={{ scaleY: 1 }}
         transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute top-0 right-[38%] w-[1px] h-full origin-top hidden sm:block"
-        style={{ background: 'linear-gradient(to bottom, transparent, hsl(var(--brass) / 0.2), transparent)' }}
+        className="absolute top-0 right-[34%] w-[1px] h-full origin-top hidden md:block"
+        style={{ background: 'linear-gradient(to bottom, transparent, hsl(var(--brass) / 0.15), transparent)' }}
       />
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10">
-        <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] items-end min-h-[70vh] sm:min-h-[80vh] gap-8 pb-16 sm:pb-20 pt-20">
-          {/* Left: title stack */}
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1px_1fr] items-center min-h-[85vh] gap-0 md:gap-10 pt-20 pb-16">
+
+          {/* ── Left: Title stack ── */}
+          <div className="py-10">
             <motion.div
               initial={{ opacity: 0, x: -15 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex items-center gap-4 mb-8"
+              className="flex items-center gap-4 mb-10"
             >
               <div className="w-10 h-[1px]" style={{ background: 'hsl(var(--brass) / 0.5)' }} />
-              <p className="text-[12px] font-mono tracking-[0.35em] uppercase" style={{ color: 'hsl(var(--brass))' }}>
+              <p className="text-[11px] font-mono tracking-[0.3em] uppercase" style={{ color: 'hsl(var(--brass))' }}>
                 Strategic Science Communication
               </p>
             </motion.div>
 
             <div className="overflow-hidden">
               <motion.h1
-                initial={{ y: 100 }}
+                initial={{ y: 80 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="font-display text-[5.5rem] sm:text-[7rem] md:text-[9rem] tracking-wider leading-[0.82]"
+                className="font-display text-[3.5rem] sm:text-[4.5rem] md:text-[5.5rem] tracking-wider leading-[0.85]"
               >
                 <span className="text-foreground">Resonance</span>
                 <br />
@@ -105,7 +112,7 @@ const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.9 }}
-              className="text-xl sm:text-2xl text-foreground/50 leading-relaxed mt-8 max-w-md"
+              className="text-lg sm:text-xl text-foreground/50 leading-relaxed mt-8 max-w-sm"
             >
               Protecting meaning where research meets public life.
             </motion.p>
@@ -114,27 +121,67 @@ const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.05 }}
-              className="text-base text-foreground/40 leading-relaxed mt-4 max-w-md"
+              className="text-[15px] text-foreground/35 leading-relaxed mt-4 max-w-sm"
             >
-              We help serious ideas survive noise, distortion,<br />
+              We help serious ideas survive noise, distortion,<br className="hidden sm:inline" />
               and the distance between expertise and understanding.
             </motion.p>
           </div>
 
-          {/* Right: vertical text accent */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
-            className="hidden sm:flex flex-col items-end gap-6 pb-4"
-          >
-            <p
-              className="text-[11px] font-mono tracking-[0.3em] uppercase text-foreground/15"
-              style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+          {/* ── Centre rule ── */}
+          <div
+            className="hidden md:block h-[60%] self-center"
+            style={{
+              background: 'linear-gradient(to bottom, transparent, hsl(var(--brass) / 0.2), transparent)',
+            }}
+          />
+
+          {/* ── Right: Signal cards — editorial sidebar ── */}
+          <div className="py-10">
+            {signals.map((s, i) => (
+              <motion.div
+                key={s.code}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 1.1 + i * 0.12 }}
+                className="relative pl-6 py-6"
+                style={{
+                  borderBottom: i < signals.length - 1 ? '1px solid hsl(var(--border) / 0.3)' : 'none',
+                }}
+              >
+                {/* Accent pip */}
+                <div
+                  className="absolute left-0 top-8 w-[3px] h-8 rounded-full"
+                  style={{ background: i === 0 ? 'hsl(340 75% 55%)' : 'hsl(var(--brass) / 0.3)' }}
+                />
+                <p
+                  className="font-mono text-[10px] tracking-[0.25em] uppercase mb-2"
+                  style={{ color: 'hsl(var(--brass) / 0.6)' }}
+                >
+                  {s.code}
+                </p>
+                <h3 className="font-heading text-[15px] font-medium leading-snug text-foreground mb-1.5">
+                  {s.label}
+                </h3>
+                <p
+                  className="text-[13px] leading-relaxed"
+                  style={{ color: 'hsl(var(--muted-foreground))' }}
+                >
+                  {s.desc}
+                </p>
+              </motion.div>
+            ))}
+
+            {/* Vertical whisper text at bottom-right */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1.5 }}
+              className="text-[10px] font-mono tracking-[0.3em] uppercase text-foreground/10 mt-8 text-right"
             >
               Where expertise meets understanding
-            </p>
-          </motion.div>
+            </motion.p>
+          </div>
         </div>
       </div>
 
@@ -143,8 +190,8 @@ const HeroSection = () => {
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
         transition={{ duration: 1.5, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="h-[2px] origin-left"
-        style={{ background: 'linear-gradient(to right, transparent, hsl(var(--brass) / 0.3), transparent)' }}
+        className="h-[1px] origin-left"
+        style={{ background: 'linear-gradient(to right, transparent, hsl(var(--brass) / 0.25), transparent)' }}
       />
     </header>
   );
