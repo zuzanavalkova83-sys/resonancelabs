@@ -1,145 +1,155 @@
 import { motion } from "framer-motion";
-import heroIllustration from "@/assets/hero-illustration-v2.jpg";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
+
+const signals = [
+  { code: "S01", label: "Narrative Strategy", desc: "Shaping how research enters public conversation." },
+  { code: "S02", label: "Distortion Mapping", desc: "Tracking how findings get twisted between lab and headline." },
+  { code: "S03", label: "Clarity Under Pressure", desc: "Holding meaning steady when the stakes are high." },
+];
 
 const HeroSection = () => {
   const glitch = useGlitch(10000, 600, 3000);
 
   return (
-    <section id="hero" className="relative w-full bg-background min-h-[100vh] pt-16">
-      <div className="relative w-full min-h-[calc(100vh-4rem)] md:min-h-[740px] lg:min-h-[800px] flex flex-col md:flex-row items-stretch overflow-hidden">
+    <section id="hero" className="relative w-full bg-background min-h-[100vh] pt-16 overflow-hidden">
+      {/* Noise texture */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          backgroundRepeat: 'repeat',
+        }}
+      />
 
-        {/* Brand panel */}
+      {/* Ambient glow */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          width: '600px',
+          height: '600px',
+          top: '-10%',
+          right: '-5%',
+          background: 'radial-gradient(circle, hsl(348 45% 18% / 0.4) 0%, transparent 70%)',
+          filter: 'blur(80px)',
+        }}
+      />
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          width: '400px',
+          height: '400px',
+          bottom: '10%',
+          left: '-5%',
+          background: 'radial-gradient(circle, hsl(30 15% 68% / 0.08) 0%, transparent 70%)',
+          filter: 'blur(60px)',
+        }}
+      />
+
+      <div className="relative max-w-6xl mx-auto px-6 md:px-12 min-h-[calc(100vh-4rem)] flex flex-col justify-center py-20">
+        {/* Top marker */}
         <motion.div
-          className="relative flex flex-col justify-center items-start md:w-[32%] shrink-0 z-20 px-8 py-12 md:px-16 md:py-0"
-          style={{ minWidth: '360px', maxWidth: '480px' }}
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex items-center gap-4 mb-12"
         >
-          {/* Panel background */}
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background: 'hsl(340, 45%, 10%)',
-              maskImage: 'linear-gradient(to right, black 65%, transparent 100%)',
-              WebkitMaskImage: 'linear-gradient(to right, black 65%, transparent 100%)',
-            }}
-          />
-
-          {/* Noise */}
-          <div
-            className="absolute inset-0 opacity-[0.025] pointer-events-none"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-              backgroundRepeat: 'repeat',
-              maskImage: 'linear-gradient(to right, black 65%, transparent 100%)',
-              WebkitMaskImage: 'linear-gradient(to right, black 65%, transparent 100%)',
-            }}
-          />
-
-          <div className="relative md:-mt-8">
-            <p
-              className="font-mono text-[10px] tracking-[0.3em] uppercase mb-8"
-              style={{ color: 'hsl(var(--brass))' }}
-            >
-              Strategic Science Communication
-            </p>
-
-            <h1 className="font-display text-[52px] md:text-[68px] lg:text-[80px] tracking-wider leading-[0.82] text-foreground mb-10">
-              <motion.span
-                animate={{ opacity: [0.92, 1, 0.92] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="inline-block"
-              >
-                Resonance
-              </motion.span>
-              <br />
-              <span className="inline-block" style={glitchStyle(glitch, "subtle")}>
-                Labs.
-              </span>
-            </h1>
-
-            <div className="w-10 h-px mb-8" style={{ backgroundColor: 'hsl(var(--brass) / 0.35)' }} />
-
-            <p
-              className="font-heading text-[17px] md:text-[19px] font-medium leading-[1.35] tracking-[-0.01em] text-foreground mb-5 max-w-[320px]"
-            >
-              Protecting{" "}
-              <span className="inline-block" style={glitchStyle(glitch)}>meaning</span>
-              {" "}where
-              <br />
-              research meets public life.
-            </p>
-
-            <p
-              className="font-body text-[14px] md:text-[15px] leading-[1.75] font-normal max-w-[300px]"
-              style={{ color: 'hsl(var(--muted-foreground))' }}
-            >
-              We help serious ideas survive noise, distortion, and the distance between expertise and understanding.
-            </p>
-          </div>
+          <div className="w-10 h-px" style={{ backgroundColor: 'hsl(var(--brass))' }} />
+          <p className="font-mono text-[10px] tracking-[0.3em] uppercase" style={{ color: 'hsl(var(--brass))' }}>
+            Strategic Science Communication
+          </p>
         </motion.div>
 
-        {/* Illustration */}
-        <motion.div
-          className="relative flex-1 overflow-hidden md:-ml-20 lg:-ml-28"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+        {/* Main heading */}
+        <motion.h1
+          className="font-display text-[72px] md:text-[100px] lg:text-[130px] tracking-wider leading-[0.82] text-foreground mb-10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
         >
-          {/* Depth overlay */}
-          <div
-            className="absolute inset-0 z-10 pointer-events-none"
-            style={{
-              background: 'linear-gradient(135deg, hsl(340, 45%, 10% / 0.12) 0%, transparent 50%, hsl(340, 45%, 10% / 0.08) 100%)',
-            }}
-          />
+          <motion.span
+            animate={{ opacity: [0.92, 1, 0.92] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="inline-block"
+          >
+            Resonance
+          </motion.span>
+          <br />
+          <span className="inline-block" style={glitchStyle(glitch, "subtle")}>
+            Labs.
+          </span>
+        </motion.h1>
 
-          {/* Left bleed */}
-          <div
-            className="absolute inset-y-0 left-0 w-48 md:w-56 lg:w-72 z-30 pointer-events-none"
-            style={{
-              backgroundImage: `linear-gradient(to right,
-                hsl(340, 45%, 10%) 0%,
-                hsl(340, 45%, 10% / 0.95) 10%,
-                hsl(340, 45%, 10% / 0.75) 22%,
-                hsl(340, 45%, 10% / 0.45) 38%,
-                hsl(340, 45%, 10% / 0.15) 58%,
-                transparent 100%)`,
-            }}
-          />
+        {/* Divider */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="origin-left mb-10"
+          style={{ width: '48px', height: '1px', backgroundColor: 'hsl(var(--brass) / 0.4)' }}
+        />
 
-          {/* Top vignette */}
-          <div
-            className="absolute inset-x-0 top-0 h-20 z-30 pointer-events-none"
-            style={{
-              background: 'linear-gradient(to bottom, hsl(340, 45%, 10% / 0.5), transparent)',
-            }}
-          />
+        {/* Sub-copy */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.55 }}
+          className="max-w-xl mb-16 md:mb-20"
+        >
+          <p className="font-heading text-[19px] md:text-[22px] font-medium leading-[1.35] tracking-[-0.01em] text-foreground mb-4">
+            Protecting{" "}
+            <span className="inline-block" style={glitchStyle(glitch)}>meaning</span>
+            {" "}where research meets public life.
+          </p>
+          <p
+            className="font-body text-[15px] md:text-[16px] leading-[1.75] font-normal max-w-[48ch]"
+            style={{ color: 'hsl(var(--muted-foreground))' }}
+          >
+            We help serious ideas survive noise, distortion, and the distance
+            between expertise and understanding.
+          </p>
+        </motion.div>
 
-          {/* Bottom fade */}
-          <div
-            className="absolute inset-x-0 bottom-0 h-36 z-30 pointer-events-none"
-            style={{
-              background: 'linear-gradient(to top, hsl(340, 45%, 10%), hsl(340, 45%, 10% / 0.5) 45%, transparent)',
-            }}
-          />
-
-          {/* Right vignette */}
-          <div
-            className="absolute inset-y-0 right-0 w-20 z-30 pointer-events-none"
-            style={{
-              background: 'linear-gradient(to left, hsl(340, 45%, 10% / 0.25), transparent)',
-            }}
-          />
-
-          <img
-            src={heroIllustration}
-            alt="Editorial collage: open book with pages dissolving into signal noise, cracked magnifying glass, botanical specimens, and scattered typography"
-            className="w-full h-full object-cover"
-            style={{ objectPosition: 'center 45%', filter: 'saturate(0.8) brightness(0.92)' }}
-          />
+        {/* Signal cards — editorial grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="grid grid-cols-1 sm:grid-cols-3 gap-px"
+          style={{ backgroundColor: 'hsl(var(--border) / 0.3)' }}
+        >
+          {signals.map((s, i) => (
+            <motion.div
+              key={s.code}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 + i * 0.08 }}
+              className="p-6 md:p-8 flex flex-col justify-between"
+              style={{
+                backgroundColor: 'hsl(var(--burgundy-mid))',
+                minHeight: '160px',
+              }}
+            >
+              <div>
+                <p
+                  className="font-mono text-[10px] tracking-[0.2em] uppercase mb-4"
+                  style={{ color: 'hsl(var(--brass))' }}
+                >
+                  {s.code}
+                </p>
+                <h3
+                  className="font-heading text-[15px] md:text-[16px] font-medium leading-[1.3] mb-3 text-foreground"
+                >
+                  {s.label}
+                </h3>
+              </div>
+              <p
+                className="font-body text-[13px] leading-[1.6]"
+                style={{ color: 'hsl(var(--muted-foreground))' }}
+              >
+                {s.desc}
+              </p>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>
