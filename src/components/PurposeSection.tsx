@@ -1,13 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
-
-const keywords = ["NOISE", "DISTORTION", "CLARITY", "MEANING", "SIGNAL", "TRUTH"];
 
 const PurposeSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const glitch = useGlitch(8000, 500, 2500);
 
   return (
     <section
@@ -36,136 +32,45 @@ const PurposeSection = () => {
           </h2>
         </motion.div>
 
-        {/* Visual element — editorial signal constellation */}
+        {/* Visual — single bold typographic panel */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 1, delay: 0.15 }}
-          className="relative overflow-hidden mb-16 md:mb-20"
-          style={{ height: '320px', backgroundColor: 'hsl(var(--wine-deep))' }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.9, delay: 0.15 }}
+          className="relative flex items-center justify-center mb-16 md:mb-20 overflow-hidden"
+          style={{ height: '280px', backgroundColor: 'hsl(var(--wine-deep))' }}
         >
-          {/* Noise texture */}
-          <div
-            className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          {/* Large watermark text */}
+          <motion.span
+            className="font-display tracking-[0.15em] uppercase select-none pointer-events-none text-center"
+            animate={{ opacity: [0.04, 0.07, 0.04] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
             style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-              backgroundRepeat: 'repeat',
+              fontSize: 'clamp(100px, 18vw, 260px)',
+              lineHeight: 1,
+              color: 'hsl(var(--foreground))',
             }}
-          />
+          >
+            MEANING
+          </motion.span>
 
-          {/* Wine accent circle */}
+          {/* Single horizontal brass rule across centre */}
           <motion.div
-            className="absolute"
-            initial={{ scale: 0.6, opacity: 0 }}
-            animate={isInView ? { scale: 1, opacity: 1 } : {}}
-            transition={{ duration: 1.2, delay: 0.3 }}
-            style={{
-              width: '200px',
-              height: '200px',
-              top: '50%',
-              left: '12%',
-              transform: 'translateY(-50%)',
-              borderRadius: '50%',
-              background: 'hsl(var(--wine))',
-              boxShadow: '0 20px 80px -10px hsl(var(--wine) / 0.5)',
-            }}
-          />
-
-          {/* Breathing ring */}
-          <motion.div
-            className="absolute"
-            animate={{
-              scale: [1, 1.08, 1],
-              opacity: [0.15, 0.3, 0.15],
-            }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            style={{
-              width: '300px',
-              height: '300px',
-              top: '50%',
-              left: '12%',
-              transform: 'translateY(-50%) translateX(-50px)',
-              borderRadius: '50%',
-              border: '1px solid hsl(var(--wine-glow) / 0.3)',
-            }}
-          />
-
-          {/* Brass dot */}
-          <motion.div
-            className="absolute"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={isInView ? { scale: 1, opacity: 0.7 } : {}}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            style={{
-              width: '10px',
-              height: '10px',
-              top: '30%',
-              left: '28%',
-              borderRadius: '50%',
-              background: 'hsl(var(--brass))',
-              boxShadow: '0 0 12px 3px hsl(var(--brass) / 0.3)',
-            }}
-          />
-
-          {/* Vertical line */}
-          <motion.div
-            className="absolute"
-            initial={{ scaleY: 0 }}
-            animate={isInView ? { scaleY: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            style={{
-              width: '1px',
-              height: '120px',
-              top: '25%',
-              left: '35%',
-              background: 'hsl(var(--brass) / 0.15)',
-              transformOrigin: 'top',
-            }}
-          />
-
-          {/* Floating keywords — scattered typographic accents */}
-          {keywords.map((word, i) => (
-            <motion.span
-              key={word}
-              className="absolute font-mono uppercase pointer-events-none select-none"
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 + i * 0.1 }}
-              style={{
-                fontSize: i === 3 ? '11px' : '9px',
-                letterSpacing: '0.25em',
-                color: i === 3
-                  ? 'hsl(var(--brass) / 0.6)'
-                  : 'hsl(var(--foreground) / 0.12)',
-                top: `${18 + (i * 13) % 65}%`,
-                right: `${8 + (i * 17) % 45}%`,
-                ...(glitch && i === 0 ? glitchStyle(true, "subtle") : {}),
-              }}
-            >
-              {word}
-            </motion.span>
-          ))}
-
-          {/* Horizontal editorial line */}
-          <motion.div
-            className="absolute"
+            className="absolute left-0 right-0"
             initial={{ scaleX: 0 }}
             animate={isInView ? { scaleX: 1 } : {}}
-            transition={{ duration: 1, delay: 0.6 }}
+            transition={{ duration: 1.2, delay: 0.4 }}
             style={{
-              width: '40%',
+              top: '50%',
               height: '1px',
-              top: '70%',
-              right: '10%',
-              background: 'linear-gradient(90deg, transparent, hsl(var(--brass) / 0.15), transparent)',
-              transformOrigin: 'right',
+              background: 'linear-gradient(90deg, transparent 5%, hsl(var(--brass) / 0.25) 30%, hsl(var(--brass) / 0.25) 70%, transparent 95%)',
             }}
           />
 
-          {/* Edge vignette */}
+          {/* Vignette */}
           <div
             className="absolute inset-0 pointer-events-none"
-            style={{ boxShadow: 'inset 0 0 60px 15px hsl(340, 40%, 10% / 0.5)' }}
+            style={{ boxShadow: 'inset 0 0 80px 30px hsl(var(--wine-deep))' }}
           />
         </motion.div>
 
