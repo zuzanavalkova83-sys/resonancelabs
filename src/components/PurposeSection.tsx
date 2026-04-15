@@ -44,21 +44,28 @@ const PurposeSection = () => {
                 className="font-body text-[16px] md:text-[17px] leading-[1.65] font-normal"
                 style={{ color: 'hsl(215, 15%, 62%)' }}
               >
-                We used to think of science communication as a delight—perhaps the most intriguing work in the world. Our perspective shifted in light of industrial misinformation and hybrid warfare.
+                We used to think of science communication mainly as a question of clarity, reach, and public engagement. That is no longer enough.
               </p>
 
               <p
                 className="font-body text-[16px] md:text-[17px] leading-[1.65] font-normal"
                 style={{ color: 'hsl(215, 15%, 62%)' }}
               >
-                We realised that knowledge without consequence is a vulnerability. When research remains isolated from the world it aims to serve, the gap is exploited. Worse, research itself can be twisted and exploited.
+                Research now enters a public space shaped by noise, strategic distortion, grievance, and misplaced certainty. Careful work can be flattened, moralised, politicised, or pulled into stories it was never trying to tell.
+              </p>
+
+              <p
+                className="font-body text-[16px] md:text-[17px] leading-[1.65] font-normal"
+                style={{ color: 'hsl(215, 15%, 62%)' }}
+              >
+                Resonance Labs exists to help serious ideas survive that contact. The work is about protecting meaning: translating expertise into language people can hear, while reducing the chances that it will be hijacked on the way.
               </p>
 
               <p
                 className="font-body text-[16px] md:text-[17px] leading-[1.65] font-normal italic"
                 style={{ color: 'hsl(215, 18%, 72%)' }}
               >
-                We founded Resonance Labs to bridge that distance: to translate expertise into action and to protect the simple, necessary idea that truth must endure.
+                We do not work to make science louder for the sake of it. We work to help it remain legible, credible, and alive in the world it actually enters.
               </p>
             </div>
           </motion.div>
