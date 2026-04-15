@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Raleway:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Raleway:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,49 +6,50 @@
 
 @layer base {
   :root {
-    --background: 220 30% 6%;
+    /* ── Deep burgundy / oxblood palette — matched to NoBull ── */
+    --background: 340 45% 10%;
     --foreground: 35 25% 88%;
 
-    --card: 220 25% 10%;
+    --card: 340 38% 15%;
     --card-foreground: 35 25% 88%;
 
-    --popover: 220 25% 10%;
+    --popover: 340 38% 15%;
     --popover-foreground: 35 25% 88%;
 
-    --primary: 30 15% 68%;
-    --primary-foreground: 220 30% 6%;
+    --primary: 340 42% 25%;
+    --primary-foreground: 35 25% 92%;
 
-    --secondary: 220 20% 16%;
+    --secondary: 340 30% 16%;
     --secondary-foreground: 35 20% 82%;
 
-    --muted: 220 18% 14%;
-    --muted-foreground: 30 10% 52%;
+    --muted: 340 25% 17%;
+    --muted-foreground: 340 12% 48%;
 
-    --accent: 220 25% 18%;
-    --accent-foreground: 35 25% 88%;
+    --accent: 30 15% 68%;
+    --accent-foreground: 340 45% 10%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 5 55% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 18%;
-    --input: 220 20% 18%;
+    --border: 340 22% 20%;
+    --input: 340 22% 20%;
     --ring: 30 15% 68%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 220 25% 8%;
+    --sidebar-background: 340 38% 12%;
     --sidebar-foreground: 35 20% 82%;
     --sidebar-primary: 30 15% 68%;
-    --sidebar-primary-foreground: 220 30% 6%;
-    --sidebar-accent: 220 20% 14%;
+    --sidebar-primary-foreground: 340 45% 10%;
+    --sidebar-accent: 340 25% 17%;
     --sidebar-accent-foreground: 35 20% 82%;
-    --sidebar-border: 220 20% 16%;
+    --sidebar-border: 340 22% 20%;
     --sidebar-ring: 30 15% 68%;
 
-    /* Named colours — aligned with NoBull */
-    --cosmic-deep: 220 35% 4%;
-    --cosmic-navy: 220 30% 8%;
-    --cosmic-mid: 220 25% 14%;
+    /* Named colours — NoBull system */
+    --burgundy: 340 45% 10%;
+    --burgundy-mid: 340 38% 15%;
+    --burgundy-light: 340 30% 20%;
 
     --ivory: 35 25% 88%;
     --ivory-dim: 35 15% 55%;
@@ -59,18 +60,14 @@
     --brass-soft: 30 10% 22%;
     --brass-glow: 30 18% 78%;
 
-    --oxblood: 340 45% 12%;
-    --oxblood-mid: 340 38% 16%;
-    --oxblood-light: 340 30% 20%;
-    --oxblood-glow: 340 40% 25%;
+    --wine: 348 45% 28%;
+    --wine-deep: 348 50% 18%;
+    --wine-glow: 348 35% 42%;
 
     --teal-deep: 170 30% 9%;
-    --teal-mid: 170 22% 13%;
 
-    --warm-light: 35 22% 88%;
-
-    --glass-bg: 220 25% 12%;
-    --glass-border: 220 20% 22%;
+    --glass-bg: 340 25% 14%;
+    --glass-border: 340 22% 22%;
   }
 }
 
@@ -80,71 +77,59 @@
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Raleway', sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
   }
 
   h1, h2, h3, h4, h5 {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
   }
 }
 
-/* Kill italics globally — matches NoBull */
+/* Kill italics globally */
 em, i, cite, address, dfn, var {
   font-style: normal;
 }
 
 @layer components {
-  .glass-card {
-    background: hsl(var(--glass-bg) / 0.6);
-    backdrop-filter: blur(20px);
-    border: 1px solid hsl(var(--glass-border) / 0.4);
-  }
-
   .glass-nav {
-    background: hsl(var(--cosmic-deep) / 0.8);
+    background: hsl(var(--burgundy) / 0.85);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid hsl(var(--glass-border) / 0.3);
-  }
-
-  .text-gold {
-    color: hsl(var(--primary));
   }
 
   .text-cream {
     color: hsl(var(--ivory));
   }
 
-  .bg-cosmic-deep {
-    background-color: hsl(var(--cosmic-deep));
+  .bg-burgundy {
+    background-color: hsl(var(--burgundy));
   }
 
-  .bg-cosmic-navy {
-    background-color: hsl(var(--cosmic-navy));
+  .bg-burgundy-mid {
+    background-color: hsl(var(--burgundy-mid));
   }
 
-  .bg-oxblood {
-    background-color: hsl(var(--oxblood));
+  .bg-burgundy-light {
+    background-color: hsl(var(--burgundy-light));
   }
 
-  .bg-oxblood-mid {
-    background-color: hsl(var(--oxblood-mid));
+  .bg-parchment {
+    background-color: hsl(var(--parchment));
+  }
+
+  .bg-ivory-warm {
+    background-color: hsl(var(--ivory-warm));
+  }
+
+  .bg-wine-deep {
+    background-color: hsl(var(--wine-deep));
   }
 
   .bg-teal-deep {
     background-color: hsl(var(--teal-deep));
-  }
-
-  .bg-warm-light {
-    background-color: hsl(var(--warm-light));
-  }
-
-  .gradient-cosmic {
-    background-color: hsl(var(--cosmic-navy));
-  }
-
-  .section-divider {
-    border-top: 1px solid hsl(var(--glass-border) / 0.5);
   }
 
   .editorial-rule {
@@ -159,6 +144,10 @@ em, i, cite, address, dfn, var {
 
   .section-padding {
     @apply px-6 md:px-12 lg:px-20 xl:px-32;
+  }
+
+  .section-divider {
+    border-top: 1px solid hsl(var(--glass-border) / 0.4);
   }
 
   @keyframes float {
