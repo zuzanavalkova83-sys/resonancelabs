@@ -21,22 +21,29 @@ const HeroSection = () => {
         }}
       />
 
-      {/* Wine accent circle — NoBull style */}
+      {/* Hot pink accent circle — shared with NoBull */}
       <motion.div
         className="absolute pointer-events-none hidden md:block"
-        initial={{ scale: 0.8, opacity: 0 }}
+        initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
-        style={{
-          width: '280px',
-          height: '280px',
-          top: '12%',
-          right: '6%',
-          borderRadius: '50%',
-          background: 'hsl(var(--wine))',
-          boxShadow: '0 20px 80px -10px hsl(var(--wine) / 0.4)',
-        }}
-      />
+        transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        style={{ top: '12%', right: '6%' }}
+      >
+        <motion.div
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <div
+            style={{
+              width: '280px',
+              height: '280px',
+              borderRadius: '50%',
+              background: 'hsl(340 75% 55%)',
+              boxShadow: '0 20px 60px -10px hsl(340 75% 55% / 0.35)',
+            }}
+          />
+        </motion.div>
+      </motion.div>
 
       {/* Small brass dot accent */}
       <motion.div
