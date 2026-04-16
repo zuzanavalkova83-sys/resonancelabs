@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 
 const HeroSection = () => {
   const glitch = useGlitch(9000, 800, 2500);
-  const letterGlitch = useGlitch(12000, 600, 4000);
   const [dotGlitch, setDotGlitch] = useState(false);
 
   useEffect(() => {
@@ -19,8 +18,12 @@ const HeroSection = () => {
     return () => { clearTimeout(first); clearInterval(interval); };
   }, []);
 
-  // Giant letters for the right side typographic sculpture
-  const letters = ["R", "L"];
+  // Orbital ring config
+  const rings = [
+    { r: 140, duration: 20, dots: 3, delay: 0.6, opacity: 0.15, dotSize: 4 },
+    { r: 100, duration: 14, dots: 2, delay: 0.9, opacity: 0.1, dotSize: 3, reverse: true },
+    { r: 60, duration: 10, dots: 1, delay: 1.2, opacity: 0.08, dotSize: 3 },
+  ];
 
   return (
     <header id="hero" className="relative w-full bg-background overflow-hidden">
@@ -38,7 +41,7 @@ const HeroSection = () => {
 
           {/* ── Left: Title stack ── */}
           <div className="relative">
-            {/* Pink dot — tucked into the title */}
+            {/* Pink dot */}
             <motion.div
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -118,72 +121,154 @@ const HeroSection = () => {
             </motion.p>
           </div>
 
-          {/* ── Right: Typographic sculpture ── */}
-          <div className="relative hidden md:flex items-center justify-center overflow-hidden">
-            {/* Giant stacked monogram */}
-            <div className="relative" style={{ height: '420px', width: '100%' }}>
-              {letters.map((letter, i) => (
+          {/* ── Right: Resonance orbital ── */}
+          <div className="relative hidden md:flex items-center justify-center" style={{ minHeight: '420px' }}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="relative"
+              style={{ width: '320px', height: '320px' }}
+            >
+              {/* Orbital rings */}
+              {rings.map((ring, ri) => (
                 <motion.div
-                  key={letter}
-                  initial={{ opacity: 0, y: 60 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.6 + i * 0.15, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute font-display select-none"
-                  style={{
-                    fontSize: i === 0 ? '22rem' : '18rem',
-                    lineHeight: 0.8,
-                    right: i === 0 ? '10%' : '0%',
-                    top: i === 0 ? '-2rem' : '8rem',
-                    color: 'transparent',
-                    WebkitTextStroke: i === 0
-                      ? '1px hsl(var(--brass) / 0.12)'
-                      : '1px hsl(var(--brass) / 0.08)',
-                    letterSpacing: '-0.04em',
-                    ...(letterGlitch && i === 0 ? {
-                      WebkitTextStroke: '1px hsl(340 75% 55% / 0.2)',
-                      textShadow: '3px 0 hsl(340 75% 55% / 0.08), -3px 0 hsl(180 80% 50% / 0.06)',
-                      transform: 'translate(2px, -1px)',
-                    } : {}),
-                  }}
+                  key={ri}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: ring.delay }}
+                  className="absolute inset-0 flex items-center justify-center"
                 >
-                  {letter}
+                  {/* Ring circle */}
+                  <div
+                    className="absolute rounded-full"
+                    style={{
+                      width: ring.r * 2,
+                      height: ring.r * 2,
+                      border: `1px solid hsl(var(--brass) / ${ring.opacity})`,
+                    }}
+                  />
+                  {/* Rotating dots on this ring */}
+                  <motion.div
+                    animate={{ rotate: ring.reverse ? -360 : 360 }}
+                    transition={{ duration: ring.duration, repeat: Infinity, ease: "linear" }}
+                    className="absolute"
+                    style={{ width: ring.r * 2, height: ring.r * 2 }}
+                  >
+                    {Array.from({ length: ring.dots }).map((_, di) => {
+                      const angle = (di / ring.dots) * 360;
+                      const rad = (angle * Math.PI) / 180;
+                      const x = Math.cos(rad) * ring.r;
+                      const y = Math.sin(rad) * ring.r;
+                      const isPink = ri === 0 && di === 0;
+                      return (
+                        <motion.div
+                          key={di}
+                          className="absolute rounded-full"
+                          style={{
+                            width: ring.dotSize + (isPink ? 2 : 0),
+                            height: ring.dotSize + (isPink ? 2 : 0),
+                            left: `calc(50% + ${x}px - ${(ring.dotSize + (isPink ? 2 : 0)) / 2}px)`,
+                            top: `calc(50% + ${y}px - ${(ring.dotSize + (isPink ? 2 : 0)) / 2}px)`,
+                            background: isPink
+                              ? 'hsl(340 75% 55%)'
+                              : 'hsl(var(--brass))',
+                            boxShadow: isPink
+                              ? '0 0 12px 3px hsl(340 75% 55% / 0.5)'
+                              : `0 0 8px 2px hsl(var(--brass) / 0.3)`,
+                          }}
+                          animate={isPink ? {
+                            boxShadow: [
+                              '0 0 12px 3px hsl(340 75% 55% / 0.5)',
+                              '0 0 20px 6px hsl(340 75% 55% / 0.7)',
+                              '0 0 12px 3px hsl(340 75% 55% / 0.5)',
+                            ],
+                          } : undefined}
+                          transition={isPink ? { duration: 2, repeat: Infinity, ease: "easeInOut" } : undefined}
+                        />
+                      );
+                    })}
+                  </motion.div>
                 </motion.div>
               ))}
 
-              {/* Floating label anchored to the monogram */}
+              {/* Core — pulsing glow */}
+              <motion.div
+                className="absolute rounded-full"
+                style={{
+                  width: 10,
+                  height: 10,
+                  left: 'calc(50% - 5px)',
+                  top: 'calc(50% - 5px)',
+                  background: 'hsl(var(--brass))',
+                }}
+                animate={{
+                  boxShadow: [
+                    '0 0 15px 4px hsl(var(--brass) / 0.3)',
+                    '0 0 30px 8px hsl(var(--brass) / 0.5)',
+                    '0 0 15px 4px hsl(var(--brass) / 0.3)',
+                  ],
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              />
+
+              {/* Core label */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 1.2 }}
-                className="absolute"
-                style={{ bottom: '3rem', left: '15%' }}
+                transition={{ delay: 1.6, duration: 0.8 }}
+                className="absolute text-center"
+                style={{ top: 'calc(50% + 16px)', left: '50%', transform: 'translateX(-50%)' }}
               >
-                <div className="flex items-center gap-4 mb-3">
-                  <div className="w-8 h-[1px]" style={{ background: 'hsl(var(--brass) / 0.3)' }} />
-                  <p className="font-mono text-[10px] tracking-[0.25em] uppercase" style={{ color: 'hsl(var(--brass) / 0.4)' }}>
-                    Est. 2025
-                  </p>
-                </div>
-                <p className="text-[13px] leading-relaxed max-w-[22ch]" style={{ color: 'hsl(var(--foreground) / 0.2)' }}>
-                  Where expertise meets understanding
+                <p className="font-mono text-[9px] tracking-[0.3em] uppercase whitespace-nowrap" style={{ color: 'hsl(var(--brass) / 0.4)' }}>
+                  Resonance
                 </p>
               </motion.div>
 
-              {/* Thin horizontal rule cutting through the letters */}
+              {/* Crosshair lines */}
+              <motion.div
+                initial={{ scaleY: 0 }}
+                animate={{ scaleY: 1 }}
+                transition={{ duration: 0.8, delay: 1.3 }}
+                className="absolute origin-center"
+                style={{
+                  width: '1px',
+                  height: '100%',
+                  left: 'calc(50% - 0.5px)',
+                  background: 'linear-gradient(to bottom, transparent, hsl(var(--brass) / 0.08), transparent)',
+                }}
+              />
               <motion.div
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
-                transition={{ duration: 1.2, delay: 1, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute origin-left"
+                transition={{ duration: 0.8, delay: 1.4 }}
+                className="absolute origin-center"
                 style={{
-                  top: '55%',
-                  left: '5%',
-                  right: '5%',
                   height: '1px',
-                  background: 'linear-gradient(to right, hsl(var(--brass) / 0.2), hsl(340 75% 55% / 0.15), transparent)',
+                  width: '100%',
+                  top: 'calc(50% - 0.5px)',
+                  background: 'linear-gradient(to right, transparent, hsl(var(--brass) / 0.08), transparent)',
                 }}
               />
-            </div>
+
+              {/* Corner coordinates */}
+              {[
+                { pos: { top: 0, right: 0 }, label: '48°N' },
+                { pos: { bottom: 0, left: 0 }, label: '16°E' },
+              ].map((c, i) => (
+                <motion.p
+                  key={i}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1.8 + i * 0.1, duration: 0.6 }}
+                  className="absolute font-mono text-[9px] tracking-[0.2em]"
+                  style={{ ...c.pos, color: 'hsl(var(--brass) / 0.25)' }}
+                >
+                  {c.label}
+                </motion.p>
+              ))}
+            </motion.div>
           </div>
         </div>
       </div>
