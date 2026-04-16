@@ -330,30 +330,30 @@ const HeroSection = () => {
                 </>
               )}
 
-              {/* Core label */}
+              {/* Core label — MEANING */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.6, duration: 0.8 }}
-                className="absolute text-center"
+                className="absolute"
                 style={{
-                  top: 'calc(50% + 16px)',
+                  top: '50%',
                   left: '50%',
                   transform: shockwave
-                    ? 'translateX(-50%) translate(3px, -1px)'
-                    : 'translateX(-50%)',
+                    ? 'translate(-50%, -50%) translate(3px, -1px)'
+                    : 'translate(-50%, -50%)',
                   transition: shockwave ? 'none' : 'transform 0.4s',
                 }}
               >
                 <p
-                  className="font-mono text-[9px] tracking-[0.3em] uppercase whitespace-nowrap"
+                  className="font-display text-[13px] tracking-[0.15em] uppercase whitespace-nowrap"
                   style={{
-                    color: shockwave ? 'hsl(340 75% 55% / 0.6)' : 'hsl(var(--brass) / 0.4)',
-                    textShadow: shockwave ? '2px 0 hsl(340 75% 55% / 0.3), -2px 0 hsl(180 80% 50% / 0.2)' : 'none',
+                    color: shockwave ? 'hsl(340 75% 55% / 0.9)' : 'hsl(var(--brass) / 0.6)',
+                    textShadow: shockwave ? '2px 0 hsl(340 75% 55% / 0.4), -2px 0 hsl(180 80% 50% / 0.3)' : '0 0 20px hsl(var(--brass) / 0.2)',
                     transition: shockwave ? 'none' : 'color 0.6s, text-shadow 0.6s',
                   }}
                 >
-                  Resonance
+                  meaning
                 </p>
               </motion.div>
 
