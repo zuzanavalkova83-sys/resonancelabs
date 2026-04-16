@@ -146,14 +146,68 @@ const HeroSection = () => {
               className="relative"
               style={{ width: '320px', height: '320px' }}
             >
-              {/* Orbital rings */}
+              {/* Shockwave expanding rings */}
+              {shockwave && (
+                <>
+                  {[0, 150, 300].map((delayMs, i) => (
+                    <motion.div
+                      key={`shock-${shockCount}-${i}`}
+                      className="absolute rounded-full pointer-events-none"
+                      style={{
+                        left: 'calc(50% - 8px)',
+                        top: 'calc(50% - 8px)',
+                        width: 16,
+                        height: 16,
+                        border: '1.5px solid hsl(340 75% 55% / 0.6)',
+                        boxShadow: '0 0 8px 2px hsl(340 75% 55% / 0.15), inset 0 0 8px 2px hsl(180 80% 50% / 0.08)',
+                      }}
+                      initial={{ scale: 1, opacity: 0.8 }}
+                      animate={{ scale: 25, opacity: 0 }}
+                      transition={{
+                        duration: 1.0,
+                        delay: delayMs / 1000,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
+                    />
+                  ))}
+                  {/* Horizontal glitch slash */}
+                  <motion.div
+                    key={`slash-${shockCount}`}
+                    className="absolute pointer-events-none"
+                    style={{
+                      top: 'calc(50% - 1px)',
+                      left: '-20%',
+                      right: '-20%',
+                      height: '2px',
+                      background: 'linear-gradient(to right, transparent 10%, hsl(340 75% 55% / 0.5) 30%, hsl(180 80% 50% / 0.3) 50%, hsl(340 75% 55% / 0.5) 70%, transparent 90%)',
+                    }}
+                    initial={{ scaleX: 0, opacity: 1 }}
+                    animate={{ scaleX: 1, opacity: 0 }}
+                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                  />
+                </>
+              )}
+
+              {/* Orbital rings — distort on shockwave */}
               {rings.map((ring, ri) => (
                 <motion.div
                   key={ri}
                   initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: ring.delay }}
+                  animate={{
+                    opacity: 1,
+                    scale: shockwave ? 1 + (0.08 * (3 - ri)) : 1,
+                  }}
+                  transition={shockwave
+                    ? { scale: { duration: 0.15, ease: "easeOut" } }
+                    : { duration: 0.8, delay: ring.delay }
+                  }
                   className="absolute inset-0 flex items-center justify-center"
+                  style={{
+                    filter: shockwave
+                      ? `hue-rotate(${ri * 15}deg) brightness(1.3)`
+                      : 'none',
+                    transition: shockwave ? 'filter 0.1s' : 'filter 0.8s ease-out',
+                  }}
                 >
                   {/* Ring circle */}
                   <div
@@ -161,7 +215,13 @@ const HeroSection = () => {
                     style={{
                       width: ring.r * 2,
                       height: ring.r * 2,
-                      border: `1px solid hsl(var(--brass) / ${ring.opacity})`,
+                      border: shockwave
+                        ? `1px solid hsl(340 75% 55% / ${ring.opacity * 2.5})`
+                        : `1px solid hsl(var(--brass) / ${ring.opacity})`,
+                      transition: shockwave ? 'border-color 0.1s' : 'border-color 0.6s ease-out',
+                      transform: shockwave
+                        ? `translate(${(ri - 1) * 3}px, ${(ri - 1) * -2}px)`
+                        : 'none',
                     }}
                   />
                   {/* Rotating dots on this ring */}
@@ -188,10 +248,13 @@ const HeroSection = () => {
                             top: `calc(50% + ${y}px - ${(ring.dotSize + (isPink ? 2 : 0)) / 2}px)`,
                             background: isPink
                               ? 'hsl(340 75% 55%)'
-                              : 'hsl(var(--brass))',
+                              : shockwave ? 'hsl(340 75% 55% / 0.7)' : 'hsl(var(--brass))',
                             boxShadow: isPink
                               ? '0 0 12px 3px hsl(340 75% 55% / 0.5)'
-                              : `0 0 8px 2px hsl(var(--brass) / 0.3)`,
+                              : shockwave
+                                ? '0 0 12px 3px hsl(340 75% 55% / 0.3)'
+                                : '0 0 8px 2px hsl(var(--brass) / 0.3)',
+                            transition: shockwave ? 'none' : 'background 0.6s, box-shadow 0.6s',
                           }}
                           animate={isPink ? {
                             boxShadow: [
@@ -208,7 +271,7 @@ const HeroSection = () => {
                 </motion.div>
               ))}
 
-              {/* Core — pulsing glow */}
+              {/* Core — pulsing glow, flares on shockwave */}
               <motion.div
                 className="absolute rounded-full"
                 style={{
@@ -216,18 +279,56 @@ const HeroSection = () => {
                   height: 10,
                   left: 'calc(50% - 5px)',
                   top: 'calc(50% - 5px)',
-                  background: 'hsl(var(--brass))',
+                  background: shockwave ? 'hsl(340 75% 65%)' : 'hsl(var(--brass))',
+                  transition: shockwave ? 'none' : 'background 0.6s',
                 }}
                 animate={{
-                  boxShadow: [
-                    '0 0 15px 4px hsl(var(--brass) / 0.3)',
-                    '0 0 30px 8px hsl(var(--brass) / 0.5)',
-                    '0 0 15px 4px hsl(var(--brass) / 0.3)',
-                  ],
-                  scale: [1, 1.2, 1],
+                  boxShadow: shockwave
+                    ? [
+                        '0 0 30px 10px hsl(340 75% 55% / 0.6)',
+                        '0 0 50px 15px hsl(340 75% 55% / 0.8)',
+                        '0 0 30px 10px hsl(340 75% 55% / 0.6)',
+                      ]
+                    : [
+                        '0 0 15px 4px hsl(var(--brass) / 0.3)',
+                        '0 0 30px 8px hsl(var(--brass) / 0.5)',
+                        '0 0 15px 4px hsl(var(--brass) / 0.3)',
+                      ],
+                  scale: shockwave ? [1, 1.8, 1] : [1, 1.2, 1],
                 }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: shockwave ? 0.4 : 3, repeat: Infinity, ease: "easeInOut" }}
               />
+
+              {/* Chromatic split glitch lines — only during shockwave */}
+              {shockwave && (
+                <>
+                  {[...Array(5)].map((_, i) => {
+                    const y = (Math.random() - 0.5) * 280;
+                    return (
+                      <motion.div
+                        key={`glitch-line-${shockCount}-${i}`}
+                        className="absolute pointer-events-none"
+                        style={{
+                          top: `calc(50% + ${y}px)`,
+                          left: 0,
+                          right: 0,
+                          height: `${1 + Math.random() * 2}px`,
+                          background: i % 2 === 0
+                            ? 'hsl(340 75% 55% / 0.25)'
+                            : 'hsl(180 80% 50% / 0.15)',
+                        }}
+                        initial={{ scaleX: 0, opacity: 1 }}
+                        animate={{ scaleX: [0, 1, 0], opacity: [0, 1, 0] }}
+                        transition={{
+                          duration: 0.3 + Math.random() * 0.3,
+                          delay: Math.random() * 0.3,
+                          ease: "easeOut",
+                        }}
+                      />
+                    );
+                  })}
+                </>
+              )}
 
               {/* Core label */}
               <motion.div
@@ -235,9 +336,23 @@ const HeroSection = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.6, duration: 0.8 }}
                 className="absolute text-center"
-                style={{ top: 'calc(50% + 16px)', left: '50%', transform: 'translateX(-50%)' }}
+                style={{
+                  top: 'calc(50% + 16px)',
+                  left: '50%',
+                  transform: shockwave
+                    ? 'translateX(-50%) translate(3px, -1px)'
+                    : 'translateX(-50%)',
+                  transition: shockwave ? 'none' : 'transform 0.4s',
+                }}
               >
-                <p className="font-mono text-[9px] tracking-[0.3em] uppercase whitespace-nowrap" style={{ color: 'hsl(var(--brass) / 0.4)' }}>
+                <p
+                  className="font-mono text-[9px] tracking-[0.3em] uppercase whitespace-nowrap"
+                  style={{
+                    color: shockwave ? 'hsl(340 75% 55% / 0.6)' : 'hsl(var(--brass) / 0.4)',
+                    textShadow: shockwave ? '2px 0 hsl(340 75% 55% / 0.3), -2px 0 hsl(180 80% 50% / 0.2)' : 'none',
+                    transition: shockwave ? 'none' : 'color 0.6s, text-shadow 0.6s',
+                  }}
+                >
                   Resonance
                 </p>
               </motion.div>
@@ -252,7 +367,10 @@ const HeroSection = () => {
                   width: '1px',
                   height: '100%',
                   left: 'calc(50% - 0.5px)',
-                  background: 'linear-gradient(to bottom, transparent, hsl(var(--brass) / 0.08), transparent)',
+                  background: shockwave
+                    ? 'linear-gradient(to bottom, transparent, hsl(340 75% 55% / 0.2), transparent)'
+                    : 'linear-gradient(to bottom, transparent, hsl(var(--brass) / 0.08), transparent)',
+                  transition: shockwave ? 'none' : 'background 0.6s',
                 }}
               />
               <motion.div
@@ -264,7 +382,10 @@ const HeroSection = () => {
                   height: '1px',
                   width: '100%',
                   top: 'calc(50% - 0.5px)',
-                  background: 'linear-gradient(to right, transparent, hsl(var(--brass) / 0.08), transparent)',
+                  background: shockwave
+                    ? 'linear-gradient(to right, transparent, hsl(340 75% 55% / 0.2), transparent)'
+                    : 'linear-gradient(to right, transparent, hsl(var(--brass) / 0.08), transparent)',
+                  transition: shockwave ? 'none' : 'background 0.6s',
                 }}
               />
 
