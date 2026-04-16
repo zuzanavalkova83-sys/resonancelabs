@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 const HeroSection = () => {
   const glitch = useGlitch(9000, 800, 2500);
   const [dotGlitch, setDotGlitch] = useState(false);
+  const [shockwave, setShockwave] = useState(false);
+  const [shockCount, setShockCount] = useState(0);
 
   useEffect(() => {
     const trigger = () => {
@@ -16,6 +18,20 @@ const HeroSection = () => {
       if (Math.random() > 0.4) trigger();
     }, 7000);
     return () => { clearTimeout(first); clearInterval(interval); };
+  }, []);
+
+  // Shockwave: fires every 6-10s, lasts 1.2s
+  useEffect(() => {
+    const fire = () => {
+      setShockwave(true);
+      setShockCount(c => c + 1);
+      setTimeout(() => setShockwave(false), 1200);
+    };
+    const first = setTimeout(fire, 3500);
+    const loop = setInterval(() => {
+      if (Math.random() > 0.3) fire();
+    }, 8000);
+    return () => { clearTimeout(first); clearInterval(loop); };
   }, []);
 
   // Orbital ring config
