@@ -2,14 +2,9 @@ import { motion } from "framer-motion";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
 import { useState, useEffect } from "react";
 
-const signals = [
-  { code: "S01", label: "Narrative Strategy", desc: "Shaping how research enters public conversation." },
-  { code: "S02", label: "Distortion Mapping", desc: "Tracking how findings get twisted between lab and headline." },
-  { code: "S03", label: "Clarity Under Pressure", desc: "Holding meaning steady when the stakes are high." },
-];
-
 const HeroSection = () => {
   const glitch = useGlitch(9000, 800, 2500);
+  const letterGlitch = useGlitch(12000, 600, 4000);
   const [dotGlitch, setDotGlitch] = useState(false);
 
   useEffect(() => {
@@ -24,6 +19,9 @@ const HeroSection = () => {
     return () => { clearTimeout(first); clearInterval(interval); };
   }, []);
 
+  // Giant letters for the right side typographic sculpture
+  const letters = ["R", "L"];
+
   return (
     <header id="hero" className="relative w-full bg-background overflow-hidden">
       {/* Noise texture */}
@@ -36,7 +34,7 @@ const HeroSection = () => {
       />
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center min-h-[85vh] gap-12 md:gap-16 pt-20 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center min-h-[85vh] gap-12 md:gap-0 pt-20 pb-16">
 
           {/* ── Left: Title stack ── */}
           <div className="relative">
@@ -120,62 +118,73 @@ const HeroSection = () => {
             </motion.p>
           </div>
 
-          {/* ── Right: Signal cards ── */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="relative"
-          >
-            {/* Vertical line accent */}
-            <div
-              className="absolute left-0 top-0 bottom-0 w-[1px] hidden md:block"
-              style={{ background: 'linear-gradient(to bottom, transparent, hsl(var(--brass) / 0.15), transparent)' }}
-            />
-
-            <div className="md:pl-10 space-y-0">
-              {signals.map((s, i) => (
+          {/* ── Right: Typographic sculpture ── */}
+          <div className="relative hidden md:flex items-center justify-center overflow-hidden">
+            {/* Giant stacked monogram */}
+            <div className="relative" style={{ height: '420px', width: '100%' }}>
+              {letters.map((letter, i) => (
                 <motion.div
-                  key={s.code}
-                  initial={{ opacity: 0, x: 16 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 1 + i * 0.1 }}
-                  className="relative py-6 first:pt-0 last:pb-0"
+                  key={letter}
+                  initial={{ opacity: 0, y: 60 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 0.6 + i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute font-display select-none"
+                  style={{
+                    fontSize: i === 0 ? '22rem' : '18rem',
+                    lineHeight: 0.8,
+                    right: i === 0 ? '10%' : '0%',
+                    top: i === 0 ? '-2rem' : '8rem',
+                    color: 'transparent',
+                    WebkitTextStroke: i === 0
+                      ? '1px hsl(var(--brass) / 0.12)'
+                      : '1px hsl(var(--brass) / 0.08)',
+                    letterSpacing: '-0.04em',
+                    ...(letterGlitch && i === 0 ? {
+                      WebkitTextStroke: '1px hsl(340 75% 55% / 0.2)',
+                      textShadow: '3px 0 hsl(340 75% 55% / 0.08), -3px 0 hsl(180 80% 50% / 0.06)',
+                      transform: 'translate(2px, -1px)',
+                    } : {}),
+                  }}
                 >
-                  {i < signals.length - 1 && (
-                    <div
-                      className="absolute bottom-0 left-0 right-0 h-[1px]"
-                      style={{ background: 'hsl(var(--border) / 0.2)' }}
-                    />
-                  )}
-                  <p
-                    className="font-mono text-[10px] tracking-[0.25em] uppercase mb-2"
-                    style={{ color: 'hsl(var(--brass) / 0.5)' }}
-                  >
-                    {s.code}
-                  </p>
-                  <h3 className="font-heading text-[15px] font-medium leading-snug text-foreground/90 mb-1">
-                    {s.label}
-                  </h3>
-                  <p
-                    className="text-[13px] leading-relaxed"
-                    style={{ color: 'hsl(var(--muted-foreground))' }}
-                  >
-                    {s.desc}
-                  </p>
+                  {letter}
                 </motion.div>
               ))}
-            </div>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1.4 }}
-              className="text-[10px] font-mono tracking-[0.25em] uppercase text-foreground/10 mt-10 md:pl-10"
-            >
-              Where expertise meets understanding
-            </motion.p>
-          </motion.div>
+              {/* Floating label anchored to the monogram */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 1.2 }}
+                className="absolute"
+                style={{ bottom: '3rem', left: '15%' }}
+              >
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="w-8 h-[1px]" style={{ background: 'hsl(var(--brass) / 0.3)' }} />
+                  <p className="font-mono text-[10px] tracking-[0.25em] uppercase" style={{ color: 'hsl(var(--brass) / 0.4)' }}>
+                    Est. 2025
+                  </p>
+                </div>
+                <p className="text-[13px] leading-relaxed max-w-[22ch]" style={{ color: 'hsl(var(--foreground) / 0.2)' }}>
+                  Where expertise meets understanding
+                </p>
+              </motion.div>
+
+              {/* Thin horizontal rule cutting through the letters */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 1.2, delay: 1, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute origin-left"
+                style={{
+                  top: '55%',
+                  left: '5%',
+                  right: '5%',
+                  height: '1px',
+                  background: 'linear-gradient(to right, hsl(var(--brass) / 0.2), hsl(340 75% 55% / 0.15), transparent)',
+                }}
+              />
+            </div>
+          </div>
         </div>
       </div>
 
