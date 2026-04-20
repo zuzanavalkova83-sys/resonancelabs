@@ -110,22 +110,46 @@ const HeroSection = () => {
               className="relative"
               style={{ width: '520px', height: '520px' }}
             >
-              {/* Soft pink halo */}
+              {/* ── Pink dot — sun/moon behind the trio, anchoring the composition ── */}
               <motion.div
+                initial={{ scale: 0.6, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 className="absolute pointer-events-none"
-                initial={{ opacity: 0, scale: 0.7 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.8, delay: 0.6 }}
                 style={{
-                  width: '420px',
-                  height: '420px',
+                  width: '210px',
+                  height: '210px',
                   left: '50%',
-                  top: '46%',
-                  transform: 'translate(-50%, -50%)',
-                  background: 'radial-gradient(circle, hsl(340 75% 55% / 0.10) 0%, transparent 65%)',
-                  filter: 'blur(28px)',
+                  top: '14%',
+                  transform: 'translateX(-50%)',
+                  zIndex: 0,
                 }}
-              />
+              >
+                {/* Outer soft halo */}
+                <div
+                  className="absolute inset-0 rounded-full"
+                  style={{
+                    background: 'radial-gradient(circle, hsl(340 75% 55% / 0.28) 0%, hsl(340 75% 55% / 0.06) 55%, transparent 75%)',
+                    filter: 'blur(24px)',
+                    transform: 'scale(1.6)',
+                  }}
+                />
+                {/* The disc itself */}
+                <motion.div
+                  animate={{ y: [0, -4, 0], scale: [1, 1.02, 1] }}
+                  transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+                  className="absolute inset-0 rounded-full"
+                  style={{
+                    background: 'radial-gradient(circle at 35% 30%, hsl(340 80% 62%) 0%, hsl(340 75% 50%) 60%, hsl(340 70% 38%) 100%)',
+                    boxShadow: '0 20px 60px -10px hsl(340 75% 55% / 0.45), inset -10px -20px 40px hsl(340 60% 25% / 0.4)',
+                    transition: dotGlitch ? 'none' : 'transform 0.3s, box-shadow 0.3s',
+                    ...(dotGlitch ? {
+                      transform: 'translate(3px, -2px)',
+                      boxShadow: '4px 0 30px -4px hsl(340 75% 55% / 0.5), -4px 0 30px -4px hsl(180 80% 50% / 0.25), inset -10px -20px 40px hsl(340 60% 25% / 0.4)',
+                    } : {}),
+                  }}
+                />
+              </motion.div>
 
               {/* Single brass hairline anchoring the shoulder-line of the trio */}
               <motion.div
@@ -135,8 +159,8 @@ const HeroSection = () => {
                 className="absolute origin-left pointer-events-none"
                 style={{
                   height: '1px',
-                  left: '8%',
-                  right: '8%',
+                  left: '12%',
+                  right: '12%',
                   bottom: '16%',
                   background:
                     'linear-gradient(to right, transparent, hsl(var(--brass) / 0.22) 18%, hsl(var(--brass) / 0.22) 82%, transparent)',
@@ -146,14 +170,14 @@ const HeroSection = () => {
               {/* ── DESPERATIO — back-left, tucked behind Quaestio's left shoulder ── */}
               <motion.div
                 className="absolute pointer-events-none"
-                initial={{ opacity: 0, x: -24, y: 10, scale: 0.94 }}
-                animate={{ opacity: 0.78, x: 0, y: 0, scale: 1 }}
+                initial={{ opacity: 0, x: -16, y: 10, scale: 0.94 }}
+                animate={{ opacity: 0.82, x: 0, y: 0, scale: 1 }}
                 transition={{ duration: 1.4, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
                 style={{
-                  width: '286px',
-                  height: '286px',
-                  left: '4%',
-                  bottom: '7%',
+                  width: '300px',
+                  height: '300px',
+                  left: '14%',
+                  bottom: '8%',
                   zIndex: 1,
                   filter: 'drop-shadow(0 14px 22px hsl(0 0% 0% / 0.4))',
                 }}
@@ -173,14 +197,14 @@ const HeroSection = () => {
               {/* ── DISTORTIO — back-right, tucked behind Quaestio's right shoulder ── */}
               <motion.div
                 className="absolute pointer-events-none"
-                initial={{ opacity: 0, x: 24, y: 6, scale: 0.94 }}
-                animate={{ opacity: 0.88, x: 0, y: 0, scale: 1 }}
+                initial={{ opacity: 0, x: 16, y: 6, scale: 0.94 }}
+                animate={{ opacity: 0.9, x: 0, y: 0, scale: 1 }}
                 transition={{ duration: 1.4, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
                 style={{
-                  width: '286px',
-                  height: '286px',
-                  right: '4%',
-                  bottom: '7%',
+                  width: '300px',
+                  height: '300px',
+                  right: '14%',
+                  bottom: '8%',
                   zIndex: 2,
                   filter: 'drop-shadow(0 14px 24px hsl(0 0% 0% / 0.45))',
                 }}
