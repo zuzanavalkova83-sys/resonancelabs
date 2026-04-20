@@ -177,10 +177,10 @@ const HeroSection = () => {
                 animate={{ opacity: 0.78, x: 0, y: 0, scale: 1 }}
                 transition={{ duration: 1.4, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
                 style={{
-                  width: '300px',
-                  height: '300px',
-                  left: '8%',
-                  bottom: '6%',
+                  width: '286px',
+                  height: '286px',
+                  left: '4%',
+                  bottom: '7%',
                   zIndex: 1,
                   filter: 'drop-shadow(0 14px 22px hsl(0 0% 0% / 0.4))',
                 }}
@@ -204,10 +204,10 @@ const HeroSection = () => {
                 animate={{ opacity: 0.88, x: 0, y: 0, scale: 1 }}
                 transition={{ duration: 1.4, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
                 style={{
-                  width: '300px',
-                  height: '300px',
-                  right: '8%',
-                  bottom: '6%',
+                  width: '286px',
+                  height: '286px',
+                  right: '4%',
+                  bottom: '7%',
                   zIndex: 2,
                   filter: 'drop-shadow(0 14px 24px hsl(0 0% 0% / 0.45))',
                 }}
@@ -264,10 +264,10 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 1.4, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 style={{
-                  width: '420px',
-                  height: '420px',
+                  width: '396px',
+                  height: '396px',
                   left: '50%',
-                  bottom: '2%',
+                  bottom: '3%',
                   transform: 'translateX(-50%)',
                   zIndex: 3,
                   filter: 'drop-shadow(0 22px 32px hsl(0 0% 0% / 0.55))',
