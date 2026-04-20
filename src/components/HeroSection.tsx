@@ -158,31 +158,31 @@ const HeroSection = () => {
               <motion.div
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
-                transition={{ duration: 1.4, delay: 1.6, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 1.2, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
                 className="absolute origin-left pointer-events-none"
                 style={{
                   height: '1px',
-                  left: '4%',
-                  right: '4%',
-                  bottom: '18%',
+                  left: '8%',
+                  right: '8%',
+                  bottom: '16%',
                   background:
                     'linear-gradient(to right, transparent, hsl(var(--brass) / 0.22) 18%, hsl(var(--brass) / 0.22) 82%, transparent)',
                 }}
               />
 
-              {/* ── DESPERATIO — back-left, slightly behind & lower, slowly tilts ── */}
+              {/* ── DESPERATIO — back-left, tucked behind Quaestio's left shoulder ── */}
               <motion.div
                 className="absolute pointer-events-none"
-                initial={{ opacity: 0, x: -30, y: 12, scale: 0.92 }}
-                animate={{ opacity: 0.7, x: 0, y: 0, scale: 1 }}
-                transition={{ duration: 1.8, delay: 2.3, ease: [0.22, 1, 0.36, 1] }}
+                initial={{ opacity: 0, x: -24, y: 10, scale: 0.94 }}
+                animate={{ opacity: 0.78, x: 0, y: 0, scale: 1 }}
+                transition={{ duration: 1.4, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
                 style={{
                   width: '300px',
                   height: '300px',
-                  left: '-2%',
-                  bottom: '8%',
+                  left: '8%',
+                  bottom: '6%',
                   zIndex: 1,
-                  filter: 'drop-shadow(0 14px 22px hsl(0 0% 0% / 0.35))',
+                  filter: 'drop-shadow(0 14px 22px hsl(0 0% 0% / 0.4))',
                 }}
               >
                 <motion.img
@@ -193,23 +193,23 @@ const HeroSection = () => {
                   draggable={false}
                   animate={{ y: [0, 5, 0], rotate: [0, -1.2, 0] }}
                   transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 3.4 }}
-                  style={{ filter: 'grayscale(0.45) brightness(0.82) contrast(1.05)' }}
+                  style={{ filter: 'grayscale(0.4) brightness(0.85) contrast(1.05)' }}
                 />
               </motion.div>
 
-              {/* ── DISTORTIO — back-right, slightly elevated, periodic chromatic glitch ── */}
+              {/* ── DISTORTIO — back-right, tucked behind Quaestio's right shoulder ── */}
               <motion.div
                 className="absolute pointer-events-none"
-                initial={{ opacity: 0, x: 36, y: 6, scale: 0.92 }}
-                animate={{ opacity: 0.85, x: 0, y: 0, scale: 1 }}
-                transition={{ duration: 1.6, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
+                initial={{ opacity: 0, x: 24, y: 6, scale: 0.94 }}
+                animate={{ opacity: 0.88, x: 0, y: 0, scale: 1 }}
+                transition={{ duration: 1.4, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
                 style={{
                   width: '300px',
                   height: '300px',
-                  right: '-4%',
-                  bottom: '8%',
+                  right: '8%',
+                  bottom: '6%',
                   zIndex: 2,
-                  filter: 'drop-shadow(0 14px 24px hsl(0 0% 0% / 0.4))',
+                  filter: 'drop-shadow(0 14px 24px hsl(0 0% 0% / 0.45))',
                 }}
               >
                 {distortGlitch && (
@@ -262,12 +262,12 @@ const HeroSection = () => {
                 className="absolute pointer-events-none"
                 initial={{ opacity: 0, y: 22, scale: 0.94 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 1.4, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 1.4, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 style={{
-                  width: '380px',
-                  height: '380px',
+                  width: '420px',
+                  height: '420px',
                   left: '50%',
-                  bottom: '6%',
+                  bottom: '2%',
                   transform: 'translateX(-50%)',
                   zIndex: 3,
                   filter: 'drop-shadow(0 22px 32px hsl(0 0% 0% / 0.55))',
@@ -288,15 +288,15 @@ const HeroSection = () => {
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 3.2, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 1, delay: 2, ease: [0.22, 1, 0.36, 1] }}
                 className="absolute pointer-events-none"
                 style={{ left: 0, right: 0, bottom: 0 }}
               >
                 <div className="flex items-baseline justify-between px-2">
                   {[
-                    { numeral: 'I', word: 'Quaestio' },
-                    { numeral: 'II', word: 'Distortio' },
-                    { numeral: 'III', word: 'Desperatio' },
+                    { numeral: 'I', word: 'Desperatio' },
+                    { numeral: 'II', word: 'Quaestio' },
+                    { numeral: 'III', word: 'Distortio' },
                   ].map((c, i) => (
                     <div key={c.word} className="flex flex-col items-center gap-1.5" style={{ flex: 1 }}>
                       <span
@@ -315,7 +315,7 @@ const HeroSection = () => {
                           fontSize: '10.5px',
                           letterSpacing: '0.32em',
                           fontWeight: 500,
-                          color: i === 0 ? 'hsl(var(--brass))' : 'hsl(var(--brass) / 0.5)',
+                          color: i === 1 ? 'hsl(var(--brass))' : 'hsl(var(--brass) / 0.5)',
                         }}
                       >
                         {c.word}
