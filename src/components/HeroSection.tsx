@@ -51,33 +51,6 @@ const HeroSection = () => {
 
           {/* ── Left: Title stack ── */}
           <div className="relative">
-            {/* Pink dot */}
-            <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute pointer-events-none z-0"
-              style={{ right: '10%', top: '15%' }}
-            >
-              <motion.div
-                animate={{ y: [0, -5, 0], scale: [1, 1.04, 1] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <div
-                  className="w-20 h-20 sm:w-24 sm:h-24 rounded-full"
-                  style={{
-                    background: 'hsl(340 75% 55%)',
-                    boxShadow: '0 10px 35px -6px hsl(340 75% 55% / 0.4)',
-                    transition: dotGlitch ? 'none' : 'transform 0.3s, box-shadow 0.3s',
-                    ...(dotGlitch ? {
-                      transform: 'translate(4px, -2px) skew(-1.5deg)',
-                      boxShadow: '5px 0 20px -4px hsl(340 75% 55% / 0.5), -5px 0 20px -4px hsl(180 80% 50% / 0.25)',
-                    } : {}),
-                  }}
-                />
-              </motion.div>
-            </motion.div>
-
             <motion.div
               initial={{ opacity: 0, x: -15 }}
               animate={{ opacity: 1, x: 0 }}
