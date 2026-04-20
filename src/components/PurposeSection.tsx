@@ -5,6 +5,110 @@ import bustSocratesTeal from "@/assets/bust-socrates-teal.png";
 import bustGoddessFacepalm from "@/assets/bust-goddess-facepalm.png";
 import bustSocratesTinfoil from "@/assets/bust-socrates-tinfoil.png";
 
+type SpecimenProps = {
+  src: string;
+  numeral: string;
+  latin: string;
+  english: string;
+  note: string;
+  delay: number;
+  isInView: boolean;
+  glitch?: boolean;
+  tall?: boolean;
+  filterStyle?: React.CSSProperties;
+};
+
+const Specimen = ({ src, numeral, latin, english, note, delay, isInView, glitch, tall, filterStyle }: SpecimenProps) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] }}
+      className="relative flex flex-col items-center"
+    >
+      {/* Bust */}
+      <div
+        className="relative flex items-end justify-center w-full"
+        style={{ height: tall ? '260px' : '230px' }}
+      >
+        {/* Chromatic split layers (only visible during glitch) */}
+        {glitch && (
+          <>
+            <img
+              src={src}
+              alt=""
+              aria-hidden
+              className="absolute h-full w-auto object-contain pointer-events-none select-none mix-blend-screen"
+              style={{
+                maxHeight: '100%',
+                opacity: 0.55,
+                transform: 'translate(-3px, 0)',
+                filter: 'brightness(0.6) sepia(1) hue-rotate(280deg) saturate(6)',
+              }}
+              draggable={false}
+            />
+            <img
+              src={src}
+              alt=""
+              aria-hidden
+              className="absolute h-full w-auto object-contain pointer-events-none select-none mix-blend-screen"
+              style={{
+                maxHeight: '100%',
+                opacity: 0.45,
+                transform: 'translate(3px, 0)',
+                filter: 'brightness(0.6) sepia(1) hue-rotate(140deg) saturate(5)',
+              }}
+              draggable={false}
+            />
+          </>
+        )}
+
+        <motion.img
+          src={src}
+          alt={`${english} — ${latin}`}
+          className="relative h-full w-auto object-contain pointer-events-none select-none"
+          style={{ maxHeight: '100%', ...filterStyle }}
+          animate={{ y: [0, -4, 0] }}
+          transition={{ duration: 7 + delay * 3, repeat: Infinity, ease: 'easeInOut' }}
+          draggable={false}
+        />
+      </div>
+
+      {/* Caption */}
+      <div className="relative w-full mt-7 md:mt-9 flex flex-col items-center text-center px-1">
+        {/* Roman numeral above brass dot */}
+        <p
+          className="font-display text-[14px] md:text-[15px] tracking-[0.25em] mb-2"
+          style={{ color: 'hsl(var(--brass) / 0.85)' }}
+        >
+          {numeral}
+        </p>
+        <p
+          className="font-display italic text-[15px] md:text-[18px] tracking-wide leading-tight"
+          style={{
+            color: 'hsl(var(--foreground) / 0.92)',
+            ...(glitch ? { textShadow: '2px 0 hsl(340 75% 55% / 0.6), -2px 0 hsl(180 80% 50% / 0.45)' } : {}),
+          }}
+        >
+          {latin}
+        </p>
+        <p
+          className="font-mono text-[9px] md:text-[10px] tracking-[0.35em] uppercase mt-1.5"
+          style={{ color: 'hsl(30, 15%, 55%)' }}
+        >
+          {english}
+        </p>
+        <p
+          className="hidden md:block font-body text-[12px] leading-[1.55] mt-3 max-w-[180px]"
+          style={{ color: 'hsl(30, 12%, 50%)' }}
+        >
+          {note}
+        </p>
+      </div>
+    </motion.div>
+  );
+};
+
 const PurposeSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
