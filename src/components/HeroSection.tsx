@@ -131,72 +131,58 @@ const HeroSection = () => {
             </motion.p>
           </div>
 
-          {/* ── Right: Three Figures composition ── */}
-          <div className="relative hidden md:flex items-center justify-center" style={{ minHeight: '480px' }}>
+          {/* ── Right: Three Figures — overlapping group ── */}
+          <div className="relative hidden md:flex items-end justify-center" style={{ minHeight: '520px' }}>
             <div
               className="relative"
-              style={{ width: '460px', height: '460px' }}
+              style={{ width: '520px', height: '520px' }}
             >
-              {/* Brass hairline crosshairs — quiet anchor */}
-              <motion.div
-                initial={{ scaleY: 0 }}
-                animate={{ scaleY: 1 }}
-                transition={{ duration: 1.1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute origin-top"
-                style={{
-                  width: '1px',
-                  height: '100%',
-                  left: 'calc(50% - 0.5px)',
-                  background: 'linear-gradient(to bottom, transparent, hsl(var(--brass) / 0.12) 25%, hsl(var(--brass) / 0.12) 75%, transparent)',
-                }}
-              />
-              <motion.div
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 1.3, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute origin-left"
-                style={{
-                  height: '1px',
-                  width: '100%',
-                  bottom: '14%',
-                  background: 'linear-gradient(to right, transparent, hsl(var(--brass) / 0.18) 20%, hsl(var(--brass) / 0.18) 80%, transparent)',
-                }}
-              />
-
-              {/* Soft pink glow halo behind composition */}
+              {/* Soft pink halo */}
               <motion.div
                 className="absolute pointer-events-none"
                 initial={{ opacity: 0, scale: 0.7 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.6, delay: 0.6 }}
+                transition={{ duration: 1.8, delay: 0.6 }}
                 style={{
-                  width: '380px',
-                  height: '380px',
+                  width: '420px',
+                  height: '420px',
                   left: '50%',
-                  top: '52%',
+                  top: '46%',
                   transform: 'translate(-50%, -50%)',
-                  background: 'radial-gradient(circle, hsl(340 75% 55% / 0.08) 0%, transparent 65%)',
-                  filter: 'blur(20px)',
+                  background: 'radial-gradient(circle, hsl(340 75% 55% / 0.10) 0%, transparent 65%)',
+                  filter: 'blur(28px)',
                 }}
               />
 
-              {/* ── DESPERATIO — back-left, descending diagonally, slow tilt ── */}
+              {/* Single brass hairline anchoring the shoulder-line of the trio */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 1.4, delay: 1.6, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute origin-left pointer-events-none"
+                style={{
+                  height: '1px',
+                  left: '4%',
+                  right: '4%',
+                  bottom: '18%',
+                  background:
+                    'linear-gradient(to right, transparent, hsl(var(--brass) / 0.22) 18%, hsl(var(--brass) / 0.22) 82%, transparent)',
+                }}
+              />
+
+              {/* ── DESPERATIO — back-left, slightly behind & lower, slowly tilts ── */}
               <motion.div
                 className="absolute pointer-events-none"
-                initial={{ opacity: 0, x: -40, y: -50, rotate: -8, scale: 0.9 }}
-                animate={{
-                  opacity: 0.55,
-                  x: 0, y: 0,
-                  rotate: 0,
-                  scale: 1,
-                }}
-                transition={{ duration: 2, delay: 2.4, ease: [0.22, 1, 0.36, 1] }}
+                initial={{ opacity: 0, x: -30, y: 12, scale: 0.92 }}
+                animate={{ opacity: 0.7, x: 0, y: 0, scale: 1 }}
+                transition={{ duration: 1.8, delay: 2.3, ease: [0.22, 1, 0.36, 1] }}
                 style={{
-                  width: '230px',
-                  height: '230px',
+                  width: '300px',
+                  height: '300px',
                   left: '-2%',
-                  top: '0%',
+                  bottom: '8%',
                   zIndex: 1,
+                  filter: 'drop-shadow(0 14px 22px hsl(0 0% 0% / 0.35))',
                 }}
               >
                 <motion.img
@@ -205,27 +191,27 @@ const HeroSection = () => {
                   aria-hidden
                   className="w-full h-full object-contain select-none"
                   draggable={false}
-                  animate={{ y: [0, 4, 0], rotate: [0, -1.5, 0] }}
-                  transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 3.5 }}
-                  style={{ filter: 'grayscale(0.55) brightness(0.78) contrast(1.05)' }}
+                  animate={{ y: [0, 5, 0], rotate: [0, -1.2, 0] }}
+                  transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 3.4 }}
+                  style={{ filter: 'grayscale(0.45) brightness(0.82) contrast(1.05)' }}
                 />
               </motion.div>
 
-              {/* ── DISTORTIO — back-right, rising in, glitching periodically ── */}
+              {/* ── DISTORTIO — back-right, slightly elevated, periodic chromatic glitch ── */}
               <motion.div
                 className="absolute pointer-events-none"
-                initial={{ opacity: 0, x: 50, y: 30, scale: 0.92 }}
-                animate={{ opacity: 0.78, x: 0, y: 0, scale: 1 }}
+                initial={{ opacity: 0, x: 36, y: 6, scale: 0.92 }}
+                animate={{ opacity: 0.85, x: 0, y: 0, scale: 1 }}
                 transition={{ duration: 1.6, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
                 style={{
-                  width: '260px',
-                  height: '260px',
+                  width: '300px',
+                  height: '300px',
                   right: '-4%',
-                  top: '12%',
+                  bottom: '8%',
                   zIndex: 2,
+                  filter: 'drop-shadow(0 14px 24px hsl(0 0% 0% / 0.4))',
                 }}
               >
-                {/* chromatic split layers visible during glitch */}
                 {distortGlitch && (
                   <>
                     <img
@@ -261,34 +247,35 @@ const HeroSection = () => {
                   className="relative w-full h-full object-contain select-none"
                   draggable={false}
                   animate={{ y: [0, -3, 0] }}
-                  transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+                  transition={{ duration: 7.5, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
                   style={{
                     filter: distortGlitch
                       ? 'grayscale(0) contrast(1.15) hue-rotate(-8deg) brightness(1.05)'
-                      : 'grayscale(0.1) brightness(0.95) contrast(1.05)',
+                      : 'grayscale(0.08) brightness(0.95) contrast(1.05)',
                     transition: distortGlitch ? 'filter 0.08s' : 'filter 0.6s ease-out',
                   }}
                 />
               </motion.div>
 
-              {/* ── QUAESTIO — front-center, anchors composition, enters first ── */}
+              {/* ── QUAESTIO — front-center, larger, anchors composition ── */}
               <motion.div
                 className="absolute pointer-events-none"
-                initial={{ opacity: 0, y: 24, scale: 0.94 }}
+                initial={{ opacity: 0, y: 22, scale: 0.94 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 1.4, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 style={{
-                  width: '300px',
-                  height: '300px',
-                  left: '24%',
+                  width: '380px',
+                  height: '380px',
+                  left: '50%',
                   bottom: '6%',
+                  transform: 'translateX(-50%)',
                   zIndex: 3,
-                  filter: 'drop-shadow(0 18px 28px hsl(0 0% 0% / 0.5))',
+                  filter: 'drop-shadow(0 22px 32px hsl(0 0% 0% / 0.55))',
                 }}
               >
                 <motion.img
                   src={bustQuaestio}
-                  alt="Three figures: inquiry, distortion, despair"
+                  alt="Three figures from antiquity in conversation"
                   className="w-full h-full object-contain select-none"
                   draggable={false}
                   animate={{ y: [0, -2.5, 0] }}
@@ -297,28 +284,46 @@ const HeroSection = () => {
                 />
               </motion.div>
 
-              {/* Whispered Latin — sequenced under each entrance */}
-              {[
-                { word: 'quaestio', delay: 1.4, x: '32%' },
-                { word: 'distortio', delay: 2.1, x: '70%' },
-                { word: 'desperatio', delay: 3.1, x: '12%' },
-              ].map((w) => (
-                <motion.p
-                  key={w.word}
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: [0, 0.55, 0.32], y: 0 }}
-                  transition={{ duration: 1.4, delay: w.delay, times: [0, 0.4, 1], ease: 'easeOut' }}
-                  className="absolute font-display italic text-[12px] tracking-[0.2em] lowercase whitespace-nowrap"
-                  style={{
-                    left: w.x,
-                    bottom: '6%',
-                    transform: 'translateX(-50%)',
-                    color: 'hsl(var(--brass) / 0.7)',
-                  }}
-                >
-                  {w.word}
-                </motion.p>
-              ))}
+              {/* ── Typographic caption: numerals + single Latin word ── */}
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 3.2, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute pointer-events-none"
+                style={{ left: 0, right: 0, bottom: 0 }}
+              >
+                <div className="flex items-baseline justify-between px-2">
+                  {[
+                    { numeral: 'I', word: 'Quaestio' },
+                    { numeral: 'II', word: 'Distortio' },
+                    { numeral: 'III', word: 'Desperatio' },
+                  ].map((c, i) => (
+                    <div key={c.word} className="flex flex-col items-center gap-1.5" style={{ flex: 1 }}>
+                      <span
+                        className="font-display"
+                        style={{
+                          fontSize: '11px',
+                          letterSpacing: '0.3em',
+                          color: 'hsl(var(--brass) / 0.55)',
+                        }}
+                      >
+                        {c.numeral}
+                      </span>
+                      <span
+                        className="font-heading uppercase"
+                        style={{
+                          fontSize: '10.5px',
+                          letterSpacing: '0.32em',
+                          fontWeight: 500,
+                          color: i === 0 ? 'hsl(var(--brass))' : 'hsl(var(--brass) / 0.5)',
+                        }}
+                      >
+                        {c.word}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </div>
         </div>
