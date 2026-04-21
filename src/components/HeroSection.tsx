@@ -31,7 +31,7 @@ const HeroSection = () => {
       />
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-[0.85fr_1.15fr] items-center min-h-[88vh] gap-12 md:gap-8 pt-20 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center min-h-[88vh] gap-12 md:gap-4 pt-20 pb-16">
 
           {/* ── Left: Title stack ── */}
           <div className="relative">
@@ -89,8 +89,8 @@ const HeroSection = () => {
           </div>
 
           {/* ── Right: heads illustration with halo ── */}
-          <div className="relative hidden md:flex items-center justify-center min-h-[600px] overflow-visible pr-2">
-            <div className="relative mx-auto" style={{ width: 'min(100%, 440px)', height: '560px' }}>
+          <div className="relative hidden md:flex items-center justify-start min-h-[600px] overflow-visible">
+            <div className="relative" style={{ width: 'min(100%, 460px)', height: '560px', marginLeft: '-40px' }}>
 
               {/* Outer atmospheric bloom */}
               <motion.div
