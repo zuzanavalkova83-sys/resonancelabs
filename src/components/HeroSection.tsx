@@ -117,10 +117,10 @@ const HeroSection = () => {
                 transition={{ duration: 1.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 className="absolute pointer-events-none"
                 style={{
-                  width: '210px',
-                  height: '210px',
+                  width: '440px',
+                  height: '440px',
                   left: '50%',
-                  top: '14%',
+                  top: '8%',
                   transform: 'translateX(-50%)',
                   zIndex: 0,
                 }}
@@ -129,23 +129,23 @@ const HeroSection = () => {
                 <div
                   className="absolute inset-0 rounded-full"
                   style={{
-                    background: 'radial-gradient(circle, hsl(340 75% 55% / 0.28) 0%, hsl(340 75% 55% / 0.06) 55%, transparent 75%)',
-                    filter: 'blur(24px)',
-                    transform: 'scale(1.6)',
+                    background: 'radial-gradient(circle, hsl(340 60% 28% / 0.55) 0%, hsl(340 55% 22% / 0.25) 55%, transparent 78%)',
+                    filter: 'blur(40px)',
+                    transform: 'scale(1.35)',
                   }}
                 />
-                {/* The disc itself */}
+                {/* The disc itself — flat plum field, like the inspiration */}
                 <motion.div
                   animate={{ y: [0, -4, 0], scale: [1, 1.02, 1] }}
                   transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
                   className="absolute inset-0 rounded-full"
                   style={{
-                    background: 'radial-gradient(circle at 35% 30%, hsl(340 80% 62%) 0%, hsl(340 75% 50%) 60%, hsl(340 70% 38%) 100%)',
-                    boxShadow: '0 20px 60px -10px hsl(340 75% 55% / 0.45), inset -10px -20px 40px hsl(340 60% 25% / 0.4)',
+                    background: 'radial-gradient(circle at 38% 32%, hsl(335 38% 30%) 0%, hsl(335 42% 22%) 55%, hsl(335 45% 16%) 100%)',
+                    boxShadow: '0 30px 80px -20px hsl(335 50% 18% / 0.7), inset -14px -24px 60px hsl(335 50% 10% / 0.5)',
                     transition: dotGlitch ? 'none' : 'transform 0.3s, box-shadow 0.3s',
                     ...(dotGlitch ? {
                       transform: 'translate(3px, -2px)',
-                      boxShadow: '4px 0 30px -4px hsl(340 75% 55% / 0.5), -4px 0 30px -4px hsl(180 80% 50% / 0.25), inset -10px -20px 40px hsl(340 60% 25% / 0.4)',
+                      boxShadow: '4px 0 30px -4px hsl(340 60% 35% / 0.5), -4px 0 30px -4px hsl(180 60% 35% / 0.2), inset -14px -24px 60px hsl(335 50% 10% / 0.5)',
                     } : {}),
                   }}
                 />
