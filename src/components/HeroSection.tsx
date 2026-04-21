@@ -89,8 +89,8 @@ const HeroSection = () => {
           </div>
 
           {/* ── Right: finished heads illustration ── */}
-          <div className="relative hidden md:flex items-center justify-center" style={{ minHeight: '520px' }}>
-            <div className="relative" style={{ width: '620px', height: '520px' }}>
+          <div className="relative hidden md:flex items-center justify-center" style={{ minHeight: '600px' }}>
+            <div className="relative w-full" style={{ height: '600px' }}>
               {/* ── Pink dot — sun/moon behind the trio, anchoring the composition ── */}
               <motion.div
                 initial={{ scale: 0.6, opacity: 0 }}
@@ -98,10 +98,10 @@ const HeroSection = () => {
                 transition={{ duration: 1.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 className="absolute pointer-events-none"
                 style={{
-                  width: '440px',
-                  height: '440px',
+                  width: '460px',
+                  height: '460px',
                   left: '50%',
-                  top: '8%',
+                  top: '12%',
                   transform: 'translateX(-50%)',
                   zIndex: 0,
                 }}
@@ -110,30 +110,31 @@ const HeroSection = () => {
                 <div
                   className="absolute inset-0 rounded-full"
                   style={{
-                    background: 'radial-gradient(circle, hsl(340 60% 28% / 0.55) 0%, hsl(340 55% 22% / 0.25) 55%, transparent 78%)',
-                    filter: 'blur(40px)',
-                    transform: 'scale(1.35)',
+                    background: 'radial-gradient(circle, hsl(340 75% 50% / 0.45) 0%, hsl(340 70% 40% / 0.18) 55%, transparent 78%)',
+                    filter: 'blur(48px)',
+                    transform: 'scale(1.5)',
                   }}
                 />
-                {/* The disc itself — flat plum field, like the inspiration */}
+                {/* The disc itself — pink halo behind the heads */}
                 <motion.div
                   animate={{ y: [0, -4, 0], scale: [1, 1.02, 1] }}
                   transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
                   className="absolute inset-0 rounded-full"
                   style={{
-                    background: 'radial-gradient(circle at 38% 32%, hsl(335 38% 30%) 0%, hsl(335 42% 22%) 55%, hsl(335 45% 16%) 100%)',
-                    boxShadow: '0 30px 80px -20px hsl(335 50% 18% / 0.7), inset -14px -24px 60px hsl(335 50% 10% / 0.5)',
+                    background: 'radial-gradient(circle at 38% 32%, hsl(340 78% 60%) 0%, hsl(340 72% 48%) 60%, hsl(338 65% 36%) 100%)',
+                    boxShadow: '0 40px 100px -20px hsl(340 75% 50% / 0.55), inset -14px -24px 70px hsl(335 60% 22% / 0.55)',
                     transition: dotGlitch ? 'none' : 'transform 0.3s, box-shadow 0.3s',
                     ...(dotGlitch ? {
                       transform: 'translate(3px, -2px)',
-                      boxShadow: '4px 0 30px -4px hsl(340 60% 35% / 0.5), -4px 0 30px -4px hsl(180 60% 35% / 0.2), inset -14px -24px 60px hsl(335 50% 10% / 0.5)',
+                      boxShadow: '5px 0 40px -4px hsl(340 80% 60% / 0.55), -5px 0 40px -4px hsl(180 75% 50% / 0.25), inset -14px -24px 70px hsl(335 60% 22% / 0.55)',
                     } : {}),
                   }}
                 />
               </motion.div>
 
               <motion.div
-                className="absolute inset-x-[-10%] bottom-[7%] z-10 pointer-events-none"
+                className="absolute left-1/2 -translate-x-1/2 bottom-0 z-10 pointer-events-none"
+                style={{ width: '115%' }}
                 initial={{ opacity: 0, y: 28, scale: 0.94, filter: 'blur(8px)' }}
                 animate={{
                   opacity: 1,
@@ -152,8 +153,7 @@ const HeroSection = () => {
                   animate={{ y: [0, -5, 0], scale: [1, 1.012, 1] }}
                   transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1.2 }}
                   style={{
-                    mixBlendMode: 'screen',
-                    filter: 'contrast(1.08) saturate(1.05) drop-shadow(0 24px 34px hsl(0 0% 0% / 0.55))',
+                    filter: 'contrast(1.05) saturate(1.05) drop-shadow(0 30px 40px hsl(0 0% 0% / 0.6))',
                   }}
                 />
               </motion.div>
