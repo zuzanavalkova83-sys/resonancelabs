@@ -151,22 +151,6 @@ const HeroSection = () => {
                 />
               </motion.div>
 
-              {/* Single brass hairline anchoring the shoulder-line of the trio */}
-              <motion.div
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 1.2, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute origin-left pointer-events-none"
-                style={{
-                  height: '1px',
-                  left: '12%',
-                  right: '12%',
-                  bottom: '16%',
-                  background:
-                    'linear-gradient(to right, transparent, hsl(var(--brass) / 0.22) 18%, hsl(var(--brass) / 0.22) 82%, transparent)',
-                }}
-              />
-
               {/* ── DESPERATIO — back-left, tucked behind Quaestio's left shoulder ── */}
               <motion.div
                 className="absolute pointer-events-none"
@@ -174,12 +158,12 @@ const HeroSection = () => {
                 animate={{ opacity: 0.82, x: 0, y: 0, scale: 1 }}
                 transition={{ duration: 1.4, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
                 style={{
-                  width: '300px',
-                  height: '300px',
-                  left: '14%',
-                  bottom: '8%',
+                  width: '340px',
+                  height: '340px',
+                  left: '-2%',
+                  bottom: '4%',
                   zIndex: 1,
-                  filter: 'drop-shadow(0 14px 22px hsl(0 0% 0% / 0.4))',
+                  filter: 'drop-shadow(0 14px 22px hsl(0 0% 0% / 0.45))',
                 }}
               >
                 <motion.img
@@ -201,12 +185,12 @@ const HeroSection = () => {
                 animate={{ opacity: 0.9, x: 0, y: 0, scale: 1 }}
                 transition={{ duration: 1.4, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
                 style={{
-                  width: '300px',
-                  height: '300px',
-                  right: '14%',
-                  bottom: '8%',
+                  width: '340px',
+                  height: '340px',
+                  right: '-2%',
+                  bottom: '4%',
                   zIndex: 2,
-                  filter: 'drop-shadow(0 14px 24px hsl(0 0% 0% / 0.45))',
+                  filter: 'drop-shadow(0 14px 24px hsl(0 0% 0% / 0.5))',
                 }}
               >
                 {distortGlitch && (
