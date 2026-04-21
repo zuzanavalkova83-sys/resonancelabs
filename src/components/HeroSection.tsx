@@ -129,10 +129,11 @@ const HeroSection = () => {
                     background: 'radial-gradient(circle at 36% 30%, hsl(340 72% 58% / 0.78) 0%, hsl(340 60% 42% / 0.62) 55%, hsl(338 50% 26% / 0.45) 100%)',
                     boxShadow: '0 60px 140px -20px hsl(340 65% 40% / 0.45), inset -24px -36px 90px hsl(335 45% 14% / 0.55), inset 18px 22px 70px hsl(340 70% 62% / 0.18)',
                     opacity: 0.82,
-                    transition: dotGlitch ? 'none' : 'transform 0.3s, box-shadow 0.3s',
+                    transition: 'transform 2.2s cubic-bezier(0.45, 0, 0.25, 1), box-shadow 2.2s cubic-bezier(0.45, 0, 0.25, 1), filter 2.2s ease',
                     ...(dotGlitch ? {
-                      transform: 'translate(4px, -2px)',
-                      boxShadow: '6px 0 60px -4px hsl(340 75% 56% / 0.5), -6px 0 60px -4px hsl(180 65% 46% / 0.22), inset -24px -36px 90px hsl(335 45% 14% / 0.55)',
+                      transform: 'translate(6px, -3px) scale(1.015)',
+                      boxShadow: '14px 0 90px -8px hsl(340 75% 56% / 0.42), -14px 0 90px -8px hsl(180 65% 50% / 0.28), 0 60px 140px -20px hsl(340 65% 40% / 0.45), inset -24px -36px 90px hsl(335 45% 14% / 0.55)',
+                      filter: 'hue-rotate(-6deg)',
                     } : {}),
                   }}
                 />
