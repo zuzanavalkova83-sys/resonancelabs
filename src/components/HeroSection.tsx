@@ -191,7 +191,7 @@ const HeroSection = () => {
                   // Center figure (Socrates) — quaestio
                   { word: 'quaestio',   left: '50%', top: '6%',  delay: 1.9, align: 'center' },
                   // Right figure (warrior) — distortio
-                  { word: 'distortio',  left: '74%', top: '26%', delay: 2.2, align: 'left' },
+                  { word: 'distortio',  left: '78%', top: '8%', delay: 2.2, align: 'left' },
                 ] as { word: string; left: string; top: string; delay: number; align: 'left' | 'center' | 'right' }[]).map(({ word, left, top, delay, align }) => (
                   <motion.div
                     key={word}
