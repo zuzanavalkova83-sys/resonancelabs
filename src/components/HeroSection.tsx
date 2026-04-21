@@ -31,7 +31,7 @@ const HeroSection = () => {
       />
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center min-h-[85vh] gap-12 md:gap-0 pt-20 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-[0.85fr_1.15fr] items-center min-h-[88vh] gap-12 md:gap-8 pt-20 pb-16">
 
           {/* ── Left: Title stack ── */}
           <div className="relative">
@@ -88,54 +88,60 @@ const HeroSection = () => {
             </motion.p>
           </div>
 
-          {/* ── Right: finished heads illustration ── */}
-          <div className="relative hidden md:flex items-center justify-center" style={{ minHeight: '600px' }}>
-            <div className="relative w-full" style={{ height: '600px' }}>
-              {/* ── Pink dot — sun/moon behind the trio, anchoring the composition ── */}
+          {/* ── Right: heads illustration with halo ── */}
+          <div className="relative hidden md:flex items-center justify-center min-h-[600px] overflow-visible pr-2">
+            <div className="relative mx-auto" style={{ width: 'min(100%, 440px)', height: '560px' }}>
+
+              {/* Outer atmospheric bloom */}
               <motion.div
-                initial={{ scale: 0.6, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute pointer-events-none"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 2, delay: 0.2 }}
+                className="absolute inset-0 pointer-events-none"
                 style={{
-                  width: '460px',
-                  height: '460px',
-                  left: '50%',
-                  top: '12%',
-                  transform: 'translateX(-50%)',
+                  background: 'radial-gradient(circle at 50% 45%, hsl(340 78% 52% / 0.35) 0%, hsl(340 70% 40% / 0.15) 35%, transparent 65%)',
+                  filter: 'blur(40px)',
+                  transform: 'scale(1.3)',
                   zIndex: 0,
                 }}
+              />
+
+              {/* The pink halo disc — sized as halo behind the heads */}
+              <motion.div
+                initial={{ scale: 0.7, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute pointer-events-none"
+                style={{
+                  width: '100%',
+                  aspectRatio: '1',
+                  left: '50%',
+                  top: '20px',
+                  transform: 'translateX(-50%)',
+                  zIndex: 1,
+                }}
               >
-                {/* Outer soft halo */}
-                <div
-                  className="absolute inset-0 rounded-full"
-                  style={{
-                    background: 'radial-gradient(circle, hsl(340 75% 50% / 0.45) 0%, hsl(340 70% 40% / 0.18) 55%, transparent 78%)',
-                    filter: 'blur(48px)',
-                    transform: 'scale(1.5)',
-                  }}
-                />
-                {/* The disc itself — pink halo behind the heads */}
                 <motion.div
-                  animate={{ y: [0, -4, 0], scale: [1, 1.02, 1] }}
-                  transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
                   className="absolute inset-0 rounded-full"
                   style={{
-                    background: 'radial-gradient(circle at 38% 32%, hsl(340 78% 60%) 0%, hsl(340 72% 48%) 60%, hsl(338 65% 36%) 100%)',
-                    boxShadow: '0 40px 100px -20px hsl(340 75% 50% / 0.55), inset -14px -24px 70px hsl(335 60% 22% / 0.55)',
+                    background: 'radial-gradient(circle at 38% 32%, hsl(340 80% 62%) 0%, hsl(340 72% 48%) 55%, hsl(338 60% 32%) 100%)',
+                    boxShadow: '0 50px 120px -10px hsl(340 75% 48% / 0.65), inset -20px -30px 80px hsl(335 55% 18% / 0.6), inset 14px 18px 60px hsl(340 85% 70% / 0.25)',
                     transition: dotGlitch ? 'none' : 'transform 0.3s, box-shadow 0.3s',
                     ...(dotGlitch ? {
-                      transform: 'translate(3px, -2px)',
-                      boxShadow: '5px 0 40px -4px hsl(340 80% 60% / 0.55), -5px 0 40px -4px hsl(180 75% 50% / 0.25), inset -14px -24px 70px hsl(335 60% 22% / 0.55)',
+                      transform: 'translate(4px, -2px)',
+                      boxShadow: '6px 0 50px -4px hsl(340 85% 62% / 0.6), -6px 0 50px -4px hsl(180 75% 50% / 0.3), inset -20px -30px 80px hsl(335 55% 18% / 0.6)',
                     } : {}),
                   }}
                 />
               </motion.div>
 
+              {/* Heads illustration — dominant foreground, centered over disc */}
               <motion.div
-                className="absolute left-1/2 -translate-x-1/2 bottom-0 z-10 pointer-events-none"
-                style={{ width: '115%' }}
-                initial={{ opacity: 0, y: 28, scale: 0.94, filter: 'blur(8px)' }}
+                className="absolute left-1/2 -translate-x-1/2 pointer-events-none z-10"
+                style={{ width: '100%', top: '90px' }}
+                initial={{ opacity: 0, y: 32, scale: 0.94, filter: 'blur(10px)' }}
                 animate={{
                   opacity: 1,
                   y: dotGlitch ? -2 : 0,
@@ -143,21 +149,32 @@ const HeroSection = () => {
                   scale: 1,
                   filter: 'blur(0px)',
                 }}
-                transition={{ duration: dotGlitch ? 0.08 : 1.4, delay: dotGlitch ? 0 : 0.55, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: dotGlitch ? 0.08 : 1.6, delay: dotGlitch ? 0 : 0.6, ease: [0.22, 1, 0.36, 1] }}
               >
                 <motion.img
                   src={heroHeadsCluster}
                   alt="Three figures from antiquity in conversation"
                   className="w-full h-auto select-none"
                   draggable={false}
-                  animate={{ y: [0, -5, 0], scale: [1, 1.012, 1] }}
-                  transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1.2 }}
+                  animate={{ y: [0, -7, 0] }}
+                  transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
                   style={{
-                    filter: 'contrast(1.05) saturate(1.05) drop-shadow(0 30px 40px hsl(0 0% 0% / 0.6))',
+                    filter: 'contrast(1.06) saturate(1.08) drop-shadow(0 40px 50px hsl(340 50% 6% / 0.75)) drop-shadow(0 0 60px hsl(340 70% 40% / 0.35))',
                   }}
                 />
               </motion.div>
 
+              {/* Bottom shadow pool to anchor figures */}
+              <div
+                className="absolute left-1/2 -translate-x-1/2 bottom-4 pointer-events-none"
+                style={{
+                  width: '60%',
+                  height: '36px',
+                  background: 'radial-gradient(ellipse at center, hsl(340 60% 4% / 0.7) 0%, transparent 70%)',
+                  filter: 'blur(10px)',
+                  zIndex: 5,
+                }}
+              />
             </div>
           </div>
         </div>
