@@ -179,6 +179,62 @@ const HeroSection = () => {
                   zIndex: 5,
                 }}
               />
+
+              {/* ── Latin labels: desperatio · quaestio · distortio ── */}
+              <div
+                className="absolute z-20 pointer-events-none"
+                style={{ left: '-40px', right: '-200px', top: 0, bottom: 0 }}
+              >
+                {([
+                  // Left figure (facepalm) — desperatio
+                  { word: 'desperatio', left: '20%', top: '26%', delay: 1.6, align: 'left' },
+                  // Center figure (Socrates) — quaestio
+                  { word: 'quaestio',   left: '50%', top: '6%',  delay: 1.9, align: 'center' },
+                  // Right figure (warrior) — distortio
+                  { word: 'distortio',  left: '78%', top: '8%', delay: 2.2, align: 'left' },
+                ] as { word: string; left: string; top: string; delay: number; align: 'left' | 'center' | 'right' }[]).map(({ word, left, top, delay, align }) => (
+                  <motion.div
+                    key={word}
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.4, delay, ease: [0.22, 1, 0.36, 1] }}
+                    className="absolute flex items-center gap-2"
+                    style={{
+                      left,
+                      top,
+                      transform: align === 'center'
+                        ? 'translateX(-50%)'
+                        : align === 'right'
+                          ? 'translateX(-100%)'
+                          : 'translateX(0)',
+                    }}
+                  >
+                    {align !== 'left' && (
+                      <span
+                        className="block h-px"
+                        style={{ width: '18px', background: 'hsl(var(--brass) / 0.45)' }}
+                      />
+                    )}
+                    <span
+                      className="font-mono uppercase"
+                      style={{
+                        fontSize: '10px',
+                        letterSpacing: '0.32em',
+                        color: 'hsl(var(--brass) / 0.78)',
+                        textShadow: '0 1px 8px hsl(340 50% 6% / 0.8)',
+                      }}
+                    >
+                      {word}
+                    </span>
+                    {align === 'left' && (
+                      <span
+                        className="block h-px"
+                        style={{ width: '18px', background: 'hsl(var(--brass) / 0.45)' }}
+                      />
+                    )}
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
