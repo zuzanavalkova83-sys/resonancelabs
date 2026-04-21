@@ -88,12 +88,9 @@ const HeroSection = () => {
             </motion.p>
           </div>
 
-          {/* ── Right: Three Figures — overlapping group ── */}
-          <div className="relative hidden md:flex items-end justify-center" style={{ minHeight: '520px' }}>
-            <div
-              className="relative"
-              style={{ width: '520px', height: '520px' }}
-            >
+          {/* ── Right: finished heads illustration ── */}
+          <div className="relative hidden md:flex items-center justify-center" style={{ minHeight: '520px' }}>
+            <div className="relative" style={{ width: '620px', height: '520px' }}>
               {/* ── Pink dot — sun/moon behind the trio, anchoring the composition ── */}
               <motion.div
                 initial={{ scale: 0.6, opacity: 0 }}
@@ -135,117 +132,29 @@ const HeroSection = () => {
                 />
               </motion.div>
 
-              {/* ── DISTORTIO — back-left, tucked behind Quaestio's left shoulder ── */}
               <motion.div
-                className="absolute pointer-events-none"
-                initial={{ opacity: 0, x: -16, y: 10, scale: 0.94 }}
-                animate={{ opacity: 0.9, x: 0, y: 0, scale: 1 }}
-                transition={{ duration: 1.4, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                style={{
-                  width: '340px',
-                  height: '340px',
-                  left: '-2%',
-                  bottom: '4%',
-                  zIndex: 2,
-                  filter: 'drop-shadow(0 14px 24px hsl(0 0% 0% / 0.5))',
+                className="absolute inset-x-[-10%] bottom-[7%] z-10 pointer-events-none"
+                initial={{ opacity: 0, y: 28, scale: 0.94, filter: 'blur(8px)' }}
+                animate={{
+                  opacity: 1,
+                  y: dotGlitch ? -2 : 0,
+                  x: dotGlitch ? 3 : 0,
+                  scale: 1,
+                  filter: 'blur(0px)',
                 }}
-              >
-                {distortGlitch && (
-                  <>
-                    <img
-                      src={bustDistortio}
-                      alt=""
-                      aria-hidden
-                      className="absolute inset-0 w-full h-full object-contain select-none mix-blend-screen"
-                      style={{
-                        opacity: 0.55,
-                        transform: 'translate(-3px, 0)',
-                        filter: 'brightness(0.55) sepia(1) hue-rotate(280deg) saturate(7)',
-                      }}
-                      draggable={false}
-                    />
-                    <img
-                      src={bustDistortio}
-                      alt=""
-                      aria-hidden
-                      className="absolute inset-0 w-full h-full object-contain select-none mix-blend-screen"
-                      style={{
-                        opacity: 0.45,
-                        transform: 'translate(3px, 0)',
-                        filter: 'brightness(0.55) sepia(1) hue-rotate(150deg) saturate(6)',
-                      }}
-                      draggable={false}
-                    />
-                  </>
-                )}
-                <motion.img
-                  src={bustDistortio}
-                  alt=""
-                  aria-hidden
-                  className="relative w-full h-full object-contain select-none"
-                  draggable={false}
-                  animate={{ y: [0, -3, 0] }}
-                  transition={{ duration: 7.5, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-                  style={{
-                    filter: distortGlitch
-                      ? 'grayscale(0) contrast(1.15) hue-rotate(-8deg) brightness(1.05)'
-                      : 'grayscale(0.08) brightness(0.95) contrast(1.05)',
-                    transition: distortGlitch ? 'filter 0.08s' : 'filter 0.6s ease-out',
-                  }}
-                />
-              </motion.div>
-
-              {/* ── DESPERATIO — back-right, tucked behind Quaestio's right shoulder ── */}
-              <motion.div
-                className="absolute pointer-events-none"
-                initial={{ opacity: 0, x: 16, y: 6, scale: 0.94 }}
-                animate={{ opacity: 0.82, x: 0, y: 0, scale: 1 }}
-                transition={{ duration: 1.4, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
-                style={{
-                  width: '340px',
-                  height: '340px',
-                  right: '-2%',
-                  bottom: '4%',
-                  zIndex: 1,
-                  filter: 'drop-shadow(0 14px 22px hsl(0 0% 0% / 0.45))',
-                }}
+                transition={{ duration: dotGlitch ? 0.08 : 1.4, delay: dotGlitch ? 0 : 0.55, ease: [0.22, 1, 0.36, 1] }}
               >
                 <motion.img
-                  src={bustDesperatio}
-                  alt=""
-                  aria-hidden
-                  className="w-full h-full object-contain select-none"
-                  draggable={false}
-                  animate={{ y: [0, 5, 0], rotate: [0, -1.2, 0] }}
-                  transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 3.4 }}
-                  style={{ filter: 'grayscale(0.4) brightness(0.85) contrast(1.05)' }}
-                />
-              </motion.div>
-
-              {/* ── QUAESTIO — front-center, larger, anchors composition ── */}
-              <motion.div
-                className="absolute pointer-events-none"
-                initial={{ opacity: 0, y: 22, scale: 0.94 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 1.4, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                style={{
-                  width: '380px',
-                  height: '380px',
-                  left: '50%',
-                  bottom: '4%',
-                  transform: 'translateX(-50%)',
-                  zIndex: 3,
-                  filter: 'drop-shadow(0 22px 32px hsl(0 0% 0% / 0.6))',
-                }}
-              >
-                <motion.img
-                  src={bustQuaestio}
+                  src={heroHeadsCluster}
                   alt="Three figures from antiquity in conversation"
-                  className="w-full h-full object-contain select-none"
+                  className="w-full h-auto select-none"
                   draggable={false}
-                  animate={{ y: [0, -2.5, 0] }}
-                  transition={{ duration: 6.5, repeat: Infinity, ease: 'easeInOut', delay: 1.4 }}
-                  style={{ filter: 'grayscale(0) contrast(1.05)' }}
+                  animate={{ y: [0, -5, 0], scale: [1, 1.012, 1] }}
+                  transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1.2 }}
+                  style={{
+                    mixBlendMode: 'screen',
+                    filter: 'contrast(1.08) saturate(1.05) drop-shadow(0 24px 34px hsl(0 0% 0% / 0.55))',
+                  }}
                 />
               </motion.div>
 
