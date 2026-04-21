@@ -115,7 +115,7 @@ const HeroSection = () => {
                 style={{
                   width: '100%',
                   aspectRatio: '1',
-                  left: '50%',
+                  left: '38%',
                   top: '20px',
                   transform: 'translateX(-50%)',
                   zIndex: 1,
