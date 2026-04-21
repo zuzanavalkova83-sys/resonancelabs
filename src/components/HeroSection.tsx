@@ -1,14 +1,11 @@
 import { motion } from "framer-motion";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
 import { useState, useEffect } from "react";
-import bustQuaestio from "@/assets/socrates-teal-uniform.png";
-import bustDistortio from "@/assets/socrates-tinfoil-uniform.png";
-import bustDesperatio from "@/assets/goddess-facepalm-uniform.png";
+import heroHeadsCluster from "@/assets/hero-heads-cluster.png";
 
 const HeroSection = () => {
   const glitch = useGlitch(9000, 800, 2500);
   const [dotGlitch, setDotGlitch] = useState(false);
-  const [distortGlitch, setDistortGlitch] = useState(false);
 
   useEffect(() => {
     const trigger = () => {
@@ -20,19 +17,6 @@ const HeroSection = () => {
       if (Math.random() > 0.4) trigger();
     }, 7000);
     return () => { clearTimeout(first); clearInterval(interval); };
-  }, []);
-
-  // Periodic chromatic twitch on the Distortio bust (after it has entered)
-  useEffect(() => {
-    const fire = () => {
-      setDistortGlitch(true);
-      setTimeout(() => setDistortGlitch(false), 320);
-    };
-    const first = setTimeout(fire, 4200);
-    const loop = setInterval(() => {
-      if (Math.random() > 0.35) fire();
-    }, 6500);
-    return () => { clearTimeout(first); clearInterval(loop); };
   }, []);
 
   return (
