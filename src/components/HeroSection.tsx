@@ -90,7 +90,7 @@ const HeroSection = () => {
 
           {/* ── Right: heads illustration with halo ── */}
           <div className="relative hidden md:flex items-center justify-center min-h-[640px]">
-            <div className="relative w-full max-w-[640px] aspect-square">
+            <div className="relative" style={{ width: '560px', height: '600px' }}>
 
               {/* Outer atmospheric bloom */}
               <motion.div
@@ -106,17 +106,17 @@ const HeroSection = () => {
                 }}
               />
 
-              {/* The pink halo disc — sized as halo, not backdrop */}
+              {/* The pink halo disc — sized as halo behind the heads */}
               <motion.div
                 initial={{ scale: 0.7, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 1.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 className="absolute pointer-events-none"
                 style={{
-                  width: '62%',
-                  aspectRatio: '1',
+                  width: '380px',
+                  height: '380px',
                   left: '50%',
-                  top: '14%',
+                  top: '60px',
                   transform: 'translateX(-50%)',
                   zIndex: 1,
                 }}
@@ -137,9 +137,10 @@ const HeroSection = () => {
                 />
               </motion.div>
 
-              {/* Heads illustration — dominant foreground */}
+              {/* Heads illustration — dominant foreground, centered over disc */}
               <motion.div
-                className="absolute inset-0 z-10 pointer-events-none flex items-end justify-center"
+                className="absolute left-1/2 -translate-x-1/2 pointer-events-none z-10"
+                style={{ width: '560px', top: '120px' }}
                 initial={{ opacity: 0, y: 32, scale: 0.94, filter: 'blur(10px)' }}
                 animate={{
                   opacity: 1,
@@ -165,12 +166,12 @@ const HeroSection = () => {
 
               {/* Bottom shadow pool to anchor figures */}
               <div
-                className="absolute left-1/2 -translate-x-1/2 bottom-0 pointer-events-none"
+                className="absolute left-1/2 -translate-x-1/2 bottom-4 pointer-events-none"
                 style={{
-                  width: '70%',
-                  height: '40px',
-                  background: 'radial-gradient(ellipse at center, hsl(340 60% 4% / 0.6) 0%, transparent 70%)',
-                  filter: 'blur(8px)',
+                  width: '60%',
+                  height: '36px',
+                  background: 'radial-gradient(ellipse at center, hsl(340 60% 4% / 0.7) 0%, transparent 70%)',
+                  filter: 'blur(10px)',
                   zIndex: 5,
                 }}
               />
