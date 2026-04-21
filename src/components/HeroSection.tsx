@@ -185,14 +185,14 @@ const HeroSection = () => {
                 className="absolute z-20 pointer-events-none"
                 style={{ left: '-40px', right: '-200px', top: 0, bottom: 0 }}
               >
-                {[
+                {([
                   // Left figure (facepalm) — desperatio
-                  { word: 'desperatio', left: '20%', top: '26%', delay: 1.6, align: 'left' as const },
+                  { word: 'desperatio', left: '20%', top: '26%', delay: 1.6, align: 'left' },
                   // Center figure (Socrates) — quaestio
-                  { word: 'quaestio',   left: '50%', top: '6%',  delay: 1.9, align: 'center' as const },
+                  { word: 'quaestio',   left: '50%', top: '6%',  delay: 1.9, align: 'center' },
                   // Right figure (warrior) — distortio
-                  { word: 'distortio',  left: '74%', top: '26%', delay: 2.2, align: 'left' as const },
-                ].map(({ word, left, top, delay, align }) => (
+                  { word: 'distortio',  left: '74%', top: '26%', delay: 2.2, align: 'left' },
+                ] as { word: string; left: string; top: string; delay: number; align: 'left' | 'center' | 'right' }[]).map(({ word, left, top, delay, align }) => (
                   <motion.div
                     key={word}
                     initial={{ opacity: 0, y: 6 }}
