@@ -92,16 +92,16 @@ const HeroSection = () => {
           <div className="relative hidden md:flex items-center justify-start min-h-[600px] overflow-visible">
             <div className="relative" style={{ width: 'min(100%, 460px)', height: '560px', marginLeft: '-40px' }}>
 
-              {/* Outer atmospheric bloom */}
+              {/* Outer atmospheric bloom — diffused, painterly */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.85 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 2, delay: 0.2 }}
+                transition={{ duration: 2.4, delay: 0.2 }}
                 className="absolute inset-0 pointer-events-none"
                 style={{
-                  background: 'radial-gradient(circle at 50% 45%, hsl(340 78% 52% / 0.35) 0%, hsl(340 70% 40% / 0.15) 35%, transparent 65%)',
-                  filter: 'blur(40px)',
-                  transform: 'scale(1.3)',
+                  background: 'radial-gradient(circle at 50% 42%, hsl(340 70% 48% / 0.22) 0%, hsl(340 60% 36% / 0.10) 38%, transparent 68%)',
+                  filter: 'blur(56px)',
+                  transform: 'scale(1.4)',
                   zIndex: 0,
                 }}
               />
@@ -126,12 +126,13 @@ const HeroSection = () => {
                   transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
                   className="absolute inset-0 rounded-full"
                   style={{
-                    background: 'radial-gradient(circle at 38% 32%, hsl(340 80% 62%) 0%, hsl(340 72% 48%) 55%, hsl(338 60% 32%) 100%)',
-                    boxShadow: '0 50px 120px -10px hsl(340 75% 48% / 0.65), inset -20px -30px 80px hsl(335 55% 18% / 0.6), inset 14px 18px 60px hsl(340 85% 70% / 0.25)',
+                    background: 'radial-gradient(circle at 36% 30%, hsl(340 72% 58% / 0.78) 0%, hsl(340 60% 42% / 0.62) 55%, hsl(338 50% 26% / 0.45) 100%)',
+                    boxShadow: '0 60px 140px -20px hsl(340 65% 40% / 0.45), inset -24px -36px 90px hsl(335 45% 14% / 0.55), inset 18px 22px 70px hsl(340 70% 62% / 0.18)',
+                    opacity: 0.82,
                     transition: dotGlitch ? 'none' : 'transform 0.3s, box-shadow 0.3s',
                     ...(dotGlitch ? {
                       transform: 'translate(4px, -2px)',
-                      boxShadow: '6px 0 50px -4px hsl(340 85% 62% / 0.6), -6px 0 50px -4px hsl(180 75% 50% / 0.3), inset -20px -30px 80px hsl(335 55% 18% / 0.6)',
+                      boxShadow: '6px 0 60px -4px hsl(340 75% 56% / 0.5), -6px 0 60px -4px hsl(180 65% 46% / 0.22), inset -24px -36px 90px hsl(335 45% 14% / 0.55)',
                     } : {}),
                   }}
                 />
@@ -159,7 +160,9 @@ const HeroSection = () => {
                   animate={{ y: [0, -7, 0] }}
                   transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
                   style={{
-                    filter: 'contrast(1.06) saturate(1.08) drop-shadow(0 40px 50px hsl(340 50% 6% / 0.75)) drop-shadow(0 0 60px hsl(340 70% 40% / 0.35))',
+                    opacity: 0.88,
+                    mixBlendMode: 'luminosity',
+                    filter: 'contrast(1.04) saturate(0.85) brightness(1.02) drop-shadow(0 32px 48px hsl(340 50% 4% / 0.6)) drop-shadow(0 0 50px hsl(340 60% 32% / 0.25))',
                   }}
                 />
               </motion.div>
