@@ -89,8 +89,8 @@ const HeroSection = () => {
           </div>
 
           {/* ── Right: heads illustration with halo ── */}
-          <div className="relative hidden md:flex items-center justify-start min-h-[600px] overflow-visible">
-            <div className="relative" style={{ width: 'min(100%, 460px)', height: '560px', marginLeft: '-40px' }}>
+          <div className="relative hidden md:flex items-end justify-start min-h-[600px] overflow-visible">
+            <div className="relative" style={{ width: 'min(100%, 460px)', height: '560px', marginLeft: '-90px', marginBottom: '-40px' }}>
 
               {/* Outer atmospheric bloom — diffused, painterly */}
               <motion.div
