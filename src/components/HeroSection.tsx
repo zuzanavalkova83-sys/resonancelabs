@@ -151,43 +151,16 @@ const HeroSection = () => {
                 />
               </motion.div>
 
-              {/* ── DESPERATIO — back-left, tucked behind Quaestio's left shoulder ── */}
+              {/* ── DISTORTIO — back-left, tucked behind Quaestio's left shoulder ── */}
               <motion.div
                 className="absolute pointer-events-none"
                 initial={{ opacity: 0, x: -16, y: 10, scale: 0.94 }}
-                animate={{ opacity: 0.82, x: 0, y: 0, scale: 1 }}
-                transition={{ duration: 1.4, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
-                style={{
-                  width: '340px',
-                  height: '340px',
-                  left: '-2%',
-                  bottom: '4%',
-                  zIndex: 1,
-                  filter: 'drop-shadow(0 14px 22px hsl(0 0% 0% / 0.45))',
-                }}
-              >
-                <motion.img
-                  src={bustDesperatio}
-                  alt=""
-                  aria-hidden
-                  className="w-full h-full object-contain select-none"
-                  draggable={false}
-                  animate={{ y: [0, 5, 0], rotate: [0, -1.2, 0] }}
-                  transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 3.4 }}
-                  style={{ filter: 'grayscale(0.4) brightness(0.85) contrast(1.05)' }}
-                />
-              </motion.div>
-
-              {/* ── DISTORTIO — back-right, tucked behind Quaestio's right shoulder ── */}
-              <motion.div
-                className="absolute pointer-events-none"
-                initial={{ opacity: 0, x: 16, y: 6, scale: 0.94 }}
                 animate={{ opacity: 0.9, x: 0, y: 0, scale: 1 }}
                 transition={{ duration: 1.4, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
                 style={{
                   width: '340px',
                   height: '340px',
-                  right: '-2%',
+                  left: '-2%',
                   bottom: '4%',
                   zIndex: 2,
                   filter: 'drop-shadow(0 14px 24px hsl(0 0% 0% / 0.5))',
@@ -235,6 +208,33 @@ const HeroSection = () => {
                       : 'grayscale(0.08) brightness(0.95) contrast(1.05)',
                     transition: distortGlitch ? 'filter 0.08s' : 'filter 0.6s ease-out',
                   }}
+                />
+              </motion.div>
+
+              {/* ── DESPERATIO — back-right, tucked behind Quaestio's right shoulder ── */}
+              <motion.div
+                className="absolute pointer-events-none"
+                initial={{ opacity: 0, x: 16, y: 6, scale: 0.94 }}
+                animate={{ opacity: 0.82, x: 0, y: 0, scale: 1 }}
+                transition={{ duration: 1.4, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
+                style={{
+                  width: '340px',
+                  height: '340px',
+                  right: '-2%',
+                  bottom: '4%',
+                  zIndex: 1,
+                  filter: 'drop-shadow(0 14px 22px hsl(0 0% 0% / 0.45))',
+                }}
+              >
+                <motion.img
+                  src={bustDesperatio}
+                  alt=""
+                  aria-hidden
+                  className="w-full h-full object-contain select-none"
+                  draggable={false}
+                  animate={{ y: [0, 5, 0], rotate: [0, -1.2, 0] }}
+                  transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 3.4 }}
+                  style={{ filter: 'grayscale(0.4) brightness(0.85) contrast(1.05)' }}
                 />
               </motion.div>
 
