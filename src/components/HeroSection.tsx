@@ -10,12 +10,12 @@ const HeroSection = () => {
   useEffect(() => {
     const trigger = () => {
       setDotGlitch(true);
-      setTimeout(() => setDotGlitch(false), 400);
+      setTimeout(() => setDotGlitch(false), 2200);
     };
-    const first = setTimeout(trigger, 5000);
+    const first = setTimeout(trigger, 6000);
     const interval = setInterval(() => {
-      if (Math.random() > 0.4) trigger();
-    }, 7000);
+      if (Math.random() > 0.3) trigger();
+    }, 11000);
     return () => { clearTimeout(first); clearInterval(interval); };
   }, []);
 
