@@ -89,8 +89,8 @@ const HeroSection = () => {
           </div>
 
           {/* ── Right: heads illustration with halo ── */}
-          <div className="relative hidden md:flex items-center justify-center min-h-[640px]">
-            <div className="relative" style={{ width: '520px', height: '600px' }}>
+          <div className="relative hidden md:flex items-center justify-center min-h-[600px] overflow-visible">
+            <div className="relative mx-auto" style={{ width: 'min(100%, 460px)', height: '560px' }}>
 
               {/* Outer atmospheric bloom */}
               <motion.div
@@ -113,10 +113,10 @@ const HeroSection = () => {
                 transition={{ duration: 1.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 className="absolute pointer-events-none"
                 style={{
-                  width: '440px',
-                  height: '440px',
+                  width: '100%',
+                  aspectRatio: '1',
                   left: '50%',
-                  top: '40px',
+                  top: '20px',
                   transform: 'translateX(-50%)',
                   zIndex: 1,
                 }}
@@ -140,7 +140,7 @@ const HeroSection = () => {
               {/* Heads illustration — dominant foreground, centered over disc */}
               <motion.div
                 className="absolute left-1/2 -translate-x-1/2 pointer-events-none z-10"
-                style={{ width: '520px', top: '110px' }}
+                style={{ width: '100%', top: '90px' }}
                 initial={{ opacity: 0, y: 32, scale: 0.94, filter: 'blur(10px)' }}
                 animate={{
                   opacity: 1,
