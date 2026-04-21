@@ -183,7 +183,7 @@ const HeroSection = () => {
               {/* ── Latin labels: desperatio · quaestio · distortio ── */}
               <div
                 className="absolute z-20 pointer-events-none"
-                style={{ left: '-40px', right: '-120px', top: 0, bottom: 0 }}
+                style={{ left: '-40px', right: '-200px', top: 0, bottom: 0 }}
               >
                 {[
                   // Left figure (facepalm) — desperatio
@@ -191,7 +191,7 @@ const HeroSection = () => {
                   // Center figure (Socrates) — quaestio
                   { word: 'quaestio',   left: '50%', top: '6%',  delay: 1.9, align: 'center' as const },
                   // Right figure (warrior) — distortio
-                  { word: 'distortio',  left: '82%', top: '24%', delay: 2.2, align: 'right' as const },
+                  { word: 'distortio',  left: '72%', top: '24%', delay: 2.2, align: 'right' as const },
                 ].map(({ word, left, top, delay, align }) => (
                   <motion.div
                     key={word}
