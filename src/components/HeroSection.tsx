@@ -245,13 +245,13 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 1.4, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 style={{
-                  width: '396px',
-                  height: '396px',
+                  width: '380px',
+                  height: '380px',
                   left: '50%',
-                  bottom: '3%',
+                  bottom: '4%',
                   transform: 'translateX(-50%)',
                   zIndex: 3,
-                  filter: 'drop-shadow(0 22px 32px hsl(0 0% 0% / 0.55))',
+                  filter: 'drop-shadow(0 22px 32px hsl(0 0% 0% / 0.6))',
                 }}
               >
                 <motion.img
@@ -265,46 +265,6 @@ const HeroSection = () => {
                 />
               </motion.div>
 
-              {/* ── Typographic caption: numerals + single Latin word ── */}
-              <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 2, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute pointer-events-none"
-                style={{ left: 0, right: 0, bottom: 0 }}
-              >
-                <div className="flex items-baseline justify-between px-2">
-                  {[
-                    { numeral: 'I', word: 'Desperatio' },
-                    { numeral: 'II', word: 'Quaestio' },
-                    { numeral: 'III', word: 'Distortio' },
-                  ].map((c, i) => (
-                    <div key={c.word} className="flex flex-col items-center gap-1.5" style={{ flex: 1 }}>
-                      <span
-                        className="font-display"
-                        style={{
-                          fontSize: '11px',
-                          letterSpacing: '0.3em',
-                          color: 'hsl(var(--brass) / 0.55)',
-                        }}
-                      >
-                        {c.numeral}
-                      </span>
-                      <span
-                        className="font-heading uppercase"
-                        style={{
-                          fontSize: '10.5px',
-                          letterSpacing: '0.32em',
-                          fontWeight: 500,
-                          color: i === 1 ? 'hsl(var(--brass))' : 'hsl(var(--brass) / 0.5)',
-                        }}
-                      >
-                        {c.word}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
             </div>
           </div>
         </div>
