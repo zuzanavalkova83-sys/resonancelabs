@@ -1,0 +1,1143 @@
+[
+  {
+    "id": "F43",
+    "frameName": "Traditional healing was pushed aside",
+    "status": "Active",
+    "type": "stable",
+    "shortDescription": "Older healing systems, folk knowledge, herbal practices, or traditional medicine are framed as wiser, safer, and more human than modern medicine — and as something deliberately forgotten or displaced.",
+    "typicalTopics": [
+      "herbal medicine",
+      "folk healing",
+      "Traditional Chinese Medicine",
+      "Ayurveda",
+      "pre-modern remedies",
+      "birth and reproductive care",
+      "immune support",
+      "alternative cancer approaches",
+      "chronic disease"
+    ],
+    "triggerWords": [
+      "grandmother knew best",
+      "traditional wisdom",
+      "ancient knowledge",
+      "forgotten healing",
+      "displaced medicine",
+      "folk remedy",
+      "natural was enough",
+      "before modern medicine",
+      "time-tested",
+      "ancestral health"
+    ],
+    "likelyDistortion": "Older healing systems are more truthful and humane; modern medicine displaced them for profit, control, or prestige; forgetting was deliberate not accidental.",
+    "publicFear": "That institutional medicine has alienated us from real human care and effective traditional knowledge.",
+    "whatToClarifyUpfront": "Respect for traditional knowledge does not require rejecting modern medicine. Many traditional practices are actively studied and integrated. The 'displacement' narrative usually conflates progress with suppression.",
+    "whatItDoesNotMean": "Appreciating traditional or herbal medicine is not anti-science. The distortion comes from framing displacement as deliberate and modern medicine as inherently alienating.",
+    "rapidResponseAdvice": "Acknowledge value in traditional knowledge without accepting the conspiracy of deliberate forgetting. Point to active research in ethnobotany, integrative medicine, and pharmacological study of traditional compounds. Distinguish between 'lost' and 'evidence-tested'.",
+    "humourOptions": [
+      "My grandmother also knew that willow bark tea worked. We call it aspirin now.",
+      "Yes, traditional medicine was pushed aside. By better outcomes.",
+      "The real tragedy is not that we forgot traditional healing. It's that we forget how recently traditional healing forgot to wash its hands."
+    ],
+    "exampleNarrative": "We already knew how to heal. Then modern medicine taught us to forget.",
+    "notes": "This frame overlaps with natural body absolutism and often appears in anti-pharma narratives. It gains traction in chronic illness and fertility spaces where modern medicine has failed to deliver easy answers."
+  },
+  {
+    "id": "F01",
+    "frameName": "Experts are hiding the truth",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Research is framed as concealed knowledge withheld from ordinary people.",
+    "typicalTopics": [
+      "public health",
+      "institutions",
+      "medicine",
+      "climate",
+      "AI"
+    ],
+    "triggerWords": [
+      "hidden",
+      "secret",
+      "suppressed",
+      "revealed",
+      "whistleblower"
+    ],
+    "likelyDistortion": "Scientists or institutions are hiding harms, costs, or motives.",
+    "publicFear": "Loss of agency; betrayal by experts",
+    "whatToClarifyUpfront": "State scope, evidence standard, and what is known vs unknown.",
+    "whatItDoesNotMean": "This does not prove concealment or coordinated intent.",
+    "rapidResponseAdvice": "Lead with plain facts and process transparency; avoid defensive jargon.",
+    "humourOptions": [
+      "Nuance has poor survival odds online. Help it out."
+    ],
+    "exampleNarrative": "They knew this all along and never told the public.",
+    "notes": "Good default frame for anything involving trust or expertise."
+  },
+  {
+    "id": "F02",
+    "frameName": "Big Pharma / elite collusion",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Scientific work is recast as profit-driven collusion between labs, funders, firms, or governments.",
+    "typicalTopics": [
+      "oncology",
+      "biotech",
+      "vaccines",
+      "public health"
+    ],
+    "triggerWords": [
+      "profit",
+      "cartel",
+      "captured",
+      "funded",
+      "lobby"
+    ],
+    "likelyDistortion": "The study exists to serve commercial or elite interests rather than evidence.",
+    "publicFear": "Being exploited for money or power",
+    "whatToClarifyUpfront": "Name funding, trial phase, limits, and oversight mechanisms.",
+    "whatItDoesNotMean": "This does not imply commercial deployment or hidden financial coordination.",
+    "rapidResponseAdvice": "Clarify who funded what, and what the research stage actually is.",
+    "humourOptions": [
+      "Sadly, a funding disclosure is less viral than a conspiracy."
+    ],
+    "exampleNarrative": "This is just another elite pipeline for profit.",
+    "notes": "Especially relevant when the abstract mentions therapy, trial, platform, rollout."
+  },
+  {
+    "id": "F03",
+    "frameName": "Tampering with nature",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Research is portrayed as unnatural intervention in life, bodies, ecosystems, or human identity.",
+    "typicalTopics": [
+      "genetics",
+      "reproduction",
+      "biotech",
+      "climate intervention"
+    ],
+    "triggerWords": [
+      "engineer",
+      "modify",
+      "alter",
+      "design",
+      "intervention"
+    ],
+    "likelyDistortion": "Scientists are redesigning nature or humanity without consent.",
+    "publicFear": "Bodily integrity; moral contamination; loss of what is natural",
+    "whatToClarifyUpfront": "Stress research stage, safeguards, and limited scope.",
+    "whatItDoesNotMean": "This does not imply public deployment, redesign of humanity, or removal of consent.",
+    "rapidResponseAdvice": "Separate mechanism discovery from real-world application.",
+    "humourOptions": [
+      "Apparently every pipette is a plot to redesign civilisation."
+    ],
+    "exampleNarrative": "They are playing God with nature and calling it science.",
+    "notes": "Useful for biotech, embryo work, gene editing, ecological manipulation."
+  },
+  {
+    "id": "F04",
+    "frameName": "Children under threat",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "The research is reframed as a threat to children, families, or future generations.",
+    "typicalTopics": [
+      "vaccines",
+      "education",
+      "fertility",
+      "endocrine",
+      "environment"
+    ],
+    "triggerWords": [
+      "children",
+      "future",
+      "family",
+      "reproductive",
+      "school"
+    ],
+    "likelyDistortion": "The work is twisted into a story about harm to children or families.",
+    "publicFear": "Protection of children and kin",
+    "whatToClarifyUpfront": "Be explicit about who the study is and is not about.",
+    "whatItDoesNotMean": "This does not imply direct risk to children, fertility, or parenting.",
+    "rapidResponseAdvice": "Correct the target population and do not repeat the scare frame.",
+    "humourOptions": [
+      "Nothing says sober research debate like 'what about the children?' five minutes in."
+    ],
+    "exampleNarrative": "This will harm children and they know it.",
+    "notes": "Often appears even when children are not actually in scope."
+  },
+  {
+    "id": "F05",
+    "frameName": "Civilisational decline",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "A finding is reframed as proof that society, morality, or institutions are collapsing.",
+    "typicalTopics": [
+      "social science",
+      "migration",
+      "education",
+      "gender",
+      "trust"
+    ],
+    "triggerWords": [
+      "decline",
+      "collapse",
+      "decaying",
+      "crisis",
+      "civilisation"
+    ],
+    "likelyDistortion": "A bounded finding becomes evidence of broad societal breakdown.",
+    "publicFear": "Status loss; moral panic; identity threat",
+    "whatToClarifyUpfront": "Restate the narrow research question and the limits of generalisation.",
+    "whatItDoesNotMean": "This does not prove large-scale decline or cultural takeover.",
+    "rapidResponseAdvice": "Shrink the frame back to the actual population and method.",
+    "humourOptions": [
+      "One dataset is not, in fact, the fall of civilisation."
+    ],
+    "exampleNarrative": "This proves our society is collapsing.",
+    "notes": "Useful when abstracts touch values, identity, or institutions."
+  },
+  {
+    "id": "F06",
+    "frameName": "Wasteful elite science",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Research is framed as frivolous, ideological, or detached from ordinary people's needs.",
+    "typicalTopics": [
+      "public funding",
+      "academia",
+      "climate",
+      "social science"
+    ],
+    "triggerWords": [
+      "taxpayer",
+      "waste",
+      "ivory tower",
+      "nonsense",
+      "ideological"
+    ],
+    "likelyDistortion": "The research is a luxury hobby funded by the public against their interests.",
+    "publicFear": "Resentment of elite institutions",
+    "whatToClarifyUpfront": "Explain practical value, limits, and why exploratory work matters.",
+    "whatItDoesNotMean": "This does not imply immediate policy cost or elite contempt.",
+    "rapidResponseAdvice": "Translate why the question matters in plain language.",
+    "humourOptions": [
+      "The taxpayer-funded apocalypse apparently now includes basic research."
+    ],
+    "exampleNarrative": "They waste public money on ideological nonsense.",
+    "notes": "Good for publicly funded academic work."
+  },
+  {
+    "id": "F07",
+    "frameName": "Censorship of ordinary people",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Scientific consensus is reframed as silencing dissent or punishing common sense.",
+    "typicalTopics": [
+      "public health",
+      "moderation",
+      "misinformation",
+      "social platforms"
+    ],
+    "triggerWords": [
+      "censored",
+      "silenced",
+      "banned",
+      "dissent",
+      "free speech"
+    ],
+    "likelyDistortion": "Evidence-based messaging is recast as elite suppression.",
+    "publicFear": "Loss of voice; social punishment",
+    "whatToClarifyUpfront": "Explain what is evidence, what is uncertainty, and what is moderation vs debate.",
+    "whatItDoesNotMean": "This does not prove censorship or suppression of legitimate inquiry.",
+    "rapidResponseAdvice": "Avoid sounding punitive; emphasise clarification not shaming.",
+    "humourOptions": [
+      "The internet does love calling correction 'censorship'."
+    ],
+    "exampleNarrative": "They want to silence anyone asking questions.",
+    "notes": "Especially relevant for contentious health or platform topics."
+  },
+  {
+    "id": "F08",
+    "frameName": "Science as political control",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Research is recast as a pretext for regulation, behavioural control, or social engineering.",
+    "typicalTopics": [
+      "public health",
+      "climate",
+      "AI governance",
+      "digital identity"
+    ],
+    "triggerWords": [
+      "control",
+      "mandate",
+      "compliance",
+      "surveillance",
+      "behavioural"
+    ],
+    "likelyDistortion": "The finding is used as evidence of top-down control over everyday life.",
+    "publicFear": "Loss of autonomy; coercion",
+    "whatToClarifyUpfront": "Separate evidence generation from policy choices and implementation.",
+    "whatItDoesNotMean": "This does not itself justify mandates, surveillance, or coercive policy.",
+    "rapidResponseAdvice": "Say clearly what the study informs and what it does not authorise.",
+    "humourOptions": [
+      "A correlation paper is not a coup, despite appearances online."
+    ],
+    "exampleNarrative": "This is about controlling the public, not science.",
+    "notes": "Good for topics adjacent to policy or governance."
+  },
+  {
+    "id": "F09",
+    "frameName": "Closed guild / scientist conspiracy",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "A normal research community is reframed as a coordinated clique protecting its own power, grants, and worldview.",
+    "typicalTopics": [
+      "academia",
+      "peer review",
+      "advisory bodies",
+      "public health",
+      "biotechnology"
+    ],
+    "triggerWords": [
+      "cartel",
+      "club",
+      "priesthood",
+      "insiders",
+      "network",
+      "coordinated",
+      "agenda"
+    ],
+    "likelyDistortion": "Scientists are acting together as a self-serving caste rather than as a contested evidence community.",
+    "publicFear": "Exclusion by insiders; rigged expertise; loss of public voice",
+    "whatToClarifyUpfront": "Explain how disagreement, replication, review, and oversight actually work; name uncertainty and institutional limits.",
+    "whatItDoesNotMean": "This does not show central coordination, uniform intent, or a single scientific line imposed from above.",
+    "rapidResponseAdvice": "Demystify process. Show where scientists disagree, and where guardrails exist. Keep the tone calm, not priestly.",
+    "humourOptions": [
+      "It is a lab meeting, not a moon cult.",
+      "A research network is not automatically a secret society, however disappointing that may be for the plot."
+    ],
+    "exampleNarrative": "“They all cite each other, fund each other, and call it science.”",
+    "notes": "Useful across topics. Especially relevant for NATO / hybrid-warfare style work on institutional mistrust."
+  },
+  {
+    "id": "F14",
+    "frameName": "Prevention is withheld because treatment pays",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Research, guidance, or clinical priorities are framed as intentionally favouring profitable treatment over prevention.",
+    "typicalTopics": [
+      "nutrition",
+      "chronic disease",
+      "pharma",
+      "public health",
+      "oncology"
+    ],
+    "triggerWords": [
+      "repeat customer",
+      "lifestyle ignored",
+      "chronic",
+      "profits",
+      "maintenance",
+      "prevention",
+      "cure",
+      "lifelong meds",
+      "subscription patients",
+      "management not cure"
+    ],
+    "likelyDistortion": "Institutions suppress low-cost prevention because recurring treatment is more lucrative.",
+    "publicFear": "People are being kept chronically ill on purpose.",
+    "whatToClarifyUpfront": "Differentiate prevention, risk reduction, treatment, and evidence thresholds. Explain why proving prevention claims is hard and why that does not imply bad faith.",
+    "whatItDoesNotMean": "A study on treatment does not prove prevention is ignored, and commercial incentives do not erase evidentiary standards.",
+    "rapidResponseAdvice": "Acknowledge the intuition behind the suspicion, then explain pathways, incentives, and evidence in plain language.",
+    "humourOptions": [
+      "The spreadsheet of incentives is real. The giant master plan usually is not.",
+      "The spreadsheet is not secretly dating the tumour."
+    ],
+    "exampleNarrative": "“If they wanted you healthy, this would be front-page news.”",
+    "notes": "Very relevant to food, sunscreen, metabolic health, and supplement rhetoric."
+  },
+  {
+    "id": "F15",
+    "frameName": "Toxic traces everywhere",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Low-dose exposure, residues, additives, or particles are framed as proof of widespread hidden poisoning.",
+    "typicalTopics": [
+      "food safety",
+      "sunscreen",
+      "cosmetics",
+      "nanoparticles",
+      "environment",
+      "vaccines"
+    ],
+    "triggerWords": [
+      "accumulates",
+      "absorbed",
+      "endocrine",
+      "poisoning",
+      "bloodstream",
+      "exposure",
+      "invisible",
+      "residue",
+      "toxic",
+      "accumulation",
+      "contamination",
+      "toxin"
+    ],
+    "likelyDistortion": "Any detectable substance becomes evidence of deliberate harm or systemic negligence.",
+    "publicFear": "The body is under constant assault from invisible industrial chemicals.",
+    "whatToClarifyUpfront": "Separate detection from danger. Explain dose, route, context, uncertainty, and what regulators actually measure.",
+    "whatItDoesNotMean": "Detection alone does not equal clinically meaningful risk, and “chemical” is not a synonym for harm.",
+    "rapidResponseAdvice": "Use one crisp comparison and one visual. Avoid over-reassurance; explain thresholds and uncertainty.",
+    "humourOptions": [
+      "Modern instruments can detect almost everything. They cannot automatically tell you what deserves panic.",
+      "Yes, a particle is small. No, it is not automatically plotting against you."
+    ],
+    "exampleNarrative": "“If they can measure it, it must already be poisoning you.”",
+    "notes": "Use whenever nanoparticles, sunscreen, additives, residues, or biomonitoring appear."
+  },
+  {
+    "id": "F16",
+    "frameName": "Digital medicine as surveillance",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Digital health tools are framed as a pretext for monitoring, behavioural control, or loss of bodily autonomy.",
+    "typicalTopics": [
+      "digital health",
+      "eHealth",
+      "records",
+      "AI triage",
+      "public health governance"
+    ],
+    "triggerWords": [
+      "biometric",
+      "tracking",
+      "platform",
+      "score",
+      "passport",
+      "QR",
+      "access",
+      "centralised",
+      "monitoring",
+      "surveillance",
+      "scoring"
+    ],
+    "likelyDistortion": "Medical infrastructure is presented as creeping social control disguised as convenience or safety.",
+    "publicFear": "Health data will be used against ordinary people by states, insurers, or platforms.",
+    "whatToClarifyUpfront": "Clarify what data is collected, who can access it, what safeguards exist, and where the limits are.",
+    "whatItDoesNotMean": "Digitisation is not identical to coercion, and interoperability does not automatically imply surveillance.",
+    "rapidResponseAdvice": "Name governance mechanisms, retention limits, and opt-out boundaries. Be concrete, not soothing.",
+    "humourOptions": [
+      "A medical record is not a spy thriller, though poor governance can certainly audition for one.",
+      "A better database is not, by itself, the panopticon in a white coat."
+    ],
+    "exampleNarrative": "“Today a health app, tomorrow a citizen score.”",
+    "notes": "Relevant to WHO, digital IDs, eHealth, and institutional trust."
+  },
+  {
+    "id": "F17",
+    "frameName": "Suppressed cheap cure",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Low-cost compounds, supplements, or repurposed interventions are framed as deliberately buried because they threaten profitable medicine.",
+    "typicalTopics": [
+      "diabetes",
+      "oncology",
+      "supplements",
+      "repurposed drugs",
+      "metabolic health"
+    ],
+    "triggerWords": [
+      "cheap cure",
+      "erased",
+      "banned",
+      "silenced",
+      "they do not want you to know"
+    ],
+    "likelyDistortion": "A simple cure exists but is being hidden by regulators, industry, or “medical elites”.",
+    "publicFear": "Life-saving solutions are being withheld for profit.",
+    "whatToClarifyUpfront": "Explain what counts as evidence, approval, dosing, replication, and clinical relevance.",
+    "whatItDoesNotMean": "A promising mechanism, lab result, or anecdote is not the same thing as a proven cure.",
+    "rapidResponseAdvice": "Respond quickly and plainly. Name the gap between interesting early evidence and treatment-grade proof.",
+    "humourOptions": [
+      "A molecule can be promising without already deserving its own conspiracy documentary."
+    ],
+    "exampleNarrative": "“This doctor will be deleted in 24 hours for telling the truth.”",
+    "notes": "Useful for deepfake doctors and miracle-cure sales."
+  },
+  {
+    "id": "F18",
+    "frameName": "Natural immunity / natural body absolutism",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Biological “naturalness” is framed as morally and medically superior to vaccination, additives, or any engineered intervention.",
+    "typicalTopics": [
+      "vaccines",
+      "public health",
+      "nutrition",
+      "reproduction",
+      "supplements"
+    ],
+    "triggerWords": [
+      "natural",
+      "pure",
+      "immune system",
+      "body knows",
+      "chemical assault",
+      "artificial"
+    ],
+    "likelyDistortion": "Intervention is treated as corruption of a perfect natural system.",
+    "publicFear": "The body is self-sufficient and modern medicine weakens it.",
+    "whatToClarifyUpfront": "Acknowledge that bodies are adaptive without romanticising vulnerability. Explain risk trade-offs and context.",
+    "whatItDoesNotMean": "Natural exposure is not automatically safer, and “natural” is not a scientific verdict.",
+    "rapidResponseAdvice": "Keep this calm and non-patronising. Moral language around purity escalates quickly.",
+    "humourOptions": [
+      "Nature does many admirable things. It also, on occasion, invents measles."
+    ],
+    "exampleNarrative": "“Your immune system is perfect until science interferes.”",
+    "notes": "High relevance for routine vaccination and wellness content. This frame often spills into pregnancy politics, where the 'natural course' is moralised and medical intervention is cast as contamination, weakness, or civilisational decay."
+  },
+  {
+    "id": "F19",
+    "frameName": "Global health as covert control",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "International coordination in health is framed as a cover for coercion, sovereignty loss, or mass behavioural control.",
+    "typicalTopics": [
+      "WHO",
+      "pandemic governance",
+      "public health",
+      "digital health",
+      "vaccination"
+    ],
+    "triggerWords": [
+      "treaty",
+      "sovereignty",
+      "globalists",
+      "control",
+      "mandate",
+      "prison",
+      "totality"
+    ],
+    "likelyDistortion": "Health governance is reinterpreted as supranational domination.",
+    "publicFear": "National self-rule is being replaced by unelected medical control.",
+    "whatToClarifyUpfront": "State clearly what is voluntary, what is binding, and who holds authority. Separate coordination from coercion.",
+    "whatItDoesNotMean": "International agreements do not automatically erase national decision-making.",
+    "rapidResponseAdvice": "Use institutional diagrams, not abstractions. People need to see who can and cannot do what.",
+    "humourOptions": [
+      "An acronym is not yet a coup, however theatrical the caption."
+    ],
+    "exampleNarrative": "“Public health is the excuse; global control is the project.”",
+    "notes": "Useful for WHO / pandemic treaty disinformation."
+  },
+  {
+    "id": "F20",
+    "frameName": "Psychiatry as sedation industry",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Mental-health expertise is framed as a machinery of numbing, labelling, and dependency rather than care.",
+    "typicalTopics": [
+      "mental health",
+      "psychiatry",
+      "ADHD",
+      "anxiety",
+      "depression",
+      "youth health"
+    ],
+    "triggerWords": [
+      "drugged",
+      "numbed",
+      "labels",
+      "big pharma psychiatry",
+      "cure yourself"
+    ],
+    "likelyDistortion": "Professional care is cast as social control while quick hacks or self-diagnosis are sold as liberation.",
+    "publicFear": "People are being chemically managed instead of understood.",
+    "whatToClarifyUpfront": "Differentiate symptom relief, long-term care, diagnosis, and evidence. Avoid overstating what one study can do.",
+    "whatItDoesNotMean": "A critique of over-medicalisation is not proof that expertise is fake, and a viral trick is not treatment.",
+    "rapidResponseAdvice": "Stay humane. Mental-health discussions punish cold language instantly.",
+    "humourOptions": [
+      "The existence of nuance is inconvenient for anyone selling a 60-second cure."
+    ],
+    "exampleNarrative": "“Psychiatrists want subscribers; here is the one breathing trick they fear.”",
+    "notes": "Relevant to Gen Z self-diagnosis and pseudo-therapeutic content."
+  },
+  {
+    "id": "F21",
+    "frameName": "Social science as ideology",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Research on society is framed as activist doctrine disguised as evidence.",
+    "typicalTopics": [
+      "sociology",
+      "economics",
+      "education",
+      "migration",
+      "policy",
+      "inequality"
+    ],
+    "triggerWords": [
+      "equity",
+      "inequality",
+      "inclusion",
+      "cohesion",
+      "resilience",
+      "discourse",
+      "framing"
+    ],
+    "likelyDistortion": "The work is recast as political preaching rather than analysis.",
+    "publicFear": "fear of indoctrination, elite contempt, social engineering",
+    "whatToClarifyUpfront": "State clearly what was measured, how, and where interpretation begins.",
+    "whatItDoesNotMean": "It does not prove a moral ranking of citizens or justify coercive redesign of society.",
+    "rapidResponseAdvice": "Lead with method, sample limits, and plain-language definitions before values-based debates hijack the story.",
+    "humourOptions": [
+      "Careful sociology can still be accused of having opinions in a lab coat."
+    ],
+    "exampleNarrative": "“They call it research, but it is just ideology with charts.”",
+    "notes": "Useful for sociology, education, migration, trust, and inequality topics."
+  },
+  {
+    "id": "F22",
+    "frameName": "Economic pain as deliberate design",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Economic hardship is framed as intentional harm imposed by elites, experts, or global agendas.",
+    "typicalTopics": [
+      "economics",
+      "taxation",
+      "inflation",
+      "labour",
+      "climate policy",
+      "energy",
+      "regulation"
+    ],
+    "triggerWords": [
+      "inflation",
+      "tax",
+      "labour market",
+      "transition",
+      "austerity",
+      "carbon",
+      "competitiveness"
+    ],
+    "likelyDistortion": "Findings are twisted into a story that experts want ordinary people poorer, weaker, or more dependent.",
+    "publicFear": "fear of engineered decline, loss of livelihood, class resentment",
+    "whatToClarifyUpfront": "Separate descriptive analysis from policy preference and explain trade-offs clearly.",
+    "whatItDoesNotMean": "It does not prove a plot to impoverish households or abolish prosperity.",
+    "rapidResponseAdvice": "Acknowledge real costs openly; vagueness about winners and losers invites conspiracy language.",
+    "humourOptions": [
+      "An elasticity estimate can become a class-war poster very quickly."
+    ],
+    "exampleNarrative": "“This is not economics, it is a blueprint for making you poorer.”",
+    "notes": "Useful for economics, labour, taxation, transition, and energy policy."
+  },
+  {
+    "id": "F23",
+    "frameName": "Indoctrination of children",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Research touching schools, child development, literacy, or public communication is framed as ideological conditioning.",
+    "typicalTopics": [
+      "education",
+      "media literacy",
+      "child development",
+      "psychology",
+      "public health",
+      "digital literacy"
+    ],
+    "triggerWords": [
+      "children",
+      "curriculum",
+      "resilience",
+      "literacy",
+      "prevention",
+      "behaviour",
+      "classroom"
+    ],
+    "likelyDistortion": "Normal educational or preventive work is recast as state-sponsored brainwashing.",
+    "publicFear": "fear of parental displacement, moral capture, loss of family authority",
+    "whatToClarifyUpfront": "Explain the educational goal, age group, and practical boundaries in very plain language.",
+    "whatItDoesNotMean": "It does not replace parents, erase disagreement, or programme children into one worldview.",
+    "rapidResponseAdvice": "Show the concrete classroom purpose and who decides what is taught.",
+    "humourOptions": [
+      "The phrase “resilience training” can sound heroic to you and suspicious to somebody else’s uncle."
+    ],
+    "exampleNarrative": "“They are not teaching children; they are programming them.”",
+    "notes": "Useful for education, literacy, misinformation, and child-development topics."
+  },
+  {
+    "id": "F24",
+    "frameName": "Expertocracy without mandate",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Evidence-based policy advice is reframed as rule by unelected specialists who bypass democratic legitimacy.",
+    "typicalTopics": [
+      "governance",
+      "regulation",
+      "advisory bodies",
+      "public health",
+      "economics",
+      "climate",
+      "digital policy"
+    ],
+    "triggerWords": [
+      "experts",
+      "advisory board",
+      "framework",
+      "recommendation",
+      "compliance",
+      "governance"
+    ],
+    "likelyDistortion": "Research is portrayed as an instrument for replacing politics with technocratic command.",
+    "publicFear": "fear of lost sovereignty, democratic bypass, unaccountable control",
+    "whatToClarifyUpfront": "Clarify the difference between evidence, advice, and political decision-making.",
+    "whatItDoesNotMean": "It does not grant scientists the authority to rule, punish, or legislate.",
+    "rapidResponseAdvice": "Name who decides, who advises, and what remains contested.",
+    "humourOptions": [
+      "A policy brief is not a coup, though the internet may file it under one."
+    ],
+    "exampleNarrative": "“Experts now think they should govern instead of elected people.”",
+    "notes": "Useful for policy, regulation, WHO, education, economics, and climate topics."
+  },
+  {
+    "id": "F25",
+    "frameName": "History rewritten against the nation",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Historical research is framed as an attempt to shame, weaken, or delegitimise the nation through selective memory.",
+    "typicalTopics": [
+      "history",
+      "memory politics",
+      "war studies",
+      "empire",
+      "colonialism",
+      "identity",
+      "education"
+    ],
+    "triggerWords": [
+      "memory",
+      "archive",
+      "empire",
+      "guilt",
+      "comparison",
+      "collaboration",
+      "genocide",
+      "monuments"
+    ],
+    "likelyDistortion": "Findings are twisted into claims that historians are erasing pride and manufacturing national self-hatred.",
+    "publicFear": "fear of humiliation, identity loss, betrayal of ancestors",
+    "whatToClarifyUpfront": "Explain the scope of the archive, period, and research question before moral conclusions rush in.",
+    "whatItDoesNotMean": "It does not declare the nation uniquely evil or demand collective guilt from living citizens.",
+    "rapidResponseAdvice": "Distinguish historical explanation from present-day moral accusation.",
+    "humourOptions": [
+      "An archive note can be rebranded as treason before lunch."
+    ],
+    "exampleNarrative": "“They are rewriting history so you will be ashamed of your own country.”",
+    "notes": "Useful for history, war memory, empire, education, and identity debates."
+  },
+  {
+    "id": "F26",
+    "frameName": "Demographic siege / replacement panic",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Population research is recast as proof of a coordinated plan to replace, dilute, or outnumber the “real” population.",
+    "typicalTopics": [
+      "migration",
+      "demography",
+      "fertility",
+      "urban studies",
+      "religion",
+      "integration"
+    ],
+    "triggerWords": [
+      "demography",
+      "migration",
+      "fertility",
+      "birth rate",
+      "population",
+      "replacement",
+      "integration"
+    ],
+    "likelyDistortion": "Descriptive research becomes a civilisational emergency narrative about invasion and disappearance.",
+    "publicFear": "fear of extinction, loss of continuity, ethnic panic",
+    "whatToClarifyUpfront": "State what the numbers do and do not show; define time horizons and uncertainty.",
+    "whatItDoesNotMean": "It does not prove intentional replacement, imminent collapse, or zero-sum demographic war.",
+    "rapidResponseAdvice": "Avoid compressed phrasing that sounds like a countdown to national extinction.",
+    "humourOptions": [
+      "A population chart can acquire battle music in under five minutes."
+    ],
+    "exampleNarrative": "“The data prove they are replacing us.”",
+    "notes": "Useful for migration, fertility, demography, urban studies, and religion topics."
+  },
+  {
+    "id": "F27",
+    "frameName": "Foreign or globalist agenda",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Research is framed as the product of foreign influence, globalist ideology, or external interference in national life.",
+    "typicalTopics": [
+      "public health",
+      "climate",
+      "migration",
+      "education",
+      "governance",
+      "AI"
+    ],
+    "triggerWords": [
+      "foreign",
+      "globalist",
+      "agenda",
+      "Brussels",
+      "WHO",
+      "WEF",
+      "sovereignty",
+      "imported",
+      "external pressure",
+      "outside influence"
+    ],
+    "likelyDistortion": "Findings are twisted into evidence that international or foreign actors are directing national policy against the interests of citizens.",
+    "publicFear": "Loss of national sovereignty; manipulation by unseen external powers",
+    "whatToClarifyUpfront": "State clearly who funded the research, where it was conducted, and what decisions it can and cannot influence.",
+    "whatItDoesNotMean": "This does not mean the research serves a foreign political agenda or overrides national democratic decisions.",
+    "rapidResponseAdvice": "Be concrete about institutional affiliations and funding. Abstract denials of 'foreign influence' tend to amplify the frame.",
+    "humourOptions": [
+      "The data did not arrive by diplomatic pouch.",
+      "A co-authored paper is not a geopolitical operation, despite what the caption says."
+    ],
+    "exampleNarrative": "This research was funded by globalist institutions to force their agenda on us.",
+    "notes": "Critical for NATO/cognitive-security context and hybrid-threat environments. Especially relevant in Central and Eastern Europe."
+  },
+  {
+    "id": "F28",
+    "frameName": "Science as weapon of cultural war",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Research on values, identity, behaviour, or society is framed as one side of a culture war rather than as inquiry.",
+    "typicalTopics": [
+      "education",
+      "sociology",
+      "psychology",
+      "gender",
+      "migration",
+      "media literacy"
+    ],
+    "triggerWords": [
+      "woke",
+      "ideology",
+      "gender",
+      "diversity",
+      "values",
+      "identity",
+      "progressive",
+      "traditional",
+      "culture war",
+      "agenda"
+    ],
+    "likelyDistortion": "Findings are recast as evidence that researchers are political activists using data to delegitimise traditional values or reshape society.",
+    "publicFear": "Moral displacement; loss of cultural identity; imposition of minority values on majority",
+    "whatToClarifyUpfront": "Separate what was measured from what is being recommended. State the method and sample clearly before interpretations are made.",
+    "whatItDoesNotMean": "It does not declare one set of values superior, endorse political positions, or prescribe how society should be organised.",
+    "rapidResponseAdvice": "Lead with methodology before values language. Avoid terms that are already coded in the culture-war lexicon without defining them precisely.",
+    "humourOptions": [
+      "A survey is not a manifesto, even when it produces inconvenient results.",
+      "Measuring something is not the same as endorsing it. This remains true regardless of what the something is."
+    ],
+    "exampleNarrative": "This is not research — it is woke ideology dressed up in statistics.",
+    "notes": "Increasingly relevant across social science, education, and policy research in polarised environments."
+  },
+  {
+    "id": "F29",
+    "frameName": "Data collected without our consent",
+    "status": "Draft",
+    "type": "stable",
+    "shortDescription": "Research using population data, health records, or behavioural datasets is framed as covert surveillance or exploitation of people without their knowledge.",
+    "typicalTopics": [
+      "digital health",
+      "social science",
+      "AI",
+      "epidemiology",
+      "public health",
+      "sociology"
+    ],
+    "triggerWords": [
+      "our data",
+      "without consent",
+      "used against us",
+      "profiled",
+      "tracked",
+      "harvested",
+      "sold",
+      "exploited",
+      "surveilled"
+    ],
+    "likelyDistortion": "Normal data governance and research ethics procedures are dismissed; the research is recast as violation of privacy and bodily autonomy.",
+    "publicFear": "Being studied, profiled, or exploited without knowledge or recourse",
+    "whatToClarifyUpfront": "Explain what data was used, how it was anonymised, what ethics approval was granted, and what participants were told.",
+    "whatItDoesNotMean": "Using anonymised or consented population data is not covert surveillance, and published findings are not a commercial data product.",
+    "rapidResponseAdvice": "Be specific about consent, anonymisation, and governance. Vague reassurances increase distrust.",
+    "humourOptions": [
+      "The ethics committee exists and it did, in fact, read the protocol.",
+      "Anonymised aggregate data is not your file. It is, at best, a very blurry crowd scene."
+    ],
+    "exampleNarrative": "They used our health data without asking and now they are profiting from it.",
+    "notes": "Growing relevance for digital health, AI, epidemiology, and any research using admin or platform data."
+  },
+  {
+    "id": "F30",
+    "frameName": "AI medical pseudo-authority",
+    "status": "Active",
+    "type": "stable",
+    "shortDescription": "AI-generated content mimics medical expertise, producing confident-sounding diagnoses, treatment advice, or expert endorsements that carry no clinical accountability.",
+    "typicalTopics": ["AI health", "digital health", "telehealth", "chatbots", "diagnostics", "clinical decision support"],
+    "triggerWords": ["AI doctor", "AI diagnosis", "AI health", "chatbot", "virtual doctor", "AI expert", "generated by AI", "AI-generated", "synthetic expert", "deepfake doctor", "machine diagnosis", "automated health", "AI medical"],
+    "likelyDistortion": "AI-produced medical content is treated as equivalent to clinical expertise. Synthetic confidence replaces accountability, qualifications, and clinical context.",
+    "publicFear": "Being given medical advice by a machine pretending to be a doctor — and not knowing the difference",
+    "whatToClarifyUpfront": "Explain what role AI played in the research or communication, who holds clinical responsibility, and what human oversight applies.",
+    "whatItDoesNotMean": "AI assistance in research or diagnostics does not mean a machine is replacing your doctor, and AI-generated text is not a peer-reviewed clinical recommendation.",
+    "rapidResponseAdvice": "Name the boundary between AI assistance and clinical responsibility. The public needs to know who is accountable, not just who is confident.",
+    "humourOptions": [
+      "The algorithm has excellent bedside manner. No actual bedside, though.",
+      "It passed the confidence exam. Still working on the medical one."
+    ],
+    "exampleNarrative": "This AI doctor diagnosed me in seconds — no waiting room, no judgement. Why do we still need real doctors?",
+    "notes": "Covers deepfake experts, synthetic health influencers, and AI systems presenting with false clinical authority."
+  },
+  {
+    "id": "F31",
+    "frameName": "Preliminary evidence inflated into certainty",
+    "status": "Active",
+    "type": "stable",
+    "shortDescription": "Early-stage, preliminary, or non-peer-reviewed findings are presented as settled fact, stripping away the uncertainty, replication needs, and caveats that define how science actually works.",
+    "typicalTopics": ["preprints", "early trials", "pilot studies", "conference abstracts", "preliminary data", "single studies"],
+    "triggerWords": ["study proves", "scientists confirm", "new research shows", "breakthrough", "game-changer", "conclusive", "definitive", "settled", "proven", "the evidence is clear", "one study"],
+    "likelyDistortion": "A single preliminary finding is elevated to proof. Caveats about sample size, study design, and replication are stripped away, creating false certainty.",
+    "publicFear": "Being told something is true when it might not be — and making decisions based on it",
+    "whatToClarifyUpfront": "State clearly what stage this evidence is at — preprint, pilot, phase 1, single study — and what would be needed to confirm the finding.",
+    "whatItDoesNotMean": "A preliminary or early finding is not proof. It is a signal that warrants further investigation, not a basis for public health decisions or personal choices.",
+    "rapidResponseAdvice": "Name the evidence stage. One sentence about what was found, one about what it does not yet prove, and one about what happens next.",
+    "humourOptions": [
+      "One study is a conversation starter, not a mic drop.",
+      "Preliminary means 'interesting, keep going' — not 'stop the presses.'"
+    ],
+    "exampleNarrative": "Scientists have confirmed that this compound cures the disease — the study is right here.",
+    "notes": "Cross-domain pattern. Applies to health, environment, nutrition, psychology, and technology. One of the most common distortion patterns in science communication."
+  },
+  {
+    "id": "F32",
+    "frameName": "Wellness science-washing",
+    "status": "Active",
+    "type": "stable",
+    "shortDescription": "Commercial wellness products or alternative health claims borrow the language and aesthetics of science without meeting its standards, creating a veneer of evidence for unproven interventions.",
+    "typicalTopics": ["supplements", "detox", "biohacking", "natural cures", "functional medicine", "wellness influencers", "alternative medicine"],
+    "triggerWords": ["clinically proven", "science-backed", "doctor-recommended", "research shows", "studies confirm", "peer-reviewed", "detox", "biohack", "natural cure", "clean", "toxin-free", "wellness", "holistic science"],
+    "likelyDistortion": "Commercial products use scientific-sounding language to create false authority. The claim sounds evidence-based but the evidence is absent, cherry-picked, or inapplicable.",
+    "publicFear": "Missing out on something that works because 'mainstream science' is too slow or too compromised to recognise it",
+    "whatToClarifyUpfront": "Explain what the actual evidence base is for the claim. Distinguish between scientific language and scientific evidence. Name the standard the claim would need to meet.",
+    "whatItDoesNotMean": "Using scientific-sounding words does not make something scientific. 'Clinically proven' on a product label does not mean the same thing as clinical proof in a peer-reviewed study.",
+    "rapidResponseAdvice": "Don't attack the product. Explain the gap between the language being used and the evidence that would justify it. Let the audience see the mismatch.",
+    "humourOptions": [
+      "If 'science-backed' meant what Instagram thinks it means, we'd have cured everything by now.",
+      "The supplement has a PhD in graphic design."
+    ],
+    "exampleNarrative": "This natural supplement is clinically proven to boost immunity — doctors don't want you to know because they can't profit from it.",
+    "notes": "Often commercially motivated rather than conspiratorial. Important to treat the audience with respect — many people genuinely want better health options."
+  },
+  {
+    "id": "F33",
+    "frameName": "Fertility and hormone panic",
+    "status": "Active",
+    "type": "stable",
+    "shortDescription": "Exaggerated or distorted claims about threats to fertility, hormones, or reproductive health — often targeting younger audiences with fear-based content about products, exposures, or institutions damaging their bodies.",
+    "typicalTopics": ["fertility", "hormones", "endocrine disruptors", "reproductive health", "contraception", "sperm count", "menstrual cycle", "testosterone", "oestrogen", "estrogen"],
+    "triggerWords": ["fertility crisis", "destroying fertility", "hormone disruptors", "endocrine", "sperm count", "reproductive harm", "cycle disruption", "testosterone levels", "hormonal damage", "chemical castration", "sterilisation", "sterilization"],
+    "likelyDistortion": "Narrow findings about hormonal mechanisms or reproductive markers are inflated into existential threats to fertility, often linking them to products, policies, or institutions as deliberate attacks.",
+    "publicFear": "That something is silently damaging your ability to have children — and no one is telling you",
+    "whatToClarifyUpfront": "Specify what was actually measured, in what population, with what effect size. Distinguish between a hormonal signal and a fertility outcome. Name what is known and what is not.",
+    "whatItDoesNotMean": "A hormonal measurement in a laboratory study does not mean your fertility is under attack. A change in a biomarker is not the same as a change in reproductive outcomes.",
+    "rapidResponseAdvice": "Restore scale. Name what was measured and what was not. Acknowledge that reproductive health matters — then explain why this finding does not mean what the panic version says it means.",
+    "humourOptions": [
+      "Your hormones have survived worse than this study's abstract.",
+      "Sperm counts: the one statistic where everyone suddenly cares about methodology."
+    ],
+    "exampleNarrative": "They are putting chemicals in everything that are destroying our fertility and nobody is doing anything about it.",
+    "notes": "Particularly prevalent on social media targeting younger audiences. Often mixes legitimate concern with commercial supplement marketing. This frame often overlaps with contraception narratives (F40), where side effects, hormonal changes, and fertility anxiety are pulled into a wider moral story about femininity, decline, and control. Also overlaps with F42 (disease as unresolved inner conflict), where hormonal and fertility issues are interpreted through a lens of moral failure, inner conflict, or spiritual imbalance rather than medical causation."
+  },
+  {
+    "id": "F34",
+    "frameName": "Infodemic as manipulation",
+    "status": "Active",
+    "type": "stable",
+    "shortDescription": "The volume and complexity of available information is reframed as deliberate institutional strategy — 'they flood you with information so you stop knowing what is true' — turning confusion into evidence of conspiracy.",
+    "typicalTopics": ["media literacy", "information overload", "trust", "institutional communication", "public health messaging", "fact-checking"],
+    "triggerWords": ["information overload", "too much information", "confused on purpose", "they want you confused", "flood of data", "can't trust anything", "truth is buried", "noise", "distraction", "overwhelmed", "infodemic", "deliberate confusion"],
+    "likelyDistortion": "The natural complexity of science and public communication is recast as intentional manipulation. Confusion becomes proof of a cover-up rather than a feature of difficult topics.",
+    "publicFear": "That the sheer volume of contradictory information is a deliberate strategy to prevent you from knowing the truth",
+    "whatToClarifyUpfront": "Acknowledge that science communication is genuinely complex and that confusion is understandable. Explain why contradictory findings exist and how evidence accumulates over time.",
+    "whatItDoesNotMean": "Complexity is not conspiracy. Contradictory findings are a normal part of science, not evidence that someone is hiding the truth. Difficulty understanding something does not mean it was designed to confuse you.",
+    "rapidResponseAdvice": "Validate the frustration. Explain that uncertainty is real but not engineered. Help the audience see how evidence works without sounding condescending.",
+    "humourOptions": [
+      "Science is confusing because reality is confusing. That is not a plot twist.",
+      "If they wanted to hide the truth, publishing thousands of open-access papers is a strange strategy."
+    ],
+    "exampleNarrative": "They keep changing the guidelines on purpose so no one knows what to believe anymore. It's deliberate.",
+    "notes": "A meta-narrative that can attach to any topic. Particularly dangerous because it makes all correction look like further manipulation."
+  },
+  {
+    "id": "F35",
+    "frameName": "Disease blamed on outsiders",
+    "status": "Active",
+    "type": "stable",
+    "shortDescription": "Disease outbreaks or health risks are attributed to migrants, refugees, or foreign populations — using epidemiological language to justify exclusion and frame outsiders as biological threats.",
+    "typicalTopics": ["migration", "public health", "epidemiology", "disease outbreaks", "border health", "quarantine", "travel health"],
+    "triggerWords": ["imported disease", "brought it here", "foreign disease", "migrant health", "border disease", "unscreened", "unvaccinated migrants", "disease carriers", "outsiders", "they brought", "infected migrants", "open borders disease"],
+    "likelyDistortion": "Health data about disease prevalence is selectively used to frame migrants as disease vectors. Epidemiological complexity is replaced with a simple blame narrative.",
+    "publicFear": "That outsiders are bringing diseases into the country and authorities are allowing it",
+    "whatToClarifyUpfront": "Explain what the actual epidemiological data shows. Distinguish between disease prevalence, transmission risk, and population-level health patterns. Name what the evidence supports and what it does not.",
+    "whatItDoesNotMean": "Disease prevalence data is not evidence that migrants cause outbreaks. Public health is a shared infrastructure challenge, not a border-enforcement question.",
+    "rapidResponseAdvice": "Stick to the epidemiology. Do not dismiss public concern about health infrastructure, but do not allow selective data use to frame people as threats.",
+    "humourOptions": [
+      "Pathogens do not check passports. They also do not read opinion columns.",
+      "Blaming disease on outsiders is the oldest public health distortion. It was wrong then too."
+    ],
+    "exampleNarrative": "These diseases were under control until they opened the borders. Now look what's happening.",
+    "notes": "Historically persistent pattern. Requires careful handling — public health concerns about screening and resources are legitimate; scapegoating is not."
+  },
+  {
+    "id": "F37",
+    "frameName": "Health data as surveillance infrastructure",
+    "status": "Active",
+    "type": "stable",
+    "shortDescription": "Digital health records, cross-border health data sharing, e-prescriptions, patient portals, and health data governance are reframed as a polite infrastructure for surveillance, profiling, exclusion, or political control.",
+    "typicalTopics": ["European Health Data Space", "electronic health records", "e-prescriptions", "patient portals", "cross-border health data sharing", "health apps", "digital identity in healthcare", "medical data governance", "secondary use of health data", "AI in healthcare linked to records"],
+    "triggerWords": ["health data space", "cross-border data", "e-prescription", "patient portal", "secondary use", "health data governance", "interoperability", "centralised records", "digital identity health", "health data access", "data sharing regulation", "EHDS", "medical data centralisation", "health surveillance", "data profiling"],
+    "likelyDistortion": "Digital health infrastructure built for care coordination, research, and interoperability is recast as a deliberate surveillance architecture. Convenience and better outcomes are treated as cover stories for centralised control.",
+    "publicFear": "That the most intimate data people have — their medical records — is being centralised not for care, but for monitoring, profiling, and eventual coercion",
+    "whatToClarifyUpfront": "Explain what the system actually does, who has access, what governance limits exist, and what the difference is between data sharing for care and data exploitation for control. Name the safeguards before someone else names the fears.",
+    "whatItDoesNotMean": "Building interoperable health data systems is not the same as building a surveillance state. Access rules, consent frameworks, and governance exist — they may be imperfect, but they are not absent.",
+    "rapidResponseAdvice": "Do not dismiss privacy concerns as irrational. Acknowledge the legitimate tension between data utility and data protection. Then be specific about what this system does and does not allow.",
+    "humourOptions": [
+      "Your medical file is not a control panel. It is mostly a list of things your GP has been meaning to follow up on.",
+      "If governments wanted to track you efficiently, your health records would be the worst possible route. Have you seen how long interoperability takes?"
+    ],
+    "exampleNarrative": "What they call digital health is really a system for tracking your body, your choices, and your future.",
+    "notes": "Distinct from F16 (digital medicine as surveillance) which focuses on clinical tools. F37 targets the governance and infrastructure layer — data spaces, cross-border sharing, and legislative frameworks like EHDS. Particularly active in EU policy discourse."
+  },
+  {
+    "id": "F38",
+    "frameName": "Fast approval means hidden harm",
+    "status": "Active",
+    "type": "stable",
+    "shortDescription": "When a medicine or vaccine becomes available quickly, the speed itself is recast as proof that safety was compromised, side effects were ignored, or harm was knowingly accepted for profit, politics, or institutional prestige.",
+    "typicalTopics": ["fast-track approval", "accelerated approval", "conditional marketing authorisation", "emergency authorisation", "rapid vaccine rollout", "new medicines in urgent settings", "post-marketing monitoring", "regulatory flexibility", "pandemic approvals", "rare-disease or oncology approvals"],
+    "triggerWords": ["fast-track", "accelerated approval", "emergency use", "conditional approval", "warp speed", "rushed", "waved through", "corners cut", "too fast", "not enough testing", "approved too quickly", "skipped trials", "insufficient testing", "expedited review", "rapid authorisation"],
+    "likelyDistortion": "Regulatory speed — designed to respond to urgency, unmet need, or rolling review — is reframed as institutional recklessness. Side effects are not risks to be monitored but hidden costs the system was always willing to impose.",
+    "publicFear": "That the medicine or vaccine was approved before anyone truly understood what it could do to people, and that regulators chose speed over safety",
+    "whatToClarifyUpfront": "Explain what accelerated or conditional approval actually means, what safety data was required before authorisation, what monitoring continues after launch, and how this differs from skipping safety steps.",
+    "whatItDoesNotMean": "Faster review does not mean fewer safety requirements. It typically means overlapping processes, rolling data submission, or prioritised review — not reduced evidence thresholds.",
+    "rapidResponseAdvice": "Do not dismiss the concern as irrational. Explain what was done, what was known at the time of approval, and what monitoring is ongoing. Speed and care are not opposites — say so plainly.",
+    "humourOptions": [
+      "Fast-track approval does not mean someone signed a permission slip on a napkin. It means the queue moved.",
+      "If regulators were as careless as this story implies, the paperwork alone would have stopped them."
+    ],
+    "exampleNarrative": "If it reached the public this fast, they clearly did not care what it might do to people.",
+    "notes": "Hybrid frame: functions as both a fear-based simplifier (speed = danger) and an institutional betrayal story (regulators chose politics or profit over safety). Particularly potent post-pandemic but applies to any accelerated approval pathway including oncology and rare diseases."
+  },
+  {
+    "id": "F39",
+    "frameName": "Pregnancy as moral jurisdiction",
+    "status": "Active",
+    "type": "stable",
+    "shortDescription": "Pregnancy is reframed as a condition in which bodily autonomy becomes negotiable and outside authority gains moral standing over medical judgment.",
+    "typicalTopics": ["abortion restrictions", "maternal health versus fetal preservation", "pregnancy complications", "treatment during pregnancy", "medication in pregnancy", "birth intervention", "prenatal screening", "reproductive rights", "fetal protection laws", "high-risk pregnancy communication"],
+    "triggerWords": ["unborn", "protect the baby", "maternal duty", "natural birth", "refuse treatment", "pregnancy termination", "fetal rights", "motherhood", "selfish choice", "playing God with life", "pregnancy intervention", "birth plan", "maternal risk", "prenatal", "fetal protection"],
+    "likelyDistortion": "Medical complexity in pregnancy is reduced to a moral hierarchy in which preserving pregnancy becomes a higher duty than respecting autonomy, comfort, or sometimes even maternal health. Intervention is suspect, refusal is selfish, and nuance is recast as moral evasion.",
+    "publicFear": "That acknowledging maternal autonomy means devaluing pregnancy, and that medical decisions during pregnancy are really moral ones in disguise",
+    "whatToClarifyUpfront": "Explain the specific medical context, who makes the decision, what clinical evidence applies, and why pregnancy does not suspend the right to informed, individual medical judgment.",
+    "whatItDoesNotMean": "Acknowledging maternal autonomy does not mean dismissing pregnancy. Medical decisions in pregnancy are clinical decisions, not moral verdicts.",
+    "rapidResponseAdvice": "Do not get drawn into abstract moral debate. Stay with the specific clinical situation, the specific patient population, and the specific medical question. Autonomy and care are not opposites.",
+    "humourOptions": [
+      "Pregnancy is not a jurisdiction. It is a medical condition in which two sets of needs exist at once, and pretending otherwise helps neither.",
+      "The body does not stop belonging to the person inside it just because someone else is also inside it."
+    ],
+    "exampleNarrative": "Once there is a pregnancy, the body is no longer just yours to decide over.",
+    "notes": "Body-purity frame with strong overlap into identity-grievance and control narratives. Particularly activated by legal cases, policy debates, and high-profile maternal health emergencies. Distinct from F33 (fertility panic) which focuses on hormonal/chemical threats to reproduction."
+  },
+  {
+    "id": "F40",
+    "frameName": "Contraception as moral corruption",
+    "status": "Active",
+    "type": "stable",
+    "shortDescription": "Contraception is reframed not merely as a medical or hormonal issue, but as a civilisational and moral threat: something that severs sex from consequence, weakens women, disrupts fertility, and serves a wider anti-family or anti-life agenda.",
+    "typicalTopics": ["hormonal contraception", "birth control policy", "fertility decline", "cycle tracking culture", "hormonal side effects", "women's health debates", "family values politics", "anti-abortion rhetoric linked to contraception", "natural womanhood discourse"],
+    "triggerWords": ["contraception", "birth control", "hormonal", "fertility suppression", "natural womanhood", "family values", "chemical alienation", "moral decay", "anti-life", "reproductive freedom", "cycle tracking", "coming off", "post-birth control", "synthetic hormones", "feminine health", "hormonal imbalance", "fertility awareness"],
+    "likelyDistortion": "Contraception is cast as culturally corrosive and morally suspect — undermining proper womanhood, detaching sexuality from responsibility, reducing respect for life, weakening families, and serving a broader ideological project hostile to fertility, motherhood, or social order.",
+    "publicFear": "That contraception is part of a wider moral decline — damaging femininity, fertility, and social order while disguising itself as empowerment",
+    "whatToClarifyUpfront": "Distinguish between medical choice and moral judgment. Clarify what contraception actually does, what it does not do, and how individual medical decisions differ from civilisational narratives.",
+    "whatItDoesNotMean": "Choosing or discussing contraception does not imply participation in moral decline, nor does it indicate weakness, corruption, or ideological capture.",
+    "rapidResponseAdvice": "Separate the medical reality from the moral narrative. Contraception is a tool with benefits and trade-offs — not a symbol of cultural collapse. Stay with the specific health context.",
+    "humourOptions": [
+      "The pill is a medication, not a manifesto.",
+      "Hormones do not have political opinions."
+    ],
+    "exampleNarrative": "What they call reproductive freedom is really chemical alienation dressed up as empowerment.",
+    "notes": "Body-purity frame that treats contraception as moral contamination. Often overlaps with F33 (fertility panic), F39 (pregnancy jurisdiction), and civilisational decline narratives. Activated by social media 'coming off birth control' content, religious rhetoric, and fertility anxiety discourse."
+  },
+  {
+    "id": "F41",
+    "frameName": "Elite-only miracle tech",
+    "status": "Active",
+    "type": "stable",
+    "shortDescription": "Advanced, near-universal medical cures are imagined as already existing but withheld from the public — reserved for elites or suppressed to protect existing medical and pharmaceutical systems.",
+    "typicalTopics": [
+      "breakthrough medicine",
+      "medical technology",
+      "healthcare inequality",
+      "pharmaceutical industry",
+      "military medicine",
+      "regenerative therapies"
+    ],
+    "triggerWords": [
+      "healing pod",
+      "miracle cure",
+      "suppressed cure",
+      "elite medicine",
+      "secret technology",
+      "withheld treatment",
+      "already cured",
+      "classified research",
+      "regenerative",
+      "energy therapy",
+      "breakthrough",
+      "advanced therapy"
+    ],
+    "likelyDistortion": "Real, effective cures exist but are deliberately kept from the public to maintain pharmaceutical profits or elite privilege.",
+    "publicFear": "Being denied access to life-saving technology that exists but is intentionally withheld",
+    "whatToClarifyUpfront": "What stage the research is actually at, what evidence exists, and what barriers to access really look like.",
+    "whatItDoesNotMean": "This does not prove that effective cures are being hidden or that public healthcare is intentionally limited.",
+    "rapidResponseAdvice": "Be transparent about research timelines, regulatory requirements, and genuine access barriers without validating conspiracy narratives.",
+    "humourOptions": [
+      "If the elites had a healing pod, someone would have leaked the unboxing video by now."
+    ],
+    "exampleNarrative": "They already have the technology to cure this. You're just not meant to access it.",
+    "notes": "Distinct from cheap natural cure narratives — this imagines high-tech, sci-fi level medicine as already existing but elite-reserved. Blends technological optimism with institutional distrust."
+  },
+  {
+    "id": "F42",
+    "frameName": "Disease as unresolved inner conflict",
+    "status": "Active",
+    "type": "stable",
+    "shortDescription": "Illness is reframed not as a medical condition requiring treatment, but as the outward manifestation of unresolved psychological, emotional, spiritual, or moral imbalance.",
+    "typicalTopics": ["chronic illness", "cancer as emotional blockage", "autoimmune disease", "trauma and disease", "mind-body healing absolutism", "spiritual wellness culture", "energy medicine", "anti-psychiatry rhetoric", "anti-medication narratives", "the body keeps the score"],
+    "triggerWords": ["unresolved trauma", "emotional blockage", "inner conflict", "body keeps the score", "disease as message", "illness as teacher", "suppressing symptoms", "medication silence", "spiritual healing", "energy medicine", "root cause emotional", "mind-body healing", "holistic cure", "natural healing journey", "resistance to illness", "refusing treatment", "healing from within", "psychosomatic truth", "medication avoidance", "soul sickness", "moral healing", "virtue recovery"],
+    "likelyDistortion": "Medical treatment is recast as suppression rather than care. Drugs merely silence the body's 'truth.' Illness becomes something the patient has, at some level, brought on themselves by repressing emotion, living 'wrongly', or failing to resolve trauma.",
+    "publicFear": "That illness reflects personal failure — that the sick are somehow responsible for their condition through unresolved inner conflict, and that medical treatment is just avoidance",
+    "whatToClarifyUpfront": "The difference between mind-body connections as one factor among many, and the claim that inner conflict is the sole or primary cause of disease requiring moral or spiritual correction rather than medical care.",
+    "whatItDoesNotMean": "Acknowledging stress or trauma as health factors does not mean medication is avoidance, or that persistent illness reflects personal failure to resolve deeper issues.",
+    "rapidResponseAdvice": "Distinguish between holistic care as complement and holistic absolutism as replacement. Acknowledge the desire for meaning without validating the implication that medical treatment suppresses truth or that patients are responsible for their illness.",
+    "humourOptions": [
+      "The body keeps the score. But the scoreboard does not determine the treatment plan.",
+      "Trauma-informed care is not the same as trauma-determined diagnosis."
+    ],
+    "exampleNarrative": "The illness is not the real problem. It is your body trying to tell you what your life refuses to face.",
+    "notes": "Hope-merchant frame that blends legitimate trauma research with moral absolutism. Often overlaps with F33 (fertility panic), F40 (contraception as moral corruption), and natural body absolutism. Can turn illness into a test of virtue and shift blame onto patients."
+  }
+]
