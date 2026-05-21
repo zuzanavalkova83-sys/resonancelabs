@@ -5,6 +5,7 @@ import TeamSection from "@/components/TeamSection";
 import PurposeSection from "@/components/PurposeSection";
 import ServicesSection from "@/components/ServicesSection";
 import NoBullTeaser from "@/components/NoBullTeaser";
+import NoiseToSignal from "@/components/NoiseToSignal";
 import FooterSection from "@/components/FooterSection";
 
 const Index = () => {
@@ -14,6 +15,7 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <NoBullTeaser />
+      <NoiseToSignal />
       <TeamSection />
       <PurposeSection />
       <ServicesSection />
