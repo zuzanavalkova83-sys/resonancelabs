@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
 import { narrativeFrames, NarrativeFrame } from "@/data/narrativeFrames";
-import NarrativeBiteLayer from "@/components/NarrativeBiteLayer";
+import NarrativeBiteLayer from "@/components/library/NarrativeBiteLayer";
 import {
   FRAME_EDITORIAL,
   PATTERN_FAMILIES,
