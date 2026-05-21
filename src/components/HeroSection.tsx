@@ -92,7 +92,7 @@ const HeroSection = () => {
       />
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10">
-        <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] items-end min-h-[78vh] sm:min-h-[86vh] gap-8 pb-20 sm:pb-24 pt-28">
+        <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] items-end min-h-[68vh] sm:min-h-[74vh] gap-8 pb-16 sm:pb-20 pt-24">
 
           {/* Left: typographic title stack */}
           <div>
@@ -100,7 +100,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, x: -15 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex items-center gap-4 mb-8"
+              className="flex items-center gap-4 mb-6"
             >
               <div className="w-10 h-px" style={{ background: 'hsl(var(--brass) / 0.5)' }} />
               <p className="text-[12px] font-mono tracking-[0.35em] uppercase" style={{ color: 'hsl(var(--brass))' }}>
@@ -113,7 +113,7 @@ const HeroSection = () => {
                 initial={{ y: 110 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="font-display text-[4.2rem] sm:text-[6.5rem] md:text-[8.5rem] tracking-wider leading-[0.82]"
+                className="font-display text-[3.6rem] sm:text-[5.6rem] md:text-[7.4rem] tracking-wider leading-[0.84]"
               >
                 <span className="text-foreground">RESONANCE</span>
                 <br />
@@ -130,12 +130,12 @@ const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.95 }}
-              className="text-xl sm:text-2xl text-foreground/55 leading-relaxed mt-10 max-w-xl"
+              className="text-lg sm:text-xl text-foreground/55 leading-snug mt-8 max-w-xl"
             >
-              Communication services for science.
+              Communication services for science and narrative risk mapping.
               <br />
-              <span className="text-foreground/30">
-                Narrative risk mapping, before the story writes itself for you.
+              <span className="text-foreground/35">
+                Write your story, before the story writes itself for you.
               </span>
             </motion.p>
 
@@ -143,7 +143,7 @@ const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.1 }}
-              className="text-[15px] text-foreground/40 leading-relaxed mt-5 max-w-md"
+              className="text-[14px] text-foreground/40 leading-relaxed mt-4 max-w-md"
             >
               Resonance Labs is a communications practice for research, clinical,
               and science-led organisations — specialised in narrative intelligence
@@ -158,7 +158,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.25 }}
-              className="flex flex-wrap items-center gap-4 mt-12"
+              className="flex flex-wrap items-center gap-4 mt-10"
             >
               <Link
                 to="/the-usual-suspects"
