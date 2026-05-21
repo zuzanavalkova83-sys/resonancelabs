@@ -1,21 +1,22 @@
 import { motion } from "framer-motion";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
 import { useState, useEffect } from "react";
-import heroHeadsCluster from "@/assets/hero-heads-cluster.png";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
-  const glitch = useGlitch(9000, 800, 2500);
-  const [dotGlitch, setDotGlitch] = useState(false);
+  const labsGlitch = useGlitch(9000, 800, 2500);
+  const riskGlitch = useGlitch(11000, 500, 4500);
+  const [bgGlitch, setBgGlitch] = useState(false);
 
   useEffect(() => {
     const trigger = () => {
-      setDotGlitch(true);
-      setTimeout(() => setDotGlitch(false), 2200);
+      setBgGlitch(true);
+      setTimeout(() => setBgGlitch(false), 600);
     };
-    const first = setTimeout(trigger, 6000);
+    const first = setTimeout(trigger, 5000);
     const interval = setInterval(() => {
-      if (Math.random() > 0.3) trigger();
-    }, 11000);
+      if (Math.random() > 0.4) trigger();
+    }, 7500);
     return () => { clearTimeout(first); clearInterval(interval); };
   }, []);
 
@@ -30,40 +31,97 @@ const HeroSection = () => {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center min-h-[88vh] gap-12 md:gap-4 pt-20 pb-16">
+      {/* Giant watermark — NOISE / breathing */}
+      <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
+        <motion.span
+          initial={{ opacity: 0.03, x: 80, scale: 1 }}
+          animate={{
+            opacity: [0.03, 0.045, 0.06, 0.045, 0.03],
+            x: [80, 0, 0, 0, 0],
+            scale: [1, 1, 1.25, 1.25, 1],
+          }}
+          transition={{
+            opacity: { duration: 22, delay: 2, repeat: Infinity, ease: "easeInOut" },
+            x: { duration: 2, ease: "easeOut" },
+            scale: { duration: 22, delay: 2, repeat: Infinity, ease: "easeInOut" },
+          }}
+          className="absolute -right-[4%] top-[4%] font-display text-[26vw] leading-none tracking-wider text-foreground origin-center"
+          aria-hidden
+          style={bgGlitch ? {
+            opacity: 0.08,
+            textShadow: "8px 0 hsl(340 75% 55%), -8px 0 hsl(180 80% 50%)",
+            transform: "translate(5px, -3px) skewX(-2deg)",
+            transition: "none",
+          } : {}}
+        >
+          NOISE
+        </motion.span>
+      </div>
 
-          {/* ── Left: Title stack ── */}
-          <div className="relative">
+      {/* Stationary pink accent disc — quiet, off-axis */}
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute pointer-events-none
+          right-[-1rem] top-[5.5rem] sm:right-auto sm:left-[34%] sm:top-[20%]"
+      >
+        <motion.div
+          animate={{ y: [0, -6, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <div
+            className="w-16 h-16 sm:w-28 sm:h-28 md:w-36 md:h-36 rounded-full"
+            style={{
+              background:
+                "radial-gradient(circle at 36% 30%, hsl(340 72% 58% / 0.78) 0%, hsl(340 60% 42% / 0.62) 55%, hsl(338 50% 26% / 0.45) 100%)",
+              boxShadow:
+                "0 18px 60px -10px hsl(340 65% 40% / 0.5), inset -10px -16px 50px hsl(335 45% 14% / 0.55)",
+            }}
+          />
+        </motion.div>
+      </motion.div>
+
+      {/* Diagonal hairline */}
+      <motion.div
+        initial={{ scaleY: 0 }}
+        animate={{ scaleY: 1 }}
+        transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute top-0 right-[34%] w-px h-full origin-top hidden sm:block"
+        style={{ background: "linear-gradient(to bottom, transparent, hsl(var(--brass) / 0.18), transparent)" }}
+      />
+
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-10">
+        <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] items-end min-h-[78vh] sm:min-h-[86vh] gap-8 pb-20 sm:pb-24 pt-28">
+
+          {/* Left: typographic title stack */}
+          <div>
             <motion.div
               initial={{ opacity: 0, x: -15 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex items-center gap-4 mb-10"
+              className="flex items-center gap-4 mb-8"
             >
-              <div className="w-10 h-[1px]" style={{ background: 'hsl(var(--brass) / 0.5)' }} />
-              <p className="text-[11px] font-mono tracking-[0.3em] uppercase" style={{ color: 'hsl(var(--brass))' }}>
-                Strategic Science Communication
+              <div className="w-10 h-px" style={{ background: 'hsl(var(--brass) / 0.5)' }} />
+              <p className="text-[12px] font-mono tracking-[0.35em] uppercase" style={{ color: 'hsl(var(--brass))' }}>
+                Narrative risk intelligence
               </p>
             </motion.div>
 
-            <div className="overflow-hidden relative z-10">
+            <div className="overflow-hidden">
               <motion.h1
-                initial={{ y: 80 }}
+                initial={{ y: 110 }}
                 animate={{ y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="font-display text-[3rem] sm:text-[4rem] md:text-[4.8rem] tracking-wider leading-[0.88]"
+                transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="font-display text-[4.2rem] sm:text-[6.5rem] md:text-[8.5rem] tracking-wider leading-[0.82]"
               >
-                <span className="text-foreground">Resonance</span>
+                <span className="text-foreground">RESONANCE</span>
                 <br />
                 <span
                   className="inline-block"
-                  style={{
-                    color: 'hsl(var(--brass))',
-                    ...glitchStyle(glitch),
-                  }}
+                  style={{ color: 'hsl(var(--brass))', ...glitchStyle(labsGlitch) }}
                 >
-                  Labs.
+                  LABS.
                 </span>
               </motion.h1>
             </div>
@@ -71,172 +129,72 @@ const HeroSection = () => {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
-              className="text-lg sm:text-xl text-foreground/50 leading-relaxed mt-8 max-w-sm relative z-10"
+              transition={{ duration: 0.8, delay: 0.95 }}
+              className="text-xl sm:text-2xl text-foreground/55 leading-relaxed mt-10 max-w-xl"
             >
-              Protecting meaning where research meets public life.
+              Narrative risk mapping for science.
+              <br />
+              <span className="text-foreground/30">
+                Before the story writes itself for you.
+              </span>
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1.05 }}
-              className="text-[15px] text-foreground/35 leading-relaxed mt-4 max-w-sm"
+              transition={{ duration: 0.8, delay: 1.1 }}
+              className="text-[15px] text-foreground/40 leading-relaxed mt-5 max-w-md"
             >
-              We help serious ideas survive noise, distortion,<br className="hidden sm:inline" />
-              and the distance between expertise and understanding.
+              Resonance Labs is a narrative intelligence practice for research,
+              clinical, and science-led organisations. We map how serious work is
+              likely to be{" "}
+              <span className="inline-block" style={glitchStyle(riskGlitch, "subtle")}>
+                twisted
+              </span>{" "}
+              in public, and help you get there first.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.25 }}
+              className="flex flex-wrap items-center gap-4 mt-12"
+            >
+              <Link
+                to="/the-usual-suspects"
+                className="inline-flex items-center gap-2 px-7 py-3.5 font-heading text-[12px] tracking-[0.18em] uppercase font-medium transition-all duration-200 hover:brightness-110"
+                style={{
+                  background: "hsl(var(--brass))",
+                  color: "hsl(340 45% 10%)",
+                  boxShadow: "0 4px 20px -4px hsl(var(--brass) / 0.35)",
+                }}
+              >
+                Explore the library →
+              </Link>
+              <a
+                href="mailto:hello@resonancelabs.com"
+                className="inline-flex items-center gap-2 px-7 py-3.5 font-heading text-[12px] tracking-[0.18em] uppercase font-normal border transition-colors duration-200"
+                style={{
+                  color: "hsl(var(--ivory) / 0.8)",
+                  borderColor: "hsl(var(--ivory) / 0.2)",
+                }}
+              >
+                Get in touch
+              </a>
+            </motion.div>
           </div>
 
-          {/* ── Right: heads illustration with halo ── */}
-          <div className="relative hidden md:flex items-end justify-start min-h-[600px] overflow-visible">
-            <div className="relative" style={{ width: 'min(100%, 460px)', height: '560px', marginLeft: '-90px', marginBottom: '-40px' }}>
-
-              {/* Outer atmospheric bloom — diffused, painterly */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.85 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 2.4, delay: 0.2 }}
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background: 'radial-gradient(circle at 50% 42%, hsl(340 70% 48% / 0.22) 0%, hsl(340 60% 36% / 0.10) 38%, transparent 68%)',
-                  filter: 'blur(56px)',
-                  transform: 'scale(1.4)',
-                  zIndex: 0,
-                }}
-              />
-
-              {/* The pink halo disc — sized as halo behind the heads */}
-              <motion.div
-                initial={{ scale: 0.7, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute pointer-events-none"
-                style={{
-                  width: '100%',
-                  aspectRatio: '1',
-                  left: '38%',
-                  top: '20px',
-                  transform: 'translateX(-50%)',
-                  zIndex: 1,
-                }}
-              >
-                <motion.div
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
-                  className="absolute inset-0 rounded-full"
-                  style={{
-                    background: 'radial-gradient(circle at 36% 30%, hsl(340 72% 58% / 0.78) 0%, hsl(340 60% 42% / 0.62) 55%, hsl(338 50% 26% / 0.45) 100%)',
-                    boxShadow: '0 60px 140px -20px hsl(340 65% 40% / 0.45), inset -24px -36px 90px hsl(335 45% 14% / 0.55), inset 18px 22px 70px hsl(340 70% 62% / 0.18)',
-                    opacity: 0.82,
-                    transition: 'transform 2.2s cubic-bezier(0.45, 0, 0.25, 1), box-shadow 2.2s cubic-bezier(0.45, 0, 0.25, 1), filter 2.2s ease',
-                    ...(dotGlitch ? {
-                      transform: 'translate(6px, -3px) scale(1.015)',
-                      boxShadow: '14px 0 90px -8px hsl(340 75% 56% / 0.42), -14px 0 90px -8px hsl(180 65% 50% / 0.28), 0 60px 140px -20px hsl(340 65% 40% / 0.45), inset -24px -36px 90px hsl(335 45% 14% / 0.55)',
-                      filter: 'hue-rotate(-6deg)',
-                    } : {}),
-                  }}
-                />
-              </motion.div>
-
-              {/* Heads illustration — dominant foreground, centered over disc */}
-              <motion.div
-                className="absolute left-1/2 -translate-x-1/2 pointer-events-none z-10"
-                style={{ width: '100%', top: '90px' }}
-                initial={{ opacity: 0, y: 32, scale: 0.94, filter: 'blur(10px)' }}
-                animate={{
-                  opacity: 1,
-                  y: dotGlitch ? -2 : 0,
-                  x: dotGlitch ? 3 : 0,
-                  scale: 1,
-                  filter: 'blur(0px)',
-                }}
-                transition={{ duration: dotGlitch ? 0.08 : 1.6, delay: dotGlitch ? 0 : 0.6, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <motion.img
-                  src={heroHeadsCluster}
-                  alt="Three figures from antiquity in conversation"
-                  className="w-full h-auto select-none"
-                  draggable={false}
-                  animate={{ y: [0, -7, 0] }}
-                  transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                  style={{
-                    opacity: 0.88,
-                    mixBlendMode: 'luminosity',
-                    filter: 'contrast(1.04) saturate(0.85) brightness(1.02) drop-shadow(0 32px 48px hsl(340 50% 4% / 0.6)) drop-shadow(0 0 50px hsl(340 60% 32% / 0.25))',
-                  }}
-                />
-              </motion.div>
-
-              {/* Bottom shadow pool to anchor figures */}
-              <div
-                className="absolute left-1/2 -translate-x-1/2 bottom-4 pointer-events-none"
-                style={{
-                  width: '60%',
-                  height: '36px',
-                  background: 'radial-gradient(ellipse at center, hsl(340 60% 4% / 0.7) 0%, transparent 70%)',
-                  filter: 'blur(10px)',
-                  zIndex: 5,
-                }}
-              />
-
-              {/* ── Latin labels: desperatio · quaestio · distortio ── */}
-              <div
-                className="absolute z-20 pointer-events-none"
-                style={{ left: '-40px', right: '-200px', top: 0, bottom: 0 }}
-              >
-                {([
-                  // Left figure (facepalm) — desperatio
-                  { word: 'desperatio', left: '20%', top: '26%', delay: 1.6, align: 'left' },
-                  // Center figure (Socrates) — quaestio
-                  { word: 'quaestio',   left: '50%', top: '6%',  delay: 1.9, align: 'center' },
-                  // Right figure (warrior) — distortio
-                  { word: 'distortio',  left: '78%', top: '8%', delay: 2.2, align: 'left' },
-                ] as { word: string; left: string; top: string; delay: number; align: 'left' | 'center' | 'right' }[]).map(({ word, left, top, delay, align }) => (
-                  <motion.div
-                    key={word}
-                    initial={{ opacity: 0, y: 6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.4, delay, ease: [0.22, 1, 0.36, 1] }}
-                    className="absolute flex items-center gap-2"
-                    style={{
-                      left,
-                      top,
-                      transform: align === 'center'
-                        ? 'translateX(-50%)'
-                        : align === 'right'
-                          ? 'translateX(-100%)'
-                          : 'translateX(0)',
-                    }}
-                  >
-                    {align !== 'left' && (
-                      <span
-                        className="block h-px"
-                        style={{ width: '18px', background: 'hsl(var(--brass) / 0.45)' }}
-                      />
-                    )}
-                    <span
-                      className="font-mono uppercase"
-                      style={{
-                        fontSize: '10px',
-                        letterSpacing: '0.32em',
-                        color: 'hsl(var(--brass) / 0.78)',
-                        textShadow: '0 1px 8px hsl(340 50% 6% / 0.8)',
-                      }}
-                    >
-                      {word}
-                    </span>
-                    {align === 'left' && (
-                      <span
-                        className="block h-px"
-                        style={{ width: '18px', background: 'hsl(var(--brass) / 0.45)' }}
-                      />
-                    )}
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
+          {/* Right: vertical text accent */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+            className="hidden sm:flex flex-col items-end gap-6 pb-4"
+          >
+            <p className="text-[11px] font-mono tracking-[0.3em] uppercase text-foreground/15 [writing-mode:vertical-rl] rotate-180">
+              Mapping the stories that hijack science
+            </p>
+          </motion.div>
         </div>
       </div>
 
