@@ -68,6 +68,10 @@
 
     --glass-bg: 340 25% 14%;
     --glass-border: 340 22% 22%;
+
+    /* Editorial extras (imported from NoBull library) */
+    --wine-blush: 348 30% 65%;
+    --editorial-max: 56rem;
   }
 }
 
@@ -148,6 +152,33 @@ em, i, cite, address, dfn, var {
 
   .section-divider {
     border-top: 1px solid hsl(var(--glass-border) / 0.4);
+  }
+
+  /* ── Library / editorial utilities ── */
+  .section-ivory-warm {
+    background: hsl(var(--ivory-warm));
+    color: hsl(340 30% 18%);
+  }
+
+  .editorial-grain {
+    position: relative;
+  }
+  .editorial-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
+  }
+
+  @keyframes editorial-fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-editorial-in {
+    animation: editorial-fade-up 0.5s ease-out both;
   }
 
   @keyframes float {

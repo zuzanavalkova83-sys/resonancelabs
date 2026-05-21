@@ -58,7 +58,7 @@ const NoBullTeaser = () => {
           >
             <div className="w-10 h-px" style={{ background: "hsl(30, 15%, 75%)" }} />
             <p className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium" style={{ color: "hsl(30, 15%, 58%)" }}>
-              Building NoBull
+              Narrative risk mapping
             </p>
           </motion.div>
 
@@ -87,7 +87,7 @@ const NoBullTeaser = () => {
             className="font-body text-[18px] md:text-[20px] leading-[1.55] font-normal mb-6"
             style={{ color: "hsl(30, 10%, 42%)" }}
           >
-            A field guide to the recurring ways science gets twisted in public.
+            A working field guide to the recurring ways science gets twisted in public — the raw material for our narrative intelligence work.
           </motion.p>
 
           <motion.p
@@ -158,8 +158,7 @@ const NoBullTeaser = () => {
           className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
         >
           <p className="font-body text-[14px] md:text-[15px] leading-[1.6] max-w-[48ch]" style={{ color: "hsl(30, 8%, 50%)" }}>
-            The library is part of NoBull, a narrative-mapping tool currently
-            being developed within Resonance Labs.
+            The library powers NoBull, our narrative risk mapping tool currently being developed within Resonance Labs.
           </p>
 
           <Link

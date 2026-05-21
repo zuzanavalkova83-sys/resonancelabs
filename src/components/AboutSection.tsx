@@ -68,7 +68,7 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           />
           <p className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium" style={{ color: 'hsl(30, 15%, 55%)' }}>
-            Why We Exist
+            Narrative intelligence
           </p>
         </motion.div>
 
@@ -108,7 +108,7 @@ const AboutSection = () => {
           </div>
           <div className="space-y-5">
             <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: 'hsl(30, 12%, 52%)' }}>
-              Resonance Labs helps scientific and research-led organisations communicate with clarity, judgment, and narrative discipline in contested public space.
+              Resonance Labs is a narrative intelligence practice for scientific and research-led organisations. We do narrative risk mapping in contested public space, so serious work can travel without being rewritten en route.
             </p>
             <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: 'hsl(30, 12%, 52%)' }}>
               The goal is not to add more noise. It is to help serious ideas survive contact with the world.
