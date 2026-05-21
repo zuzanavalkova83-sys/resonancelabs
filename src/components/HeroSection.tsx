@@ -104,7 +104,7 @@ const HeroSection = () => {
             >
               <div className="w-10 h-px" style={{ background: 'hsl(var(--brass) / 0.5)' }} />
               <p className="text-[12px] font-mono tracking-[0.35em] uppercase" style={{ color: 'hsl(var(--brass))' }}>
-                Narrative risk intelligence
+                Communication services · Narrative intelligence
               </p>
             </motion.div>
 
@@ -132,10 +132,10 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.95 }}
               className="text-xl sm:text-2xl text-foreground/55 leading-relaxed mt-10 max-w-xl"
             >
-              Narrative risk mapping for science.
+              Communication services for science.
               <br />
               <span className="text-foreground/30">
-                Before the story writes itself for you.
+                Narrative risk mapping, before the story writes itself for you.
               </span>
             </motion.p>
 
@@ -145,9 +145,9 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 1.1 }}
               className="text-[15px] text-foreground/40 leading-relaxed mt-5 max-w-md"
             >
-              Resonance Labs is a narrative intelligence practice for research,
-              clinical, and science-led organisations. We map how serious work is
-              likely to be{" "}
+              Resonance Labs is a communications practice for research, clinical,
+              and science-led organisations — specialised in narrative intelligence
+              and risk mapping. We chart how serious work is likely to be{" "}
               <span className="inline-block" style={glitchStyle(riskGlitch, "subtle")}>
                 twisted
               </span>{" "}
