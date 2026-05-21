@@ -143,9 +143,9 @@ const AboutSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.45 }}
         >
-          <div className="flex items-center gap-6 mb-16">
-            <div className="h-px w-12" style={{ background: 'hsl(var(--brass) / 0.4)' }} />
-            <p className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.3em] font-medium" style={{ color: 'hsl(var(--brass))' }}>
+          <div className="flex items-center gap-4 mb-16">
+            <div className="w-10 h-px" style={{ background: 'hsl(30, 15%, 45%)' }} />
+            <p className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium" style={{ color: 'hsl(30, 15%, 55%)' }}>
               Fields of practice
             </p>
           </div>
@@ -161,20 +161,20 @@ const AboutSection = () => {
                   transition={{ duration: 0.55, delay: 0.5 + catIdx * 0.1 }}
                 >
                   <span
-                    className="block font-heading text-xs mb-4 tracking-tighter"
-                    style={{ color: 'hsl(var(--brass) / 0.55)' }}
+                    className="block font-mono text-[11px] uppercase tracking-[0.3em] mb-4"
+                    style={{ color: 'hsl(var(--brass) / 0.65)' }}
                   >
-                    {String(catIdx + 1).padStart(2, '0')} //
+                    {String(catIdx + 1).padStart(2, '0')} / {String(categories.length).padStart(2, '0')}
                   </span>
                   <h3
-                    className="font-display text-xl md:text-[22px] tracking-tight text-foreground pb-4 mb-8 border-b"
+                    className="font-display text-[26px] md:text-[30px] tracking-wider leading-[0.95] text-foreground pb-5 mb-8 border-b"
                     style={{ borderColor: 'hsl(var(--brass) / 0.2)' }}
                   >
                     {cat.label}
                   </h3>
 
                   {isWrap ? (
-                    <div className="flex flex-wrap gap-x-5 gap-y-3 font-body font-light">
+                    <div className="flex flex-wrap gap-x-5 gap-y-3 font-body text-[15px] md:text-[16px] leading-[1.7]">
                       {cat.fields.map((field) => {
                         const Tag = field.url ? "a" : "span";
                         return (
@@ -184,7 +184,7 @@ const AboutSection = () => {
                             className={`inline-flex items-center gap-1 transition-colors duration-300 ${
                               field.url ? "hover:text-[hsl(var(--brass))]" : ""
                             }`}
-                            style={{ color: 'hsl(35, 25%, 88% / 0.8)' }}
+                            style={{ color: 'hsl(35, 20%, 72%)' }}
                           >
                             {field.name}
                             {field.url && <span className="text-[10px] opacity-40">↗</span>}
@@ -193,21 +193,21 @@ const AboutSection = () => {
                       })}
                     </div>
                   ) : (
-                    <ul className="space-y-4">
+                    <ul className="space-y-3">
                       {cat.fields.map((field) => {
                         const Tag = field.url ? "a" : "span";
                         return (
                           <li key={field.name}>
                             <Tag
                               {...(field.url ? { href: field.url, target: "_blank", rel: "noopener noreferrer" } : {})}
-                              className={`group/link flex items-center justify-between font-body py-1 transition-colors duration-300 ${
+                              className={`group/link flex items-center justify-between font-body text-[15px] md:text-[16px] leading-[1.7] py-0.5 transition-colors duration-300 ${
                                 field.url ? "hover:text-[hsl(var(--brass))]" : ""
                               }`}
-                              style={{ color: 'hsl(35, 25%, 88% / 0.8)' }}
+                              style={{ color: 'hsl(35, 20%, 72%)' }}
                             >
-                              <span className="text-lg font-light">{field.name}</span>
+                              <span>{field.name}</span>
                               {field.url && (
-                                <span className="text-sm opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300">
+                                <span className="text-[12px] opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300">
                                   ↗
                                 </span>
                               )}
