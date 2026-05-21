@@ -82,15 +82,6 @@ const HeroSection = () => {
         </motion.div>
       </motion.div>
 
-      {/* Diagonal hairline */}
-      <motion.div
-        initial={{ scaleY: 0 }}
-        animate={{ scaleY: 1 }}
-        transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute top-0 right-[34%] w-px h-full origin-top hidden sm:block"
-        style={{ background: "linear-gradient(to bottom, transparent, hsl(var(--brass) / 0.18), transparent)" }}
-      />
-
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10">
         <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] items-end min-h-[68vh] sm:min-h-[74vh] gap-8 pb-16 sm:pb-20 pt-24">
 

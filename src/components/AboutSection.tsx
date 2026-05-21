@@ -160,14 +160,8 @@ const AboutSection = () => {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.55, delay: 0.5 + catIdx * 0.1 }}
                 >
-                  <span
-                    className="block font-mono text-[11px] uppercase tracking-[0.3em] mb-4"
-                    style={{ color: 'hsl(var(--brass) / 0.65)' }}
-                  >
-                    {String(catIdx + 1).padStart(2, '0')} / {String(categories.length).padStart(2, '0')}
-                  </span>
                   <h3
-                    className="font-display text-[26px] md:text-[30px] tracking-wider leading-[0.95] text-foreground pb-5 mb-8 border-b"
+                    className="font-display text-[20px] md:text-[23px] tracking-wider leading-[0.95] text-foreground pb-5 mb-8 border-b whitespace-nowrap"
                     style={{ borderColor: 'hsl(var(--brass) / 0.2)' }}
                   >
                     {cat.label}
