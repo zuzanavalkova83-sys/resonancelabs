@@ -137,63 +137,89 @@ const AboutSection = () => {
           style={{ background: 'hsl(340, 22%, 22% / 0.4)' }}
         />
 
-        {/* Fields of practice — 3-column grid */}
+        {/* Fields of practice — editorial numbered index */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.45 }}
         >
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-8 h-px" style={{ background: 'hsl(30, 15%, 40%)' }} />
-            <p className="font-heading text-[11px] md:text-[12px] uppercase tracking-[0.2em] font-medium" style={{ color: 'hsl(30, 15%, 50%)' }}>
+          <div className="flex items-center gap-6 mb-16">
+            <div className="h-px w-12" style={{ background: 'hsl(var(--brass) / 0.4)' }} />
+            <p className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.3em] font-medium" style={{ color: 'hsl(var(--brass))' }}>
               Fields of practice
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-            {categories.map((cat, catIdx) => (
-              <div key={cat.label}>
-                <p className="font-heading text-[11px] uppercase tracking-[0.12em] font-medium mb-4" style={{ color: 'hsl(30, 15%, 58%)' }}>
-                  {cat.label}
-                </p>
-                <div
-                  className="overflow-hidden"
-                  style={{
-                    border: '1px solid hsl(340, 22%, 22% / 0.4)',
-                    backgroundColor: 'hsl(340, 30%, 12% / 0.4)',
-                  }}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 lg:gap-x-16 gap-y-16">
+            {categories.map((cat, catIdx) => {
+              const isWrap = cat.fields.length > 5;
+              return (
+                <motion.div
+                  key={cat.label}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.55, delay: 0.5 + catIdx * 0.1 }}
                 >
-                  {cat.fields.map((field, i) => {
-                    const Tag = field.url ? "a" : "span";
-                    const isLast = i === cat.fields.length - 1;
-                    return (
-                      <motion.div
-                        key={field.name}
-                        initial={{ opacity: 0, x: -8 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 0.35, delay: 0.5 + catIdx * 0.12 + i * 0.04 }}
-                      >
-                        <Tag
-                          {...(field.url ? { href: field.url, target: "_blank", rel: "noopener noreferrer" } : {})}
-                          className={`flex items-center justify-between px-4 py-2.5 font-body text-[13px] md:text-[14px] tracking-[0.01em] transition-colors duration-200 ${
-                            field.url ? "cursor-pointer hover:text-foreground/80" : ""
-                          }`}
-                          style={{
-                            color: 'hsl(30, 12%, 55%)',
-                            ...(!isLast ? { borderBottom: '1px solid hsl(340, 22%, 22% / 0.3)' } : {}),
-                          }}
-                        >
-                          {field.name}
-                          {field.url && (
-                            <span className="text-[11px] opacity-35">↗</span>
-                          )}
-                        </Tag>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
+                  <span
+                    className="block font-heading text-xs mb-4 tracking-tighter"
+                    style={{ color: 'hsl(var(--brass) / 0.55)' }}
+                  >
+                    {String(catIdx + 1).padStart(2, '0')} //
+                  </span>
+                  <h3
+                    className="font-display text-xl md:text-[22px] tracking-tight text-foreground pb-4 mb-8 border-b"
+                    style={{ borderColor: 'hsl(var(--brass) / 0.2)' }}
+                  >
+                    {cat.label}
+                  </h3>
+
+                  {isWrap ? (
+                    <div className="flex flex-wrap gap-x-5 gap-y-3 font-body font-light">
+                      {cat.fields.map((field) => {
+                        const Tag = field.url ? "a" : "span";
+                        return (
+                          <Tag
+                            key={field.name}
+                            {...(field.url ? { href: field.url, target: "_blank", rel: "noopener noreferrer" } : {})}
+                            className={`inline-flex items-center gap-1 transition-colors duration-300 ${
+                              field.url ? "hover:text-[hsl(var(--brass))]" : ""
+                            }`}
+                            style={{ color: 'hsl(35, 25%, 88% / 0.8)' }}
+                          >
+                            {field.name}
+                            {field.url && <span className="text-[10px] opacity-40">↗</span>}
+                          </Tag>
+                        );
+                      })}
+                    </div>
+                  ) : (
+                    <ul className="space-y-4">
+                      {cat.fields.map((field) => {
+                        const Tag = field.url ? "a" : "span";
+                        return (
+                          <li key={field.name}>
+                            <Tag
+                              {...(field.url ? { href: field.url, target: "_blank", rel: "noopener noreferrer" } : {})}
+                              className={`group/link flex items-center justify-between font-body py-1 transition-colors duration-300 ${
+                                field.url ? "hover:text-[hsl(var(--brass))]" : ""
+                              }`}
+                              style={{ color: 'hsl(35, 25%, 88% / 0.8)' }}
+                            >
+                              <span className="text-lg font-light">{field.name}</span>
+                              {field.url && (
+                                <span className="text-sm opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300">
+                                  ↗
+                                </span>
+                              )}
+                            </Tag>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
       </div>
