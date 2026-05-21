@@ -34,23 +34,23 @@ const HeroSection = () => {
       {/* Giant watermark — NOISE / breathing */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
         <motion.span
-          initial={{ opacity: 0.03, x: 80, scale: 1 }}
+          initial={{ opacity: 0, x: 60, scale: 1 }}
           animate={{
-            opacity: [0.03, 0.045, 0.06, 0.045, 0.03],
-            x: [80, 0, 0, 0, 0],
-            scale: [1, 1, 1.25, 1.25, 1],
+            opacity: [0.025, 0.035, 0.045, 0.035, 0.025],
+            x: [60, 0, 0, 0, 0],
+            scale: [1, 1, 1.06, 1.06, 1],
           }}
           transition={{
-            opacity: { duration: 22, delay: 2, repeat: Infinity, ease: "easeInOut" },
-            x: { duration: 2, ease: "easeOut" },
-            scale: { duration: 22, delay: 2, repeat: Infinity, ease: "easeInOut" },
+            opacity: { duration: 26, delay: 2.4, repeat: Infinity, ease: "easeInOut" },
+            x: { duration: 2.2, ease: "easeOut" },
+            scale: { duration: 26, delay: 2.4, repeat: Infinity, ease: "easeInOut" },
           }}
-          className="absolute -right-[4%] top-[4%] font-display text-[26vw] leading-none tracking-wider text-foreground origin-center"
+          className="absolute -right-[6%] bottom-[-6vw] font-display text-[34vw] sm:text-[30vw] leading-[0.78] tracking-[-0.02em] text-foreground origin-bottom-right"
           aria-hidden
           style={bgGlitch ? {
-            opacity: 0.08,
-            textShadow: "8px 0 hsl(340 75% 55%), -8px 0 hsl(180 80% 50%)",
-            transform: "translate(5px, -3px) skewX(-2deg)",
+            opacity: 0.055,
+            textShadow: "6px 0 hsl(340 75% 55%), -6px 0 hsl(180 80% 50%)",
+            transform: "translate(4px, -2px) skewX(-1.5deg)",
             transition: "none",
           } : {}}
         >
