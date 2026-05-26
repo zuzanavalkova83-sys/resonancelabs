@@ -106,8 +106,8 @@ const SoftDistrustSection = () => {
           className="font-body text-[17px] md:text-[19px] leading-[1.55] max-w-[58ch]"
           style={{ color: "hsl(35, 20%, 72%)" }}
         >
-          Where skepticism became identity and intellectually respectable bull
-          learned to speak in a calm podcast voice.
+          Scepticism has become identity, and intellectually respectable bull
+          has learned to speak in a calm podcast voice.
         </motion.p>
 
         {/* Pull quote */}
