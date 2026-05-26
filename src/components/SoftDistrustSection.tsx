@@ -71,6 +71,54 @@ const SoftDistrustSection = () => {
       ref={ref}
       className="relative py-32 md:py-44 section-padding bg-burgundy-mid overflow-hidden"
     >
+      {/* Vertical tone shift — lighter at top, deeper toward bottom */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(180deg, hsl(340, 22%, 14%) 0%, transparent 22%, transparent 70%, hsl(340, 30%, 7%) 100%)",
+        }}
+      />
+      {/* Soft brass glow, top-right */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          top: "8%",
+          right: "-10%",
+          width: "55%",
+          height: "45%",
+          background:
+            "radial-gradient(ellipse at center, hsl(var(--brass) / 0.07), transparent 65%)",
+          filter: "blur(40px)",
+        }}
+      />
+      {/* Cool burgundy wash, mid-left */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          top: "38%",
+          left: "-15%",
+          width: "60%",
+          height: "40%",
+          background:
+            "radial-gradient(ellipse at center, hsl(340, 30%, 18% / 0.55), transparent 70%)",
+          filter: "blur(60px)",
+        }}
+      />
+      {/* Deeper burgundy pool, bottom-right */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          bottom: "5%",
+          right: "-10%",
+          width: "70%",
+          height: "45%",
+          background:
+            "radial-gradient(ellipse at center, hsl(340, 35%, 10% / 0.7), transparent 70%)",
+          filter: "blur(70px)",
+        }}
+      />
+
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.03] mix-blend-overlay"
         style={{
