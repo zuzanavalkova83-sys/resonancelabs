@@ -86,7 +86,7 @@ const SoftDistrustSection = () => {
             className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium"
             style={{ color: "hsl(30, 15%, 55%)" }}
           >
-            Field note · 01
+            A field note
           </p>
         </motion.div>
 
@@ -94,7 +94,7 @@ const SoftDistrustSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-display text-[48px] md:text-[68px] lg:text-[82px] tracking-wider leading-[0.9] text-foreground max-w-[18ch] mb-10"
+          className="font-display text-[48px] md:text-[60px] lg:text-[72px] tracking-wider leading-[0.88] text-foreground max-w-[18ch] mb-10"
         >
           Welcome to the Era of Soft Distrust
         </motion.h2>
@@ -115,12 +115,12 @@ const SoftDistrustSection = () => {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-14 md:mt-20 pl-6 md:pl-8 max-w-[42ch]"
-          style={{ borderLeft: "2px solid hsl(var(--brass) / 0.5)" }}
+          className="mt-14 md:mt-20 pl-6 md:pl-8 max-w-[44ch]"
+          style={{ borderLeft: "1px solid hsl(var(--brass) / 0.45)" }}
         >
           <p
-            className="font-heading font-light text-[24px] md:text-[32px] leading-[1.25] tracking-[-0.01em]"
-            style={{ color: "hsl(35, 25%, 88%)" }}
+            className="font-display text-[28px] md:text-[38px] tracking-wider leading-[1.1]"
+            style={{ color: "hsl(35, 25%, 90%)" }}
           >
             “Science is probably fine. The people behind it, less so.”
           </p>
@@ -132,7 +132,7 @@ const SoftDistrustSection = () => {
           animate={isInView ? { scaleX: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="h-px w-full origin-left my-20 md:my-28"
-          style={{ background: "hsl(340, 22%, 22% / 0.5)" }}
+          style={{ background: "hsl(340, 22%, 22% / 0.4)" }}
         />
 
         {/* ─── EXPLAINER ────────────────────────────── */}
@@ -147,15 +147,15 @@ const SoftDistrustSection = () => {
                 The diagnosis
               </p>
             </div>
-            <h3 className="font-display text-[28px] md:text-[34px] tracking-wider leading-[0.95] text-foreground">
+            <h3 className="font-display text-[26px] md:text-[32px] tracking-wider leading-[0.95] text-foreground">
               Not a conspiracy.
               <br />A posture.
             </h3>
           </div>
 
           <div
-            className="md:col-span-8 space-y-5 font-body text-[15px] md:text-[16px] leading-[1.75]"
-            style={{ color: "hsl(30, 12%, 58%)" }}
+            className="md:col-span-8 space-y-5 font-body text-[15px] md:text-[16px] leading-[1.7] font-normal"
+            style={{ color: "hsl(30, 12%, 55%)" }}
           >
             <p>
               Soft distrust is the well-mannered cousin of conspiracy. It does
@@ -185,7 +185,7 @@ const SoftDistrustSection = () => {
 
         <div
           className="h-px w-full my-20 md:my-28"
-          style={{ background: "hsl(340, 22%, 22% / 0.5)" }}
+          style={{ background: "hsl(340, 22%, 22% / 0.4)" }}
         />
 
         {/* ─── GLOSSARY ─────────────────────────────── */}
@@ -196,11 +196,11 @@ const SoftDistrustSection = () => {
               className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium"
               style={{ color: "hsl(30, 15%, 55%)" }}
             >
-              Section 02 · A glossary
+              A glossary
             </p>
           </div>
 
-          <h3 className="font-display text-[40px] md:text-[54px] lg:text-[64px] tracking-wider leading-[0.9] text-foreground max-w-[20ch] mb-14">
+          <h3 className="font-display text-[36px] md:text-[44px] lg:text-[52px] tracking-wider leading-[0.92] text-foreground max-w-[20ch] mb-14">
             Intellectually Respectable Bull
           </h3>
 
@@ -228,14 +228,14 @@ const SoftDistrustSection = () => {
                 style={{ borderBottom: "1px solid hsl(var(--brass) / 0.15)" }}
               >
                 <dt
-                  className="col-span-12 md:col-span-5 font-heading text-[18px] md:text-[20px] leading-[1.35] tracking-[-0.005em] font-light"
+                  className="col-span-12 md:col-span-5 font-display text-[20px] md:text-[24px] tracking-wider leading-[1.15]"
                   style={{ color: "hsl(35, 25%, 88%)" }}
                 >
                   {row.line}
                 </dt>
                 <dd
-                  className="col-span-12 md:col-span-7 mt-2 md:mt-0 font-body text-[15px] md:text-[16px] leading-[1.7]"
-                  style={{ color: "hsl(30, 12%, 58%)" }}
+                  className="col-span-12 md:col-span-7 mt-2 md:mt-0 font-body text-[15px] md:text-[16px] leading-[1.7] font-normal"
+                  style={{ color: "hsl(30, 12%, 55%)" }}
                 >
                   {row.gloss}
                 </dd>
@@ -246,7 +246,7 @@ const SoftDistrustSection = () => {
 
         <div
           className="h-px w-full my-20 md:my-28"
-          style={{ background: "hsl(340, 22%, 22% / 0.5)" }}
+          style={{ background: "hsl(340, 22%, 22% / 0.4)" }}
         />
 
         {/* ─── AESTHETIC: THEN / NOW ────────────────── */}
@@ -257,7 +257,7 @@ const SoftDistrustSection = () => {
               className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium"
               style={{ color: "hsl(30, 15%, 55%)" }}
             >
-              Section 03 · A wardrobe change
+              A wardrobe change
             </p>
           </div>
 
