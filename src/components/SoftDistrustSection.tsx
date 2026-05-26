@@ -49,6 +49,18 @@ const reasons: { title: string; body: string }[] = [
   },
 ];
 
+const Eyebrow = ({ children }: { children: React.ReactNode }) => (
+  <div className="flex items-center gap-4 mb-6">
+    <div className="w-10 h-px" style={{ background: "hsl(30, 15%, 45%)" }} />
+    <p
+      className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium"
+      style={{ color: "hsl(30, 15%, 55%)" }}
+    >
+      {children}
+    </p>
+  </div>
+);
+
 const SoftDistrustSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -59,7 +71,6 @@ const SoftDistrustSection = () => {
       ref={ref}
       className="relative py-32 md:py-44 section-padding bg-burgundy overflow-hidden"
     >
-      {/* Noise texture */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.03] mix-blend-overlay"
         style={{
@@ -69,126 +80,67 @@ const SoftDistrustSection = () => {
       />
 
       <div className="relative max-w-5xl mx-auto px-6 md:px-12">
-        {/* ─── FOLIO HEADER ─────────────────────────── */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6 }}
-          className="flex justify-between items-baseline pb-5 mb-16 md:mb-24"
-          style={{ borderBottom: "1px solid hsl(var(--brass) / 0.25)" }}
-        >
-          <p
-            className="font-heading text-[11px] uppercase tracking-[0.3em] font-medium"
-            style={{ color: "hsl(var(--brass))" }}
-          >
-            A field note
-          </p>
-          <p
-            className="font-mono text-[11px] uppercase tracking-[0.25em]"
-            style={{ color: "hsl(30, 15%, 50%)" }}
-          >
-            Vol. 01 · Folio 04
-          </p>
-        </motion.div>
-
         {/* ─── HERO ─────────────────────────────────── */}
+        <Eyebrow>A field note</Eyebrow>
+
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="font-display text-[56px] md:text-[88px] lg:text-[104px] leading-[0.88] tracking-tight text-foreground mb-14 md:mb-20"
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="font-display text-[48px] md:text-[60px] lg:text-[72px] tracking-wider leading-[0.88] text-foreground max-w-[18ch] mb-10"
         >
-          Welcome to the<br />
-          <span className="italic font-light" style={{ color: "hsl(var(--brass))" }}>
-            Era of Soft Distrust
-          </span>
+          Welcome to the Era of Soft Distrust
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-14 mb-28 md:mb-36">
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.25 }}
-            className="md:col-start-5 md:col-span-8 font-body text-[18px] md:text-[22px] leading-[1.5] italic font-light"
-            style={{ color: "hsl(35, 20%, 78%)" }}
-          >
-            Scepticism has become identity, and intellectually respectable bull
-            has learned to speak in a calm podcast voice.
-          </motion.p>
-        </div>
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.18 }}
+          className="font-body text-[17px] md:text-[19px] leading-[1.55] max-w-[58ch]"
+          style={{ color: "hsl(35, 20%, 72%)" }}
+        >
+          Scepticism has become identity, and intellectually respectable bull
+          has learned to speak in a calm podcast voice.
+        </motion.p>
 
-        {/* ─── HERO PULL QUOTE ──────────────────────── */}
-        <motion.div
+        <motion.blockquote
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.35 }}
-          className="flex justify-center mb-32 md:mb-44"
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-14 md:mt-20 pl-6 md:pl-8 max-w-[44ch]"
+          style={{ borderLeft: "1px solid hsl(var(--brass) / 0.45)" }}
         >
-          <blockquote
-            className="relative py-10 md:py-14 px-6 max-w-[44ch] text-center"
-            style={{
-              borderTop: "1px solid hsl(var(--brass) / 0.35)",
-              borderBottom: "1px solid hsl(var(--brass) / 0.35)",
-            }}
+          <p
+            className="font-display text-[28px] md:text-[38px] tracking-wider leading-[1.1]"
+            style={{ color: "hsl(35, 25%, 90%)" }}
           >
-            <span
-              className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-4 font-mono text-[10px] tracking-[0.3em] uppercase bg-burgundy"
-              style={{ color: "hsl(var(--brass))" }}
-            >
-              Observation
-            </span>
-            <p
-              className="font-display text-[24px] md:text-[34px] leading-[1.15] tracking-tight"
-              style={{ color: "hsl(35, 25%, 92%)" }}
-            >
-              “Science is probably fine. The people behind it, less so.”
-            </p>
-          </blockquote>
-        </motion.div>
+            “Science is probably fine. The people behind it, less so.”
+          </p>
+        </motion.blockquote>
+
+        <div
+          className="h-px w-full my-20 md:my-28"
+          style={{ background: "hsl(340, 22%, 22% / 0.4)" }}
+        />
 
         {/* ─── DIAGNOSIS ────────────────────────────── */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 mb-32 md:mb-44">
-          <aside className="md:col-span-4">
-            <div className="md:sticky md:top-16">
-              <div
-                className="w-10 h-px mb-5"
-                style={{ background: "hsl(var(--brass))" }}
-              />
-              <p
-                className="font-heading text-[11px] uppercase tracking-[0.25em] font-medium mb-5"
-                style={{ color: "hsl(var(--brass))" }}
-              >
-                The Diagnosis
-              </p>
-              <h3 className="font-display text-[34px] md:text-[40px] leading-[0.95] tracking-tight text-foreground mb-8">
+        <div className="grid md:grid-cols-12 gap-10 md:gap-14">
+          <div className="md:col-span-4">
+            <div className="md:sticky md:top-20">
+              <Eyebrow>The diagnosis</Eyebrow>
+              <h3 className="font-display text-[26px] md:text-[32px] tracking-wider leading-[0.95] text-foreground">
                 Not a conspiracy.
                 <br />A posture.
               </h3>
-              <div
-                className="hidden md:block font-mono text-[10px] leading-[1.9] uppercase tracking-[0.2em]"
-                style={{ color: "hsl(30, 15%, 45%)" }}
-              >
-                Subject — Behavioural analysis
-                <br />
-                Classification — Social contagion
-                <br />
-                Status — Pervasive
-              </div>
             </div>
-          </aside>
+          </div>
 
           <div
-            className="md:col-span-8 font-body text-[16px] md:text-[17px] leading-[1.75] font-normal space-y-7"
-            style={{ color: "hsl(35, 18%, 78%)" }}
+            className="md:col-span-8 space-y-6 font-body text-[15px] md:text-[16px] leading-[1.7] font-normal"
+            style={{ color: "hsl(30, 12%, 60%)" }}
           >
             <p>
-              <span
-                className="float-left font-display text-[80px] md:text-[96px] leading-[0.78] mr-3 mt-1.5"
-                style={{ color: "hsl(var(--brass))" }}
-              >
-                I
-              </span>
-              f hard disinformation feeding major conspiracy theories is a
+              If hard disinformation feeding major conspiracy theories is a
               hydra with self-reviving properties, “soft distrust” is its
               well-mannered cousin with a regular mani-pedi, a capacity for
               concerned small talk, and unlimited resources.
@@ -209,18 +161,18 @@ const SoftDistrustSection = () => {
               agenda, spiced with attempts at public intellectualism.
             </p>
 
-            <div
-              className="my-10 md:my-12 pl-6 md:pl-8 py-2"
-              style={{ borderLeft: "2px solid hsl(var(--brass))" }}
+            <blockquote
+              className="my-8 pl-6 md:pl-8"
+              style={{ borderLeft: "1px solid hsl(var(--brass) / 0.45)" }}
             >
               <p
-                className="font-display text-[22px] md:text-[26px] leading-[1.25] tracking-tight"
-                style={{ color: "hsl(35, 25%, 92%)" }}
+                className="font-display text-[20px] md:text-[24px] tracking-wider leading-[1.25]"
+                style={{ color: "hsl(35, 25%, 88%)" }}
               >
                 “We smell nice, and we’re not stupid, either. Now be a darling,
                 consider doubting this and buy my bottle of supplements.”
               </p>
-            </div>
+            </blockquote>
 
             <p>
               Soft distrust nudges. It hedges. It assembles a tone — measured,
@@ -245,116 +197,102 @@ const SoftDistrustSection = () => {
           </div>
         </div>
 
+        <div
+          className="h-px w-full my-20 md:my-28"
+          style={{ background: "hsl(340, 22%, 22% / 0.4)" }}
+        />
+
         {/* ─── GLOSSARY ─────────────────────────────── */}
-        <div className="mb-32 md:mb-44">
-          <div className="flex items-baseline justify-between mb-10">
-            <div>
-              <p
-                className="font-heading text-[11px] uppercase tracking-[0.3em] font-medium mb-3"
-                style={{ color: "hsl(var(--brass))" }}
-              >
-                The Lexicon
-              </p>
-              <h3 className="font-display text-[32px] md:text-[44px] leading-[0.95] tracking-tight text-foreground max-w-[22ch]">
-                Intellectually Respectable Bull
-              </h3>
-            </div>
-            <span
-              className="font-mono text-[10px] uppercase tracking-[0.25em] hidden md:inline"
-              style={{ color: "hsl(30, 15%, 45%)" }}
-            >
-              Table 1.1
-            </span>
-          </div>
-
-          <div style={{ borderTop: "1px solid hsl(var(--brass) / 0.35)" }}>
-            <div
-              className="grid grid-cols-12 gap-x-6 py-4 font-heading text-[10px] uppercase tracking-[0.25em] font-medium"
-              style={{
-                color: "hsl(30, 15%, 55%)",
-                borderBottom: "1px solid hsl(var(--brass) / 0.15)",
-              }}
-            >
-              <div className="col-span-12 md:col-span-5">Sounds thoughtful</div>
-              <div className="col-span-12 md:col-span-7 hidden md:block">
-                Actually does
-              </div>
-            </div>
-
-            <dl>
-              {respectableBull.map((row, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.05 * i }}
-                  className="grid grid-cols-12 gap-x-6 py-8 items-baseline"
-                  style={{ borderBottom: "1px solid hsl(var(--brass) / 0.12)" }}
-                >
-                  <dt
-                    className="col-span-12 md:col-span-5 font-display text-[20px] md:text-[24px] leading-[1.2] tracking-tight italic"
-                    style={{ color: "hsl(35, 25%, 90%)" }}
-                  >
-                    {row.line}
-                  </dt>
-                  <dd
-                    className="col-span-12 md:col-span-7 mt-2 md:mt-0 font-body text-[15px] md:text-[16px] leading-[1.7] font-normal"
-                    style={{ color: "hsl(35, 15%, 65%)" }}
-                  >
-                    {row.gloss}
-                  </dd>
-                </motion.div>
-              ))}
-            </dl>
-          </div>
-        </div>
-
-        {/* ─── WARDROBE: THEN / NOW ─────────────────── */}
-        <div className="mb-32 md:mb-44">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-10 h-px" style={{ background: "hsl(var(--brass))" }} />
-            <p
-              className="font-heading text-[11px] uppercase tracking-[0.3em] font-medium"
-              style={{ color: "hsl(var(--brass))" }}
-            >
-              A wardrobe change
-            </p>
-          </div>
-          <h3 className="font-display text-[32px] md:text-[44px] leading-[0.95] tracking-tight text-foreground max-w-[22ch] mb-14">
-            The New Aesthetic of Distrust
+        <div>
+          <Eyebrow>A glossary</Eyebrow>
+          <h3 className="font-display text-[36px] md:text-[44px] lg:text-[52px] tracking-wider leading-[0.92] text-foreground max-w-[20ch] mb-14">
+            Intellectually Respectable Bull
           </h3>
 
           <div
-            className="grid grid-cols-1 md:grid-cols-2"
-            style={{ border: "1px solid hsl(var(--brass) / 0.18)" }}
+            className="grid grid-cols-12 pb-4 text-[11px] uppercase tracking-[0.2em] font-heading"
+            style={{
+              color: "hsl(30, 15%, 55%)",
+              borderBottom: "1px solid hsl(var(--brass) / 0.2)",
+            }}
           >
+            <div className="col-span-12 md:col-span-5">Sounds thoughtful</div>
+            <div className="col-span-12 md:col-span-7 hidden md:block">
+              Actually does
+            </div>
+          </div>
+
+          <dl>
+            {respectableBull.map((row, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.05 * i }}
+                className="grid grid-cols-12 gap-x-6 py-6 items-baseline"
+                style={{ borderBottom: "1px solid hsl(var(--brass) / 0.15)" }}
+              >
+                <dt
+                  className="col-span-12 md:col-span-5 font-display text-[20px] md:text-[24px] tracking-wider leading-[1.15]"
+                  style={{ color: "hsl(35, 25%, 88%)" }}
+                >
+                  {row.line}
+                </dt>
+                <dd
+                  className="col-span-12 md:col-span-7 mt-2 md:mt-0 font-body text-[15px] md:text-[16px] leading-[1.7] font-normal"
+                  style={{ color: "hsl(30, 12%, 60%)" }}
+                >
+                  {row.gloss}
+                </dd>
+              </motion.div>
+            ))}
+          </dl>
+        </div>
+
+        <div
+          className="h-px w-full my-20 md:my-28"
+          style={{ background: "hsl(340, 22%, 22% / 0.4)" }}
+        />
+
+        {/* ─── WARDROBE: THEN / NOW ─────────────────── */}
+        <div>
+          <Eyebrow>A wardrobe change</Eyebrow>
+          <h3 className="font-display text-[36px] md:text-[44px] lg:text-[52px] tracking-wider leading-[0.92] text-foreground max-w-[22ch] mb-14">
+            The New Aesthetic of Distrust
+          </h3>
+
+          <div className="grid md:grid-cols-2 gap-4">
             <motion.article
               initial={{ opacity: 0, y: 14 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
-              className="p-10 md:p-14 flex flex-col gap-6"
+              className="p-8 md:p-10 flex flex-col gap-5"
+              style={{
+                backgroundColor: "hsl(340, 38%, 13%)",
+                border: "1px solid hsl(340, 22%, 22%)",
+              }}
             >
               <p
-                className="font-mono text-[10px] uppercase tracking-[0.3em]"
+                className="font-mono text-[11px] uppercase tracking-[0.25em]"
                 style={{ color: "hsl(30, 15%, 50%)" }}
               >
-                Then · The ancestor
+                Then
               </p>
               <h4
-                className="font-display text-[26px] md:text-[32px] leading-[1.05] tracking-tight"
-                style={{ color: "hsl(35, 22%, 80%)" }}
+                className="font-display text-[24px] md:text-[30px] tracking-wider leading-[1.05]"
+                style={{ color: "hsl(35, 25%, 88%)" }}
               >
                 Old conspiracy culture
               </h4>
               <ul
-                className="font-body text-[15px] md:text-[16px] leading-[1.8] space-y-1.5 font-normal"
+                className="font-body text-[15px] md:text-[16px] leading-[1.7] space-y-1.5 font-normal"
                 style={{ color: "hsl(30, 12%, 60%)" }}
               >
-                <li>— Comic Sans on a black background</li>
-                <li>— Apocalypse on a Tuesday</li>
-                <li>— A clearly visible fringe identity</li>
-                <li>— Capital letters. Many of them.</li>
-                <li>— A basement, structurally</li>
+                <li>Comic Sans on a black background</li>
+                <li>Apocalypse on a Tuesday</li>
+                <li>A clearly visible fringe identity</li>
+                <li>Capital letters. Many of them.</li>
+                <li>A basement, structurally</li>
               </ul>
             </motion.article>
 
@@ -362,84 +300,85 @@ const SoftDistrustSection = () => {
               initial={{ opacity: 0, y: 14 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="p-10 md:p-14 flex flex-col gap-6 md:border-l"
-              style={{ borderColor: "hsl(var(--brass) / 0.18)" }}
+              className="p-8 md:p-10 flex flex-col gap-5"
+              style={{
+                backgroundColor: "hsl(348, 50%, 18%)",
+                border: "1px solid hsl(348, 35%, 28%)",
+              }}
             >
               <p
-                className="font-mono text-[10px] uppercase tracking-[0.3em]"
-                style={{ color: "hsl(var(--brass))" }}
+                className="font-mono text-[11px] uppercase tracking-[0.25em]"
+                style={{ color: "hsl(30, 18%, 70%)" }}
               >
-                Now · The upgrade
+                Now
               </p>
               <h4
-                className="font-display text-[26px] md:text-[32px] leading-[1.05] tracking-tight"
-                style={{ color: "hsl(35, 25%, 92%)" }}
+                className="font-display text-[24px] md:text-[30px] tracking-wider leading-[1.05]"
+                style={{ color: "hsl(35, 25%, 90%)" }}
               >
                 Soft distrust culture
               </h4>
               <ul
-                className="font-body text-[15px] md:text-[16px] leading-[1.8] space-y-1.5 font-normal"
-                style={{ color: "hsl(35, 18%, 75%)" }}
+                className="font-body text-[15px] md:text-[16px] leading-[1.7] space-y-1.5 font-normal"
+                style={{ color: "hsl(30, 15%, 68%)" }}
               >
-                <li>— A linen shirt and a forty-minute monologue</li>
-                <li>— A microphone that costs more than the research</li>
-                <li>— A discount code for magnesium</li>
-                <li>— Selectively rigorous skepticism</li>
-                <li>— A minimalist kitchen, lit beautifully</li>
+                <li>A linen shirt and a forty-minute monologue</li>
+                <li>A microphone that costs more than the research</li>
+                <li>A discount code for magnesium</li>
+                <li>Selectively rigorous skepticism</li>
+                <li>A minimalist kitchen, lit beautifully</li>
               </ul>
             </motion.article>
           </div>
 
           <p
-            className="font-display text-[22px] md:text-[28px] leading-[1.25] tracking-tight mt-14 max-w-[44ch] italic font-light"
-            style={{ color: "hsl(35, 22%, 82%)" }}
+            className="font-display text-[24px] md:text-[32px] tracking-wider leading-[1.15] mt-14 max-w-[44ch]"
+            style={{ color: "hsl(35, 25%, 88%)" }}
           >
             The modern misinformation ecosystem rarely looks dangerous. It
             looks well moisturised.
           </p>
         </div>
 
-        {/* ─── WHY IT WORKS ─────────────────────────── */}
-        <div className="mb-32 md:mb-44">
-          <div className="mb-14 max-w-3xl">
-            <p
-              className="font-heading text-[11px] uppercase tracking-[0.3em] font-medium mb-3"
-              style={{ color: "hsl(var(--brass))" }}
-            >
-              Mechanics
-            </p>
-            <h3 className="font-display text-[40px] md:text-[64px] leading-[0.9] tracking-tight text-foreground">
-              Why It Works
-            </h3>
-          </div>
+        <div
+          className="h-px w-full my-20 md:my-28"
+          style={{ background: "hsl(340, 22%, 22% / 0.4)" }}
+        />
 
-          <div style={{ borderTop: "1px solid hsl(var(--brass) / 0.35)" }}>
+        {/* ─── WHY IT WORKS ─────────────────────────── */}
+        <div>
+          <Eyebrow>Mechanics</Eyebrow>
+          <h3 className="font-display text-[36px] md:text-[44px] lg:text-[52px] tracking-wider leading-[0.92] text-foreground mb-14">
+            Why It Works
+          </h3>
+
+          <div style={{ borderTop: "1px solid hsl(var(--brass) / 0.2)" }}>
             {reasons.map((r, i) => {
               const isOpen = open === i;
               return (
                 <div
                   key={i}
-                  style={{ borderBottom: "1px solid hsl(var(--brass) / 0.18)" }}
+                  style={{ borderBottom: "1px solid hsl(var(--brass) / 0.15)" }}
                 >
                   <button
                     onClick={() => setOpen(isOpen ? null : i)}
-                    className="w-full flex items-center justify-between gap-6 py-6 md:py-8 text-left group transition-colors hover:bg-[hsl(var(--brass)/0.03)]"
+                    className="w-full flex items-center justify-between gap-6 py-5 md:py-6 text-left group"
                   >
-                    <span className="flex items-baseline gap-6 md:gap-10">
+                    <span className="flex items-baseline gap-5 md:gap-7">
                       <span
-                        className="font-mono text-[11px] tracking-[0.2em]"
-                        style={{ color: "hsl(var(--brass))" }}
+                        className="font-mono text-[12px] tracking-[0.15em]"
+                        style={{ color: "hsl(30, 15%, 45%)" }}
                       >
                         0{i + 1}
                       </span>
                       <span
-                        className="font-display text-[22px] md:text-[28px] tracking-tight leading-[1.1]"
-                        style={{ color: "hsl(35, 25%, 92%)" }}
+                        className="font-display text-[20px] md:text-[24px] tracking-wider leading-[1.1]"
+                        style={{ color: "hsl(35, 25%, 88%)" }}
                       >
                         {r.title}
                       </span>
                     </span>
-                    <span style={{ color: "hsl(var(--brass))" }}>
+                    <span style={{ color: "hsl(30, 15%, 55%)" }}>
                       {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                     </span>
                   </button>
@@ -451,8 +390,8 @@ const SoftDistrustSection = () => {
                     className="overflow-hidden"
                   >
                     <p
-                      className="pb-8 md:pb-10 pl-12 md:pl-20 pr-10 font-body text-[15px] md:text-[17px] leading-[1.75] max-w-[60ch] font-normal"
-                      style={{ color: "hsl(35, 15%, 70%)" }}
+                      className="pb-6 md:pb-8 pl-10 md:pl-14 pr-10 font-body text-[15px] md:text-[16px] leading-[1.7] max-w-[60ch] font-normal"
+                      style={{ color: "hsl(30, 12%, 60%)" }}
                     >
                       {r.body}
                     </p>
@@ -463,63 +402,40 @@ const SoftDistrustSection = () => {
           </div>
         </div>
 
-        {/* ─── BRIDGE / CTA ─────────────────────────── */}
         <div
-          className="pt-16 md:pt-20"
-          style={{ borderTop: "1px solid hsl(var(--brass) / 0.35)" }}
-        >
-          <div className="text-center max-w-[58ch] mx-auto mb-12">
+          className="h-px w-full my-20 md:my-28"
+          style={{ background: "hsl(340, 22%, 22% / 0.4)" }}
+        />
+
+        {/* ─── BRIDGE / CTA ─────────────────────────── */}
+        <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-end">
+          <div className="md:col-span-8">
+            <Eyebrow>Where this goes</Eyebrow>
             <p
-              className="font-heading text-[11px] uppercase tracking-[0.3em] font-medium mb-6"
-              style={{ color: "hsl(var(--brass))" }}
-            >
-              Continue the field work
-            </p>
-            <p
-              className="font-body text-[16px] md:text-[17px] leading-[1.75] font-normal"
-              style={{ color: "hsl(35, 18%, 75%)" }}
+              className="font-body text-[15px] md:text-[16px] leading-[1.7] max-w-[58ch] font-normal"
+              style={{ color: "hsl(30, 12%, 60%)" }}
             >
               Most of this material rhymes. The same plots, the same
               rhetorical moves, the same calm voice doing the same trick in a
               different kitchen. The{" "}
-              <span style={{ color: "hsl(35, 25%, 92%)" }}>NoBull Library</span>{" "}
+              <span style={{ color: "hsl(35, 25%, 90%)" }}>NoBull Library</span>{" "}
               is our working map of those recurring patterns — catalogued so
               they stop feeling like fresh insights every time.
             </p>
           </div>
-
-          <div className="flex justify-center">
+          <div className="md:col-span-4 md:text-right">
             <Link
               to="/the-usual-suspects"
-              className="group inline-flex items-center gap-4"
+              className="inline-flex items-center gap-3 px-6 py-3.5 font-heading text-[13px] tracking-[0.1em] uppercase font-medium transition-all duration-200 hover:brightness-110 group"
+              style={{
+                color: "hsl(35, 25%, 92%)",
+                backgroundColor: "hsl(348, 45%, 28%)",
+              }}
             >
-              <span
-                className="font-display text-[26px] md:text-[36px] leading-none tracking-tight pb-2 transition-colors group-hover:text-[hsl(var(--brass))]"
-                style={{
-                  color: "hsl(35, 25%, 92%)",
-                  borderBottom: "1px solid hsl(var(--brass))",
-                }}
-              >
-                Enter the NoBull Library
-              </span>
-              <ArrowRight
-                className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1"
-                style={{ color: "hsl(var(--brass))" }}
-              />
+              Explore the Usual Suspects
+              <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
           </div>
-        </div>
-
-        {/* ─── FOLIO FOOTER ─────────────────────────── */}
-        <div
-          className="mt-24 md:mt-32 pt-6 flex justify-between items-end font-mono text-[10px] uppercase tracking-[0.25em]"
-          style={{
-            borderTop: "1px solid hsl(var(--brass) / 0.15)",
-            color: "hsl(30, 15%, 40%)",
-          }}
-        >
-          <span>Resonance Labs · Field research</span>
-          <span>Ref. No. 992-SD</span>
         </div>
       </div>
     </section>
