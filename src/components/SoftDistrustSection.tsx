@@ -158,27 +158,49 @@ const SoftDistrustSection = () => {
             style={{ color: "hsl(30, 12%, 55%)" }}
           >
             <p>
-              Soft distrust is the well-mannered cousin of conspiracy. It does
-              not reject reality; it just lowers the temperature on it. The
-              moon landing happened. The vaccine works. But have you considered
-              who benefits, and have you considered it on a podcast, slowly,
-              with a fern in the background.
+              If hard disinformation feeding major conspiracy theories is a
+              hydra with self-reviving properties, “soft distrust” is its
+              well-mannered cousin with a regular mani-pedi, a capacity for
+              concerned small talk, and unlimited resources.
             </p>
             <p>
-              It rarely makes claims you can fact-check. It nudges. It hedges.
-              It assembles a tone — measured, faintly disappointed, vaguely
-              spiritual — and lets that tone do the arguing. Most of its
-              individual sentences are technically defensible. The cumulative
-              effect is a quiet erosion of the idea that anyone, anywhere,
-              knows what they are talking about.
+              It looks and smells much better. It’s bullsh*t for better people.
+            </p>
+            <p>
+              Soft distrust, as we will see, is not conspiratorial thinking. It
+              does not reject reality; it just lowers the temperature on it.
+              The Moon landing happened, why not? The vaccines may even work.
+              But have you considered who benefits, and have you considered it
+              on a podcast, slowly, with a fern in the background?
+            </p>
+            <p>
+              Soft distrust is a misinformation category that moulds major
+              health-related misinformation into a wellness-and-identity
+              agenda, spiced with attempts at public intellectualism.
+            </p>
+            <p style={{ color: "hsl(35, 25%, 88%)" }} className="font-display text-[20px] md:text-[24px] tracking-wider leading-[1.3]">
+              “We smell nice, and we’re not stupid, either. Now be a darling,
+              consider doubting this and buy my bottle of supplements.”
+            </p>
+            <p>
+              Soft distrust nudges. It hedges. It assembles a tone — measured,
+              faintly disappointed, vaguely spiritual — and lets that tone do
+              the arguing. Most of its individual sentences are technically
+              defensible.
+            </p>
+            <p>
+              The cumulative effect is a quiet erosion of the idea that anyone,
+              anywhere, knows what they are talking about.
             </p>
             <p>
               It travels best inside socially respectable language: wellness
               vocabulary, the “as a parent” framing, the contrarian essay, the
               long-form interview. It almost always contains a real fragment
               of truth, which it uses the way a magician uses a real coin.
+            </p>
+            <p>
               Then it asks you to be brave enough to think for yourself, which
-              is flattering, and free.
+              is flattering and free.
             </p>
           </div>
         </div>
