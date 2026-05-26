@@ -50,7 +50,7 @@ const reasons: { title: string; body: string }[] = [
 ];
 
 const Eyebrow = ({ children }: { children: React.ReactNode }) => (
-  <div className="flex items-center gap-4 mb-6">
+  <div className="flex items-center gap-4 mb-8">
     <div className="w-10 h-px" style={{ background: "hsl(30, 15%, 45%)" }} />
     <p
       className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium"
@@ -69,7 +69,7 @@ const SoftDistrustSection = () => {
   return (
     <section
       ref={ref}
-      className="relative py-32 md:py-44 section-padding bg-burgundy overflow-hidden"
+      className="relative py-32 md:py-44 section-padding bg-burgundy-mid overflow-hidden"
     >
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.03] mix-blend-overlay"
@@ -79,9 +79,15 @@ const SoftDistrustSection = () => {
         }}
       />
 
-      <div className="relative max-w-5xl mx-auto px-6 md:px-12">
+      <div className="relative max-w-6xl mx-auto px-6 md:px-12">
         {/* ─── HERO ─────────────────────────────────── */}
-        <Eyebrow>A field note</Eyebrow>
+        <motion.div
+          initial={{ opacity: 0, x: -10 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <Eyebrow>A field note</Eyebrow>
+        </motion.div>
 
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -92,39 +98,49 @@ const SoftDistrustSection = () => {
           Welcome to the Era of Soft Distrust
         </motion.h2>
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.18 }}
-          className="font-body text-[17px] md:text-[19px] leading-[1.55] max-w-[58ch]"
-          style={{ color: "hsl(35, 20%, 72%)" }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 lg:gap-24"
         >
-          Scepticism has become identity, and intellectually respectable bull
-          has learned to speak in a calm podcast voice.
-        </motion.p>
+          <div className="space-y-5">
+            <p
+              className="font-body text-[17px] md:text-[19px] leading-[1.55] font-normal"
+              style={{ color: "hsl(35, 20%, 72%)" }}
+            >
+              Scepticism has become identity, and intellectually respectable
+              bull has learned to speak in a calm podcast voice.
+            </p>
+          </div>
+          <div className="space-y-5">
+            <p
+              className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal"
+              style={{ color: "hsl(30, 12%, 52%)" }}
+            >
+              Not a conspiracy. A posture. A misinformation category that
+              moulds health-related misinformation into a wellness-and-identity
+              agenda, spiced with attempts at public intellectualism.
+            </p>
+          </div>
+        </motion.div>
 
-        <motion.blockquote
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-14 md:mt-20 pl-6 md:pl-8 max-w-[44ch]"
-          style={{ borderLeft: "1px solid hsl(var(--brass) / 0.45)" }}
-        >
-          <p
-            className="font-display text-[28px] md:text-[38px] tracking-wider leading-[1.1]"
-            style={{ color: "hsl(35, 25%, 90%)" }}
-          >
-            “Science is probably fine. The people behind it, less so.”
-          </p>
-        </motion.blockquote>
-
-        <div
-          className="h-px w-full my-20 md:my-28"
+        {/* Divider */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={isInView ? { scaleX: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="h-px w-full origin-left my-20 md:my-28"
           style={{ background: "hsl(340, 22%, 22% / 0.4)" }}
         />
 
         {/* ─── DIAGNOSIS ────────────────────────────── */}
-        <div className="grid md:grid-cols-12 gap-10 md:gap-14">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.45 }}
+          className="grid md:grid-cols-12 gap-10 md:gap-14"
+        >
           <div className="md:col-span-4">
             <div className="md:sticky md:top-20">
               <Eyebrow>The diagnosis</Eyebrow>
@@ -135,10 +151,7 @@ const SoftDistrustSection = () => {
             </div>
           </div>
 
-          <div
-            className="md:col-span-8 space-y-6 font-body text-[15px] md:text-[16px] leading-[1.7] font-normal"
-            style={{ color: "hsl(30, 12%, 60%)" }}
-          >
+          <div className="md:col-span-8 space-y-6 font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: "hsl(35, 20%, 72%)" }}>
             <p>
               If hard disinformation feeding major conspiracy theories is a
               hydra with self-reviving properties, “soft distrust” is its
@@ -155,14 +168,9 @@ const SoftDistrustSection = () => {
               But have you considered who benefits, and have you considered it
               on a podcast, slowly, with a fern in the background?
             </p>
-            <p>
-              Soft distrust is a misinformation category that moulds major
-              health-related misinformation into a wellness-and-identity
-              agenda, spiced with attempts at public intellectualism.
-            </p>
 
             <blockquote
-              className="my-8 pl-6 md:pl-8"
+              className="my-10 pl-6 md:pl-8"
               style={{ borderLeft: "1px solid hsl(var(--brass) / 0.45)" }}
             >
               <p
@@ -195,22 +203,29 @@ const SoftDistrustSection = () => {
               is flattering and free.
             </p>
           </div>
-        </div>
+        </motion.div>
 
-        <div
-          className="h-px w-full my-20 md:my-28"
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={isInView ? { scaleX: 1 } : {}}
+          transition={{ duration: 0.8 }}
+          className="h-px w-full origin-left my-20 md:my-28"
           style={{ background: "hsl(340, 22%, 22% / 0.4)" }}
         />
 
         {/* ─── GLOSSARY ─────────────────────────────── */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
+        >
           <Eyebrow>A glossary</Eyebrow>
           <h3 className="font-display text-[36px] md:text-[44px] lg:text-[52px] tracking-wider leading-[0.92] text-foreground max-w-[20ch] mb-14">
             Intellectually Respectable Bull
           </h3>
 
           <div
-            className="grid grid-cols-12 pb-4 text-[11px] uppercase tracking-[0.2em] font-heading"
+            className="grid grid-cols-12 pb-5 mb-2 font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium"
             style={{
               color: "hsl(30, 15%, 55%)",
               borderBottom: "1px solid hsl(var(--brass) / 0.2)",
@@ -229,124 +244,116 @@ const SoftDistrustSection = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.05 * i }}
-                className="grid grid-cols-12 gap-x-6 py-6 items-baseline"
+                className="grid grid-cols-12 gap-x-6 py-7 items-baseline"
                 style={{ borderBottom: "1px solid hsl(var(--brass) / 0.15)" }}
               >
                 <dt
-                  className="col-span-12 md:col-span-5 font-display text-[20px] md:text-[24px] tracking-wider leading-[1.15]"
+                  className="col-span-12 md:col-span-5 font-display text-[20px] md:text-[23px] tracking-wider leading-[1.2]"
                   style={{ color: "hsl(35, 25%, 88%)" }}
                 >
                   {row.line}
                 </dt>
                 <dd
                   className="col-span-12 md:col-span-7 mt-2 md:mt-0 font-body text-[15px] md:text-[16px] leading-[1.7] font-normal"
-                  style={{ color: "hsl(30, 12%, 60%)" }}
+                  style={{ color: "hsl(30, 12%, 52%)" }}
                 >
                   {row.gloss}
                 </dd>
               </motion.div>
             ))}
           </dl>
-        </div>
+        </motion.div>
 
-        <div
-          className="h-px w-full my-20 md:my-28"
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={isInView ? { scaleX: 1 } : {}}
+          transition={{ duration: 0.8 }}
+          className="h-px w-full origin-left my-20 md:my-28"
           style={{ background: "hsl(340, 22%, 22% / 0.4)" }}
         />
 
         {/* ─── WARDROBE: THEN / NOW ─────────────────── */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
+        >
           <Eyebrow>A wardrobe change</Eyebrow>
           <h3 className="font-display text-[36px] md:text-[44px] lg:text-[52px] tracking-wider leading-[0.92] text-foreground max-w-[22ch] mb-14">
             The New Aesthetic of Distrust
           </h3>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            <motion.article
-              initial={{ opacity: 0, y: 14 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
-              className="p-8 md:p-10 flex flex-col gap-5"
-              style={{
-                backgroundColor: "hsl(340, 38%, 13%)",
-                border: "1px solid hsl(340, 22%, 22%)",
-              }}
-            >
-              <p
-                className="font-mono text-[11px] uppercase tracking-[0.25em]"
-                style={{ color: "hsl(30, 15%, 50%)" }}
+          <div className="grid md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-12">
+            {[
+              {
+                tag: "Then",
+                title: "Old conspiracy culture",
+                items: [
+                  "Comic Sans on a black background",
+                  "Apocalypse on a Tuesday",
+                  "A clearly visible fringe identity",
+                  "Capital letters. Many of them.",
+                  "A basement, structurally",
+                ],
+              },
+              {
+                tag: "Now",
+                title: "Soft distrust culture",
+                items: [
+                  "A linen shirt and a forty-minute monologue",
+                  "A microphone that costs more than the research",
+                  "A discount code for magnesium",
+                  "Selectively rigorous skepticism",
+                  "A minimalist kitchen, lit beautifully",
+                ],
+              },
+            ].map((col, i) => (
+              <motion.div
+                key={col.tag}
+                initial={{ opacity: 0, y: 16 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.55, delay: 0.1 + i * 0.1 }}
               >
-                Then
-              </p>
-              <h4
-                className="font-display text-[24px] md:text-[30px] tracking-wider leading-[1.05]"
-                style={{ color: "hsl(35, 25%, 88%)" }}
-              >
-                Old conspiracy culture
-              </h4>
-              <ul
-                className="font-body text-[15px] md:text-[16px] leading-[1.7] space-y-1.5 font-normal"
-                style={{ color: "hsl(30, 12%, 60%)" }}
-              >
-                <li>Comic Sans on a black background</li>
-                <li>Apocalypse on a Tuesday</li>
-                <li>A clearly visible fringe identity</li>
-                <li>Capital letters. Many of them.</li>
-                <li>A basement, structurally</li>
-              </ul>
-            </motion.article>
-
-            <motion.article
-              initial={{ opacity: 0, y: 14 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="p-8 md:p-10 flex flex-col gap-5"
-              style={{
-                backgroundColor: "hsl(348, 50%, 18%)",
-                border: "1px solid hsl(348, 35%, 28%)",
-              }}
-            >
-              <p
-                className="font-mono text-[11px] uppercase tracking-[0.25em]"
-                style={{ color: "hsl(30, 18%, 70%)" }}
-              >
-                Now
-              </p>
-              <h4
-                className="font-display text-[24px] md:text-[30px] tracking-wider leading-[1.05]"
-                style={{ color: "hsl(35, 25%, 90%)" }}
-              >
-                Soft distrust culture
-              </h4>
-              <ul
-                className="font-body text-[15px] md:text-[16px] leading-[1.7] space-y-1.5 font-normal"
-                style={{ color: "hsl(30, 15%, 68%)" }}
-              >
-                <li>A linen shirt and a forty-minute monologue</li>
-                <li>A microphone that costs more than the research</li>
-                <li>A discount code for magnesium</li>
-                <li>Selectively rigorous skepticism</li>
-                <li>A minimalist kitchen, lit beautifully</li>
-              </ul>
-            </motion.article>
+                <h4
+                  className="font-display text-[20px] md:text-[23px] tracking-wider leading-[0.95] text-foreground pb-5 mb-8 border-b"
+                  style={{ borderColor: "hsl(var(--brass) / 0.2)" }}
+                >
+                  {col.tag} — {col.title}
+                </h4>
+                <ul className="space-y-3 font-body text-[15px] md:text-[16px] leading-[1.7]">
+                  {col.items.map((item) => (
+                    <li key={item} style={{ color: "hsl(35, 20%, 72%)" }}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
           </div>
 
           <p
-            className="font-display text-[24px] md:text-[32px] tracking-wider leading-[1.15] mt-14 max-w-[44ch]"
+            className="font-display text-[22px] md:text-[28px] tracking-wider leading-[1.2] mt-16 max-w-[44ch]"
             style={{ color: "hsl(35, 25%, 88%)" }}
           >
             The modern misinformation ecosystem rarely looks dangerous. It
             looks well moisturised.
           </p>
-        </div>
+        </motion.div>
 
-        <div
-          className="h-px w-full my-20 md:my-28"
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={isInView ? { scaleX: 1 } : {}}
+          transition={{ duration: 0.8 }}
+          className="h-px w-full origin-left my-20 md:my-28"
           style={{ background: "hsl(340, 22%, 22% / 0.4)" }}
         />
 
         {/* ─── WHY IT WORKS ─────────────────────────── */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
+        >
           <Eyebrow>Mechanics</Eyebrow>
           <h3 className="font-display text-[36px] md:text-[44px] lg:text-[52px] tracking-wider leading-[0.92] text-foreground mb-14">
             Why It Works
@@ -362,7 +369,7 @@ const SoftDistrustSection = () => {
                 >
                   <button
                     onClick={() => setOpen(isOpen ? null : i)}
-                    className="w-full flex items-center justify-between gap-6 py-5 md:py-6 text-left group"
+                    className="w-full flex items-center justify-between gap-6 py-6 md:py-7 text-left group"
                   >
                     <span className="flex items-baseline gap-5 md:gap-7">
                       <span
@@ -372,7 +379,7 @@ const SoftDistrustSection = () => {
                         0{i + 1}
                       </span>
                       <span
-                        className="font-display text-[20px] md:text-[24px] tracking-wider leading-[1.1]"
+                        className="font-display text-[20px] md:text-[23px] tracking-wider leading-[1.1]"
                         style={{ color: "hsl(35, 25%, 88%)" }}
                       >
                         {r.title}
@@ -390,8 +397,8 @@ const SoftDistrustSection = () => {
                     className="overflow-hidden"
                   >
                     <p
-                      className="pb-6 md:pb-8 pl-10 md:pl-14 pr-10 font-body text-[15px] md:text-[16px] leading-[1.7] max-w-[60ch] font-normal"
-                      style={{ color: "hsl(30, 12%, 60%)" }}
+                      className="pb-7 md:pb-8 pl-10 md:pl-14 pr-10 font-body text-[15px] md:text-[16px] leading-[1.7] max-w-[60ch] font-normal"
+                      style={{ color: "hsl(30, 12%, 52%)" }}
                     >
                       {r.body}
                     </p>
@@ -400,20 +407,28 @@ const SoftDistrustSection = () => {
               );
             })}
           </div>
-        </div>
+        </motion.div>
 
-        <div
-          className="h-px w-full my-20 md:my-28"
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={isInView ? { scaleX: 1 } : {}}
+          transition={{ duration: 0.8 }}
+          className="h-px w-full origin-left my-20 md:my-28"
           style={{ background: "hsl(340, 22%, 22% / 0.4)" }}
         />
 
         {/* ─── BRIDGE / CTA ─────────────────────────── */}
-        <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-end">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
+          className="grid md:grid-cols-12 gap-10 md:gap-14 items-end"
+        >
           <div className="md:col-span-8">
             <Eyebrow>Where this goes</Eyebrow>
             <p
               className="font-body text-[15px] md:text-[16px] leading-[1.7] max-w-[58ch] font-normal"
-              style={{ color: "hsl(30, 12%, 60%)" }}
+              style={{ color: "hsl(35, 20%, 72%)" }}
             >
               Most of this material rhymes. The same plots, the same
               rhetorical moves, the same calm voice doing the same trick in a
@@ -426,17 +441,14 @@ const SoftDistrustSection = () => {
           <div className="md:col-span-4 md:text-right">
             <Link
               to="/the-usual-suspects"
-              className="inline-flex items-center gap-3 px-6 py-3.5 font-heading text-[13px] tracking-[0.1em] uppercase font-medium transition-all duration-200 hover:brightness-110 group"
-              style={{
-                color: "hsl(35, 25%, 92%)",
-                backgroundColor: "hsl(348, 45%, 28%)",
-              }}
+              className="inline-flex items-center gap-2 font-heading text-[13px] tracking-[0.12em] uppercase font-medium transition-opacity duration-200 hover:opacity-100 group"
+              style={{ color: "hsl(30, 15%, 68%)", opacity: 0.85 }}
             >
               Explore the Usual Suspects
-              <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
