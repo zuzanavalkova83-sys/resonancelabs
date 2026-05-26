@@ -261,7 +261,7 @@ const SoftDistrustSection = () => {
             </p>
           </div>
 
-          <h3 className="font-display text-[40px] md:text-[54px] lg:text-[64px] tracking-wider leading-[0.9] text-foreground max-w-[22ch] mb-14">
+          <h3 className="font-display text-[36px] md:text-[44px] lg:text-[52px] tracking-wider leading-[0.92] text-foreground max-w-[22ch] mb-14">
             The New Aesthetic of Distrust
           </h3>
 
@@ -284,14 +284,14 @@ const SoftDistrustSection = () => {
                 Then
               </p>
               <h4
-                className="font-heading text-[22px] md:text-[26px] leading-[1.15] tracking-[-0.005em] font-light"
+                className="font-display text-[24px] md:text-[30px] tracking-wider leading-[1.05]"
                 style={{ color: "hsl(35, 25%, 88%)" }}
               >
                 Old conspiracy culture
               </h4>
               <ul
-                className="font-body text-[15px] leading-[1.75] space-y-1.5"
-                style={{ color: "hsl(30, 12%, 60%)" }}
+                className="font-body text-[15px] md:text-[16px] leading-[1.7] space-y-1.5 font-normal"
+                style={{ color: "hsl(30, 12%, 58%)" }}
               >
                 <li>Comic Sans on a black background</li>
                 <li>Apocalypse on a Tuesday</li>
@@ -319,14 +319,14 @@ const SoftDistrustSection = () => {
                 Now
               </p>
               <h4
-                className="font-heading text-[22px] md:text-[26px] leading-[1.15] tracking-[-0.005em] font-light"
+                className="font-display text-[24px] md:text-[30px] tracking-wider leading-[1.05]"
                 style={{ color: "hsl(35, 25%, 90%)" }}
               >
                 Soft distrust culture
               </h4>
               <ul
-                className="font-body text-[15px] leading-[1.75] space-y-1.5"
-                style={{ color: "hsl(30, 15%, 70%)" }}
+                className="font-body text-[15px] md:text-[16px] leading-[1.7] space-y-1.5 font-normal"
+                style={{ color: "hsl(30, 15%, 68%)" }}
               >
                 <li>A linen shirt and a forty-minute monologue</li>
                 <li>A microphone that costs more than the research</li>
@@ -338,8 +338,8 @@ const SoftDistrustSection = () => {
           </div>
 
           <p
-            className="font-heading font-light text-[20px] md:text-[26px] leading-[1.35] tracking-[-0.005em] mt-12 max-w-[44ch]"
-            style={{ color: "hsl(35, 25%, 85%)" }}
+            className="font-display text-[24px] md:text-[32px] tracking-wider leading-[1.15] mt-14 max-w-[44ch]"
+            style={{ color: "hsl(35, 25%, 88%)" }}
           >
             The modern misinformation ecosystem rarely looks dangerous. It
             looks well moisturised.
@@ -348,7 +348,7 @@ const SoftDistrustSection = () => {
 
         <div
           className="h-px w-full my-20 md:my-28"
-          style={{ background: "hsl(340, 22%, 22% / 0.5)" }}
+          style={{ background: "hsl(340, 22%, 22% / 0.4)" }}
         />
 
         {/* ─── WHY IT WORKS ─────────────────────────── */}
@@ -359,11 +359,11 @@ const SoftDistrustSection = () => {
               className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium"
               style={{ color: "hsl(30, 15%, 55%)" }}
             >
-              Section 04 · Mechanics
+              Mechanics
             </p>
           </div>
 
-          <h3 className="font-display text-[40px] md:text-[54px] lg:text-[64px] tracking-wider leading-[0.9] text-foreground mb-14">
+          <h3 className="font-display text-[36px] md:text-[44px] lg:text-[52px] tracking-wider leading-[0.92] text-foreground mb-14">
             Why It Works
           </h3>
 
@@ -387,7 +387,7 @@ const SoftDistrustSection = () => {
                         0{i + 1}
                       </span>
                       <span
-                        className="font-heading text-[18px] md:text-[22px] tracking-[-0.005em] font-light"
+                        className="font-display text-[20px] md:text-[24px] tracking-wider leading-[1.1]"
                         style={{ color: "hsl(35, 25%, 88%)" }}
                       >
                         {r.title}
@@ -412,8 +412,8 @@ const SoftDistrustSection = () => {
                     className="overflow-hidden"
                   >
                     <p
-                      className="pb-6 md:pb-8 pl-10 md:pl-14 pr-10 font-body text-[15px] md:text-[16px] leading-[1.75] max-w-[60ch]"
-                      style={{ color: "hsl(30, 12%, 58%)" }}
+                      className="pb-6 md:pb-8 pl-10 md:pl-14 pr-10 font-body text-[15px] md:text-[16px] leading-[1.7] max-w-[60ch] font-normal"
+                      style={{ color: "hsl(30, 12%, 55%)" }}
                     >
                       {r.body}
                     </p>
@@ -426,7 +426,7 @@ const SoftDistrustSection = () => {
 
         <div
           className="h-px w-full my-20 md:my-28"
-          style={{ background: "hsl(340, 22%, 22% / 0.5)" }}
+          style={{ background: "hsl(340, 22%, 22% / 0.4)" }}
         />
 
         {/* ─── BRIDGE / CTA ─────────────────────────── */}
@@ -442,8 +442,8 @@ const SoftDistrustSection = () => {
               </p>
             </div>
             <p
-              className="font-body text-[16px] md:text-[18px] leading-[1.65] max-w-[58ch]"
-              style={{ color: "hsl(35, 20%, 72%)" }}
+              className="font-body text-[15px] md:text-[16px] leading-[1.7] max-w-[58ch] font-normal"
+              style={{ color: "hsl(30, 12%, 55%)" }}
             >
               Most of this material rhymes. The same plots, the same
               rhetorical moves, the same calm voice doing the same trick in a
