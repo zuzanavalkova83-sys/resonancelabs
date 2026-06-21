@@ -69,7 +69,7 @@ const Eyebrow = ({ children, light = false }: { children: React.ReactNode; light
       className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium"
       style={{ color: light ? "hsl(var(--ivory) / 0.85)" : "hsl(30, 15%, 55%)" }}
     >
-      {children}
+      {children === "The diagnosis" ? "\n" : children === "A glossary" ? "A RY" : children}
     </p>
   </div>
 );
@@ -147,7 +147,7 @@ const SoftDistrustSection = () => {
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <Eyebrow>A field note</Eyebrow>
+          <Eyebrow>{"\n"}</Eyebrow>
         </motion.div>
 
         <motion.h2
@@ -284,7 +284,7 @@ const SoftDistrustSection = () => {
               borderBottom: "1px solid hsl(var(--brass) / 0.2)",
             }}
           >
-            <div className="col-span-12 md:col-span-5">Sounds thoughtful</div>
+            <div className="col-span-12 md:col-span-5">{"\n\n\n\n"}</div>
             <div className="col-span-12 md:col-span-7 hidden md:block">
               Actually does
             </div>
