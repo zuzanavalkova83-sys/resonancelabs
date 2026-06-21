@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import heroIllustration from "@/assets/hero-illustration.png.asset.json";
+import heroPortrait from "@/assets/hero-portrait.mp4.asset.json";
+import heroPortraitPoster from "@/assets/hero-portrait-poster.jpg.asset.json";
 
 const HeroSection = () => {
   const labsGlitch = useGlitch(9000, 800, 2500);
@@ -59,28 +60,24 @@ const HeroSection = () => {
         </motion.span>
       </div>
 
-      {/* Right-side illustration — tucked behind the hero with a gradient fade and slow zoom */}
+      {/* Right-side video atmosphere — tucked behind the hero with a gradient fade */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
-        <div
-          className="absolute bottom-0 right-0 h-[58%] sm:h-[74%] w-[90%] sm:w-[56%] overflow-hidden"
+        <video
+          src={heroPortrait.url}
+          poster={heroPortraitPoster.url}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute bottom-0 right-0 h-[85%] sm:h-full w-full sm:w-[72%] lg:w-[64%] object-cover opacity-[0.65] sm:opacity-[0.58]"
           style={{
-            maskImage: "linear-gradient(to right, transparent 0%, transparent 22%, black 55%), linear-gradient(to bottom, transparent 0%, transparent 18%, black 48%)",
-            WebkitMaskImage: "linear-gradient(to right, transparent 0%, transparent 22%, black 55%), linear-gradient(to bottom, transparent 0%, transparent 18%, black 48%)",
+            filter: "contrast(1.04) brightness(0.94)",
+            maskImage: "linear-gradient(to right, transparent 0%, transparent 28%, black 62%), linear-gradient(to bottom, transparent 0%, transparent 22%, black 55%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, transparent 28%, black 62%), linear-gradient(to bottom, transparent 0%, transparent 22%, black 55%)",
           }}
-        >
-          <motion.img
-            src={heroIllustration.url}
-            alt=""
-            initial={{ scale: 1 }}
-            animate={{ scale: 1.06 }}
-            transition={{ duration: 24, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
-            className="w-full h-full object-contain object-center opacity-[0.6] sm:opacity-[0.52]"
-            style={{
-              filter: "contrast(1.03) brightness(0.98)",
-            }}
-          />
-        </div>
-        {/* Subtle navy wash to unify the palette */}
+        />
+        {/* Subtle navy wash to unify the palette without killing color */}
         <div
           className="absolute inset-0 mix-blend-multiply"
           style={{
