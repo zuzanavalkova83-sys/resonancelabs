@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import mariaPhoto from "@/assets/maria-michopulu.jpg.asset.json";
+import { Plus, Minus } from "lucide-react";
 
 const collaborators = [
   {
