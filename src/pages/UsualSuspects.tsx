@@ -38,9 +38,6 @@ const UsualSuspects = () => {
           }}
         />
         <div className="max-w-3xl mx-auto text-center relative">
-          <p className="font-mono text-[10px] tracking-[0.3em] uppercase mb-6" style={{ color: "hsl(var(--brass))" }}>
-            Narrative risk mapping
-          </p>
           <h2 className="font-display text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] tracking-wider leading-[0.88] text-foreground mb-8">
             Want this mapped for your own research?
           </h2>

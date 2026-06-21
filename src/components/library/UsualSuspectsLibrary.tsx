@@ -450,12 +450,6 @@ const UsualSuspects = () => {
 
         <div className="relative max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-28 sm:py-36">
           <div className="mb-16">
-            <div className="flex items-center gap-5 mb-10">
-              <div className="w-12 h-[1px]" style={{ background: "hsl(30 15% 75%)" }} />
-              <p className="text-[13px] font-mono tracking-[0.3em] uppercase" style={{ color: "hsl(30 15% 60%)" }}>
-                Field guide
-              </p>
-            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-12 md:gap-20">
               <div>

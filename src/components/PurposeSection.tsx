@@ -127,12 +127,6 @@ const PurposeSection = () => {
           transition={{ duration: 0.7 }}
           className="mb-16 md:mb-20"
         >
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-10 h-px" style={{ background: 'hsl(30, 15%, 45%)' }} />
-            <p className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium" style={{ color: 'hsl(30, 15%, 55%)' }}>
-              Our Purpose
-            </p>
-          </div>
 
           <h2 className="font-display text-[48px] md:text-[60px] lg:text-[72px] tracking-wider leading-[0.88] text-foreground">
             Why We Exist

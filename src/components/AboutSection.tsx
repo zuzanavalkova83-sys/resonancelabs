@@ -55,22 +55,6 @@ const AboutSection = () => {
       <div className="relative max-w-6xl mx-auto px-6 md:px-12">
 
         {/* Header row */}
-        <motion.div
-          initial={{ opacity: 0, x: -10 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="flex items-center gap-4 mb-8"
-        >
-          <motion.div
-            className="w-10 h-px"
-            style={{ background: 'hsl(30, 15%, 45%)' }}
-            animate={isInView ? { scaleX: [0, 1] } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          />
-          <p className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium" style={{ color: 'hsl(30, 15%, 55%)' }}>
-            Narrative intelligence
-          </p>
-        </motion.div>
 
         {/* Title — with breathing opacity */}
         <motion.h2
@@ -143,12 +127,6 @@ const AboutSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.45 }}
         >
-          <div className="flex items-center gap-4 mb-16">
-            <div className="w-10 h-px" style={{ background: 'hsl(30, 15%, 45%)' }} />
-            <p className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium" style={{ color: 'hsl(30, 15%, 55%)' }}>
-              Fields of practice
-            </p>
-          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 lg:gap-x-16 gap-y-16">
             {categories.map((cat, catIdx) => {

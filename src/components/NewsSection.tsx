@@ -82,12 +82,6 @@ const NewsSection = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-8"
       >
-        <p
-          className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.14em] font-medium mb-6"
-          style={{ color: "hsl(215, 20%, 50%)" }}
-        >
-          Latest
-        </p>
         <h2 className="font-heading text-[34px] md:text-[42px] lg:text-[46px] font-light leading-[1.1] tracking-[-0.02em] text-foreground">
           News
         </h2>

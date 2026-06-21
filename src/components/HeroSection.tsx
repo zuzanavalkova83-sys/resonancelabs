@@ -103,17 +103,6 @@ const HeroSection = () => {
 
           {/* Left: typographic title stack */}
           <div>
-            <motion.div
-              initial={{ opacity: 0, x: -15 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex items-center gap-4 mb-6"
-            >
-              <div className="w-10 h-px" style={{ background: 'hsl(var(--brass) / 0.5)' }} />
-              <p className="text-[12px] font-mono tracking-[0.35em] uppercase" style={{ color: 'hsl(var(--brass))' }}>
-                <br />
-              </p>
-            </motion.div>
 
             <div className="overflow-hidden">
               <motion.h1
