@@ -19,6 +19,7 @@ const collaborators = [
 const TeamSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [showCredit, setShowCredit] = useState(false);
 
   return (
     <section
