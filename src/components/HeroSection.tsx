@@ -70,11 +70,11 @@ const HeroSection = () => {
           loop
           playsInline
           preload="metadata"
-          className="absolute top-0 right-0 h-full w-full sm:w-[70%] lg:w-[62%] object-cover opacity-[0.55] sm:opacity-[0.5]"
+          className="absolute bottom-0 right-0 h-[85%] sm:h-full w-full sm:w-[72%] lg:w-[64%] object-cover opacity-[0.65] sm:opacity-[0.58]"
           style={{
-            filter: "contrast(1.05) brightness(0.92)",
-            maskImage: "linear-gradient(to right, transparent 0%, transparent 30%, black 60%), linear-gradient(to top, transparent 0%, black 18%)",
-            WebkitMaskImage: "linear-gradient(to right, transparent 0%, transparent 30%, black 60%), linear-gradient(to top, transparent 0%, black 18%)",
+            filter: "contrast(1.04) brightness(0.94)",
+            maskImage: "linear-gradient(to right, transparent 0%, transparent 28%, black 62%), linear-gradient(to bottom, transparent 0%, transparent 22%, black 55%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, transparent 28%, black 62%), linear-gradient(to bottom, transparent 0%, transparent 22%, black 55%)",
           }}
         />
         {/* Subtle navy wash to unify the palette without killing color */}
