@@ -2,8 +2,7 @@ import { motion } from "framer-motion";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import heroPortrait from "@/assets/hero-portrait.mp4.asset.json";
-import heroPortraitPoster from "@/assets/hero-portrait-poster.jpg.asset.json";
+import revertingScience from "@/assets/reverting-science.mp4.asset.json";
 
 const HeroSection = () => {
   const labsGlitch = useGlitch(9000, 800, 2500);
@@ -63,8 +62,7 @@ const HeroSection = () => {
       {/* Right-side video atmosphere — tucked behind the hero with a gradient fade */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
         <video
-          src={heroPortrait.url}
-          poster={heroPortraitPoster.url}
+          src={revertingScience.url}
           autoPlay
           muted
           loop
