@@ -112,6 +112,14 @@ em, i, cite, address, dfn, var {
     color: hsl(var(--ivory));
   }
 
+  .text-ivory {
+    color: hsl(var(--ivory));
+  }
+
+  .text-ivory-dim {
+    color: hsl(var(--ivory-dim));
+  }
+
   .bg-burgundy {
     background-color: hsl(var(--burgundy));
   }
@@ -145,6 +153,9 @@ em, i, cite, address, dfn, var {
   }
   .bg-signal-red {
     background-color: hsl(var(--signal-red));
+  }
+  .bg-signal-red-deep {
+    background-color: hsl(var(--signal-red-deep));
   }
 
   .editorial-rule {

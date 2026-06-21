@@ -49,20 +49,25 @@ const reasons: { title: string; body: string }[] = [
   },
 ];
 
-const Eyebrow = ({ children }: { children: React.ReactNode }) => (
+const Eyebrow = ({ children, light = false }: { children: React.ReactNode; light?: boolean }) => (
   <div className="flex items-center gap-4 mb-8">
     {/* Signal-red tick — risk-marker motif */}
     <div
       className="w-1.5 h-1.5 rounded-full"
       style={{
-        background: "hsl(var(--signal-red))",
-        boxShadow: "0 0 8px hsl(var(--signal-red) / 0.6)",
+        background: light ? "hsl(var(--ivory))" : "hsl(var(--signal-red))",
+        boxShadow: light
+          ? "0 0 10px hsl(var(--ivory) / 0.55)"
+          : "0 0 8px hsl(var(--signal-red) / 0.6)",
       }}
     />
-    <div className="w-8 h-px" style={{ background: "hsl(30, 15%, 45%)" }} />
+    <div
+      className="w-8 h-px"
+      style={{ background: light ? "hsl(var(--ivory) / 0.45)" : "hsl(30, 15%, 45%)" }}
+    />
     <p
       className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium"
-      style={{ color: "hsl(30, 15%, 55%)" }}
+      style={{ color: light ? "hsl(var(--ivory) / 0.85)" : "hsl(30, 15%, 55%)" }}
     >
       {children}
     </p>
@@ -333,112 +338,109 @@ const SoftDistrustSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="relative -mx-6 md:-mx-12 px-6 md:px-12 py-16 md:py-20 overflow-hidden"
+          className="relative -mx-6 md:-mx-12 px-6 md:px-12 py-16 md:py-20 overflow-hidden bg-signal-red-deep"
         >
-          {/* Deep oxblood/red wash — breaks the burgundy monotony, ties to the signal-red motif */}
+          {/* Full red wash — edge-to-edge signal red band */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "linear-gradient(160deg, hsl(var(--signal-red-deep) / 0.18) 0%, hsl(358, 55%, 14%) 35%, hsl(355, 45%, 10%) 100%)",
+                "linear-gradient(160deg, hsl(var(--signal-red) / 0.95) 0%, hsl(var(--signal-red-deep) / 0.98) 60%, hsl(358, 65%, 32%) 100%)",
             }}
           />
-          {/* Red glow, top-left */}
+          {/* Hot glow, top-left */}
           <div
             className="absolute pointer-events-none"
             style={{
-              top: "-10%",
-              left: "-8%",
-              width: "55%",
-              height: "60%",
+              top: "-20%",
+              left: "-10%",
+              width: "65%",
+              height: "70%",
               background:
-                "radial-gradient(ellipse at center, hsl(var(--signal-red) / 0.18), transparent 65%)",
-              filter: "blur(60px)",
+                "radial-gradient(ellipse at center, hsl(2 78% 58% / 0.55), transparent 60%)",
+              filter: "blur(80px)",
             }}
           />
-          {/* Deep red pool, bottom-right */}
+          {/* Deeper red pool, bottom-right */}
           <div
             className="absolute pointer-events-none"
             style={{
-              bottom: "-15%",
-              right: "-10%",
-              width: "60%",
-              height: "55%",
+              bottom: "-25%",
+              right: "-15%",
+              width: "70%",
+              height: "65%",
               background:
-                "radial-gradient(ellipse at center, hsl(var(--signal-red-deep) / 0.35), transparent 70%)",
-              filter: "blur(70px)",
+                "radial-gradient(ellipse at center, hsl(358 70% 24% / 0.75), transparent 65%)",
+              filter: "blur(90px)",
             }}
           />
           {/* Grain */}
           <div
-            className="absolute inset-0 pointer-events-none opacity-[0.04] mix-blend-overlay"
+            className="absolute inset-0 pointer-events-none opacity-[0.06] mix-blend-overlay"
             style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
               backgroundSize: "128px 128px",
             }}
           />
 
-          <div className="relative">
-          <Eyebrow>A wardrobe change</Eyebrow>
-          <h3 className="font-display text-[36px] md:text-[44px] lg:text-[52px] tracking-wider leading-[0.92] text-foreground max-w-[22ch] mb-14">
-            The New Aesthetic of Distrust
-          </h3>
+          <div className="relative text-ivory">
+            <Eyebrow light>A wardrobe change</Eyebrow>
+            <h3 className="font-display text-[36px] md:text-[44px] lg:text-[52px] tracking-wider leading-[0.92] max-w-[22ch] mb-14">
+              The New Aesthetic of Distrust
+            </h3>
 
-          <div className="grid md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-12">
-            {[
-              {
-                tag: "Then",
-                title: "Old conspiracy culture",
-                items: [
-                  "Comic Sans on a black background",
-                  "Apocalypse on a Tuesday",
-                  "A clearly visible fringe identity",
-                  "Capital letters. Many of them.",
-                  "A basement, structurally",
-                ],
-              },
-              {
-                tag: "Now",
-                title: "Soft distrust culture",
-                items: [
-                  "A linen shirt and a forty-minute monologue",
-                  "A microphone that costs more than the research",
-                  "A discount code for magnesium",
-                  "Selectively rigorous skepticism",
-                  "A minimalist kitchen, lit beautifully",
-                ],
-              },
-            ].map((col, i) => (
-              <motion.div
-                key={col.tag}
-                initial={{ opacity: 0, y: 16 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.55, delay: 0.1 + i * 0.1 }}
-              >
-                <h4
-                  className="font-display text-[20px] md:text-[23px] tracking-wider leading-[0.95] text-foreground pb-5 mb-8 border-b"
-                  style={{ borderColor: "hsl(var(--signal-red) / 0.35)" }}
+            <div className="grid md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-12">
+              {[
+                {
+                  tag: "Then",
+                  title: "Old conspiracy culture",
+                  items: [
+                    "Comic Sans on a black background",
+                    "Apocalypse on a Tuesday",
+                    "A clearly visible fringe identity",
+                    "Capital letters. Many of them.",
+                    "A basement, structurally",
+                  ],
+                },
+                {
+                  tag: "Now",
+                  title: "Soft distrust culture",
+                  items: [
+                    "A linen shirt and a forty-minute monologue",
+                    "A microphone that costs more than the research",
+                    "A discount code for magnesium",
+                    "Selectively rigorous skepticism",
+                    "A minimalist kitchen, lit beautifully",
+                  ],
+                },
+              ].map((col, i) => (
+                <motion.div
+                  key={col.tag}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.55, delay: 0.1 + i * 0.1 }}
                 >
-                  {col.tag} — {col.title}
-                </h4>
-                <ul className="space-y-3 font-body text-[15px] md:text-[16px] leading-[1.7]">
-                  {col.items.map((item) => (
-                    <li key={item} style={{ color: "hsl(35, 20%, 72%)" }}>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
+                  <h4
+                    className="font-display text-[20px] md:text-[23px] tracking-wider leading-[0.95] pb-5 mb-8 border-b"
+                    style={{ borderColor: "hsl(var(--ivory) / 0.35)" }}
+                  >
+                    {col.tag} — {col.title}
+                  </h4>
+                  <ul className="space-y-3 font-body text-[15px] md:text-[16px] leading-[1.7]" style={{ color: "hsl(var(--ivory) / 0.9)" }}>
+                    {col.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
 
-          <p
-            className="font-display text-[22px] md:text-[28px] tracking-wider leading-[1.2] mt-16 max-w-[44ch]"
-            style={{ color: "hsl(35, 25%, 88%)" }}
-          >
-            The modern misinformation ecosystem rarely looks dangerous. It
-            looks well moisturised.
-          </p>
+            <p
+              className="font-display text-[22px] md:text-[28px] tracking-wider leading-[1.2] mt-16 max-w-[44ch] text-ivory"
+            >
+              The modern misinformation ecosystem rarely looks dangerous. It
+              looks well moisturised.
+            </p>
           </div>
         </motion.div>
 
