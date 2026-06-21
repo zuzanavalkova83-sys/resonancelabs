@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import revertingScience from "@/assets/reverting-science.mp4.asset.json";
+import heroPortrait from "@/assets/hero-portrait.mp4.asset.json";
+import heroPortraitPoster from "@/assets/hero-portrait-poster.jpg.asset.json";
 
 const HeroSection = () => {
   const labsGlitch = useGlitch(9000, 800, 2500);
@@ -62,17 +63,18 @@ const HeroSection = () => {
       {/* Right-side video atmosphere — tucked behind the hero with a gradient fade */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
         <video
-          src={revertingScience.url}
+          src={heroPortrait.url}
+          poster={heroPortraitPoster.url}
           autoPlay
           muted
           loop
           playsInline
           preload="metadata"
-          className="absolute bottom-0 right-0 h-[68%] sm:h-[74%] lg:h-[78%] aspect-square object-cover opacity-[0.62] sm:opacity-[0.56]"
+          className="absolute bottom-0 right-0 h-[85%] sm:h-full w-full sm:w-[72%] lg:w-[64%] object-cover opacity-[0.65] sm:opacity-[0.58]"
           style={{
-            filter: "contrast(1.04) brightness(0.96)",
-            maskImage: "linear-gradient(to right, transparent 0%, transparent 16%, black 48%), linear-gradient(to bottom, transparent 0%, transparent 12%, black 42%)",
-            WebkitMaskImage: "linear-gradient(to right, transparent 0%, transparent 16%, black 48%), linear-gradient(to bottom, transparent 0%, transparent 12%, black 42%)",
+            filter: "contrast(1.04) brightness(0.94)",
+            maskImage: "linear-gradient(to right, transparent 0%, transparent 28%, black 62%), linear-gradient(to bottom, transparent 0%, transparent 22%, black 55%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, transparent 28%, black 62%), linear-gradient(to bottom, transparent 0%, transparent 22%, black 55%)",
           }}
         />
         {/* Subtle navy wash to unify the palette without killing color */}
