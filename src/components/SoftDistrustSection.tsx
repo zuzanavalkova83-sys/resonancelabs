@@ -217,7 +217,8 @@ const SoftDistrustSection = () => {
             <p>
               Imagine the hard disinformation behind major conspiracy theories as
               a Hydra with self-reviving properties. It's powerful, ugly, and
-              not cool enough for the city folk.&nbsp;<br />
+              not cool enough for the city folk. We like to think we know
+              better.<br />
               <br />
               “Soft distrust”, on the other hand, is Hydra's well-mannered cousin
               with a regular mani-pedi, a capacity for small talk, and
