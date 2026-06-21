@@ -49,7 +49,7 @@ const HeroSection = () => {
           aria-hidden
           style={bgGlitch ? {
             opacity: 0.055,
-            textShadow: "6px 0 hsl(340 75% 55%), -6px 0 hsl(180 80% 50%)",
+            textShadow: "6px 0 hsl(var(--signal-red)), -6px 0 hsl(var(--brass))",
             transform: "translate(4px, -2px) skewX(-1.5deg)",
             transition: "none",
           } : {}}
@@ -58,25 +58,41 @@ const HeroSection = () => {
         </motion.span>
       </div>
 
-      {/* Stationary pink accent disc — quiet, off-axis */}
+      {/* Signal-red beacon — slow heartbeat pulse. Risk made visible. */}
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
         className="absolute pointer-events-none
-          right-[-1rem] top-[5.5rem] sm:right-auto sm:left-[34%] sm:top-[20%]"
+          right-[0.25rem] top-[5.5rem] sm:right-auto sm:left-[34%] sm:top-[20%]"
+        aria-hidden
       >
+        {/* Outer halo — slow breathing wash */}
         <motion.div
-          animate={{ y: [0, -6, 0] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          animate={{ scale: [1, 1.18, 1], opacity: [0.35, 0.55, 0.35] }}
+          transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute inset-0 -m-8 sm:-m-12 rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, hsl(var(--signal-red) / 0.28) 0%, hsl(var(--signal-red) / 0.08) 45%, transparent 70%)",
+            filter: "blur(8px)",
+          }}
+        />
+        {/* Core disc — heartbeat pulse (1.0 → 1.06 → 1.0) */}
+        <motion.div
+          animate={{ scale: [1, 1.06, 1, 1.04, 1], y: [0, -4, 0] }}
+          transition={{
+            scale: { duration: 3.6, repeat: Infinity, ease: "easeInOut", times: [0, 0.18, 0.32, 0.42, 1] },
+            y: { duration: 8, repeat: Infinity, ease: "easeInOut" },
+          }}
         >
           <div
-            className="w-16 h-16 sm:w-28 sm:h-28 md:w-36 md:h-36 rounded-full"
+            className="w-12 h-12 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full relative"
             style={{
               background:
-                "radial-gradient(circle at 36% 30%, hsl(340 72% 58% / 0.78) 0%, hsl(340 60% 42% / 0.62) 55%, hsl(338 50% 26% / 0.45) 100%)",
+                "radial-gradient(circle at 36% 30%, hsl(var(--signal-red) / 0.95) 0%, hsl(var(--signal-red) / 0.78) 45%, hsl(var(--signal-red-deep) / 0.62) 78%, hsl(340 50% 12% / 0.55) 100%)",
               boxShadow:
-                "0 18px 60px -10px hsl(340 65% 40% / 0.5), inset -10px -16px 50px hsl(335 45% 14% / 0.55)",
+                "0 18px 60px -10px hsl(var(--signal-red) / 0.55), 0 0 80px -10px hsl(var(--signal-red) / 0.35), inset -10px -16px 50px hsl(340 55% 10% / 0.55)",
             }}
           />
         </motion.div>

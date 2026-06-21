@@ -66,6 +66,10 @@
 
     --teal-deep: 170 30% 9%;
 
+    /* Signal red — third complementary accent (from the portrait). Used sparingly: risk markers, glitch chroma, hero beacon. */
+    --signal-red: 2 78% 52%;
+    --signal-red-deep: 358 70% 38%;
+
     --glass-bg: 340 25% 14%;
     --glass-border: 340 22% 22%;
 
@@ -134,6 +138,13 @@ em, i, cite, address, dfn, var {
 
   .bg-teal-deep {
     background-color: hsl(var(--teal-deep));
+  }
+
+  .text-signal-red {
+    color: hsl(var(--signal-red));
+  }
+  .bg-signal-red {
+    background-color: hsl(var(--signal-red));
   }
 
   .editorial-rule {
