@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import teamZuzana from "@/assets/team-zuzana.jpg";
+import mariaPhoto from "@/assets/maria-michopulu.jpg.asset.json";
 
 const collaborators = [
   {
