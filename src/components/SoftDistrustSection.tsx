@@ -182,13 +182,14 @@ const SoftDistrustSection = () => {
             </div>
           </div>
 
-          <div className="md:col-span-8 space-y-6 font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: "hsl(35, 20%, 72%)" }}>
+          <div className="md:col-span-8 space-y-9 font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: "hsl(35, 20%, 72%)" }}>
             <p>
               Imagine the hard disinformation behind major conspiracy theories as
               a Hydra with self-reviving properties. It's powerful, ugly, and
               not cool enough for the city folk. We like to think we know
-              better.<br />
-              <br />
+              better.
+            </p>
+            <p>
               “Soft distrust”, on the other hand, is Hydra's well-mannered cousin
               with a regular mani-pedi, a capacity for small talk, and
               unlimited resources.
@@ -203,16 +204,12 @@ const SoftDistrustSection = () => {
               considered who benefits, and have you considered it on a podcast,
               slowly, with a fern in the background?
             </p>
-
             <p>
               Soft distrust nudges. It hedges. It assembles a tone — measured,
               faintly disappointed, vaguely spiritual — and lets that tone do
               the arguing. Most of its individual sentences are technically
               defensible.&nbsp;The cumulative effect is a quiet erosion of the
               idea that anyone, anywhere, knows what they are talking about.
-            </p>
-            <p>
-              <br />
             </p>
             <p>
               It travels best inside socially respectable language: wellness
