@@ -86,15 +86,6 @@ const ServicesSection = () => {
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <div className="text-center mb-20">
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium mb-8"
-            style={{ color: 'hsl(30, 15%, 55%)' }}
-          >
-            Services
-          </motion.p>
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

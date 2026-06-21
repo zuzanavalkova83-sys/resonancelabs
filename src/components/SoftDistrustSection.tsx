@@ -49,30 +49,6 @@ const reasons: { title: string; body: string }[] = [
   },
 ];
 
-const Eyebrow = ({ children, light = false }: { children: React.ReactNode; light?: boolean }) => (
-  <div className="flex items-center gap-4 mb-8">
-    {/* Signal-red tick — risk-marker motif */}
-    <div
-      className="w-1.5 h-1.5 rounded-full"
-      style={{
-        background: light ? "hsl(var(--ivory))" : "hsl(var(--signal-red))",
-        boxShadow: light
-          ? "0 0 10px hsl(var(--ivory) / 0.55)"
-          : "0 0 8px hsl(var(--signal-red) / 0.6)",
-      }}
-    />
-    <div
-      className="w-8 h-px"
-      style={{ background: light ? "hsl(var(--ivory) / 0.45)" : "hsl(30, 15%, 45%)" }}
-    />
-    <p
-      className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium"
-      style={{ color: light ? "hsl(var(--ivory) / 0.85)" : "hsl(30, 15%, 55%)" }}
-    >
-      {children === "The diagnosis" ? "\n" : children === "A glossary" ? "A RY" : children}
-    </p>
-  </div>
-);
 
 const SoftDistrustSection = () => {
   const ref = useRef(null);
@@ -142,13 +118,6 @@ const SoftDistrustSection = () => {
 
       <div className="relative max-w-6xl mx-auto px-6 md:px-12">
         {/* ─── HERO ─────────────────────────────────── */}
-        <motion.div
-          initial={{ opacity: 0, x: -10 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <Eyebrow>{"\n"}</Eyebrow>
-        </motion.div>
 
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -205,7 +174,7 @@ const SoftDistrustSection = () => {
         >
           <div className="md:col-span-4">
             <div className="md:sticky md:top-20">
-              <Eyebrow>The diagnosis</Eyebrow>
+              
               <h3 className="font-display text-[26px] md:text-[32px] tracking-wider leading-[0.95] text-foreground">
                 Not a conspiracy.
                 <br />A posture.
@@ -272,7 +241,7 @@ const SoftDistrustSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <Eyebrow>A glossary</Eyebrow>
+          
           <h3 className="font-display text-[36px] md:text-[44px] lg:text-[52px] tracking-wider leading-[0.92] text-foreground max-w-[20ch] mb-14">
             Intellectually Respectable Bull
           </h3>
@@ -376,7 +345,7 @@ const SoftDistrustSection = () => {
           />
 
           <div className="relative text-ivory">
-            <Eyebrow light>A wardrobe change</Eyebrow>
+            
             <h3 className="font-display text-[36px] md:text-[44px] lg:text-[52px] tracking-wider leading-[0.92] max-w-[22ch] mb-14">
               The New Aesthetic of Distrust
             </h3>
@@ -450,7 +419,7 @@ const SoftDistrustSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <Eyebrow>Mechanics</Eyebrow>
+          
           <h3 className="font-display text-[36px] md:text-[44px] lg:text-[52px] tracking-wider leading-[0.92] text-foreground mb-14">
             Why It Works
           </h3>
@@ -521,7 +490,7 @@ const SoftDistrustSection = () => {
           className="grid md:grid-cols-12 gap-10 md:gap-14 items-end"
         >
           <div className="md:col-span-8">
-            <Eyebrow>Where this goes</Eyebrow>
+            
             <p
               className="font-body text-[15px] md:text-[16px] leading-[1.7] max-w-[58ch] font-normal"
               style={{ color: "hsl(35, 20%, 72%)" }}

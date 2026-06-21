@@ -56,17 +56,6 @@ const NoBullTeaser = () => {
       <div className="max-w-6xl mx-auto px-6 md:px-12 relative">
         {/* Top — copy */}
         <div className="max-w-2xl mb-16 md:mb-20">
-          <motion.div
-            initial={{ opacity: 0, x: -10 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5 }}
-            className="flex items-center gap-4 mb-10"
-          >
-            <div className="w-10 h-px" style={{ background: "hsl(30, 15%, 75%)" }} />
-            <p className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium" style={{ color: "hsl(30, 15%, 58%)" }}>
-              NARRATIVE RISK MAPPING AREAS
-            </p>
-          </motion.div>
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
