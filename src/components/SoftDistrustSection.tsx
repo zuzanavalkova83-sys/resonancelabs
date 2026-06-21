@@ -333,45 +333,45 @@ const SoftDistrustSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="relative -mx-6 md:-mx-12 px-6 md:px-12 py-16 md:py-20 overflow-hidden"
+          className="relative -mx-6 md:-mx-12 px-6 md:px-12 py-16 md:py-20 overflow-hidden bg-signal-red-deep"
         >
-          {/* Deep oxblood/red wash — breaks the burgundy monotony, ties to the signal-red motif */}
+          {/* Full red wash — edge-to-edge signal red band */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "linear-gradient(160deg, hsl(var(--signal-red-deep) / 0.18) 0%, hsl(358, 55%, 14%) 35%, hsl(355, 45%, 10%) 100%)",
+                "linear-gradient(160deg, hsl(var(--signal-red) / 0.95) 0%, hsl(var(--signal-red-deep) / 0.98) 60%, hsl(358, 65%, 32%) 100%)",
             }}
           />
-          {/* Red glow, top-left */}
+          {/* Hot glow, top-left */}
           <div
             className="absolute pointer-events-none"
             style={{
-              top: "-10%",
-              left: "-8%",
-              width: "55%",
-              height: "60%",
+              top: "-20%",
+              left: "-10%",
+              width: "65%",
+              height: "70%",
               background:
-                "radial-gradient(ellipse at center, hsl(var(--signal-red) / 0.18), transparent 65%)",
-              filter: "blur(60px)",
+                "radial-gradient(ellipse at center, hsl(2 78% 58% / 0.55), transparent 60%)",
+              filter: "blur(80px)",
             }}
           />
-          {/* Deep red pool, bottom-right */}
+          {/* Deeper red pool, bottom-right */}
           <div
             className="absolute pointer-events-none"
             style={{
-              bottom: "-15%",
-              right: "-10%",
-              width: "60%",
-              height: "55%",
+              bottom: "-25%",
+              right: "-15%",
+              width: "70%",
+              height: "65%",
               background:
-                "radial-gradient(ellipse at center, hsl(var(--signal-red-deep) / 0.35), transparent 70%)",
-              filter: "blur(70px)",
+                "radial-gradient(ellipse at center, hsl(358 70% 24% / 0.75), transparent 65%)",
+              filter: "blur(90px)",
             }}
           />
           {/* Grain */}
           <div
-            className="absolute inset-0 pointer-events-none opacity-[0.04] mix-blend-overlay"
+            className="absolute inset-0 pointer-events-none opacity-[0.06] mix-blend-overlay"
             style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
               backgroundSize: "128px 128px",
