@@ -426,7 +426,7 @@ const SoftDistrustSection = () => {
                   >
                     {col.tag} — {col.title}
                   </h4>
-                  <ul className="space-y-3 font-body text-[15px] md:text-[16px] leading-[1.7] text-ivory/90">
+                  <ul className="space-y-3 font-body text-[15px] md:text-[16px] leading-[1.7]" style={{ color: "hsl(var(--ivory) / 0.9)" }}>
                     {col.items.map((item) => (
                       <li key={item}>{item}</li>
                     ))}
