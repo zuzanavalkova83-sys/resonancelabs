@@ -216,7 +216,7 @@ const SoftDistrustSection = () => {
           <div className="md:col-span-8 space-y-6 font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: "hsl(35, 20%, 72%)" }}>
             <p>
               Imagine the hard disinformation behind major conspiracy theories as
-              a Hydra with self-reviving properties. It's powerful, ugly, but
+              a Hydra with self-reviving properties. It's powerful, ugly, and
               not cool enough for the city folk.&nbsp;<br />
               <br />
               “Soft distrust”, on the other hand, is Hydra's well-mannered cousin
@@ -227,11 +227,11 @@ const SoftDistrustSection = () => {
               It’s bullsh*t for better people.
             </p>
             <p>
-              Soft distrust, as we'll see, is not conspiratorial thinking. It
-              does not reject reality; it just lowers the temperature on it.
-              The Moon landing happened, why not? The vaccines may even work.
-              But have you considered who benefits, and have you considered it
-              on a podcast, slowly, with a fern in the background?
+              Soft distrust is not conspiratorial thinking. It does not reject
+              reality. It just lowers the temperature on it. The Moon landing
+              happened, why not? The vaccines may even work. But have you
+              considered who benefits, and have you considered it on a podcast,
+              slowly, with a fern in the background?
             </p>
 
             <blockquote
@@ -242,8 +242,7 @@ const SoftDistrustSection = () => {
                 className="font-display text-[20px] md:text-[24px] tracking-wider leading-[1.25]"
                 style={{ color: "hsl(35, 25%, 88%)" }}
               >
-                “We smell nice, and we’re not stupid, either. Now be a darling,
-                consider doubting this and buy my bottle of supplements.”
+                <br />
               </p>
             </blockquote>
 
