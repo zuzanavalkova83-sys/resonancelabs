@@ -62,8 +62,7 @@ const HeroSection = () => {
       {/* Right-side video atmosphere — tucked behind the hero with a gradient fade */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
         <video
-          src={heroPortrait.url}
-          poster={heroPortraitPoster.url}
+          src={revertingScience.url}
           autoPlay
           muted
           loop
