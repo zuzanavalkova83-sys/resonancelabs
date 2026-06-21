@@ -153,8 +153,7 @@ const HeroSection = () => {
               className="text-[14px] text-foreground/40 leading-relaxed mt-4 max-w-md"
             >
               Resonance Labs is a communications practice for research, clinical,
-              and science-led organisations — specialised in narrative intelligence
-              and risk mapping. We chart how serious work is likely to be{" "}
+              and science-led organisations. We chart how serious work is likely to be{" "}
               <span className="inline-block" style={glitchStyle(riskGlitch, "subtle")}>
                 twisted
               </span>{" "}
