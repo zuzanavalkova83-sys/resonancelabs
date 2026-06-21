@@ -250,11 +250,11 @@ const SoftDistrustSection = () => {
               Soft distrust nudges. It hedges. It assembles a tone — measured,
               faintly disappointed, vaguely spiritual — and lets that tone do
               the arguing. Most of its individual sentences are technically
-              defensible.
+              defensible.&nbsp;The cumulative effect is a quiet erosion of the
+              idea that anyone, anywhere, knows what they are talking about.
             </p>
             <p>
-              The cumulative effect is a quiet erosion of the idea that anyone,
-              anywhere, knows what they are talking about.
+              <br />
             </p>
             <p>
               It travels best inside socially respectable language: wellness
