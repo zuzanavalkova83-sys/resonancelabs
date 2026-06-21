@@ -59,24 +59,22 @@ const HeroSection = () => {
         </motion.span>
       </div>
 
-      {/* Right-side video atmosphere — tucked behind the hero with a gradient fade */}
+      {/* Right-side illustration — tucked behind the hero with a gradient fade and slow zoom */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
-        <video
-          src={heroPortrait.url}
-          poster={heroPortraitPoster.url}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="absolute bottom-0 right-0 h-[85%] sm:h-full w-full sm:w-[72%] lg:w-[64%] object-cover opacity-[0.65] sm:opacity-[0.58]"
+        <motion.img
+          src={heroIllustration.url}
+          alt=""
+          initial={{ scale: 1 }}
+          animate={{ scale: 1.08 }}
+          transition={{ duration: 24, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
+          className="absolute bottom-0 right-0 h-[85%] sm:h-full w-full sm:w-[72%] lg:w-[64%] object-cover opacity-[0.55] sm:opacity-[0.48]"
           style={{
-            filter: "contrast(1.04) brightness(0.94)",
+            filter: "contrast(1.04) brightness(0.96)",
             maskImage: "linear-gradient(to right, transparent 0%, transparent 28%, black 62%), linear-gradient(to bottom, transparent 0%, transparent 22%, black 55%)",
             WebkitMaskImage: "linear-gradient(to right, transparent 0%, transparent 28%, black 62%), linear-gradient(to bottom, transparent 0%, transparent 22%, black 55%)",
           }}
         />
-        {/* Subtle navy wash to unify the palette without killing color */}
+        {/* Subtle navy wash to unify the palette */}
         <div
           className="absolute inset-0 mix-blend-multiply"
           style={{
