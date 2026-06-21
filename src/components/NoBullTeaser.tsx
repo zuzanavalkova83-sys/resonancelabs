@@ -93,7 +93,7 @@ const NoBullTeaser = () => {
             className="font-body text-[18px] md:text-[20px] leading-[1.55] font-normal mb-6"
             style={{ color: "hsl(30, 10%, 42%)" }}
           >
-            A working field guide to the recurring ways science gets twisted in public — the raw material for our narrative intelligence work.
+            A working field guide to the recurring ways science gets twisted in public. The raw material for our narrative intelligence work.
           </motion.p>
 
           <motion.p
@@ -105,8 +105,7 @@ const NoBullTeaser = () => {
           >
             We collect and group the familiar plots that keep turning research
             into panic, miracle, scandal, ideology, or noise. The point is
-            simple: if the nonsense repeats, we can learn to recognise it
-            faster.
+            simple: if the nonsense repeats, we can recognise it faster.
           </motion.p>
         </div>
 
@@ -164,7 +163,7 @@ const NoBullTeaser = () => {
           className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
         >
           <p className="font-body text-[14px] md:text-[15px] leading-[1.6] max-w-[48ch]" style={{ color: "hsl(30, 8%, 50%)" }}>
-            The library powers NoBull, our narrative risk mapping tool currently being developed within Resonance Labs.
+            <br />
           </p>
 
           <Link
