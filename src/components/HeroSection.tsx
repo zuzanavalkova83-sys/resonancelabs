@@ -169,10 +169,10 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 1.35 }}
-              className="absolute bottom-6 right-6 sm:bottom-12 sm:right-10 max-w-[190px] text-right pointer-events-none"
+              className="absolute bottom-6 right-6 sm:bottom-12 sm:right-10 max-w-[240px] text-right pointer-events-none"
             >
-              <div className="h-px w-10 ml-auto mb-2.5 bg-brass/25" />
-              <p className="text-[10px] sm:text-[11px] leading-snug text-foreground/45 font-heading tracking-[0.04em]">
+              <div className="h-px w-12 ml-auto mb-3 bg-brass/30" />
+              <p className="text-[12px] sm:text-[13px] leading-snug text-foreground/55 font-heading tracking-[0.04em]">
                 Scientist watching her research going wild on socials, oil on canvas, 2026
               </p>
             </motion.div>
