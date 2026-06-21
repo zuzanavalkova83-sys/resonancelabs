@@ -333,7 +333,52 @@ const SoftDistrustSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
+          className="relative -mx-6 md:-mx-12 px-6 md:px-12 py-16 md:py-20 overflow-hidden"
         >
+          {/* Deep oxblood/red wash — breaks the burgundy monotony, ties to the signal-red motif */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(160deg, hsl(var(--signal-red-deep) / 0.18) 0%, hsl(358, 55%, 14%) 35%, hsl(355, 45%, 10%) 100%)",
+            }}
+          />
+          {/* Red glow, top-left */}
+          <div
+            className="absolute pointer-events-none"
+            style={{
+              top: "-10%",
+              left: "-8%",
+              width: "55%",
+              height: "60%",
+              background:
+                "radial-gradient(ellipse at center, hsl(var(--signal-red) / 0.18), transparent 65%)",
+              filter: "blur(60px)",
+            }}
+          />
+          {/* Deep red pool, bottom-right */}
+          <div
+            className="absolute pointer-events-none"
+            style={{
+              bottom: "-15%",
+              right: "-10%",
+              width: "60%",
+              height: "55%",
+              background:
+                "radial-gradient(ellipse at center, hsl(var(--signal-red-deep) / 0.35), transparent 70%)",
+              filter: "blur(70px)",
+            }}
+          />
+          {/* Grain */}
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.04] mix-blend-overlay"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+              backgroundSize: "128px 128px",
+            }}
+          />
+
+          <div className="relative">
           <Eyebrow>A wardrobe change</Eyebrow>
           <h3 className="font-display text-[36px] md:text-[44px] lg:text-[52px] tracking-wider leading-[0.92] text-foreground max-w-[22ch] mb-14">
             The New Aesthetic of Distrust
@@ -372,7 +417,7 @@ const SoftDistrustSection = () => {
               >
                 <h4
                   className="font-display text-[20px] md:text-[23px] tracking-wider leading-[0.95] text-foreground pb-5 mb-8 border-b"
-                  style={{ borderColor: "hsl(var(--brass) / 0.2)" }}
+                  style={{ borderColor: "hsl(var(--signal-red) / 0.35)" }}
                 >
                   {col.tag} — {col.title}
                 </h4>
@@ -394,6 +439,7 @@ const SoftDistrustSection = () => {
             The modern misinformation ecosystem rarely looks dangerous. It
             looks well moisturised.
           </p>
+          </div>
         </motion.div>
 
         <motion.div
