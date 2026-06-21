@@ -49,20 +49,25 @@ const reasons: { title: string; body: string }[] = [
   },
 ];
 
-const Eyebrow = ({ children }: { children: React.ReactNode }) => (
+const Eyebrow = ({ children, light = false }: { children: React.ReactNode; light?: boolean }) => (
   <div className="flex items-center gap-4 mb-8">
     {/* Signal-red tick — risk-marker motif */}
     <div
       className="w-1.5 h-1.5 rounded-full"
       style={{
-        background: "hsl(var(--signal-red))",
-        boxShadow: "0 0 8px hsl(var(--signal-red) / 0.6)",
+        background: light ? "hsl(var(--ivory))" : "hsl(var(--signal-red))",
+        boxShadow: light
+          ? "0 0 10px hsl(var(--ivory) / 0.55)"
+          : "0 0 8px hsl(var(--signal-red) / 0.6)",
       }}
     />
-    <div className="w-8 h-px" style={{ background: "hsl(30, 15%, 45%)" }} />
+    <div
+      className="w-8 h-px"
+      style={{ background: light ? "hsl(var(--ivory) / 0.45)" : "hsl(30, 15%, 45%)" }}
+    />
     <p
       className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium"
-      style={{ color: "hsl(30, 15%, 55%)" }}
+      style={{ color: light ? "hsl(var(--ivory) / 0.85)" : "hsl(30, 15%, 55%)" }}
     >
       {children}
     </p>
