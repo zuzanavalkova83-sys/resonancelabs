@@ -51,7 +51,15 @@ const reasons: { title: string; body: string }[] = [
 
 const Eyebrow = ({ children }: { children: React.ReactNode }) => (
   <div className="flex items-center gap-4 mb-8">
-    <div className="w-10 h-px" style={{ background: "hsl(30, 15%, 45%)" }} />
+    {/* Signal-red tick — risk-marker motif */}
+    <div
+      className="w-1.5 h-1.5 rounded-full"
+      style={{
+        background: "hsl(var(--signal-red))",
+        boxShadow: "0 0 8px hsl(var(--signal-red) / 0.6)",
+      }}
+    />
+    <div className="w-8 h-px" style={{ background: "hsl(30, 15%, 45%)" }} />
     <p
       className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium"
       style={{ color: "hsl(30, 15%, 55%)" }}
@@ -219,7 +227,7 @@ const SoftDistrustSection = () => {
 
             <blockquote
               className="my-10 pl-6 md:pl-8"
-              style={{ borderLeft: "1px solid hsl(var(--brass) / 0.45)" }}
+              style={{ borderLeft: "2px solid hsl(var(--signal-red) / 0.7)" }}
             >
               <p
                 className="font-display text-[20px] md:text-[24px] tracking-wider leading-[1.25]"
