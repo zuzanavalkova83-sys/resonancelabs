@@ -86,13 +86,11 @@ const HeroSection = () => {
         />
       </div>
 
-
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10">
         <div className="relative grid grid-cols-1 items-end min-h-[68vh] sm:min-h-[92vh] pb-16 sm:pb-20 pt-24">
-
-
           {/* Left: typographic title stack */}
           <div className="max-w-2xl">
+
 
             <div className="overflow-hidden">
               <motion.h1
