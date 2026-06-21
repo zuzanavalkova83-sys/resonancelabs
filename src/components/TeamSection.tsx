@@ -53,10 +53,10 @@ const TeamSection = () => {
         >
           <div className="relative overflow-hidden" style={{ borderRadius: "4px" }}>
             <img
-              src={teamZuzana}
-              alt="Zuzana Válková"
-              className="w-full aspect-[4/5] object-cover"
-              style={{ objectPosition: "center 20%" }}
+              src={mariaPhoto.url}
+              alt="Maria Michopulu"
+              className="w-full aspect-[3/4] object-cover"
+              style={{ objectPosition: "center 18%" }}
             />
           </div>
 
