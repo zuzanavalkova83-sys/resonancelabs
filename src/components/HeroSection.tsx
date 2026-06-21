@@ -80,7 +80,7 @@ const HeroSection = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10">
-        <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] items-end min-h-[68vh] sm:min-h-[74vh] gap-8 pb-16 sm:pb-20 pt-24">
+        <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] items-end min-h-[68vh] sm:min-h-[92vh] gap-10 pb-16 sm:pb-20 pt-24">
 
           {/* Left: typographic title stack */}
           <div>
@@ -168,13 +168,14 @@ const HeroSection = () => {
             className="hidden sm:flex flex-col items-end gap-3 self-stretch h-full"
           >
             <div
-              className="relative h-full aspect-[3/5] overflow-hidden"
+              className="relative h-full aspect-[4/6] overflow-hidden"
               style={{
-                border: "1px solid hsl(var(--ivory) / 0.14)",
+                border: "1px solid hsl(var(--ivory) / 0.18)",
                 boxShadow:
-                  "0 30px 60px -30px hsl(340 60% 4% / 0.75), inset 0 0 0 1px hsl(var(--ivory) / 0.04)",
+                  "0 40px 80px -30px hsl(340 60% 3% / 0.85), inset 0 0 0 1px hsl(var(--ivory) / 0.05)",
               }}
             >
+              {/* Base video — pushed toward high-contrast monochrome so the tint reads cleanly */}
               <video
                 src={heroPortrait.url}
                 poster={heroPortraitPoster.url}
@@ -184,26 +185,44 @@ const HeroSection = () => {
                 playsInline
                 preload="metadata"
                 className="absolute inset-0 w-full h-full object-cover"
-                style={{ filter: "saturate(0.92) contrast(1.03) brightness(0.96)" }}
+                style={{
+                  filter:
+                    "grayscale(0.95) contrast(1.22) brightness(1.06)",
+                }}
               />
-              {/* Burgundy tint to fuse into palette */}
+              {/* Signal-red duotone wash — paints the midtones/shadows in accent red */}
+              <div
+                className="absolute inset-0 pointer-events-none mix-blend-multiply"
+                style={{
+                  background: "hsl(var(--signal-red) / 0.78)",
+                }}
+              />
+              {/* Ivory highlights — pulls whites back, breaks the flat red */}
+              <div
+                className="absolute inset-0 pointer-events-none mix-blend-screen"
+                style={{
+                  background:
+                    "linear-gradient(160deg, hsl(var(--ivory) / 0.22) 0%, transparent 45%, transparent 100%)",
+                }}
+              />
+              {/* Deep wine in the shadows — anchors to site palette */}
               <div
                 className="absolute inset-0 pointer-events-none mix-blend-multiply"
                 style={{
                   background:
-                    "linear-gradient(140deg, hsl(var(--burgundy) / 0.18) 0%, transparent 35%, hsl(var(--wine-deep) / 0.28) 100%)",
+                    "linear-gradient(200deg, transparent 0%, transparent 55%, hsl(var(--wine-deep) / 0.55) 100%)",
                 }}
               />
               {/* Inner vignette */}
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
-                  boxShadow: "inset 0 0 80px hsl(340 55% 6% / 0.55)",
+                  boxShadow: "inset 0 0 100px hsl(340 60% 4% / 0.7)",
                 }}
               />
               {/* Film grain — match section noise */}
               <div
-                className="absolute inset-0 pointer-events-none opacity-[0.08] mix-blend-overlay"
+                className="absolute inset-0 pointer-events-none opacity-[0.1] mix-blend-overlay"
                 style={{
                   backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
                 }}
