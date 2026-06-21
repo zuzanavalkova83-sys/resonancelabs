@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import mariaPhoto from "@/assets/maria-michopulu.jpg.asset.json";
+import { Plus, Minus } from "lucide-react";
 
 const collaborators = [
   {
@@ -18,6 +19,7 @@ const collaborators = [
 const TeamSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [showCredit, setShowCredit] = useState(false);
 
   return (
     <section
@@ -54,10 +56,44 @@ const TeamSection = () => {
           <div className="relative overflow-hidden" style={{ borderRadius: "4px" }}>
             <img
               src={mariaPhoto.url}
-              alt="Maria Michopulu"
+              alt="Zuzana Válková"
               className="w-full aspect-[3/4] object-cover"
               style={{ objectPosition: "center 18%" }}
             />
+
+            {/* Expandable photo credit */}
+            <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4">
+              <button
+                onClick={() => setShowCredit((v) => !v)}
+                className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-sm font-heading text-[10px] tracking-[0.12em] uppercase transition-all duration-200"
+                style={{
+                  background: showCredit ? "hsl(340 30% 14% / 0.85)" : "hsl(340 30% 10% / 0.55)",
+                  color: "hsl(35, 20%, 82%)",
+                  backdropFilter: "blur(4px)",
+                }}
+                aria-label="Photo credit"
+                aria-expanded={showCredit}
+              >
+                <span>Photo</span>
+                {showCredit ? <Minus className="w-3 h-3" /> : <Plus className="w-3 h-3" />}
+              </button>
+
+              {showCredit && (
+                <motion.div
+                  initial={{ opacity: 0, y: 4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute bottom-full right-0 mb-2 px-3 py-2 rounded-sm whitespace-nowrap font-body text-[12px] leading-[1.5]"
+                  style={{
+                    background: "hsl(340 30% 14% / 0.92)",
+                    color: "hsl(35, 20%, 82%)",
+                    backdropFilter: "blur(4px)",
+                  }}
+                >
+                  Photo: Maria Michopulu
+                </motion.div>
+              )}
+            </div>
           </div>
 
           <div className="flex flex-col justify-center md:py-6">
