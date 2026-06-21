@@ -22,7 +22,8 @@ export const glitchStyle = (active: boolean, intensity: "strong" | "subtle" = "s
   if (!active) return {};
   const px = intensity === "strong" ? 3 : 2;
   return {
-    textShadow: `${px}px 0 hsl(340 75% 55%), -${px}px 0 hsl(180 80% 50%)`,
+    // Signal red + brass chroma — keeps the glitch inside the site's palette.
+    textShadow: `${px}px 0 hsl(var(--signal-red)), -${px}px 0 hsl(var(--brass))`,
     transform: `translate(${px - 1}px, -1px)`,
     transition: "none",
   };
