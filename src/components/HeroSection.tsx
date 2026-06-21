@@ -60,8 +60,8 @@ const HeroSection = () => {
         </motion.span>
       </div>
 
-      {/* Mobile — portrait as full-height atmospheric wash on the right. */}
-      <div className="absolute inset-0 sm:hidden pointer-events-none overflow-hidden" aria-hidden>
+      {/* Right-side video atmosphere — tucked behind the hero with a gradient fade */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
         <video
           src={heroPortrait.url}
           poster={heroPortraitPoster.url}
@@ -70,22 +70,28 @@ const HeroSection = () => {
           loop
           playsInline
           preload="metadata"
-          className="absolute -right-[10%] top-0 h-full w-[72%] object-cover opacity-[0.12]"
+          className="absolute bottom-0 right-0 h-[85%] sm:h-full w-full sm:w-[72%] lg:w-[64%] object-cover opacity-[0.65] sm:opacity-[0.58]"
           style={{
-            filter: "saturate(0.85) contrast(1.02)",
-            maskImage: "linear-gradient(to left, black 10%, transparent 85%)",
-            WebkitMaskImage: "linear-gradient(to left, black 10%, transparent 85%)",
+            filter: "contrast(1.04) brightness(0.94)",
+            maskImage: "linear-gradient(to right, transparent 0%, transparent 28%, black 62%), linear-gradient(to bottom, transparent 0%, transparent 22%, black 55%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, transparent 28%, black 62%), linear-gradient(to bottom, transparent 0%, transparent 22%, black 55%)",
+          }}
+        />
+        {/* Subtle navy wash to unify the palette without killing color */}
+        <div
+          className="absolute inset-0 mix-blend-multiply"
+          style={{
+            background: "linear-gradient(105deg, hsl(var(--background) / 0.92) 0%, hsl(var(--background) / 0.55) 45%, transparent 72%)",
           }}
         />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10">
-        <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] items-end min-h-[68vh] sm:min-h-[92vh] gap-10 pb-16 sm:pb-20 pt-24">
-
+        <div className="relative grid grid-cols-1 items-end min-h-[68vh] sm:min-h-[92vh] pb-16 sm:pb-20 pt-24">
           {/* Left: typographic title stack */}
-          <div>
-
+          <div className="max-w-2xl">
             <div className="overflow-hidden">
+
               <motion.h1
                 initial={{ y: 110 }}
                 animate={{ y: 0 }}
@@ -160,85 +166,8 @@ const HeroSection = () => {
             </motion.div>
           </div>
 
-          {/* Right: portrait plate — the subject, under pressure */}
-          <motion.figure
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="hidden sm:flex flex-col items-end gap-3 self-stretch h-full"
-          >
-            <div
-              className="relative h-full aspect-[4/6] overflow-hidden"
-              style={{
-                border: "1px solid hsl(var(--ivory) / 0.18)",
-                boxShadow:
-                  "0 40px 80px -30px hsl(340 60% 3% / 0.85), inset 0 0 0 1px hsl(var(--ivory) / 0.05)",
-              }}
-            >
-              {/* Base video — pushed toward high-contrast monochrome so the tint reads cleanly */}
-              <video
-                src={heroPortrait.url}
-                poster={heroPortraitPoster.url}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                className="absolute inset-0 w-full h-full object-cover"
-                style={{
-                  filter:
-                    "grayscale(0.95) contrast(1.22) brightness(1.06)",
-                }}
-              />
-              {/* Signal-red duotone wash — paints the midtones/shadows in accent red */}
-              <div
-                className="absolute inset-0 pointer-events-none mix-blend-multiply"
-                style={{
-                  background: "hsl(var(--signal-red) / 0.78)",
-                }}
-              />
-              {/* Ivory highlights — pulls whites back, breaks the flat red */}
-              <div
-                className="absolute inset-0 pointer-events-none mix-blend-screen"
-                style={{
-                  background:
-                    "linear-gradient(160deg, hsl(var(--ivory) / 0.22) 0%, transparent 45%, transparent 100%)",
-                }}
-              />
-              {/* Deep wine in the shadows — anchors to site palette */}
-              <div
-                className="absolute inset-0 pointer-events-none mix-blend-multiply"
-                style={{
-                  background:
-                    "linear-gradient(200deg, transparent 0%, transparent 55%, hsl(var(--wine-deep) / 0.55) 100%)",
-                }}
-              />
-              {/* Inner vignette */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  boxShadow: "inset 0 0 100px hsl(340 60% 4% / 0.7)",
-                }}
-              />
-              {/* Film grain — match section noise */}
-              <div
-                className="absolute inset-0 pointer-events-none opacity-[0.1] mix-blend-overlay"
-                style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-                }}
-              />
-            </div>
-            <figcaption className="flex items-baseline justify-between w-full gap-3">
-              <span className="font-mono text-[10px] tracking-[0.28em] uppercase text-foreground/45">
-                The subject, under pressure
-              </span>
-              <span className="h-px flex-1 mx-2" style={{ background: "hsl(var(--ivory) / 0.12)" }} />
-              <span className="font-mono text-[10px] tracking-[0.28em] uppercase text-foreground/30">
-                oil / loop
-              </span>
-            </figcaption>
-          </motion.figure>
         </div>
+
       </div>
 
       {/* Bottom strip */}
