@@ -60,7 +60,7 @@ const HeroSection = () => {
         </motion.span>
       </div>
 
-      {/* Mobile — portrait as full-bleed atmospheric wash behind text. */}
+      {/* Mobile — portrait as full-height atmospheric wash on the right. */}
       <div className="absolute inset-0 sm:hidden pointer-events-none overflow-hidden" aria-hidden>
         <video
           src={heroPortrait.url}
@@ -70,8 +70,12 @@ const HeroSection = () => {
           loop
           playsInline
           preload="metadata"
-          className="absolute right-[-18%] top-[6%] w-[88%] aspect-square object-cover opacity-[0.22]"
-          style={{ filter: "saturate(0.85) contrast(1.02)", maskImage: "radial-gradient(ellipse at 65% 40%, black 35%, transparent 78%)", WebkitMaskImage: "radial-gradient(ellipse at 65% 40%, black 35%, transparent 78%)" }}
+          className="absolute -right-[10%] top-0 h-full w-[72%] object-cover opacity-[0.12]"
+          style={{
+            filter: "saturate(0.85) contrast(1.02)",
+            maskImage: "linear-gradient(to left, black 10%, transparent 85%)",
+            WebkitMaskImage: "linear-gradient(to left, black 10%, transparent 85%)",
+          }}
         />
       </div>
 
