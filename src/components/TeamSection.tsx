@@ -12,7 +12,7 @@ const collaborators = [
   {
     name: "Maria Michopulu",
     role: "Design",
-    bio: "Visual artist and graphic designer, alumna of Emily Carr University of Art and Design. Responsible for visual identity and everything that makes science look as good as it deserves.",
+    bio: "Visual artist and graphic designer, alumna of Emily Carr University of Art and Design. Responsible for everything that makes science look as good as it deserves.",
   },
 ];
 
