@@ -2,8 +2,7 @@ import { motion } from "framer-motion";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import heroPortrait from "@/assets/hero-portrait.mp4.asset.json";
-import heroPortraitPoster from "@/assets/hero-portrait-poster.jpg.asset.json";
+import revertingScience from "@/assets/reverting-science.mp4.asset.json";
 
 const HeroSection = () => {
   const labsGlitch = useGlitch(9000, 800, 2500);
