@@ -112,6 +112,14 @@ em, i, cite, address, dfn, var {
     color: hsl(var(--ivory));
   }
 
+  .text-ivory {
+    color: hsl(var(--ivory));
+  }
+
+  .text-ivory-dim {
+    color: hsl(var(--ivory-dim));
+  }
+
   .bg-burgundy {
     background-color: hsl(var(--burgundy));
   }
