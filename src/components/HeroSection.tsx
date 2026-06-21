@@ -161,10 +161,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="hidden sm:flex flex-col items-end gap-4 self-end pb-2 w-[38vw] max-w-[420px]"
+            className="hidden sm:flex flex-col items-end gap-3 self-stretch h-full"
           >
             <div
-              className="relative w-full aspect-square overflow-hidden"
+              className="relative h-full aspect-[3/5] overflow-hidden"
               style={{
                 border: "1px solid hsl(var(--ivory) / 0.14)",
                 boxShadow:
@@ -204,23 +204,6 @@ const HeroSection = () => {
                   backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
                 }}
               />
-              {/* Signal-red tick — top-left corner marker */}
-              <div className="absolute top-3 left-3 flex items-center gap-2">
-                <span
-                  className="block w-1.5 h-1.5 rounded-full"
-                  style={{
-                    background: "hsl(var(--signal-red))",
-                    boxShadow: "0 0 10px hsl(var(--signal-red) / 0.7)",
-                  }}
-                />
-                <span className="font-mono text-[9px] tracking-[0.32em] uppercase text-ivory/70">
-                  Plate 01
-                </span>
-              </div>
-              {/* Hairline crosshair bottom-right */}
-              <div className="absolute bottom-3 right-3 font-mono text-[9px] tracking-[0.28em] uppercase text-ivory/45">
-                01 / 01
-              </div>
             </div>
             <figcaption className="flex items-baseline justify-between w-full gap-3">
               <span className="font-mono text-[10px] tracking-[0.28em] uppercase text-foreground/45">
