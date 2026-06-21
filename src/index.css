@@ -226,4 +226,14 @@ em, i, cite, address, dfn, var {
     animation: twinkle var(--duration, 3s) ease-in-out infinite;
     animation-delay: var(--delay, 0s);
   }
+
+  /* Subtle video signal glitch — used on the hero portrait wash */
+  @keyframes hero-glitch {
+    0%   { transform: translate(0, 0) skewX(0deg); filter: contrast(1.04) brightness(0.94); clip-path: inset(0 0 0 0); }
+    18%  { transform: translate(-2px, 1px) skewX(-0.6deg); filter: contrast(1.14) brightness(1.06) saturate(1.22); clip-path: inset(8% 0 82% 0); }
+    36%  { transform: translate(2px, -1px) skewX(0.5deg); filter: contrast(1.16) brightness(1.08) saturate(1.28); clip-path: inset(62% 0 28% 0); }
+    54%  { transform: translate(-1px, 0) skewX(-0.3deg); filter: contrast(1.1) brightness(1.02) saturate(1.12); clip-path: inset(0 0 0 0); }
+    72%  { transform: translate(1px, 1px) skewX(0.4deg); filter: contrast(1.08) brightness(0.98) saturate(1.18); clip-path: inset(38% 0 52% 0); }
+    100% { transform: translate(0, 0) skewX(0deg); filter: contrast(1.04) brightness(0.94); clip-path: inset(0 0 0 0); }
+  }
 }

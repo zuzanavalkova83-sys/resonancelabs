@@ -75,6 +75,7 @@ const HeroSection = () => {
             filter: "contrast(1.04) brightness(0.94)",
             maskImage: "linear-gradient(to right, transparent 0%, transparent 28%, black 62%), linear-gradient(to bottom, transparent 0%, transparent 22%, black 55%)",
             WebkitMaskImage: "linear-gradient(to right, transparent 0%, transparent 28%, black 62%), linear-gradient(to bottom, transparent 0%, transparent 22%, black 55%)",
+            animation: bgGlitch ? "hero-glitch 520ms steps(5) both" : "none",
           }}
         />
         {/* Subtle navy wash to unify the palette without killing color */}
