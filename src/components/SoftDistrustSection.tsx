@@ -235,18 +235,6 @@ const SoftDistrustSection = () => {
               slowly, with a fern in the background?
             </p>
 
-            <blockquote
-              className="my-10 pl-6 md:pl-8"
-              style={{ borderLeft: "2px solid hsl(var(--signal-red) / 0.7)" }}
-            >
-              <p
-                className="font-display text-[20px] md:text-[24px] tracking-wider leading-[1.25]"
-                style={{ color: "hsl(35, 25%, 88%)" }}
-              >
-                <br />
-              </p>
-            </blockquote>
-
             <p>
               Soft distrust nudges. It hedges. It assembles a tone — measured,
               faintly disappointed, vaguely spiritual — and lets that tone do
