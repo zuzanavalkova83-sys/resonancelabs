@@ -383,67 +383,64 @@ const SoftDistrustSection = () => {
             }}
           />
 
-          <div className="relative">
-          <Eyebrow>A wardrobe change</Eyebrow>
-          <h3 className="font-display text-[36px] md:text-[44px] lg:text-[52px] tracking-wider leading-[0.92] text-foreground max-w-[22ch] mb-14">
-            The New Aesthetic of Distrust
-          </h3>
+          <div className="relative text-ivory">
+            <Eyebrow light>A wardrobe change</Eyebrow>
+            <h3 className="font-display text-[36px] md:text-[44px] lg:text-[52px] tracking-wider leading-[0.92] max-w-[22ch] mb-14">
+              The New Aesthetic of Distrust
+            </h3>
 
-          <div className="grid md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-12">
-            {[
-              {
-                tag: "Then",
-                title: "Old conspiracy culture",
-                items: [
-                  "Comic Sans on a black background",
-                  "Apocalypse on a Tuesday",
-                  "A clearly visible fringe identity",
-                  "Capital letters. Many of them.",
-                  "A basement, structurally",
-                ],
-              },
-              {
-                tag: "Now",
-                title: "Soft distrust culture",
-                items: [
-                  "A linen shirt and a forty-minute monologue",
-                  "A microphone that costs more than the research",
-                  "A discount code for magnesium",
-                  "Selectively rigorous skepticism",
-                  "A minimalist kitchen, lit beautifully",
-                ],
-              },
-            ].map((col, i) => (
-              <motion.div
-                key={col.tag}
-                initial={{ opacity: 0, y: 16 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.55, delay: 0.1 + i * 0.1 }}
-              >
-                <h4
-                  className="font-display text-[20px] md:text-[23px] tracking-wider leading-[0.95] text-foreground pb-5 mb-8 border-b"
-                  style={{ borderColor: "hsl(var(--signal-red) / 0.35)" }}
+            <div className="grid md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-12">
+              {[
+                {
+                  tag: "Then",
+                  title: "Old conspiracy culture",
+                  items: [
+                    "Comic Sans on a black background",
+                    "Apocalypse on a Tuesday",
+                    "A clearly visible fringe identity",
+                    "Capital letters. Many of them.",
+                    "A basement, structurally",
+                  ],
+                },
+                {
+                  tag: "Now",
+                  title: "Soft distrust culture",
+                  items: [
+                    "A linen shirt and a forty-minute monologue",
+                    "A microphone that costs more than the research",
+                    "A discount code for magnesium",
+                    "Selectively rigorous skepticism",
+                    "A minimalist kitchen, lit beautifully",
+                  ],
+                },
+              ].map((col, i) => (
+                <motion.div
+                  key={col.tag}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.55, delay: 0.1 + i * 0.1 }}
                 >
-                  {col.tag} — {col.title}
-                </h4>
-                <ul className="space-y-3 font-body text-[15px] md:text-[16px] leading-[1.7]">
-                  {col.items.map((item) => (
-                    <li key={item} style={{ color: "hsl(35, 20%, 72%)" }}>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
+                  <h4
+                    className="font-display text-[20px] md:text-[23px] tracking-wider leading-[0.95] pb-5 mb-8 border-b"
+                    style={{ borderColor: "hsl(var(--ivory) / 0.35)" }}
+                  >
+                    {col.tag} — {col.title}
+                  </h4>
+                  <ul className="space-y-3 font-body text-[15px] md:text-[16px] leading-[1.7] text-ivory/90">
+                    {col.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
 
-          <p
-            className="font-display text-[22px] md:text-[28px] tracking-wider leading-[1.2] mt-16 max-w-[44ch]"
-            style={{ color: "hsl(35, 25%, 88%)" }}
-          >
-            The modern misinformation ecosystem rarely looks dangerous. It
-            looks well moisturised.
-          </p>
+            <p
+              className="font-display text-[22px] md:text-[28px] tracking-wider leading-[1.2] mt-16 max-w-[44ch] text-ivory"
+            >
+              The modern misinformation ecosystem rarely looks dangerous. It
+              looks well moisturised.
+            </p>
           </div>
         </motion.div>
 
