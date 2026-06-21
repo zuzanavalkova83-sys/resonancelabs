@@ -111,7 +111,7 @@ const HeroSection = () => {
             >
               <div className="w-10 h-px" style={{ background: 'hsl(var(--brass) / 0.5)' }} />
               <p className="text-[12px] font-mono tracking-[0.35em] uppercase" style={{ color: 'hsl(var(--brass))' }}>
-                Communication services · Narrative intelligence
+                <br />
               </p>
             </motion.div>
 
