@@ -64,7 +64,7 @@ const NoBullTeaser = () => {
           >
             <div className="w-10 h-px" style={{ background: "hsl(30, 15%, 75%)" }} />
             <p className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium" style={{ color: "hsl(30, 15%, 58%)" }}>
-              Narrative risk mapping
+              NARRATIVE RISK MAPPING AREAS
             </p>
           </motion.div>
 
