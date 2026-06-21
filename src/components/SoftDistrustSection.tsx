@@ -170,8 +170,9 @@ const SoftDistrustSection = () => {
               className="font-body text-[17px] md:text-[19px] leading-[1.55] font-normal"
               style={{ color: "hsl(35, 20%, 72%)" }}
             >
-              Scepticism has become identity, and intellectually respectable
-              bull has learned to speak in a calm podcast voice.
+              Scepticism has become an identity.&nbsp;<br />
+              Intellectually respectable bull has learned to speak&nbsp;<br />
+              in a calm podcast voice.
             </p>
           </div>
           <div className="space-y-5">
@@ -179,8 +180,8 @@ const SoftDistrustSection = () => {
               className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal"
               style={{ color: "hsl(30, 12%, 52%)" }}
             >
-              Not a conspiracy. A posture. A misinformation category that
-              moulds health-related misinformation into a wellness-and-identity
+              This is not a conspiracy. It's posture. This category moulds
+              health-related misinformation into a wellness-and-identity
               agenda, spiced with attempts at public intellectualism.
             </p>
           </div>
@@ -214,10 +215,14 @@ const SoftDistrustSection = () => {
 
           <div className="md:col-span-8 space-y-6 font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: "hsl(35, 20%, 72%)" }}>
             <p>
-              If hard disinformation feeding major conspiracy theories is a
-              hydra with self-reviving properties, “soft distrust” is its
-              well-mannered cousin with a regular mani-pedi, a capacity for
-              concerned small talk, and unlimited resources.
+              Imagine the hard disinformation behind major conspiracy theories as
+              a hydra with self-reviving properties. It's terrifying, ugly, and
+              not cool enough for the city folk.&nbsp;<br />
+              <br />
+              <br />
+              “Soft distrust”, on the other hand, is hydra's well-mannered cousin
+              with a regular mani-pedi, a capacity for concerned small talk, and
+              unlimited resources.
             </p>
             <p>
               It looks and smells much better. It’s bullsh*t for better people.

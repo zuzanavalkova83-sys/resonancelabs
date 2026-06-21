@@ -111,7 +111,7 @@ const AboutSection = () => {
               Resonance Labs is a narrative intelligence practice for scientific and research-led organisations. We do narrative risk mapping in contested public space, so serious work can travel without being rewritten en route.
             </p>
             <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: 'hsl(30, 12%, 52%)' }}>
-              The goal is not to add more noise. It is to help serious ideas survive contact with the world.
+              <br />
             </p>
           </div>
         </motion.div>
