@@ -1,6 +1,5 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
 
 const services = [
   { name: "Communication Strategies" },
@@ -13,63 +12,63 @@ const services = [
   { name: "Creative Writing Workshops" },
 ];
 
-const GlitchCircle = ({ delay }: { delay: number }) => {
-  const glitch = useGlitch(6000 + delay * 800, 500, 2000 + delay * 600);
+/**
+ * Editorial glyphs — each service gets a distinct, restrained mark drawn in
+ * brass on hairline-bordered tile. Lightweight, no per-card animation.
+ */
+const GLYPHS = [
+  // 0 — single dot
+  (s: string) => <circle cx="22" cy="22" r="3" fill={s} />,
+  // 1 — concentric rings
+  (s: string) => (<>
+    <circle cx="22" cy="22" r="11" fill="none" stroke={s} strokeWidth="1" />
+    <circle cx="22" cy="22" r="4" fill="none" stroke={s} strokeWidth="1" />
+  </>),
+  // 2 — arrow east (transfer)
+  (s: string) => (<>
+    <line x1="10" y1="22" x2="32" y2="22" stroke={s} strokeWidth="1" />
+    <polyline points="26,16 32,22 26,28" fill="none" stroke={s} strokeWidth="1" />
+  </>),
+  // 3 — square outline (brand frame)
+  (s: string) => <rect x="11" y="11" width="22" height="22" fill="none" stroke={s} strokeWidth="1" />,
+  // 4 — diagonal (crisis / fracture)
+  (s: string) => (<>
+    <line x1="10" y1="34" x2="34" y2="10" stroke={s} strokeWidth="1" />
+    <line x1="14" y1="14" x2="20" y2="14" stroke={s} strokeWidth="1" />
+    <line x1="24" y1="30" x2="30" y2="30" stroke={s} strokeWidth="1" />
+  </>),
+  // 5 — three rising bars (impact)
+  (s: string) => (<>
+    <line x1="14" y1="30" x2="14" y2="24" stroke={s} strokeWidth="1.5" />
+    <line x1="22" y1="30" x2="22" y2="18" stroke={s} strokeWidth="1.5" />
+    <line x1="30" y1="30" x2="30" y2="12" stroke={s} strokeWidth="1.5" />
+  </>),
+  // 6 — concentric arcs (broadcast)
+  (s: string) => (<>
+    <circle cx="22" cy="22" r="2" fill={s} />
+    <path d="M14 22 a 8 8 0 0 1 16 0" fill="none" stroke={s} strokeWidth="1" />
+    <path d="M10 22 a 12 12 0 0 1 24 0" fill="none" stroke={s} strokeWidth="1" />
+  </>),
+  // 7 — pen nib (writing)
+  (s: string) => (<>
+    <path d="M14 12 L30 28 L22 32 L12 22 Z" fill="none" stroke={s} strokeWidth="1" />
+    <line x1="22" y1="32" x2="20" y2="30" stroke={s} strokeWidth="1" />
+  </>),
+];
 
+const ServiceGlyph = ({ index }: { index: number }) => {
+  const Glyph = GLYPHS[index % GLYPHS.length];
   return (
-    <div className="w-20 h-20 md:w-[88px] md:h-[88px] rounded-full relative mb-5 flex items-center justify-center overflow-hidden">
-      {/* Base circle */}
-      <div
-        className="absolute inset-0 rounded-full"
-        style={{
-          background: 'radial-gradient(circle at 35% 35%, hsl(340 55% 45% / 0.6), hsl(348 50% 28% / 0.8))',
-          border: '1px solid hsl(340 45% 40% / 0.3)',
-        }}
-      />
-      {/* Chromatic split layers */}
-      {glitch && (
-        <>
-          <motion.div
-            className="absolute inset-0 rounded-full"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 0.7, 0] }}
-            transition={{ duration: 0.15, repeat: 3, repeatDelay: 0.05 }}
-            style={{
-              background: 'radial-gradient(circle at 40% 40%, hsl(340 80% 55% / 0.5), transparent 70%)',
-              transform: 'translate(3px, -1px)',
-              mixBlendMode: 'screen',
-            }}
-          />
-          <motion.div
-            className="absolute inset-0 rounded-full"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 0.5, 0] }}
-            transition={{ duration: 0.12, repeat: 2, repeatDelay: 0.08 }}
-            style={{
-              background: 'radial-gradient(circle at 40% 40%, hsl(180 70% 50% / 0.4), transparent 70%)',
-              transform: 'translate(-3px, 1px)',
-              mixBlendMode: 'screen',
-            }}
-          />
-        </>
-      )}
-      {/* Breathing pulse */}
-      <motion.div
-        className="absolute inset-0 rounded-full"
-        animate={{ scale: [1, 1.06, 1], opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 4 + delay * 0.5, repeat: Infinity, ease: "easeInOut" }}
-        style={{
-          background: 'radial-gradient(circle, hsl(340 60% 50% / 0.25), transparent 70%)',
-        }}
-      />
-      {/* Inner glow dot */}
-      <div
-        className="w-2 h-2 rounded-full relative z-10"
-        style={{
-          background: 'hsl(340 55% 65%)',
-          boxShadow: '0 0 12px 4px hsl(340 55% 50% / 0.4)',
-        }}
-      />
+    <div
+      className="w-14 h-14 md:w-16 md:h-16 mb-6 flex items-center justify-center"
+      style={{
+        border: "1px solid hsl(var(--brass) / 0.25)",
+        backgroundColor: "hsl(340, 38%, 11% / 0.5)",
+      }}
+    >
+      <svg viewBox="0 0 44 44" className="w-full h-full">
+        {Glyph("hsl(var(--brass))")}
+      </svg>
     </div>
   );
 };
@@ -118,23 +117,25 @@ const ServicesSection = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 + i * 0.06 }}
-              className="group flex flex-col items-center text-center p-6 transition-all duration-400"
+              className="group flex flex-col items-start text-left p-7 transition-all duration-400"
               style={{
-                border: '1px solid hsl(340, 22%, 22% / 0.3)',
-                backgroundColor: 'hsl(340, 30%, 13% / 0.3)',
+                borderTop: '1px solid hsl(var(--brass) / 0.18)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'hsl(30, 15%, 55% / 0.3)';
-                e.currentTarget.style.backgroundColor = 'hsl(340, 30%, 15% / 0.4)';
-                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.borderTopColor = 'hsl(var(--brass) / 0.5)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'hsl(340, 22%, 22% / 0.3)';
-                e.currentTarget.style.backgroundColor = 'hsl(340, 30%, 13% / 0.3)';
-                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.borderTopColor = 'hsl(var(--brass) / 0.18)';
               }}
             >
-              <GlitchCircle delay={i} />
+              <span
+                className="font-mono text-[10.5px] tracking-[0.22em] uppercase mb-5"
+                style={{ color: "hsl(30, 15%, 50%)" }}
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
+
+              <ServiceGlyph index={i} />
 
               <h3
                 className="font-heading text-[15px] md:text-[16px] font-medium leading-[1.3] tracking-[-0.01em] transition-colors duration-300"

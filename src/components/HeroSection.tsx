@@ -45,7 +45,7 @@ const HeroSection = () => {
             x: { duration: 2.2, ease: "easeOut" },
             scale: { duration: 26, delay: 2.4, repeat: Infinity, ease: "easeInOut" },
           }}
-          className="absolute -right-[6%] bottom-[-6vw] font-display text-[34vw] sm:text-[30vw] leading-[0.78] tracking-[-0.02em] text-foreground origin-bottom-right"
+          className="absolute -right-[16%] sm:-right-[12%] bottom-[-8vw] font-display text-[30vw] sm:text-[26vw] leading-[0.78] tracking-[-0.02em] text-foreground origin-bottom-right"
           aria-hidden
           style={bgGlitch ? {
             opacity: 0.055,

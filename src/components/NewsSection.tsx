@@ -71,7 +71,7 @@ const NewsSection = () => {
   return (
     <section
       id="news"
-      className="py-28 md:py-40 section-padding section-divider"
+      className="py-32 md:py-44 section-padding section-divider"
       ref={ref}
       style={{ backgroundColor: "hsl(222, 28%, 8%)" }}
     >

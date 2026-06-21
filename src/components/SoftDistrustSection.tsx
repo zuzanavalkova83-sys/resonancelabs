@@ -299,30 +299,31 @@ const SoftDistrustSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="relative -mx-6 md:-mx-12 lg:-mx-20 xl:-mx-32 px-6 md:px-12 lg:px-20 xl:px-32 py-16 md:py-20 overflow-hidden bg-signal-red-deep"
+          className="relative -mx-6 md:-mx-12 lg:-mx-20 xl:-mx-32 px-6 md:px-12 lg:px-20 xl:px-32 py-16 md:py-20 overflow-hidden"
+          style={{ backgroundColor: "hsl(340, 38%, 12%)" }}
         >
-          {/* Full red wash — edge-to-edge signal red band */}
+          {/* Deep burgundy wash with a single restrained red ember in the corner */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "linear-gradient(160deg, hsl(var(--signal-red) / 0.95) 0%, hsl(var(--signal-red-deep) / 0.98) 60%, hsl(358, 65%, 32%) 100%)",
+                "linear-gradient(160deg, hsl(340, 42%, 14%) 0%, hsl(340, 45%, 10%) 60%, hsl(348, 50%, 12%) 100%)",
             }}
           />
-          {/* Hot glow, top-left */}
+          {/* Soft red ember, top-left — accent only */}
           <div
             className="absolute pointer-events-none"
             style={{
-              top: "-20%",
-              left: "-10%",
-              width: "65%",
-              height: "70%",
+              top: "-15%",
+              left: "-8%",
+              width: "55%",
+              height: "60%",
               background:
-                "radial-gradient(ellipse at center, hsl(2 78% 58% / 0.55), transparent 60%)",
-              filter: "blur(80px)",
+                "radial-gradient(ellipse at center, hsl(var(--signal-red) / 0.18), transparent 65%)",
+              filter: "blur(90px)",
             }}
           />
-          {/* Deeper red pool, bottom-right */}
+          {/* Cool burgundy pool, bottom-right */}
           <div
             className="absolute pointer-events-none"
             style={{
@@ -331,7 +332,7 @@ const SoftDistrustSection = () => {
               width: "70%",
               height: "65%",
               background:
-                "radial-gradient(ellipse at center, hsl(358 70% 24% / 0.75), transparent 65%)",
+                "radial-gradient(ellipse at center, hsl(340, 50%, 8% / 0.85), transparent 65%)",
               filter: "blur(90px)",
             }}
           />
@@ -343,6 +344,12 @@ const SoftDistrustSection = () => {
               backgroundSize: "128px 128px",
             }}
           />
+
+          {/* Hairline brass border to frame the band as an editorial pull */}
+          <div className="absolute inset-x-0 top-0 h-px pointer-events-none"
+            style={{ background: "linear-gradient(90deg, transparent, hsl(var(--brass) / 0.3), transparent)" }} />
+          <div className="absolute inset-x-0 bottom-0 h-px pointer-events-none"
+            style={{ background: "linear-gradient(90deg, transparent, hsl(var(--brass) / 0.3), transparent)" }} />
 
           <div className="relative text-ivory">
             
@@ -451,7 +458,7 @@ const SoftDistrustSection = () => {
                       </span>
                     </span>
                     <span style={{ color: "hsl(30, 15%, 55%)" }}>
-                      {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                      {isOpen ? <Minus className="w-3.5 h-3.5" strokeWidth={1} /> : <Plus className="w-3.5 h-3.5" strokeWidth={1} />}
                     </span>
                   </button>
 

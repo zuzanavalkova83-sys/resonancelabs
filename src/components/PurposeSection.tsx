@@ -80,7 +80,7 @@ const Figure = ({ src, active, isInView, enterDelay, behaviour }: FigureProps) =
         animate={
           behaviour === "sigh" && active
             ? { opacity: 1, scale: 1, y: [0, 6, 0], rotate: [0, -1.2, 0] }
-            : { opacity: active ? 1 : 0.22, scale: active ? 1 : 0.97 }
+            : { opacity: active ? 1 : 0, scale: active ? 1 : 0.97 }
         }
         transition={
           behaviour === "sigh" && active

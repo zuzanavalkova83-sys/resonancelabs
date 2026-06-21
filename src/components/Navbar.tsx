@@ -33,9 +33,14 @@ const Navbar = () => {
       <div className="section-padding flex items-center justify-between">
         <Link
           to="/"
-          className="font-heading text-[11px] tracking-[0.2em] uppercase font-medium text-foreground/70 hover:text-foreground/90 transition-opacity duration-300"
+          className="group inline-flex items-center gap-2.5 font-display text-[14px] sm:text-[15px] tracking-[0.18em] uppercase font-normal text-foreground/90 hover:text-foreground transition-opacity duration-300"
         >
-          RESONANCE LABS
+          <span
+            className="block w-[6px] h-[6px] rounded-full"
+            style={{ backgroundColor: "hsl(var(--brass))", boxShadow: "0 0 8px hsl(var(--brass) / 0.5)" }}
+            aria-hidden
+          />
+          Resonance Labs
         </Link>
         <div className="hidden md:flex items-center gap-10">
           {[
@@ -47,14 +52,14 @@ const Navbar = () => {
             <button
               key={item.id}
               onClick={() => scrollTo(item.id)}
-              className="font-heading text-[11px] tracking-[0.15em] uppercase font-normal text-foreground/50 hover:text-foreground/80 transition-opacity duration-300"
+              className="font-heading text-[10.5px] tracking-[0.22em] uppercase font-normal text-foreground/55 hover:text-foreground/90 transition-opacity duration-300"
             >
               {item.label}
             </button>
           ))}
           <Link
             to="/the-usual-suspects"
-            className="font-heading text-[11px] tracking-[0.15em] uppercase font-normal text-foreground/50 hover:text-foreground/80 transition-opacity duration-300"
+            className="font-heading text-[10.5px] tracking-[0.22em] uppercase font-normal text-foreground/55 hover:text-foreground/90 transition-opacity duration-300"
           >
             NoBull Library
           </Link>
