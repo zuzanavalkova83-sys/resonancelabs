@@ -198,7 +198,7 @@ const HeroSection = () => {
             className="hidden sm:flex flex-col items-end gap-6 pb-4"
           >
             <p className="text-[11px] font-mono tracking-[0.3em] uppercase text-foreground/15 [writing-mode:vertical-rl] rotate-180">
-              Mapping the stories that hijack science
+              <br />
             </p>
           </motion.div>
         </div>
