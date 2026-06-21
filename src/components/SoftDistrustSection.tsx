@@ -342,7 +342,7 @@ const SoftDistrustSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="relative left-1/2 -translate-x-1/2 w-screen px-6 md:px-12 lg:px-20 xl:px-32 py-16 md:py-20 overflow-hidden bg-signal-red-deep"
+          className="relative -mx-6 md:-mx-12 lg:-mx-20 xl:-mx-32 px-6 md:px-12 lg:px-20 xl:px-32 py-16 md:py-20 overflow-hidden bg-signal-red-deep"
         >
           {/* Full red wash — edge-to-edge signal red band */}
           <div
