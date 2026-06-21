@@ -58,41 +58,41 @@ const HeroSection = () => {
         </motion.span>
       </div>
 
-      {/* Signal-red beacon — slow heartbeat pulse. Risk made visible. */}
+      {/* Signal-red beacon — smaller, deliberate top-right counterweight. */}
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
         className="absolute pointer-events-none
-          right-[0.25rem] top-[5.5rem] sm:right-auto sm:left-[34%] sm:top-[20%]"
+          right-3 top-20 sm:right-[6%] sm:top-[20%] md:right-[8%] md:top-[22%]"
         aria-hidden
       >
-        {/* Outer halo — slow breathing wash */}
+        {/* Outer halo — tight breathing wash */}
         <motion.div
-          animate={{ scale: [1, 1.18, 1], opacity: [0.35, 0.55, 0.35] }}
+          animate={{ scale: [1, 1.14, 1], opacity: [0.22, 0.38, 0.22] }}
           transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute inset-0 -m-8 sm:-m-12 rounded-full"
+          className="absolute inset-0 -m-6 sm:-m-8 rounded-full"
           style={{
             background:
-              "radial-gradient(circle, hsl(var(--signal-red) / 0.28) 0%, hsl(var(--signal-red) / 0.08) 45%, transparent 70%)",
+              "radial-gradient(circle, hsl(var(--signal-red) / 0.22) 0%, hsl(var(--signal-red) / 0.06) 50%, transparent 72%)",
             filter: "blur(8px)",
           }}
         />
-        {/* Core disc — heartbeat pulse (1.0 → 1.06 → 1.0) */}
+        {/* Core disc — slow heartbeat pulse */}
         <motion.div
-          animate={{ scale: [1, 1.06, 1, 1.04, 1], y: [0, -4, 0] }}
+          animate={{ scale: [1, 1.05, 1, 1.03, 1], y: [0, -3, 0] }}
           transition={{
             scale: { duration: 3.6, repeat: Infinity, ease: "easeInOut", times: [0, 0.18, 0.32, 0.42, 1] },
             y: { duration: 8, repeat: Infinity, ease: "easeInOut" },
           }}
         >
           <div
-            className="w-12 h-12 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full relative"
+            className="w-8 h-8 sm:w-14 sm:h-14 md:w-20 md:h-20 rounded-full relative"
             style={{
               background:
                 "radial-gradient(circle at 36% 30%, hsl(var(--signal-red) / 0.95) 0%, hsl(var(--signal-red) / 0.78) 45%, hsl(var(--signal-red-deep) / 0.62) 78%, hsl(340 50% 12% / 0.55) 100%)",
               boxShadow:
-                "0 18px 60px -10px hsl(var(--signal-red) / 0.55), 0 0 80px -10px hsl(var(--signal-red) / 0.35), inset -10px -16px 50px hsl(340 55% 10% / 0.55)",
+                "0 14px 48px -10px hsl(var(--signal-red) / 0.45), 0 0 60px -10px hsl(var(--signal-red) / 0.28), inset -8px -12px 36px hsl(340 55% 10% / 0.55)",
             }}
           />
         </motion.div>
