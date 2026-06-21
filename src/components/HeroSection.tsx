@@ -60,8 +60,8 @@ const HeroSection = () => {
         </motion.span>
       </div>
 
-      {/* Mobile — portrait as full-height atmospheric wash on the right. */}
-      <div className="absolute inset-0 sm:hidden pointer-events-none overflow-hidden" aria-hidden>
+      {/* Right-side video atmosphere — tucked behind the hero with a gradient fade */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
         <video
           src={heroPortrait.url}
           poster={heroPortraitPoster.url}
@@ -70,14 +70,22 @@ const HeroSection = () => {
           loop
           playsInline
           preload="metadata"
-          className="absolute -right-[10%] top-0 h-full w-[72%] object-cover opacity-[0.12]"
+          className="absolute top-0 right-0 h-full w-full sm:w-[70%] lg:w-[62%] object-cover opacity-[0.55] sm:opacity-[0.5]"
           style={{
-            filter: "saturate(0.85) contrast(1.02)",
-            maskImage: "linear-gradient(to left, black 10%, transparent 85%)",
-            WebkitMaskImage: "linear-gradient(to left, black 10%, transparent 85%)",
+            filter: "contrast(1.05) brightness(0.92)",
+            maskImage: "linear-gradient(to right, transparent 0%, transparent 30%, black 60%), linear-gradient(to top, transparent 0%, black 18%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, transparent 30%, black 60%), linear-gradient(to top, transparent 0%, black 18%)",
+          }}
+        />
+        {/* Subtle navy wash to unify the palette without killing color */}
+        <div
+          className="absolute inset-0 mix-blend-multiply"
+          style={{
+            background: "linear-gradient(105deg, hsl(var(--background) / 0.92) 0%, hsl(var(--background) / 0.55) 45%, transparent 72%)",
           }}
         />
       </div>
+
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10">
         <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] items-end min-h-[68vh] sm:min-h-[92vh] gap-10 pb-16 sm:pb-20 pt-24">
