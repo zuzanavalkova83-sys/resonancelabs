@@ -9,19 +9,19 @@ const PAINTINGS = [
     src: paintingGroup.url,
     alt: "Group of scientists in discussion",
     caption:
-      "\"COMMITTEE FOR INSISTING THAT SIMPLIFICATION OF THEIR WORK IS IMPOSSIBLE (AFTER THE SEMINAR THAT RAN LONG)\", OIL ON DESPAIR, 2026",
+      "\"COMMITTEE FOR DISSEMINATING DOUBT (AFTER THE SEMINAR THAT RAN LONG)\", OIL ON DESPAIR, 2026",
   },
   {
     src: paintingElder.url,
     alt: "Senior scientist with patient expression",
     caption:
-      "\"SENIOR RESEARCHER EXPLAINING WHY IT IS ACTUALLY MORE COMPLICATED, FRUSTRATING THE PUBLIC WHO ONLY ASKED IF IT'S SAFE\", OIL ON FIRE, 2026",
+      "\"SENIOR RESEARCHER EXPLAINING WHY IT IS ACTUALLY MORE COMPLICATED, OIL ON FIRE, 2026",
   },
   {
     src: paintingHorizon.url,
     alt: "Man staring at the horizon",
     caption:
-      "\"MAN WHO DID HIS OWN RESEARCH AND NOW WE ARE GOING TO SUFFER FOR IT\", MIXED MEDIA AND FEELINGS, 2026",
+      "\"MAN WHO 'DID HIS OWN RESEARCH' AND NOW WE ARE GOING TO SUFFER FOR IT\", MIXED MEDIA AND FEELINGS, 2026",
   },
 ] as const;
 
