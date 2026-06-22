@@ -439,41 +439,25 @@ const UsualSuspects = () => {
     <section className="relative overflow-hidden">
       {/* ── Hero header — ivory warm ── */}
       <div className="section-ivory-warm editorial-grain relative">
-        {/* Accent circle */}
-        <div
-          className="absolute -right-[4rem] top-[8rem] w-48 h-48 lg:w-64 lg:h-64 rounded-full hidden md:block pointer-events-none"
-          style={{
-            background: "hsl(var(--wine))",
-            boxShadow: "0 20px 60px -10px hsl(var(--wine) / 0.3), 0 0 80px -15px hsl(var(--wine) / 0.15)",
-          }}
-        />
-
         <div className="relative max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-28 sm:py-36">
-          <div className="mb-16">
-
-            <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-12 md:gap-20">
-              <div>
-                <h2
-                  className="font-display text-6xl sm:text-7xl md:text-8xl tracking-wider leading-[0.85]"
-                  style={{ color: "hsl(340 30% 25%)" }}
-                >
-                  <span>The usual</span>
-                  <br />
-                  <span className="inline-block relative" style={glitchStyle(glitch, "strong")}>
-                    suspects
-                  </span>
-                </h2>
-              </div>
-              <div className="flex flex-col justify-end space-y-6 pb-2">
-                <p className="text-xl leading-relaxed" style={{ color: "hsl(30 10% 42%)" }}>
-                  These are the recurring storylines used to twist science in public. We track them, group them, and study how they turn research into panic, miracle, scandal, ideology, or noise.
-                </p>
-                <div className="w-16 h-[2px]" style={{ background: "hsl(30 15% 78%)" }} />
-                <p className="text-base leading-relaxed" style={{ color: "hsl(30 10% 58%)" }}>
-                  They are not random. They repeat. Which is good news, actually. Repeated nonsense is easier to recognise.
-                </p>
-              </div>
-            </div>
+          <div className="mb-20 max-w-4xl">
+            <h2
+              className="font-display text-6xl sm:text-7xl md:text-8xl tracking-wider leading-[0.85] mb-10"
+              style={{ color: "hsl(340 30% 25%)" }}
+            >
+              <span>The usual</span>
+              <br />
+              <span className="inline-block relative" style={glitchStyle(glitch, "strong")}>
+                suspects
+              </span>
+            </h2>
+            <div className="w-16 h-[1px] mb-8" style={{ background: "hsl(30 15% 70%)" }} />
+            <p className="text-xl leading-relaxed max-w-2xl mb-5" style={{ color: "hsl(30 10% 42%)" }}>
+              These are the recurring storylines used to twist science in public. We track them, group them, and study how they turn research into panic, miracle, scandal, ideology, or noise.
+            </p>
+            <p className="text-base leading-relaxed max-w-2xl" style={{ color: "hsl(30 10% 58%)" }}>
+              They are not random. They repeat. Which is good news, actually. Repeated nonsense is easier to recognise.
+            </p>
           </div>
 
           {/* Stats + browse modes */}
