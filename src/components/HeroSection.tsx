@@ -100,7 +100,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.95 }}
               className="text-lg sm:text-xl text-foreground/55 leading-snug mt-8 max-w-2xl sm:whitespace-nowrap"
             >
-              Communication services for science. Narrative risk mapping.
+              Strategic communication for science. Narrative risk mapping.
               <br />
               <span className="text-foreground/35 whitespace-normal">
                 Write your story before the story writes itself for you.
