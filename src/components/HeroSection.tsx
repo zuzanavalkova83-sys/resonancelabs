@@ -153,7 +153,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 1.35 }}
-              className="absolute bottom-44 right-5 sm:bottom-12 sm:right-10 max-w-[200px] sm:max-w-[260px] text-right pointer-events-none p-2 -mr-2 -mb-2 sm:p-0 sm:mr-0 sm:mb-0"
+              className="absolute bottom-52 right-5 sm:bottom-12 sm:right-10 max-w-[200px] sm:max-w-[260px] text-right pointer-events-none p-2 -mr-2 -mb-2 sm:p-0 sm:mr-0 sm:mb-0"
               style={{
                 background: "linear-gradient(135deg, transparent 0%, hsl(var(--burgundy) / 0.3) 45%, hsl(var(--burgundy) / 0.45) 100%)",
               }}
