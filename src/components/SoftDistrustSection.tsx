@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Plus, Minus } from "lucide-react";
+import twinsPainting from "@/assets/soft-distrust-twins.png.asset.json";
 
 const respectableBull: { line: string; gloss: string }[] = [
   {
@@ -119,42 +120,107 @@ const SoftDistrustSection = () => {
       <div className="relative max-w-6xl mx-auto px-6 md:px-12">
         {/* ─── HERO ─────────────────────────────────── */}
 
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-display text-[48px] md:text-[60px] lg:text-[72px] tracking-wider leading-[0.88] text-foreground max-w-[18ch] mb-10"
-        >
-          Welcome to the Era of Soft Distrust
-        </motion.h2>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+          {/* Painting — large, museum-mounted */}
+          <motion.figure
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.9, delay: 0.05 }}
+            className="lg:col-span-7 relative"
+          >
+            <div
+              className="relative overflow-hidden"
+              style={{
+                boxShadow:
+                  "0 30px 80px -30px hsl(340, 50%, 4% / 0.8), 0 0 0 1px hsl(var(--brass) / 0.12)",
+              }}
+            >
+              <img
+                src={twinsPainting.url}
+                alt="Two women in white blouses against a navy and terracotta ground — oil painting evoking the calm posture of soft distrust."
+                className="w-full h-auto block"
+                style={{
+                  filter:
+                    "contrast(1.04) brightness(0.94) saturate(0.82) hue-rotate(-14deg)",
+                }}
+              />
+              {/* Burgundy wash to bind the painting into the site palette */}
+              <div
+                className="absolute inset-0 pointer-events-none mix-blend-color"
+                style={{
+                  background:
+                    "linear-gradient(135deg, hsl(var(--wine-deep) / 0.32), hsl(var(--burgundy) / 0.18) 60%, hsl(var(--wine) / 0.28))",
+                }}
+              />
+              {/* Subtle vignette at the bottom for editorial weight */}
+              <div
+                className="absolute inset-x-0 bottom-0 h-1/3 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(180deg, transparent, hsl(340, 45%, 6% / 0.45))",
+                }}
+              />
+              {/* Film grain */}
+              <div
+                className="absolute inset-0 pointer-events-none opacity-[0.06] mix-blend-overlay"
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+                  backgroundSize: "128px 128px",
+                }}
+              />
+            </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 lg:gap-24"
-        >
-          <div className="space-y-5">
-            <p
-              className="font-body text-[17px] md:text-[19px] leading-[1.55] font-normal"
-              style={{ color: "hsl(35, 20%, 72%)" }}
+            {/* Museum label */}
+            <figcaption className="mt-5 max-w-[34ch]">
+              <div
+                className="h-px w-12 mb-3"
+                style={{ background: "hsl(var(--brass) / 0.35)" }}
+              />
+              <p
+                className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.22em] leading-[1.55] font-normal"
+                style={{ color: "hsl(30, 15%, 60%)" }}
+              >
+                The same woman, twice, considering whether to mistrust the
+                experts — oil on canvas, 2026
+              </p>
+            </figcaption>
+          </motion.figure>
+
+          {/* Headline + intro */}
+          <div className="lg:col-span-5 lg:pt-6">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              className="font-display text-[44px] md:text-[56px] lg:text-[60px] tracking-wider leading-[0.9] text-foreground max-w-[14ch] mb-8"
             >
-              Scepticism has become an identity.&nbsp;<br />
-              Intellectually respectable bull has learned to speak&nbsp;<br />
-              in a calm podcast voice.
-            </p>
-          </div>
-          <div className="space-y-5">
-            <p
-              className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal"
-              style={{ color: "hsl(30, 12%, 52%)" }}
+              Welcome to the Era of Soft Distrust
+            </motion.h2>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.25 }}
+              className="space-y-6"
             >
-              This is not a conspiracy. It's posture. This category moulds
-              health-related misinformation into a wellness-and-identity
-              agenda, spiced with attempts at public intellectualism.
-            </p>
+              <p
+                className="font-body text-[17px] md:text-[19px] leading-[1.55] font-normal"
+                style={{ color: "hsl(35, 20%, 72%)" }}
+              >
+                Scepticism has become an identity. Intellectually respectable
+                bull has learned to speak in a calm podcast voice.
+              </p>
+              <p
+                className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal"
+                style={{ color: "hsl(30, 12%, 52%)" }}
+              >
+                This is not a conspiracy. It's posture. This category moulds
+                health-related misinformation into a wellness-and-identity
+                agenda, spiced with attempts at public intellectualism.
+              </p>
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Divider */}
         <motion.div
