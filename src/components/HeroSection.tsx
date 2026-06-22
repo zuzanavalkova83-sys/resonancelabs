@@ -36,23 +36,18 @@ const HeroSection = () => {
         </motion.span>
       </div>
 
-      {/* Right-side video atmosphere — tucked behind the hero with a gradient fade */}
+      {/* Right-side portrait atmosphere — tucked behind the hero with a gradient fade */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
-        <video
+        <img
           src={heroPortrait.url}
-          poster={heroPortraitPoster.url}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
+          alt="Scientist watching her research go wild on socials"
           className="absolute bottom-0 right-0 h-[92%] sm:h-full w-full sm:w-[78%] lg:w-[68%] object-cover opacity-[0.82] sm:opacity-[0.78]"
           style={{
             objectPosition: "72% center",
             filter: "contrast(1.04) brightness(1.04) saturate(0.82) hue-rotate(-14deg)",
             maskImage: "linear-gradient(to right, transparent 0%, black 44%), linear-gradient(to bottom, transparent 0%, black 18%)",
             WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 44%), linear-gradient(to bottom, transparent 0%, black 18%)",
-            animation: "hero-zoom 22s ease-in-out infinite alternate",
+            animation: "hero-zoom 28s ease-in-out infinite alternate",
             transformOrigin: "70% 55%",
           }}
         />
