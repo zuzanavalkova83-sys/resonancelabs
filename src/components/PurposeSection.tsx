@@ -15,7 +15,7 @@ const PAINTINGS = [
     src: paintingElder.url,
     alt: "Senior scientist with patient expression",
     caption:
-      "SENIOR RESEARCHER EXPLAINING WHY IT IS ACTUALLY MORE COMPLICATED, FRUSTRATING THE PUBLIC WHO \"ONLY ASKED IF IT , OIL ON LINEN, 2026",
+      "SENIOR RESEARCHER EXPLAINING WHY IT IS ACTUALLY MORE COMPLICATED, FRUSTRATING THE PUBLIC WHO \"ONLY ASKED IF IT'S SAFE\", OIL ON FIRE, 2026",
   },
   {
     src: paintingHorizon.url,
