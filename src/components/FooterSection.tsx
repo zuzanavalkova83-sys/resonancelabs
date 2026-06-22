@@ -29,7 +29,7 @@ const FooterSection = () => {
                 onClick={() => document.getElementById(item.toLowerCase())?.scrollIntoView({ behavior: "smooth" })}
                 className="hover:text-foreground transition-colors duration-300"
               >
-                {item}
+                {item === "Team" ? "\n" : item}
               </button>
             ))}
             <Link
