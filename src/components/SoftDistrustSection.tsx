@@ -180,8 +180,9 @@ const SoftDistrustSection = () => {
                 className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.22em] leading-[1.55] font-normal"
                 style={{ color: "hsl(30, 15%, 60%)" }}
               >
-                The same woman, twice, considering whether to mistrust the
-                experts — oil on canvas, 2026
+                "THE SCIENTIST WHO GOT AWAY (WITH ONLY SLIGHTLY MISINTERPRETED
+                RESEARCH RESULTS EXPLAINED ON FINGERS, CUPS AND PENCILS)",
+                ZUZANA VÁLKOVÁ, OIL ON NOTHING, 2026
               </p>
             </figcaption>
           </motion.figure>
