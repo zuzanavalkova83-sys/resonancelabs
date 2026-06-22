@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import heroPortrait from "@/assets/hero-portrait.jpg.asset.json";
+import heroPortrait from "@/assets/hero-portrait.mp4.asset.json";
 
 
 const HeroSection = () => {
@@ -36,11 +36,15 @@ const HeroSection = () => {
         </motion.span>
       </div>
 
-      {/* Right-side portrait atmosphere — tucked behind the hero with a gradient fade */}
+      {/* Right-side video atmosphere — tucked behind the hero with a gradient fade */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
-        <img
+        <video
           src={heroPortrait.url}
-          alt="Scientist watching her research go wild on socials"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
           className="absolute bottom-0 right-0 h-[92%] sm:h-full w-full sm:w-[78%] lg:w-[68%] object-cover opacity-[0.82] sm:opacity-[0.78]"
           style={{
             objectPosition: "72% center",
