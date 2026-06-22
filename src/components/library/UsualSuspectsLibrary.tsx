@@ -2,6 +2,9 @@ import { useState } from "react";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
 import { narrativeFrames, NarrativeFrame } from "@/data/narrativeFrames";
 import NarrativeBiteLayer from "@/components/library/NarrativeBiteLayer";
+import paintingTwins from "@/assets/suspects-twins.png.asset.json";
+import paintingElderSea from "@/assets/suspects-elder-sea.png.asset.json";
+import paintingElderRocks from "@/assets/suspects-elder-rocks.png.asset.json";
 import {
   FRAME_EDITORIAL,
   PATTERN_FAMILIES,
