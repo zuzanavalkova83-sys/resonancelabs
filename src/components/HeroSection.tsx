@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import heroPortrait from "@/assets/hero-portrait.mp4.asset.json";
-import heroPortraitPoster from "@/assets/hero-portrait-poster.jpg.asset.json";
+import heroPortrait from "@/assets/hero-portrait.jpg.asset.json";
+
 
 const HeroSection = () => {
   return (
