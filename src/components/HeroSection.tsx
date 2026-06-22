@@ -1,26 +1,10 @@
 import { motion } from "framer-motion";
-import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import heroPortrait from "@/assets/hero-portrait.mp4.asset.json";
 import heroPortraitPoster from "@/assets/hero-portrait-poster.jpg.asset.json";
 
 const HeroSection = () => {
-  const labsGlitch = useGlitch(9000, 800, 2500);
-  const riskGlitch = useGlitch(11000, 500, 4500);
-  const [bgGlitch, setBgGlitch] = useState(false);
 
-  useEffect(() => {
-    const trigger = () => {
-      setBgGlitch(true);
-      setTimeout(() => setBgGlitch(false), 600);
-    };
-    const first = setTimeout(trigger, 5000);
-    const interval = setInterval(() => {
-      if (Math.random() > 0.4) trigger();
-    }, 7500);
-    return () => { clearTimeout(first); clearInterval(interval); };
-  }, []);
 
   return (
     <header id="hero" className="relative w-full bg-background overflow-hidden">
