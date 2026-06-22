@@ -19,7 +19,7 @@ const FooterSection = () => {
             Resonance Labs
           </h3>
           <p className="text-sm mb-8 tracking-wide" style={{ color: 'hsl(30, 15%, 55%)' }}>
-            Science, Amplified.
+            {"\n"}
           </p>
 
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 sm:gap-8 mb-10 text-[11px] tracking-[0.2em] uppercase" style={{ color: 'hsl(30, 12%, 50%)' }}>
