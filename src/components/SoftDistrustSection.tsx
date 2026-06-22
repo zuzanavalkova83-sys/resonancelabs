@@ -181,7 +181,7 @@ const SoftDistrustSection = () => {
                 style={{ color: "hsl(30, 15%, 60%)" }}
               >
                 "THE SCIENTIST WHO GOT AWAY (WITH ONLY SLIGHTLY MISINTERPRETED
-                RESEARCH RESULTS EXPLAINED ON FINGERS, CUPS AND PENCILS)",
+                RESEARCH RESULTS EXPLAINED USING FINGERS, CUPS AND PENCILS)",
                 ZUZANA VÁLKOVÁ, OIL ON NOTHING, 2026
               </p>
             </figcaption>
