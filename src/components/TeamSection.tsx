@@ -127,9 +127,6 @@ const TeamSection = () => {
           </div>
         </motion.div>
 
-        {/* Collaborators section removed */}
-
-        </div>
       </div>
     </section>
   );
