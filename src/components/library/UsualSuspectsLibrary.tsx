@@ -2,6 +2,9 @@ import { useState } from "react";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
 import { narrativeFrames, NarrativeFrame } from "@/data/narrativeFrames";
 import NarrativeBiteLayer from "@/components/library/NarrativeBiteLayer";
+import paintingTwins from "@/assets/suspects-twins.png.asset.json";
+import paintingElderSea from "@/assets/suspects-elder-sea.png.asset.json";
+import paintingElderRocks from "@/assets/suspects-elder-rocks.png.asset.json";
 import {
   FRAME_EDITORIAL,
   PATTERN_FAMILIES,
@@ -440,24 +443,52 @@ const UsualSuspects = () => {
       {/* ── Hero header — ivory warm ── */}
       <div className="section-ivory-warm editorial-grain relative">
         <div className="relative max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-28 sm:py-36">
-          <div className="mb-20 max-w-4xl">
-            <h2
-              className="font-display text-6xl sm:text-7xl md:text-8xl tracking-wider leading-[0.85] mb-10"
-              style={{ color: "hsl(340 30% 25%)" }}
-            >
-              <span>The usual</span>
-              <br />
-              <span className="inline-block relative" style={glitchStyle(glitch, "strong")}>
-                suspects
-              </span>
-            </h2>
-            <div className="w-16 h-[1px] mb-8" style={{ background: "hsl(30 15% 70%)" }} />
-            <p className="text-xl leading-relaxed max-w-2xl mb-5" style={{ color: "hsl(30 10% 42%)" }}>
-              These are the recurring storylines used to twist science in public. We track them, group them, and study how they turn research into panic, miracle, scandal, ideology, or noise.
-            </p>
-            <p className="text-base leading-relaxed max-w-2xl" style={{ color: "hsl(30 10% 58%)" }}>
-              They are not random. They repeat. Which is good news, actually. Repeated nonsense is easier to recognise.
-            </p>
+          <div className="mb-20 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-end">
+            <div className="md:col-span-7">
+              <p
+                className="font-heading text-[11px] tracking-[0.22em] uppercase font-medium mb-6"
+                style={{ color: "hsl(var(--wine))" }}
+              >
+                Living Field Guide · No. 01
+              </p>
+              <h2
+                className="font-display text-6xl sm:text-7xl md:text-8xl tracking-wider leading-[0.85] mb-10"
+                style={{ color: "hsl(340 30% 25%)" }}
+              >
+                <span>The usual</span>
+                <br />
+                <span className="inline-block relative" style={glitchStyle(glitch, "strong")}>
+                  suspects
+                </span>
+              </h2>
+              <div className="w-16 h-[1px] mb-8" style={{ background: "hsl(30 15% 70%)" }} />
+              <p className="text-xl leading-relaxed max-w-2xl mb-5" style={{ color: "hsl(30 10% 42%)" }}>
+                These are the recurring storylines used to twist science in public. We track them, group them, and study how they turn research into panic, miracle, scandal, ideology, or noise.
+              </p>
+              <p className="text-base leading-relaxed max-w-2xl" style={{ color: "hsl(30 10% 58%)" }}>
+                They are not random. They repeat. Which is good news, actually. Repeated nonsense is easier to recognise.
+              </p>
+            </div>
+            <figure className="md:col-span-5 flex flex-col">
+              <div className="relative aspect-square w-full overflow-hidden" style={{ background: "hsl(var(--burgundy))" }}>
+                <img
+                  src={paintingTwins.url}
+                  alt="Two women, twin portraits in opposing fields of red and blue"
+                  className="w-full h-full object-cover"
+                  draggable={false}
+                  style={{ filter: "contrast(1.03) brightness(0.96) saturate(0.88)" }}
+                />
+              </div>
+              <figcaption className="mt-5 flex flex-col items-center text-center">
+                <div className="h-px w-10 mb-3" style={{ background: "hsl(var(--wine) / 0.35)" }} />
+                <p
+                  className="font-heading text-[11px] md:text-[12px] uppercase tracking-[0.22em] leading-[1.55] max-w-[32ch]"
+                  style={{ color: "hsl(30 12% 50%)" }}
+                >
+                  "TWO READERS OF THE SAME PAPER, ARRIVING AT OPPOSITE CONCLUSIONS", OIL ON DISAGREEMENT, 2026
+                </p>
+              </figcaption>
+            </figure>
           </div>
 
           {/* Stats + browse modes */}
@@ -494,6 +525,41 @@ const UsualSuspects = () => {
 
       {/* ── Interpretive layer ── */}
       <NarrativeBiteLayer />
+
+      {/* ── Full-bleed painting interlude ── */}
+      <figure
+        className="relative w-full"
+        style={{ background: "hsl(var(--wine-deep))" }}
+      >
+        <div className="relative w-full overflow-hidden" style={{ maxHeight: "78vh" }}>
+          <img
+            src={paintingElderSea.url}
+            alt="Elder figure contemplating the sea under an orange sky"
+            className="w-full h-full object-cover"
+            draggable={false}
+            style={{
+              maxHeight: "78vh",
+              filter: "contrast(1.04) brightness(0.92) saturate(0.85) hue-rotate(-10deg)",
+            }}
+          />
+          <div
+            className="absolute inset-0 pointer-events-none mix-blend-color"
+            style={{
+              background:
+                "linear-gradient(135deg, hsl(var(--wine-deep) / 0.35), hsl(var(--burgundy) / 0.2) 60%, hsl(var(--wine) / 0.3))",
+            }}
+          />
+        </div>
+        <figcaption className="max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-10 flex flex-col items-center text-center">
+          <div className="h-px w-12 mb-4" style={{ background: "hsl(var(--brass) / 0.35)" }} />
+          <p
+            className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.22em] leading-[1.55] max-w-[44ch]"
+            style={{ color: "hsl(30 15% 60%)" }}
+          >
+            "MAN WATCHING HIS FINDING DRIFT OUT TO SEA, JUST AS HE FEARED IT WOULD", OIL ON DRIFT, 2026
+          </p>
+        </figcaption>
+      </figure>
 
       {/* ── Family view: alternating full-width sub-sections ── */}
       {mode === "family" && (
@@ -532,16 +598,49 @@ const UsualSuspects = () => {
 
       {/* ── Coda ── */}
       <div className="section-ivory-warm">
-        <div className="max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-16">
+        <div className="max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-20 sm:py-28">
           <hr
-            className="border-0 h-px mb-12"
+            className="border-0 h-px mb-16"
             style={{
               background: "linear-gradient(90deg, transparent 0%, hsl(30 15% 78% / 0.5) 20%, hsl(30 15% 78% / 0.5) 80%, transparent 100%)",
             }}
           />
-          <p className="text-base leading-relaxed max-w-md" style={{ color: "hsl(30 10% 55%)" }}>
-            This atlas is not exhaustive. It maps the recurring patterns we see most often. New frames emerge when old fears find new topics — but the underlying logic rarely changes.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-center">
+            <figure className="md:col-span-5">
+              <div className="relative aspect-square w-full overflow-hidden" style={{ background: "hsl(var(--burgundy))" }}>
+                <img
+                  src={paintingElderRocks.url}
+                  alt="Elder figure seated on red rocks under a deep blue sky"
+                  className="w-full h-full object-cover"
+                  draggable={false}
+                  style={{ filter: "contrast(1.04) brightness(0.95) saturate(0.85)" }}
+                />
+              </div>
+              <figcaption className="mt-5 flex flex-col items-center text-center">
+                <div className="h-px w-10 mb-3" style={{ background: "hsl(var(--wine) / 0.35)" }} />
+                <p
+                  className="font-heading text-[11px] md:text-[12px] uppercase tracking-[0.22em] leading-[1.55] max-w-[34ch]"
+                  style={{ color: "hsl(30 12% 50%)" }}
+                >
+                  "ELDER STATESMAN OF EVIDENCE, STILL WAITING TO BE READ", MIXED MEDIA AND PATIENCE, 2026
+                </p>
+              </figcaption>
+            </figure>
+            <div className="md:col-span-7 space-y-6">
+              <p
+                className="font-heading text-[11px] tracking-[0.22em] uppercase font-medium"
+                style={{ color: "hsl(var(--wine))" }}
+              >
+                A working document
+              </p>
+              <p className="text-lg leading-[1.7] max-w-xl" style={{ color: "hsl(30 10% 42%)" }}>
+                This atlas is not exhaustive. It maps the recurring patterns we see most often. New frames emerge when old fears find new topics — but the underlying logic rarely changes.
+              </p>
+              <p className="text-base leading-[1.75] max-w-xl" style={{ color: "hsl(30 10% 55%)" }}>
+                The details change. The hooks do not. We keep watching.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
