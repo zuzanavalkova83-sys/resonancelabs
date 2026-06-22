@@ -25,6 +25,12 @@ const TeamSection = () => {
           transition={{ duration: 0.6 }}
           className="mb-16 md:mb-20"
         >
+          <p
+            className="font-heading text-[11px] tracking-[0.22em] uppercase font-medium mb-5"
+            style={{ color: "hsl(340, 40%, 35%)" }}
+          >
+            Principal
+          </p>
           <h2 className="font-display text-[48px] md:text-[60px] lg:text-[72px] tracking-wider leading-[0.88]" style={{ color: "hsl(340, 30%, 22%)" }}>
             Who's behind Resonance Labs
           </h2>

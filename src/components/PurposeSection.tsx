@@ -43,6 +43,12 @@ const PurposeSection = () => {
           transition={{ duration: 0.7 }}
           className="mb-16 md:mb-20"
         >
+          <p
+            className="font-heading text-[11px] tracking-[0.22em] uppercase font-medium mb-5"
+            style={{ color: "hsl(var(--brass) / 0.85)" }}
+          >
+            Position
+          </p>
           <h2 className="font-display text-[48px] md:text-[60px] lg:text-[72px] tracking-wider leading-[0.88] text-foreground">
             Why We Exist
           </h2>

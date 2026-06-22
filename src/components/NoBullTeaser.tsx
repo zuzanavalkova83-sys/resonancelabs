@@ -45,6 +45,16 @@ const NoBullTeaser = () => {
         {/* Top — copy */}
         <div className="max-w-2xl mb-16 md:mb-20">
 
+          <motion.p
+            initial={{ opacity: 0, y: 8 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+            className="font-heading text-[11px] tracking-[0.22em] uppercase font-medium mb-5"
+            style={{ color: "hsl(340, 35%, 30%)" }}
+          >
+            Living Field Guide
+          </motion.p>
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -139,9 +149,7 @@ const NoBullTeaser = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
         >
-          <p className="font-body text-[14px] md:text-[15px] leading-[1.6] max-w-[48ch]" style={{ color: "hsl(30, 8%, 50%)" }}>
-            <br />
-          </p>
+          <div className="hidden sm:block" />
 
           <Link
             to="/the-usual-suspects"

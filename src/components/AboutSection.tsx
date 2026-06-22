@@ -56,6 +56,17 @@ const AboutSection = () => {
 
         {/* Header row */}
 
+        {/* Eyebrow */}
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="font-heading text-[11px] tracking-[0.22em] uppercase font-medium mb-5"
+          style={{ color: "hsl(var(--brass) / 0.85)" }}
+        >
+          The Practice
+        </motion.p>
+
         {/* Title — with breathing opacity */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -93,9 +104,6 @@ const AboutSection = () => {
           <div className="space-y-5">
             <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: 'hsl(30, 12%, 52%)' }}>
               Resonance Labs is a narrative intelligence practice for scientific and research-led organisations. We do narrative risk mapping in contested public space, so serious work can travel without being rewritten en route.
-            </p>
-            <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: 'hsl(30, 12%, 52%)' }}>
-              <br />
             </p>
           </div>
         </motion.div>

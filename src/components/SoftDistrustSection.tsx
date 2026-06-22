@@ -180,13 +180,23 @@ const SoftDistrustSection = () => {
                 className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.22em] leading-[1.55] font-normal"
                 style={{ color: "hsl(30, 15%, 60%)" }}
               >
-                {"\n"}
+                "TWO WOMEN AGREEING TO DISAGREE, GENTLY, OVER HERBAL TEA", OIL ON RESTRAINT, 2026
               </p>
             </figcaption>
           </motion.figure>
 
           {/* Headline + intro */}
           <div className="lg:col-span-5 lg:pt-6">
+            <motion.p
+              initial={{ opacity: 0, y: 8 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="font-heading text-[11px] tracking-[0.22em] uppercase font-medium mb-5"
+              style={{ color: "hsl(var(--brass) / 0.85)" }}
+            >
+              Case in Point
+            </motion.p>
+
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
