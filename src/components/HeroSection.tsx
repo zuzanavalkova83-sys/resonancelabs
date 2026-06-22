@@ -33,12 +33,6 @@ const HeroSection = () => {
           }}
             className="absolute -left-[6%] sm:-left-[4%] bottom-[-8vw] font-display text-[30vw] sm:text-[26vw] leading-[0.78] tracking-[-0.02em] text-foreground origin-bottom-left"
           aria-hidden
-          style={bgGlitch ? {
-              opacity: 0.05,
-            textShadow: "6px 0 hsl(var(--signal-red)), -6px 0 hsl(var(--brass))",
-            transform: "translate(4px, -2px) skewX(-1.5deg)",
-            transition: "none",
-          } : {}}
         >
           NOISE
         </motion.span>
@@ -60,7 +54,7 @@ const HeroSection = () => {
             filter: "contrast(1.04) brightness(1.04) saturate(0.82) hue-rotate(-14deg)",
             maskImage: "linear-gradient(to right, transparent 0%, black 44%), linear-gradient(to bottom, transparent 0%, black 18%)",
             WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 44%), linear-gradient(to bottom, transparent 0%, black 18%)",
-            animation: bgGlitch ? "hero-glitch 520ms steps(5) both" : "hero-zoom 22s ease-in-out infinite alternate",
+            animation: "hero-zoom 22s ease-in-out infinite alternate",
             transformOrigin: "70% 55%",
           }}
         />
@@ -96,7 +90,7 @@ const HeroSection = () => {
                 <br />
                 <span
                   className="inline-block"
-                  style={{ color: 'hsl(var(--brass))', ...glitchStyle(labsGlitch) }}
+                  style={{ color: 'hsl(var(--brass))' }}
                 >
                   LABS.
                 </span>
@@ -124,7 +118,7 @@ const HeroSection = () => {
             >
               Resonance Labs is a communications practice for research, clinical,
               and science-led organisations. We chart how serious work is likely to be{" "}
-              <span className="inline-block" style={glitchStyle(riskGlitch, "subtle")}>
+              <span className="inline-block">
                 twisted
               </span>{" "}
               in public, and help you get there first.
