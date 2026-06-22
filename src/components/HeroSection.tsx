@@ -179,8 +179,11 @@ const HeroSection = () => {
               className="absolute bottom-6 right-6 sm:bottom-12 sm:right-10 max-w-[240px] text-right pointer-events-none"
             >
               <div className="h-px w-12 ml-auto mb-3 bg-brass/30" />
-              <p className="text-[12px] sm:text-[13px] leading-snug text-foreground/55 font-heading tracking-[0.04em]">
-                Scientist watching her research going wild on socials, oil on canvas, 2026
+              <p
+                className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.22em] leading-[1.55] font-normal"
+                style={{ color: "hsl(30, 15%, 60%)" }}
+              >
+                "SCIENTIST WATCHING HER RESEARCH GO WILD ON SOCIALS", OIL ON CANVAS, 2026
               </p>
             </motion.div>
           </div>
