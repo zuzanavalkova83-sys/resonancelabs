@@ -21,7 +21,7 @@ const PAINTINGS = [
     src: paintingHorizon.url,
     alt: "Man staring at the horizon",
     caption:
-      "MAN WHO READ ONLY THE ABSTRACT AND IS ALREADY FORMING AN OPINION, MIXED MEDIA, 2026",
+      "MAN WHO \"DID HIS OWN RESEARCH\" AND NOW WE ARE GOING TO SUFFER FOR IT, MIXED MEDIA AND FEELINGS, 2026",
   },
 ] as const;
 
