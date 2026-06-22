@@ -598,16 +598,49 @@ const UsualSuspects = () => {
 
       {/* ── Coda ── */}
       <div className="section-ivory-warm">
-        <div className="max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-16">
+        <div className="max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-20 sm:py-28">
           <hr
-            className="border-0 h-px mb-12"
+            className="border-0 h-px mb-16"
             style={{
               background: "linear-gradient(90deg, transparent 0%, hsl(30 15% 78% / 0.5) 20%, hsl(30 15% 78% / 0.5) 80%, transparent 100%)",
             }}
           />
-          <p className="text-base leading-relaxed max-w-md" style={{ color: "hsl(30 10% 55%)" }}>
-            This atlas is not exhaustive. It maps the recurring patterns we see most often. New frames emerge when old fears find new topics — but the underlying logic rarely changes.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-center">
+            <figure className="md:col-span-5">
+              <div className="relative aspect-square w-full overflow-hidden" style={{ background: "hsl(var(--burgundy))" }}>
+                <img
+                  src={paintingElderRocks.url}
+                  alt="Elder figure seated on red rocks under a deep blue sky"
+                  className="w-full h-full object-cover"
+                  draggable={false}
+                  style={{ filter: "contrast(1.04) brightness(0.95) saturate(0.85)" }}
+                />
+              </div>
+              <figcaption className="mt-5 flex flex-col items-center text-center">
+                <div className="h-px w-10 mb-3" style={{ background: "hsl(var(--wine) / 0.35)" }} />
+                <p
+                  className="font-heading text-[11px] md:text-[12px] uppercase tracking-[0.22em] leading-[1.55] max-w-[34ch]"
+                  style={{ color: "hsl(30 12% 50%)" }}
+                >
+                  "ELDER STATESMAN OF EVIDENCE, STILL WAITING TO BE READ", MIXED MEDIA AND PATIENCE, 2026
+                </p>
+              </figcaption>
+            </figure>
+            <div className="md:col-span-7 space-y-6">
+              <p
+                className="font-heading text-[11px] tracking-[0.22em] uppercase font-medium"
+                style={{ color: "hsl(var(--wine))" }}
+              >
+                A working document
+              </p>
+              <p className="text-lg leading-[1.7] max-w-xl" style={{ color: "hsl(30 10% 42%)" }}>
+                This atlas is not exhaustive. It maps the recurring patterns we see most often. New frames emerge when old fears find new topics — but the underlying logic rarely changes.
+              </p>
+              <p className="text-base leading-[1.75] max-w-xl" style={{ color: "hsl(30 10% 55%)" }}>
+                The details change. The hooks do not. We keep watching.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
