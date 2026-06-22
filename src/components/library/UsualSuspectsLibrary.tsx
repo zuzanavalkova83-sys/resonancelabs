@@ -443,7 +443,7 @@ const UsualSuspects = () => {
       {/* ── Hero header — ivory warm ── */}
       <div className="section-ivory-warm editorial-grain relative">
         <div className="relative max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-28 sm:py-36">
-          <div className="mb-20 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-end">
+          <div className="mb-20 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-start">
             <div className="md:col-span-5">
               <p
                 className="font-heading text-[11px] tracking-[0.22em] uppercase font-medium mb-6"
