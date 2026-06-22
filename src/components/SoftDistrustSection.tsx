@@ -182,7 +182,7 @@ const SoftDistrustSection = () => {
               >
                 "THE SCIENTIST WHO GOT AWAY (WITH ONLY SLIGHTLY MISINTERPRETED
                 RESEARCH RESULTS EXPLAINED USING FINGERS, CUPS AND PENCILS)",
-                ZUZANA VÁLKOVÁ, OIL ON NOTHING, 2026
+                OIL ON WATER, 2026
               </p>
             </figcaption>
           </motion.figure>
