@@ -76,7 +76,8 @@ const HeroSection = () => {
             filter: "contrast(1.04) brightness(1.04) saturate(0.82) hue-rotate(-14deg)",
             maskImage: "linear-gradient(to right, transparent 0%, black 44%), linear-gradient(to bottom, transparent 0%, black 18%)",
             WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 44%), linear-gradient(to bottom, transparent 0%, black 18%)",
-            animation: bgGlitch ? "hero-glitch 520ms steps(5) both" : "none",
+            animation: bgGlitch ? "hero-glitch 520ms steps(5) both" : "hero-zoom 22s ease-in-out infinite alternate",
+            transformOrigin: "70% 55%",
           }}
         />
         {/* Burgundy wash to pull the painting into the site palette */}
@@ -177,12 +178,15 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 1.35 }}
-              className="absolute bottom-6 right-6 sm:bottom-12 sm:right-10 max-w-[240px] text-right pointer-events-none"
+              className="absolute bottom-6 right-6 sm:bottom-12 sm:right-10 max-w-[260px] text-right pointer-events-none"
             >
-              <div className="h-px w-12 ml-auto mb-3 bg-brass/30" />
+              <div className="h-px w-12 ml-auto mb-3 bg-brass/55" />
               <p
-                className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.22em] leading-[1.55] font-normal"
-                style={{ color: "hsl(30, 15%, 60%)" }}
+                className="font-heading text-[13px] md:text-[14px] uppercase tracking-[0.22em] leading-[1.55] font-normal"
+                style={{
+                  color: "hsl(var(--brass) / 0.95)",
+                  textShadow: "0 1px 18px hsl(var(--background) / 0.85)",
+                }}
               >
                 "SCIENTIST WATCHING HER RESEARCH GO WILD ON SOCIALS", OIL ON CANVAS, 2026
               </p>

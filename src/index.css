@@ -236,4 +236,10 @@ em, i, cite, address, dfn, var {
     72%  { transform: translate(1px, 1px) skewX(0.4deg); filter: contrast(1.08) brightness(0.98) saturate(1.18); clip-path: inset(38% 0 52% 0); }
     100% { transform: translate(0, 0) skewX(0deg); filter: contrast(1.04) brightness(0.94); clip-path: inset(0 0 0 0); }
   }
+
+  /* Slow Ken Burns zoom on the hero portrait */
+  @keyframes hero-zoom {
+    0%   { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.055) translate(-0.8%, -0.6%); }
+  }
 }
