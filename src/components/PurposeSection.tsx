@@ -9,13 +9,13 @@ const PAINTINGS = [
     src: paintingGroup.url,
     alt: "Group of scientists in discussion",
     caption:
-      "COMMITTEE FOR THE PROMOTION OF DOUBT (AFTER THE SEMINAR THAT RAN LONG), OIL ON CANVAS, 2026",
+      "COMMITTEE FOR THE PROMOTION OF DOUBT (AFTER THE SEMINAR THAT RAN LONG), OIL ON DESPAIR, 2026",
   },
   {
     src: paintingElder.url,
     alt: "Senior scientist with patient expression",
     caption:
-      "SENIOR RESEARCHER EXPLAINING WHY IT IS ACTUALLY MORE COMPLICATED, OIL ON LINEN, 2026",
+      "SENIOR RESEARCHER EXPLAINING WHY IT IS ACTUALLY MORE COMPLICATED, FRUSTRATING THE PUBLIC WHO \"ONLY ASKED IF IT , OIL ON LINEN, 2026",
   },
   {
     src: paintingHorizon.url,
