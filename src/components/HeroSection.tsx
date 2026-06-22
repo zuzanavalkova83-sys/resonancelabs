@@ -4,8 +4,6 @@ import heroPortrait from "@/assets/hero-portrait.mp4.asset.json";
 import heroPortraitPoster from "@/assets/hero-portrait-poster.jpg.asset.json";
 
 const HeroSection = () => {
-
-
   return (
     <header id="hero" className="relative w-full bg-background overflow-hidden">
       {/* Noise texture */}
