@@ -153,14 +153,17 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 1.35 }}
-              className="absolute bottom-6 right-6 sm:bottom-12 sm:right-10 max-w-[260px] text-right pointer-events-none"
+              className="absolute bottom-6 right-6 sm:bottom-12 sm:right-10 max-w-[260px] text-right pointer-events-none p-3 -mr-3 -mb-3 rounded-sm"
+              style={{
+                background: "linear-gradient(135deg, transparent 0%, hsl(var(--burgundy) / 0.55) 40%, hsl(var(--burgundy) / 0.72) 100%)",
+              }}
             >
-              <div className="h-px w-12 ml-auto mb-3 bg-brass/55" />
+              <div className="h-px w-12 ml-auto mb-3 bg-brass/70" />
               <p
-                className="font-heading text-[13px] md:text-[14px] uppercase tracking-[0.22em] leading-[1.55] font-normal"
+                className="font-heading text-[13px] md:text-[14px] uppercase tracking-[0.22em] leading-[1.55] font-medium"
                 style={{
-                  color: "hsl(var(--brass) / 0.95)",
-                  textShadow: "0 1px 18px hsl(var(--background) / 0.85)",
+                  color: "hsl(var(--brass) / 0.98)",
+                  textShadow: "0 1px 10px hsl(var(--background) / 0.9), 0 2px 24px hsl(var(--background) / 0.75)",
                 }}
               >
                 "SCIENTIST WATCHING HER RESEARCH GO WILD ON SOCIALS", OIL ON CANVAS, 2026
