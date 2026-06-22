@@ -39,19 +39,7 @@ const NoBullTeaser = () => {
       ref={ref}
       className="py-32 md:py-44 section-padding relative overflow-hidden bg-ivory-warm"
     >
-      {/* Wine accent circle */}
-      <div
-        className="absolute pointer-events-none hidden md:block"
-        style={{
-          width: "260px",
-          height: "260px",
-          top: "8rem",
-          right: "-3rem",
-          borderRadius: "50%",
-          background: "hsl(348, 45%, 28%)",
-          boxShadow: "0 20px 60px -10px hsl(348 45% 28% / 0.3)",
-        }}
-      />
+      {/* Wine accent circle removed — clean layout for the new tone */}
 
       <div className="max-w-6xl mx-auto px-6 md:px-12 relative">
         {/* Top — copy */}
