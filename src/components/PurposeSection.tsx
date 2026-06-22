@@ -9,7 +9,7 @@ const PAINTINGS = [
     src: paintingGroup.url,
     alt: "Group of scientists in discussion",
     caption:
-      "COMMITTEE FOR THE PROMOTION OF DOUBT (AFTER THE SEMINAR THAT RAN LONG), OIL ON DESPAIR, 2026",
+      "COMMITTEE FOR INSISTING THAT SIMPLIFICATION OF THEIR WORK IS IMPOSSIBLE (AFTER THE SEMINAR THAT RAN LONG), OIL ON DESPAIR, 2026",
   },
   {
     src: paintingElder.url,
