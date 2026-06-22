@@ -227,9 +227,10 @@ em, i, cite, address, dfn, var {
     animation-delay: var(--delay, 0s);
   }
 
-  /* Slow Ken Burns zoom on the hero portrait */
+  /* Slow, barely-there Ken Burns zoom on the hero portrait */
   @keyframes hero-zoom {
     0%   { transform: scale(1) translate(0, 0); }
-    100% { transform: scale(1.09) translate(-1%, -0.8%); }
+    100% { transform: scale(1.03) translate(-0.4%, -0.3%); }
   }
+
 }
