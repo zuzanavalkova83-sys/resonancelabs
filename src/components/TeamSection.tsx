@@ -89,7 +89,6 @@ const TeamSection = () => {
             <div className="flex items-center gap-2.5 mb-4">
               <span className="w-[5px] h-[5px] rounded-full shrink-0" style={{ backgroundColor: "hsl(340, 40%, 35%)" }} />
               <p className="font-heading text-[11px] md:text-[12px] tracking-[0.15em] uppercase font-medium" style={{ color: "hsl(340, 40%, 35%)" }}>
-                Founder
               </p>
             </div>
 
