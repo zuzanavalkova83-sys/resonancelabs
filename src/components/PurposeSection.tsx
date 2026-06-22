@@ -35,7 +35,7 @@ const PurposeSection = () => {
       className="py-32 md:py-44 section-padding bg-burgundy-mid"
       ref={ref}
     >
-      <div className="max-w-6xl mx-auto px-6 md:px-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -69,13 +69,25 @@ const PurposeSection = () => {
                 }}
                 className="flex flex-col"
               >
-                <div className="relative aspect-square w-full overflow-hidden bg-burgundy">
+                <div className="relative aspect-[3/4] w-full overflow-hidden bg-burgundy">
                   <img
                     src={painting.src}
                     alt={painting.alt}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                     draggable={false}
                     loading="lazy"
+                    style={{
+                      filter:
+                        "contrast(1.04) brightness(0.94) saturate(0.82) hue-rotate(-14deg)",
+                    }}
+                  />
+                  {/* Cool burgundy wash to bind the triptych into the site palette */}
+                  <div
+                    className="absolute inset-0 pointer-events-none mix-blend-color"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, hsl(var(--wine-deep) / 0.30), hsl(var(--burgundy) / 0.18) 60%, hsl(var(--wine) / 0.26))",
+                    }}
                   />
                 </div>
                 <p
