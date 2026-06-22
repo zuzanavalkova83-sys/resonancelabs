@@ -100,17 +100,13 @@ const AboutSection = () => {
           </div>
         </motion.div>
 
-        {/* Explore link */}
-        <motion.a
-          href="#services"
+        {/* Explore link removed per request */}
+        <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.35 }}
-          className="inline-block font-heading text-[13px] tracking-[0.12em] uppercase font-medium transition-opacity duration-200 hover:opacity-100 mb-20"
-          style={{ color: 'hsl(30, 15%, 68%)', opacity: 0.8 }}
-        >
-          Explore services →
-        </motion.a>
+          className="mb-20"
+        />
 
         {/* Divider */}
         <motion.div
