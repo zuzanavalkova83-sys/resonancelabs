@@ -153,17 +153,17 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 1.35 }}
-              className="absolute bottom-6 right-6 sm:bottom-12 sm:right-10 max-w-[260px] text-right pointer-events-none p-3 -mr-3 -mb-3 rounded-sm"
+              className="absolute bottom-28 right-5 sm:bottom-12 sm:right-10 max-w-[220px] sm:max-w-[260px] text-right pointer-events-none p-2 -mr-2 -mb-2 sm:p-0 sm:mr-0 sm:mb-0"
               style={{
-                background: "linear-gradient(135deg, transparent 0%, hsl(var(--burgundy) / 0.55) 40%, hsl(var(--burgundy) / 0.72) 100%)",
+                background: "linear-gradient(135deg, transparent 0%, hsl(var(--burgundy) / 0.35) 45%, hsl(var(--burgundy) / 0.5) 100%)",
               }}
             >
-              <div className="h-px w-12 ml-auto mb-3 bg-brass/70" />
+              <div className="h-px w-10 sm:w-12 ml-auto mb-2 sm:mb-3 bg-brass/60" />
               <p
-                className="font-heading text-[13px] md:text-[14px] uppercase tracking-[0.22em] leading-[1.55] font-medium"
+                className="font-heading text-[11px] sm:text-[13px] md:text-[14px] uppercase tracking-[0.2em] sm:tracking-[0.22em] leading-[1.5] sm:leading-[1.55] font-normal sm:font-medium"
                 style={{
-                  color: "hsl(var(--brass) / 0.98)",
-                  textShadow: "0 1px 10px hsl(var(--background) / 0.9), 0 2px 24px hsl(var(--background) / 0.75)",
+                  color: "hsl(var(--brass) / 0.96)",
+                  textShadow: "0 1px 8px hsl(var(--background) / 0.85), 0 2px 20px hsl(var(--background) / 0.6)",
                 }}
               >
                 "SCIENTIST WATCHING HER RESEARCH GO WILD ON SOCIALS", OIL ON CANVAS, 2026
