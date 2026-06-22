@@ -65,7 +65,7 @@ const FooterSection = () => {
           <div className="editorial-rule mb-8" />
 
           <p className="text-xs" style={{ color: 'hsl(340, 12%, 35%)' }}>
-            © {new Date().getFullYear()} Resonance Labs. All rights reserved.
+            © {new Date().getFullYear()}&nbsp;Zuzana Válková. All rights reserved.
           </p>
         </motion.div>
       </div>
