@@ -70,11 +70,12 @@ const HeroSection = () => {
           loop
           playsInline
           preload="metadata"
-          className="absolute bottom-0 right-0 h-[85%] sm:h-full w-full sm:w-[72%] lg:w-[64%] object-cover opacity-[0.65] sm:opacity-[0.58]"
+          className="absolute bottom-0 right-0 h-[92%] sm:h-full w-full sm:w-[78%] lg:w-[68%] object-cover opacity-[0.82] sm:opacity-[0.78]"
           style={{
-            filter: "contrast(1.05) brightness(0.9) saturate(0.78) hue-rotate(-18deg)",
-            maskImage: "linear-gradient(to right, transparent 0%, transparent 28%, black 62%), linear-gradient(to bottom, transparent 0%, transparent 22%, black 55%)",
-            WebkitMaskImage: "linear-gradient(to right, transparent 0%, transparent 28%, black 62%), linear-gradient(to bottom, transparent 0%, transparent 22%, black 55%)",
+            objectPosition: "72% center",
+            filter: "contrast(1.04) brightness(1.04) saturate(0.82) hue-rotate(-14deg)",
+            maskImage: "linear-gradient(to right, transparent 0%, black 44%), linear-gradient(to bottom, transparent 0%, black 18%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 44%), linear-gradient(to bottom, transparent 0%, black 18%)",
             animation: bgGlitch ? "hero-glitch 520ms steps(5) both" : "none",
           }}
         />
@@ -82,12 +83,12 @@ const HeroSection = () => {
         <div
           className="absolute inset-0 mix-blend-multiply"
           style={{
-            background: "linear-gradient(105deg, hsl(var(--background) / 0.94) 0%, hsl(var(--background) / 0.6) 45%, hsl(var(--burgundy-mid) / 0.35) 100%)",
+            background: "linear-gradient(105deg, hsl(var(--background) / 0.94) 0%, hsl(var(--background) / 0.5) 42%, hsl(var(--burgundy-mid) / 0.12) 100%)",
           }}
         />
         {/* Cool color overlay — shifts warm oranges toward the burgundy/wine register */}
         <div
-          className="absolute inset-0 mix-blend-color opacity-[0.35]"
+          className="absolute inset-0 mix-blend-color opacity-[0.18]"
           style={{
             background: "linear-gradient(120deg, hsl(var(--wine-deep)) 0%, hsl(var(--burgundy)) 60%, hsl(var(--wine)) 100%)",
           }}
