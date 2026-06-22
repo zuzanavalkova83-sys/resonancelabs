@@ -3,18 +3,7 @@ import { useRef, useState } from "react";
 import mariaPhoto from "@/assets/maria-michopulu.jpg.asset.json";
 import { Plus, Minus } from "lucide-react";
 
-const collaborators = [
-  {
-    name: "Martin Paur",
-    role: "Creative Direction",
-    bio: "Former creative director at multinational agencies. Works from a simple premise: the world of research is unique, but not exempt from the rules of what moves people.",
-  },
-  {
-    name: "Maria Michopulu",
-    role: "Design",
-    bio: "Visual artist and graphic designer, alumna of Emily Carr University of Art and Design. Responsible for everything that makes science look as good as it deserves.",
-  },
-];
+const collaborators = [];
 
 const TeamSection = () => {
   const ref = useRef(null);
@@ -138,38 +127,6 @@ const TeamSection = () => {
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mb-10"
-        >
-          <div className="h-px w-full mb-10" style={{ backgroundColor: "hsl(30, 12%, 78%)" }} />
-          <p className="font-body text-[15px] md:text-[16px] leading-[1.6] font-normal max-w-[56ch]" style={{ color: "hsl(30, 8%, 48%)" }}>
-            Resonance Labs works with a flexible network of collaborators across design, storytelling, and communications.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 max-w-3xl">
-          {collaborators.map((person, i) => (
-            <motion.div
-              key={person.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 + i * 0.1 }}
-            >
-              <h4 className="font-heading text-[16px] md:text-[17px] font-medium tracking-[-0.01em] mb-1" style={{ color: "hsl(340, 25%, 20%)" }}>
-                {person.name}
-              </h4>
-              <p className="font-heading text-[11px] tracking-[0.12em] uppercase font-medium mb-2.5" style={{ color: "hsl(30, 10%, 55%)" }}>
-                {person.role}
-              </p>
-              <p className="font-body text-[13px] md:text-[14px] leading-[1.6] font-normal" style={{ color: "hsl(30, 8%, 48%)" }}>
-                {person.bio}
-              </p>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );
