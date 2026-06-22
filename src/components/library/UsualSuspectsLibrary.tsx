@@ -526,6 +526,41 @@ const UsualSuspects = () => {
       {/* ── Interpretive layer ── */}
       <NarrativeBiteLayer />
 
+      {/* ── Full-bleed painting interlude ── */}
+      <figure
+        className="relative w-full"
+        style={{ background: "hsl(var(--wine-deep))" }}
+      >
+        <div className="relative w-full overflow-hidden" style={{ maxHeight: "78vh" }}>
+          <img
+            src={paintingElderSea.url}
+            alt="Elder figure contemplating the sea under an orange sky"
+            className="w-full h-full object-cover"
+            draggable={false}
+            style={{
+              maxHeight: "78vh",
+              filter: "contrast(1.04) brightness(0.92) saturate(0.85) hue-rotate(-10deg)",
+            }}
+          />
+          <div
+            className="absolute inset-0 pointer-events-none mix-blend-color"
+            style={{
+              background:
+                "linear-gradient(135deg, hsl(var(--wine-deep) / 0.35), hsl(var(--burgundy) / 0.2) 60%, hsl(var(--wine) / 0.3))",
+            }}
+          />
+        </div>
+        <figcaption className="max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-10 flex flex-col items-center text-center">
+          <div className="h-px w-12 mb-4" style={{ background: "hsl(var(--brass) / 0.35)" }} />
+          <p
+            className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.22em] leading-[1.55] max-w-[44ch]"
+            style={{ color: "hsl(30 15% 60%)" }}
+          >
+            "MAN WATCHING HIS FINDING DRIFT OUT TO SEA, JUST AS HE FEARED IT WOULD", OIL ON DRIFT, 2026
+          </p>
+        </figcaption>
+      </figure>
+
       {/* ── Family view: alternating full-width sub-sections ── */}
       {mode === "family" && (
         <div>
