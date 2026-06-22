@@ -317,7 +317,7 @@ const SoftDistrustSection = () => {
           >
             <div className="col-span-12 md:col-span-5">{"\n\n\n\n"}</div>
             <div className="col-span-12 md:col-span-7 hidden md:block">
-              Actually does
+              {"\n"}
             </div>
           </div>
 
