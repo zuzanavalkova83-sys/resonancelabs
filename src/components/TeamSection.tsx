@@ -86,11 +86,6 @@ const TeamSection = () => {
           </div>
 
           <div className="flex flex-col justify-center md:py-6">
-            <div className="flex items-center gap-2.5 mb-4">
-              <span className="w-[5px] h-[5px] rounded-full shrink-0" style={{ backgroundColor: "hsl(340, 40%, 35%)" }} />
-              <p className="font-heading text-[11px] md:text-[12px] tracking-[0.15em] uppercase font-medium" style={{ color: "hsl(340, 40%, 35%)" }}>
-              </p>
-            </div>
 
             <h3 className="font-display text-[32px] md:text-[40px] lg:text-[48px] tracking-wider leading-[0.9] mb-5" style={{ color: "hsl(340, 30%, 22%)" }}>
               Zuzana Válková
