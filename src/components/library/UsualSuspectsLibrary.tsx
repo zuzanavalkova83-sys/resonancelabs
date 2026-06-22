@@ -443,24 +443,52 @@ const UsualSuspects = () => {
       {/* ── Hero header — ivory warm ── */}
       <div className="section-ivory-warm editorial-grain relative">
         <div className="relative max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-28 sm:py-36">
-          <div className="mb-20 max-w-4xl">
-            <h2
-              className="font-display text-6xl sm:text-7xl md:text-8xl tracking-wider leading-[0.85] mb-10"
-              style={{ color: "hsl(340 30% 25%)" }}
-            >
-              <span>The usual</span>
-              <br />
-              <span className="inline-block relative" style={glitchStyle(glitch, "strong")}>
-                suspects
-              </span>
-            </h2>
-            <div className="w-16 h-[1px] mb-8" style={{ background: "hsl(30 15% 70%)" }} />
-            <p className="text-xl leading-relaxed max-w-2xl mb-5" style={{ color: "hsl(30 10% 42%)" }}>
-              These are the recurring storylines used to twist science in public. We track them, group them, and study how they turn research into panic, miracle, scandal, ideology, or noise.
-            </p>
-            <p className="text-base leading-relaxed max-w-2xl" style={{ color: "hsl(30 10% 58%)" }}>
-              They are not random. They repeat. Which is good news, actually. Repeated nonsense is easier to recognise.
-            </p>
+          <div className="mb-20 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-end">
+            <div className="md:col-span-7">
+              <p
+                className="font-heading text-[11px] tracking-[0.22em] uppercase font-medium mb-6"
+                style={{ color: "hsl(var(--wine))" }}
+              >
+                Living Field Guide · No. 01
+              </p>
+              <h2
+                className="font-display text-6xl sm:text-7xl md:text-8xl tracking-wider leading-[0.85] mb-10"
+                style={{ color: "hsl(340 30% 25%)" }}
+              >
+                <span>The usual</span>
+                <br />
+                <span className="inline-block relative" style={glitchStyle(glitch, "strong")}>
+                  suspects
+                </span>
+              </h2>
+              <div className="w-16 h-[1px] mb-8" style={{ background: "hsl(30 15% 70%)" }} />
+              <p className="text-xl leading-relaxed max-w-2xl mb-5" style={{ color: "hsl(30 10% 42%)" }}>
+                These are the recurring storylines used to twist science in public. We track them, group them, and study how they turn research into panic, miracle, scandal, ideology, or noise.
+              </p>
+              <p className="text-base leading-relaxed max-w-2xl" style={{ color: "hsl(30 10% 58%)" }}>
+                They are not random. They repeat. Which is good news, actually. Repeated nonsense is easier to recognise.
+              </p>
+            </div>
+            <figure className="md:col-span-5 flex flex-col">
+              <div className="relative aspect-square w-full overflow-hidden" style={{ background: "hsl(var(--burgundy))" }}>
+                <img
+                  src={paintingTwins.url}
+                  alt="Two women, twin portraits in opposing fields of red and blue"
+                  className="w-full h-full object-cover"
+                  draggable={false}
+                  style={{ filter: "contrast(1.03) brightness(0.96) saturate(0.88)" }}
+                />
+              </div>
+              <figcaption className="mt-5 flex flex-col items-center text-center">
+                <div className="h-px w-10 mb-3" style={{ background: "hsl(var(--wine) / 0.35)" }} />
+                <p
+                  className="font-heading text-[11px] md:text-[12px] uppercase tracking-[0.22em] leading-[1.55] max-w-[32ch]"
+                  style={{ color: "hsl(30 12% 50%)" }}
+                >
+                  "TWO READERS OF THE SAME PAPER, ARRIVING AT OPPOSITE CONCLUSIONS", OIL ON DISAGREEMENT, 2026
+                </p>
+              </figcaption>
+            </figure>
           </div>
 
           {/* Stats + browse modes */}
