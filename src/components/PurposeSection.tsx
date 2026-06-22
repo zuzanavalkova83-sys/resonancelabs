@@ -9,19 +9,19 @@ const PAINTINGS = [
     src: paintingGroup.url,
     alt: "Group of scientists in discussion",
     caption:
-      "COMMITTEE FOR INSISTING THAT SIMPLIFICATION OF THEIR WORK IS IMPOSSIBLE (AFTER THE SEMINAR THAT RAN LONG), OIL ON DESPAIR, 2026",
+      "\"COMMITTEE FOR INSISTING THAT SIMPLIFICATION OF THEIR WORK IS IMPOSSIBLE (AFTER THE SEMINAR THAT RAN LONG)\", OIL ON DESPAIR, 2026",
   },
   {
     src: paintingElder.url,
     alt: "Senior scientist with patient expression",
     caption:
-      "SENIOR RESEARCHER EXPLAINING WHY IT IS ACTUALLY MORE COMPLICATED, FRUSTRATING THE PUBLIC WHO \"ONLY ASKED IF IT'S SAFE\", OIL ON FIRE, 2026",
+      "\"SENIOR RESEARCHER EXPLAINING WHY IT IS ACTUALLY MORE COMPLICATED, FRUSTRATING THE PUBLIC WHO ONLY ASKED IF IT'S SAFE\", OIL ON FIRE, 2026",
   },
   {
     src: paintingHorizon.url,
     alt: "Man staring at the horizon",
     caption:
-      "MAN WHO \"DID HIS OWN RESEARCH\" AND NOW WE ARE GOING TO SUFFER FOR IT, MIXED MEDIA AND FEELINGS, 2026",
+      "\"MAN WHO DID HIS OWN RESEARCH AND NOW WE ARE GOING TO SUFFER FOR IT\", MIXED MEDIA AND FEELINGS, 2026",
   },
 ] as const;
 
@@ -90,12 +90,18 @@ const PurposeSection = () => {
                     }}
                   />
                 </div>
-                <p
-                  className="mt-5 md:mt-6 font-heading text-[11px] md:text-[12px] uppercase tracking-[0.18em] leading-[1.55] font-normal text-center"
-                  style={{ color: "hsl(var(--ivory-dim))" }}
-                >
-                  {painting.caption}
-                </p>
+                <div className="mt-5 md:mt-6 flex flex-col items-center">
+                  <div
+                    className="h-px w-12 mb-3"
+                    style={{ background: "hsl(var(--brass) / 0.35)" }}
+                  />
+                  <p
+                    className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.22em] leading-[1.55] font-normal text-center max-w-[34ch]"
+                    style={{ color: "hsl(30, 15%, 60%)" }}
+                  >
+                    {painting.caption}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
