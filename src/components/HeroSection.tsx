@@ -159,11 +159,11 @@ const HeroSection = () => {
               <p
                 className="font-heading text-[11px] lg:text-[13px] xl:text-[14px] uppercase tracking-[0.18em] lg:tracking-[0.22em] leading-[1.45] lg:leading-[1.55] font-normal lg:font-medium"
                 style={{
-                  color: "hsl(var(--brass) / 0.95)",
-                  textShadow: "0 1px 8px hsl(var(--background) / 0.85), 0 2px 18px hsl(var(--background) / 0.55)",
+                  color: "hsl(var(--brass) / 1)",
+                  textShadow: "0 1px 10px hsl(var(--background) / 0.92), 0 2px 22px hsl(var(--background) / 0.7)",
                 }}
               >
-                "SCIENTIST WATCHING HER RESEARCH GO WILD ON SOCIALS", OIL ON CANVAS, 2026
+                "SCIENTIST WATCHING HER RESEARCH GO WILD ON SOCIALS", OIL ON WORRY, 2026
               </p>
             </motion.div>
           </div>
