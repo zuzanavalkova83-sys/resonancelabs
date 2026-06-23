@@ -469,7 +469,7 @@ const UsualSuspects = () => {
                 They are not random. They repeat. Which is good news, actually. Repeated nonsense is easier to recognise.
               </p>
             </div>
-            <figure className="md:col-span-7 flex flex-col">
+            <figure className="md:col-span-6 flex flex-col">
               <div className="relative aspect-square w-full overflow-hidden" style={{ background: "hsl(var(--burgundy))" }}>
                 <img
                   src={paintingTwins.url}
