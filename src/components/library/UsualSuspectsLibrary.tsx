@@ -443,8 +443,8 @@ const UsualSuspects = () => {
       {/* ── Hero header — ivory warm ── */}
       <div className="section-ivory-warm editorial-grain relative">
         <div className="relative max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-28 sm:py-36">
-          <div className="mb-20 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-start">
-            <div className="md:col-span-5">
+          <div className="mb-20 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+            <div className="lg:col-span-5">
               <p
                 className="font-heading text-[11px] tracking-[0.22em] uppercase font-medium mb-6"
                 style={{ color: "hsl(var(--wine))" }}
@@ -462,14 +462,14 @@ const UsualSuspects = () => {
                 </span>
               </h2>
               <div className="w-16 h-[1px] mb-8" style={{ background: "hsl(30 15% 70%)" }} />
-              <p className="text-xl leading-relaxed max-w-xl mb-5" style={{ color: "hsl(30 10% 42%)" }}>
+              <p className="text-xl leading-relaxed max-w-xl mb-5 text-balance" style={{ color: "hsl(30 10% 42%)" }}>
                 These are the recurring storylines used to twist science in public. We track them, group them, and study how they turn research into panic, miracle, scandal, ideology, or noise.
               </p>
-              <p className="text-base leading-relaxed max-w-xl" style={{ color: "hsl(30 10% 58%)" }}>
+              <p className="text-base leading-relaxed max-w-xl text-balance" style={{ color: "hsl(30 10% 58%)" }}>
                 They are not random. They repeat. Which is good news, actually. Repeated nonsense is easier to recognise.
               </p>
             </div>
-            <figure className="md:col-span-7 flex flex-col">
+            <figure className="lg:col-span-7 flex flex-col">
               <div className="relative aspect-square w-full overflow-hidden" style={{ background: "hsl(var(--burgundy))" }}>
                 <img
                   src={paintingTwins.url}
