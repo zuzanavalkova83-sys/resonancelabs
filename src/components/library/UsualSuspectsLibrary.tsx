@@ -482,7 +482,7 @@ const UsualSuspects = () => {
               <figcaption className="mt-5 flex flex-col items-center text-center">
                 <div className="h-px w-10 mb-3" style={{ background: "hsl(var(--wine) / 0.35)" }} />
                 <p
-                  className="font-heading text-[11px] md:text-[12px] uppercase tracking-[0.22em] leading-[1.55] max-w-[32ch]"
+                  className="font-heading text-[11px] md:text-[12px] uppercase tracking-[0.22em] leading-[1.55] max-w-[46ch]"
                   style={{ color: "hsl(30 12% 50%)" }}
                 >
                   "TWO READERS OF THE SAME PAPER, ARRIVING AT OPPOSITE CONCLUSIONS", OIL ON DISAGREEMENT, 2026
