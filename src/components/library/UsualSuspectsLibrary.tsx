@@ -462,7 +462,7 @@ const UsualSuspects = () => {
                 </span>
               </h2>
               <div className="w-16 h-[1px] mb-8" style={{ background: "hsl(30 15% 70%)" }} />
-              <p className="text-lg leading-relaxed max-w-xl mb-5 text-balance" style={{ color: "hsl(30 10% 42%)" }}>
+              <p className="text-xl leading-relaxed max-w-xl mb-5 text-balance" style={{ color: "hsl(30 10% 42%)" }}>
                 These are the recurring storylines used to twist science in public. We track them, group them, and study how they turn research into panic, miracle, scandal, ideology, or noise.
               </p>
               <p className="text-base leading-relaxed max-w-xl text-balance" style={{ color: "hsl(30 10% 58%)" }}>
