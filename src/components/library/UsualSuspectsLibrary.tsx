@@ -210,37 +210,22 @@ const FrameTile = ({
   return (
     <button
       onClick={onClick}
-      className="w-full text-left p-6 sm:p-7 transition-all duration-300 group relative"
+      className="w-full text-left p-8 sm:p-9 transition-all duration-300 group relative flex flex-col hover:-translate-y-1"
       style={{
         background: isDarkActive ? theme.tileActiveBg : theme.tileBg,
         border: "1px solid",
         borderColor: isDarkActive ? theme.tileActiveBorder : theme.tileBorder,
       }}
     >
-      <span
-        className="text-[11px] font-mono tracking-[0.2em] block mb-4"
-        style={{ color: isDarkActive ? "hsl(30 15% 55%)" : theme.tileTextMuted }}
-      >
-        {frame.id}
-      </span>
-
-      <h4
-        className="text-[15px] sm:text-base font-medium leading-snug mb-3 transition-colors"
-        style={{ color: isDarkActive ? "hsl(35 30% 90%)" : theme.tileText }}
-      >
-        {frame.frameName}
-      </h4>
-
-      <p
-        className="text-[13px] leading-relaxed line-clamp-2"
-        style={{ color: isDarkActive ? "hsl(30 15% 60%)" : theme.tileTextMuted }}
-      >
-        {ed.hookLine}
-      </p>
-
-      <div className="mt-4">
+      <div className="flex items-baseline justify-between gap-3 mb-8">
         <span
-          className="text-[11px] font-mono tracking-[0.15em] uppercase px-2 py-0.5"
+          className="text-[11px] font-mono tracking-[0.28em] block"
+          style={{ color: isDarkActive ? "hsl(30 15% 55%)" : theme.tileTextMuted }}
+        >
+          {frame.id}
+        </span>
+        <span
+          className="text-[10px] font-mono tracking-[0.28em] uppercase px-2 py-1"
           style={{
             background: isDarkActive ? "hsl(var(--wine) / 0.3)" : theme.tagBg,
             color: isDarkActive ? "hsl(var(--wine-blush))" : theme.tileTextMuted,
@@ -248,6 +233,36 @@ const FrameTile = ({
         >
           {ed.emotion}
         </span>
+      </div>
+
+      <blockquote
+        className="font-display text-[20px] sm:text-[22px] leading-[1.2] tracking-wide mb-8"
+        style={{
+          color: isDarkActive ? "hsl(35 30% 92%)" : theme.tileText,
+          fontStyle: "normal",
+        }}
+      >
+        "{ed.hostileClaim}"
+      </blockquote>
+
+      <div
+        className="mt-auto pt-5 border-t"
+        style={{
+          borderColor: isDarkActive ? "hsl(var(--wine-glow) / 0.25)" : "hsl(30 15% 78% / 0.5)",
+        }}
+      >
+        <h4
+          className="text-[13px] font-medium tracking-wide leading-snug mb-3"
+          style={{ color: isDarkActive ? "hsl(35 25% 82%)" : theme.tileText }}
+        >
+          {frame.frameName}
+        </h4>
+        <p
+          className="text-[13.5px] leading-[1.7] line-clamp-3"
+          style={{ color: isDarkActive ? "hsl(30 15% 60%)" : theme.tileTextMuted }}
+        >
+          {ed.hookLine}
+        </p>
       </div>
     </button>
   );
@@ -289,28 +304,28 @@ const FamilySubSection = ({
     >
       <div className="max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-20 sm:py-28">
         {/* Header */}
-        <div className="mb-12">
+        <div className="mb-16 max-w-[40rem]">
           <div className="flex items-center gap-5 mb-5">
             <div className="w-8 h-[1px]" style={{ background: theme.divider }} />
-            <span className="text-[12px] font-mono tracking-[0.2em] uppercase" style={{ color: theme.meta }}>
+            <span className="text-[12px] font-mono tracking-[0.28em] uppercase" style={{ color: theme.meta }}>
               {frames.length} {frames.length === 1 ? "frame" : "frames"}
             </span>
           </div>
           <h3
-            className="font-display text-3xl sm:text-4xl md:text-5xl tracking-wider leading-[0.9] mb-6"
+            className="font-display text-4xl sm:text-5xl md:text-6xl tracking-wider leading-[0.9] mb-6"
             style={{ color: theme.heading }}
           >
             {label}
           </h3>
           {description && (
-            <p className="text-base leading-relaxed max-w-xl" style={{ color: theme.body }}>
+            <p className="text-[17px] leading-[1.7]" style={{ color: theme.body }}>
               {description}
             </p>
           )}
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {frames.map((f) => {
             const eid = (f as any)._editorialId ?? f.id;
             return (
