@@ -81,7 +81,13 @@ type EditorialSection = {
   index: string;
   heading: string;
   body: string;
-  painting?: { url: string; alt: string; caption: string; filter?: string };
+  painting?: {
+    url: string;
+    alt: string;
+    caption: string;
+    filter?: string;
+    orientation?: "portrait" | "landscape";
+  };
   pullQuote?: string;
 };
 
@@ -112,6 +118,7 @@ const EDITORIAL_SECTIONS: EditorialSection[] = [
       alt: "Postava rozjímající nad mořem — autorita, která se dívá stranou",
       caption: "„ÚŘAD S VÝHLEDEM NA MOŘE, ODVRÁCENÝ OD PLÁŽE“, OLEJ NA DŮVĚŘE, 2026",
       filter: "contrast(1.04) brightness(0.92) saturate(0.82) hue-rotate(-6deg)",
+      orientation: "landscape",
     },
   },
   {
