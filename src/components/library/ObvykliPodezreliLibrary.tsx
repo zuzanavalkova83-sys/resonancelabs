@@ -371,25 +371,15 @@ const ObvykliPodezreliLibrary = () => {
                 Tyhle škatulky nejsou náhodné. Opakují se. To je dobrá zpráva — na zkreslení, které se opakuje, se dá připravit.
               </p>
             </div>
-            <figure className="lg:col-span-6 flex flex-col">
-              <div className="relative aspect-[3/4] w-full overflow-hidden" style={{ background: "hsl(var(--burgundy))" }}>
-                <img
-                  src={paintingTwins.url}
-                  alt="Dva čtenáři téhož článku"
-                  className="w-full h-full object-cover"
-                  draggable={false}
-                  style={{ filter: "contrast(1.03) brightness(0.96) saturate(0.88)" }}
-                />
-              </div>
-              <figcaption className="mt-5">
-                <p
-                  className="font-heading text-[10.5px] md:text-[11px] uppercase tracking-[0.28em] leading-[1.55]"
-                  style={{ color: "hsl(30 12% 50%)" }}
-                >
-                  „DVA ČTENÁŘI TÉHOŽ ČLÁNKU DOCHÁZEJÍ K OPAČNÝM ZÁVĚRŮM“, OLEJ NA VODĚ, 2026
-                </p>
-              </figcaption>
-            </figure>
+            <div className="lg:col-span-6">
+              <PaintingFrame
+                url={paintingTwins.url}
+                alt="Dva čtenáři téhož článku"
+                caption="„DVA ČTENÁŘI TÉHOŽ ČLÁNKU DOCHÁZEJÍ K OPAČNÝM ZÁVĚRŮM“, OLEJ NA VODĚ, 2026"
+                filter="contrast(1.03) brightness(0.96) saturate(0.88)"
+                orientation="portrait"
+              />
+            </div>
           </div>
 
           {/* Stats strip */}
