@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
 import { narrativeFrames, NarrativeFrame } from "@/data/narrativeFrames";
 import NarrativeBiteLayer from "@/components/library/NarrativeBiteLayer";
