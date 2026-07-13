@@ -35,7 +35,7 @@ const PaintingFrame = ({
   bg?: string;
   captionColor?: string;
 }) => (
-  <figure className="flex flex-col w-full">
+  <figure className="flex flex-col w-full items-center">
     <div
       className={
         "relative w-full overflow-hidden " +
@@ -51,7 +51,7 @@ const PaintingFrame = ({
         style={{ filter }}
       />
     </div>
-    <figcaption className="mt-4">
+    <figcaption className="mt-4 text-center">
       <p
         className="font-heading text-[10.5px] uppercase tracking-[0.22em] leading-[1.55] max-w-[44ch]"
         style={{ color: captionColor }}
