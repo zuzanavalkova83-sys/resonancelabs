@@ -16,6 +16,51 @@ import {
   type PatternFamily,
 } from "@/data/frameAtlas";
 
+/* Consistent painting frame — never crops through faces. */
+const PaintingFrame = ({
+  url,
+  alt,
+  caption,
+  filter,
+  orientation = "portrait",
+  bg = "hsl(var(--burgundy))",
+  captionColor = "hsl(30 12% 52%)",
+}: {
+  url: string;
+  alt: string;
+  caption: string;
+  filter?: string;
+  orientation?: "portrait" | "landscape";
+  bg?: string;
+  captionColor?: string;
+}) => (
+  <figure className="flex flex-col w-full">
+    <div
+      className={
+        "relative w-full overflow-hidden " +
+        (orientation === "landscape" ? "aspect-[3/2]" : "aspect-[4/5]")
+      }
+      style={{ background: bg }}
+    >
+      <img
+        src={url}
+        alt={alt}
+        draggable={false}
+        className="absolute inset-0 w-full h-full object-contain"
+        style={{ filter }}
+      />
+    </div>
+    <figcaption className="mt-4">
+      <p
+        className="font-heading text-[10.5px] uppercase tracking-[0.22em] leading-[1.55] max-w-[44ch]"
+        style={{ color: captionColor }}
+      >
+        {caption}
+      </p>
+    </figcaption>
+  </figure>
+);
+
 type BrowseMode = "family" | "emotion" | "mechanism" | "terrain";
 const editorialFor = (id: string): FrameEditorial | undefined =>
   FRAME_EDITORIAL[id];
