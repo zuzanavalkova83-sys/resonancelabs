@@ -1,60 +1,12 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Plus, Minus } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import twinsPainting from "@/assets/soft-distrust-twins.png.asset.json";
-
-const respectableBull: { line: string; gloss: string }[] = [
-  {
-    line: "“I’m just asking questions.”",
-    gloss:
-      "Asks one, posts the answer he already wanted, then asks the same question again next Tuesday.",
-  },
-  {
-    line: "“Nobody really knows.”",
-    gloss:
-      "Several thousand people do, in fact, know. They have written it down. The microphone is just louder than the footnote.",
-  },
-  {
-    line: "“There are conflicts of interest.”",
-    gloss:
-      "True of almost everything, including the supplement company sponsoring the episode that brought it up.",
-  },
-  {
-    line: "“Do your own research.”",
-    gloss:
-      "Translation: please arrive at my conclusion using a method I would not survive scrutiny on.",
-  },
-];
-
-const reasons: { title: string; body: string }[] = [
-  {
-    title: "Distrust feels intelligent",
-    body: "Doubting something in public is read as having thought about it. Often, neither party has.",
-  },
-  {
-    title: "Cynicism mimics critical thinking",
-    body: "Same posture, almost none of the work. On a podcast, the two are indistinguishable.",
-  },
-  {
-    title: "Ambiguity survives fact-checking",
-    body: "You cannot debunk a vibe. “Something feels off” is unfalsifiable and quietly contagious.",
-  },
-  {
-    title: "Algorithms reward emotional certainty",
-    body: "The calm, sure voice wins the watch-time auction. Hesitation gets buried near the kitchen renovation videos.",
-  },
-  {
-    title: "“Natural” feels morally clean",
-    body: "A useful word, because it means almost nothing and almost everyone agrees they prefer it.",
-  },
-];
-
 
 const SoftDistrustSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [open, setOpen] = useState<number | null>(0);
 
   return (
     <section
