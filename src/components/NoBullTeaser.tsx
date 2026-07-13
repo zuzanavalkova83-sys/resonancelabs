@@ -80,7 +80,8 @@ const NoBullTeaser = () => {
             className="font-body text-[18px] md:text-[20px] leading-[1.55] font-normal mb-6"
             style={{ color: "hsl(30, 10%, 42%)" }}
           >
-            A working field guide to the recurring ways science gets twisted in public. The raw material for our narrative intelligence work.
+            A working field guide to the recurring ways science gets twisted
+            in public — the raw material for our work.
           </motion.p>
 
           <motion.p
@@ -89,11 +90,7 @@ const NoBullTeaser = () => {
             transition={{ duration: 0.7, delay: 0.24 }}
             className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal max-w-[54ch]"
             style={{ color: "hsl(30, 8%, 50%)" }}
-          >
-            We collect and group the familiar plots that keep turning research
-            into panic, miracle, scandal, ideology, or noise. The point is
-            simple: if the nonsense repeats, we can recognise it faster.
-          </motion.p>
+          />
         </div>
 
         {/* Cards */}

@@ -5,6 +5,7 @@ import TeamSection from "@/components/TeamSection";
 import PurposeSection from "@/components/PurposeSection";
 import NoBullTeaser from "@/components/NoBullTeaser";
 import SoftDistrustSection from "@/components/SoftDistrustSection";
+import WhatWeDoSection from "@/components/WhatWeDoSection";
 import FooterSection from "@/components/FooterSection";
 
 const Index = () => {
@@ -13,6 +14,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <WhatWeDoSection />
       <NoBullTeaser />
       <SoftDistrustSection />
       <PurposeSection />

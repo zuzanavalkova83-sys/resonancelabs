@@ -113,30 +113,20 @@ const PurposeSection = () => {
           </div>
         </motion.figure>
 
-        {/* Manifesto — two balanced columns of text */}
+        {/* Credo — a single line, the strongest one */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 lg:gap-24"
+          className="max-w-[46ch] mx-auto text-center"
         >
-          <div className="space-y-5">
-            <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: 'hsl(30, 12%, 55%)' }}>
-              We used to think of science communication mainly as a question of clarity, reach, and public engagement. That is no longer enough.
-            </p>
-            <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: 'hsl(30, 12%, 55%)' }}>
-              Research now enters a public space shaped by noise, strategic distortion, grievance, and misplaced certainty. Careful work can be flattened, moralised, politicised, or pulled into stories it was never trying to tell.
-            </p>
-          </div>
-
-          <div className="space-y-5">
-            <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: 'hsl(30, 12%, 55%)' }}>
-              Resonance Labs exists to help serious ideas survive that contact. The work is about protecting meaning: translating expertise into language people can hear, while reducing the chances that it will be hijacked on the way.
-            </p>
-            <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: 'hsl(35, 15%, 62%)' }}>
-              We do not work to make science louder for the sake of it. We work to help it remain legible, credible, and alive in the world it actually enters.
-            </p>
-          </div>
+          <p
+            className="font-display text-[24px] md:text-[30px] lg:text-[34px] tracking-wide leading-[1.25]"
+            style={{ color: 'hsl(35, 22%, 82%)' }}
+          >
+            We don't work to make science louder. We work to help it stay
+            legible, credible, and alive in the world it actually enters.
+          </p>
         </motion.div>
       </div>
     </section>

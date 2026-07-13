@@ -105,6 +105,12 @@ const AboutSection = () => {
             <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: 'hsl(30, 12%, 52%)' }}>
               Resonance Labs is a narrative intelligence practice for scientific and research-led organisations. We do narrative risk mapping in contested public space, so serious work can travel without being rewritten en route.
             </p>
+            <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: 'hsl(35, 18%, 68%)' }}>
+              A cancer study becomes “they're hiding a cure.” A sunscreen paper
+              becomes “chemicals give you cancer.” A sociology finding becomes
+              “activism in a lab coat.” The research didn't change — the story
+              around it did. Our job is to see that story coming.
+            </p>
           </div>
         </motion.div>
 
@@ -131,6 +137,20 @@ const AboutSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.45 }}
         >
+
+          <div className="mb-12 md:mb-14 max-w-3xl">
+            <p
+              className="font-heading text-[11px] tracking-[0.22em] uppercase font-medium mb-4"
+              style={{ color: "hsl(var(--brass) / 0.85)" }}
+            >
+              Fields of practice
+            </p>
+            <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: 'hsl(35, 18%, 68%)' }}>
+              We work across the sciences — and equally with the social
+              sciences and humanities, where a whole field can be dismissed as
+              ideology rather than judged as scholarship.
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 lg:gap-x-16 gap-y-16">
             {categories.map((cat, catIdx) => {
