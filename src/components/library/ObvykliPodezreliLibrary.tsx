@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import paintingTwins from "@/assets/suspects-twins.png.asset.json";
 import paintingElderSea from "@/assets/suspects-elder-sea.png.asset.json";
 import paintingElderRocks from "@/assets/suspects-elder-rocks.png.asset.json";
@@ -105,6 +106,22 @@ const ObvykliPodezreliLibrary = () => {
         <div className="relative max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-28 sm:py-36">
           <div className="mb-20 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
             <div className="lg:col-span-5">
+              <div className="mb-6 inline-flex items-center gap-1 p-1 border" style={{ borderColor: "hsl(var(--wine) / 0.25)", background: "hsl(var(--parchment) / 0.5)" }}>
+                <Link
+                  to="/the-usual-suspects"
+                  className="font-heading text-[10.5px] tracking-[0.22em] uppercase font-medium px-3 py-1.5 transition-colors hover:text-[hsl(var(--wine))]"
+                  style={{ color: "hsl(30 10% 45%)" }}
+                >
+                  EN
+                </Link>
+                <span
+                  aria-current="page"
+                  className="font-heading text-[10.5px] tracking-[0.22em] uppercase font-medium px-3 py-1.5"
+                  style={{ background: "hsl(var(--wine))", color: "hsl(35 30% 92%)" }}
+                >
+                  CZ
+                </span>
+              </div>
               <p
                 className="font-heading text-[11px] tracking-[0.22em] uppercase font-medium mb-6"
                 style={{ color: "hsl(var(--wine))" }}
@@ -118,6 +135,12 @@ const ObvykliPodezreliLibrary = () => {
                 <span>Obvyklí</span>
                 <br />
                 <span>podezřelí</span>
+                <span
+                  className="block font-display text-2xl sm:text-3xl md:text-4xl tracking-wider leading-[1] mt-4 italic"
+                  style={{ color: "hsl(340 20% 45%)" }}
+                >
+                  / The usual suspects
+                </span>
               </h1>
               <div className="w-16 h-[1px] mb-8" style={{ background: "hsl(30 15% 70%)" }} />
               <p className="text-xl leading-relaxed max-w-xl mb-5 text-balance" style={{ color: "hsl(30 10% 42%)" }}>
