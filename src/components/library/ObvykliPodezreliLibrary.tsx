@@ -63,7 +63,7 @@ const FRAMES: {
     title: "Příroda ví nejlíp",
     tag: "ČISTOTA",
     quote: "Přírodní je vždycky lepší.",
-    body: "Cokoli syntetického je podezřelé, cokoli „přírodního" automaticky bezpečné. Za tou samozřejmostí je stará hranice mezi čistým a znečištěným.",
+    body: 'Cokoli syntetického je podezřelé, cokoli „přírodního“ automaticky bezpečné. Za tou samozřejmostí je stará hranice mezi čistým a znečištěným.',
   },
   {
     code: "F43",
