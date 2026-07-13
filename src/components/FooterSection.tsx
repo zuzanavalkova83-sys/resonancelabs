@@ -18,18 +18,14 @@ const FooterSection = () => {
           <h3 className="font-display text-[36px] md:text-[44px] tracking-wider text-foreground mb-4 leading-[0.9]">
             Resonance Labs
           </h3>
-          <p className="text-sm mb-8 tracking-wide" style={{ color: 'hsl(30, 15%, 55%)' }}>
-            {"\n"}
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 sm:gap-8 mb-10 text-[11px] tracking-[0.2em] uppercase" style={{ color: 'hsl(30, 12%, 50%)' }}>
-            {["About", "Team", "Purpose", "Services"].map((item) => (
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 sm:gap-8 mt-2 mb-10 text-[11px] tracking-[0.2em] uppercase" style={{ color: 'hsl(30, 12%, 50%)' }}>
+            {["About", "Purpose", "Team"].map((item) => (
               <button
                 key={item}
                 onClick={() => document.getElementById(item.toLowerCase())?.scrollIntoView({ behavior: "smooth" })}
                 className="hover:text-foreground transition-colors duration-300"
               >
-                {item === "Team" ? "\n" : item}
+                {item}
               </button>
             ))}
             <Link
