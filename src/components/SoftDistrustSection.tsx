@@ -168,16 +168,17 @@ const SoftDistrustSection = () => {
                 className="font-body text-[17px] md:text-[19px] leading-[1.55] font-normal"
                 style={{ color: "hsl(35, 20%, 72%)" }}
               >
-                Scepticism has become an identity. Intellectually respectable
-                bull has learned to speak in a calm podcast voice.
+                Scepticism has become an identity, and intellectually
+                respectable nonsense has learned to speak in a calm podcast
+                voice.
               </p>
               <p
                 className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal"
                 style={{ color: "hsl(30, 12%, 52%)" }}
               >
-                This is not a conspiracy. It's posture. This category moulds
-                health-related misinformation into a wellness-and-identity
-                agenda, spiced with attempts at public intellectualism.
+                It doesn't reject reality — it just lowers the temperature on
+                it, until it's no longer clear that anyone knows anything at
+                all.
               </p>
             </motion.div>
           </div>
