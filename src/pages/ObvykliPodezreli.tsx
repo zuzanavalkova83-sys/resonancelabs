@@ -81,7 +81,7 @@ const ObvykliPodezreli = () => {
               className="inline-flex items-center gap-2 font-heading text-[12px] tracking-[0.15em] uppercase transition-colors duration-200 hover:text-white/90"
               style={{ color: "hsl(var(--wine-blush))" }}
             >
-              Anglická verze obsahuje rozpracovanější obsah No Bull Library
+              ANGLICKÁ VERZE OBSAHUJE AKTUÁLNÍ OBSAH NO BULL LIBRARY
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
