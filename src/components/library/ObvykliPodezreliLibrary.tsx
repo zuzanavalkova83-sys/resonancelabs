@@ -101,13 +101,14 @@ const EDITORIAL_SECTIONS: { heading: string; body: string }[] = [
 ];
 
 const ObvykliPodezreliLibrary = () => {
+  const [noteOpen, setNoteOpen] = useState(false);
   return (
     <section className="relative overflow-hidden">
       {/* ── Hero header — ivory warm ── */}
       <div className="section-ivory-warm editorial-grain relative">
         <div className="relative max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-28 sm:py-36">
-          <div className="mb-20 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-            <div className="lg:col-span-5">
+          <div className="mb-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="lg:col-span-7">
               <div className="mb-6 inline-flex items-center gap-1 p-1 border" style={{ borderColor: "hsl(var(--wine) / 0.25)", background: "hsl(var(--parchment) / 0.5)" }}>
                 <Link
                   to="/the-usual-suspects"
@@ -131,29 +132,27 @@ const ObvykliPodezreliLibrary = () => {
                 Terénní průvodce · č. 01
               </p>
               <h1
-                className="font-display text-6xl sm:text-7xl md:text-8xl tracking-wider leading-[0.85] mb-10"
+                className="font-display text-5xl sm:text-6xl md:text-7xl tracking-wider leading-[0.9] mb-8"
                 style={{ color: "hsl(340 30% 25%)" }}
               >
-                <span>Obvyklí</span>
-                <br />
-                <span>podezřelí</span>
+                Obvyklí podezřelí
                 <span
-                  className="block font-display text-2xl sm:text-3xl md:text-4xl tracking-wider leading-[1] mt-4 italic"
+                  className="block font-display text-xl sm:text-2xl md:text-3xl tracking-wider leading-[1] mt-4 italic font-normal"
                   style={{ color: "hsl(340 20% 45%)" }}
                 >
                   / The usual suspects
                 </span>
               </h1>
               <div className="w-16 h-[1px] mb-8" style={{ background: "hsl(30 15% 70%)" }} />
-              <p className="text-xl leading-relaxed max-w-xl mb-5 text-balance" style={{ color: "hsl(30 10% 42%)" }}>
+              <p className="text-lg md:text-xl leading-[1.55] max-w-[52ch] mb-5" style={{ color: "hsl(30 10% 42%)" }}>
                 Příběhy a stereotypy, které dokáží pohltit váš výzkum dřív, než si ho lidé vůbec stihnou přečíst (pokud je to vůbec napadne). Sleduji je, třídím a zkoumám, odkud se bere panika, skandál, ideologické hádky, nezřízené nadšení nebo prostě jen hluk.
               </p>
-              <p className="text-base leading-relaxed max-w-xl text-balance" style={{ color: "hsl(30 10% 58%)" }}>
+              <p className="text-base leading-[1.6] max-w-[52ch]" style={{ color: "hsl(30 10% 58%)" }}>
                 Tyhle škatulky nejsou náhodné. Opakují se. To je dobrá zpráva — na zkreslení, které se opakuje, se dá připravit.
               </p>
             </div>
-            <figure className="lg:col-span-7 flex flex-col">
-              <div className="relative aspect-square w-full overflow-hidden" style={{ background: "hsl(var(--burgundy))" }}>
+            <figure className="lg:col-span-5 flex flex-col">
+              <div className="relative aspect-[4/5] w-full overflow-hidden" style={{ background: "hsl(var(--burgundy))" }}>
                 <img
                   src={paintingTwins.url}
                   alt="Dva čtenáři téhož článku"
