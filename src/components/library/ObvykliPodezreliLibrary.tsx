@@ -611,7 +611,7 @@ const ObvykliPodezreliLibrary = () => {
               <PaintingFrame
                 url={paintingElderRocks.url}
                 alt="Starešina důkazů"
-                caption="„STAŘEŠINA DŮKAZŮ, STÁLE ČEKÁ, AŽ SI HO NĚKDO PŘEČETL“, KOMBINOVANÁ TECHNIKA A TRPĚLIVOST, 2026"
+                caption="„STAŘEŠINA DŮKAZŮ, STÁLE ČEKÁ, AŽ SI HO NĚKDO PŘEČTE“, KOMBINOVANÁ TECHNIKA A TRPĚLIVOST, 2026"
                 filter="contrast(1.04) brightness(0.95) saturate(0.85)"
                 orientation="portrait"
               />
