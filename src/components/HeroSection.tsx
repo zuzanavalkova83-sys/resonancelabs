@@ -101,10 +101,6 @@ const HeroSection = () => {
               className="text-lg sm:text-xl text-foreground/55 leading-snug mt-8 max-w-2xl sm:whitespace-nowrap"
             >
               Strategic communication for science. Narrative risk mapping.
-              <br />
-              <span className="text-foreground/35 whitespace-normal">
-                Write your story before the story writes itself for you.
-              </span>
             </motion.p>
 
             <motion.p
@@ -113,23 +109,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 1.02 }}
               className="text-base sm:text-lg text-foreground/70 leading-relaxed mt-6 max-w-xl"
             >
-              We help research and science teams see how their work could be
-              misread or twisted in public — and prepare for it before it
-              happens.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1.1 }}
-              className="text-[14px] text-foreground/40 leading-relaxed mt-4 max-w-md"
-            >
-              Resonance Labs is a communications practice for research, clinical,
-              and science-led organisations. We chart how serious work is likely to be{" "}
-              <span className="inline-block">
-                twisted
-              </span>{" "}
-              in public, and help you get there first.
+              We help research teams see how their work could be twisted in public — and prepare before it happens.
             </motion.p>
 
             <motion.div
