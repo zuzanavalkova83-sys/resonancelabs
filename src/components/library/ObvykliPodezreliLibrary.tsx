@@ -368,7 +368,7 @@ const ObvykliPodezreliLibrary = () => {
                 Příběhy a stereotypy, které dokáží pohltit váš výzkum dřív, než si ho lidé vůbec stihnou přečíst (pokud je to vůbec napadne). Sleduji je, třídím a zkoumám, odkud se bere panika, skandál, ideologické hádky, nezřízené nadšení nebo prostě jen hluk.
               </p>
               <p className="text-[17px] leading-[1.7] max-w-[38ch]" style={{ color: "hsl(30 10% 55%)" }}>
-                Tyhle škatulky nejsou náhodné. Opakují se. To je dobrá zpráva — na zkreslení, které se opakuje, se dá připravit.
+                {"\n"}
               </p>
             </div>
             <div className="lg:col-span-6">
