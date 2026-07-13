@@ -107,7 +107,7 @@ const Navbar = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
             className="fixed inset-0 z-40 md:hidden"
-            style={{ background: "hsl(var(--navy))" }}
+            style={{ background: "hsl(var(--background))" }}
           >
             <div className="section-padding pt-24 h-full flex flex-col">
               <div className="flex-1 flex flex-col items-start gap-8">
