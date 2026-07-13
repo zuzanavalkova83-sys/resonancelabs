@@ -16,6 +16,51 @@ import {
   type PatternFamily,
 } from "@/data/frameAtlas";
 
+/* Consistent painting frame — never crops through faces. */
+const PaintingFrame = ({
+  url,
+  alt,
+  caption,
+  filter,
+  orientation = "portrait",
+  bg = "hsl(var(--burgundy))",
+  captionColor = "hsl(30 12% 52%)",
+}: {
+  url: string;
+  alt: string;
+  caption: string;
+  filter?: string;
+  orientation?: "portrait" | "landscape";
+  bg?: string;
+  captionColor?: string;
+}) => (
+  <figure className="flex flex-col w-full">
+    <div
+      className={
+        "relative w-full overflow-hidden " +
+        (orientation === "landscape" ? "aspect-[3/2]" : "aspect-[4/5]")
+      }
+      style={{ background: bg }}
+    >
+      <img
+        src={url}
+        alt={alt}
+        draggable={false}
+        className="absolute inset-0 w-full h-full object-contain"
+        style={{ filter }}
+      />
+    </div>
+    <figcaption className="mt-4">
+      <p
+        className="font-heading text-[10.5px] uppercase tracking-[0.22em] leading-[1.55] max-w-[44ch]"
+        style={{ color: captionColor }}
+      >
+        {caption}
+      </p>
+    </figcaption>
+  </figure>
+);
+
 type BrowseMode = "family" | "emotion" | "mechanism" | "terrain";
 const editorialFor = (id: string): FrameEditorial | undefined =>
   FRAME_EDITORIAL[id];
@@ -507,25 +552,15 @@ const UsualSuspects = () => {
                 They are not random. They repeat. Which is good news, actually. Repeated nonsense is easier to recognise.
               </p>
             </div>
-            <figure className="lg:col-span-6 flex flex-col">
-              <div className="relative aspect-[3/4] w-full overflow-hidden" style={{ background: "hsl(var(--burgundy))" }}>
-                <img
-                  src={paintingTwins.url}
-                  alt="Two women, twin portraits in opposing fields of red and blue"
-                  className="w-full h-full object-cover"
-                  draggable={false}
-                  style={{ filter: "contrast(1.03) brightness(0.96) saturate(0.88)" }}
-                />
-              </div>
-              <figcaption className="mt-5">
-                <p
-                  className="font-heading text-[10.5px] md:text-[11px] uppercase tracking-[0.28em] leading-[1.55]"
-                  style={{ color: "hsl(30 12% 50%)" }}
-                >
-                  "TWO READERS OF THE SAME PAPER, ARRIVING AT OPPOSITE CONCLUSIONS", OIL ON DISAGREEMENT, 2026
-                </p>
-              </figcaption>
-            </figure>
+            <div className="lg:col-span-6">
+              <PaintingFrame
+                url={paintingTwins.url}
+                alt="Two women, twin portraits in opposing fields of red and blue"
+                caption='"TWO READERS OF THE SAME PAPER, ARRIVING AT OPPOSITE CONCLUSIONS", OIL ON DISAGREEMENT, 2026'
+                filter="contrast(1.03) brightness(0.96) saturate(0.88)"
+                orientation="portrait"
+              />
+            </div>
           </div>
 
           {/* Stats + browse modes */}
@@ -563,40 +598,20 @@ const UsualSuspects = () => {
       {/* ── Interpretive layer ── */}
       <NarrativeBiteLayer />
 
-      {/* ── Full-bleed painting interlude ── */}
-      <figure
-        className="relative w-full"
-        style={{ background: "hsl(var(--wine-deep))" }}
-      >
-        <div className="relative w-full overflow-hidden" style={{ maxHeight: "78vh" }}>
-          <img
-            src={paintingElderSea.url}
+      {/* ── Painting interlude — landscape card, contained, no cropping through faces ── */}
+      <div style={{ background: "hsl(var(--wine-deep))" }}>
+        <div className="max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-24 sm:py-32">
+          <PaintingFrame
+            url={paintingElderSea.url}
             alt="Elder figure contemplating the sea under an orange sky"
-            className="w-full h-full object-cover"
-            draggable={false}
-            style={{
-              maxHeight: "78vh",
-              filter: "contrast(1.04) brightness(0.92) saturate(0.85) hue-rotate(-10deg)",
-            }}
-          />
-          <div
-            className="absolute inset-0 pointer-events-none mix-blend-color"
-            style={{
-              background:
-                "linear-gradient(135deg, hsl(var(--wine-deep) / 0.35), hsl(var(--burgundy) / 0.2) 60%, hsl(var(--wine) / 0.3))",
-            }}
+            caption='"MAN WATCHING HIS FINDING DRIFT OUT TO SEA, JUST AS HE FEARED IT WOULD", OIL ON DRIFT, 2026'
+            filter="contrast(1.04) brightness(0.92) saturate(0.85) hue-rotate(-10deg)"
+            orientation="landscape"
+            bg="hsl(var(--wine-deep))"
+            captionColor="hsl(30 15% 62%)"
           />
         </div>
-        <figcaption className="max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-10 flex flex-col items-center text-center">
-          <div className="h-px w-12 mb-4" style={{ background: "hsl(var(--brass) / 0.35)" }} />
-          <p
-            className="font-heading text-[12px] md:text-[13px] uppercase tracking-[0.22em] leading-[1.55] max-w-[44ch]"
-            style={{ color: "hsl(30 15% 60%)" }}
-          >
-            "MAN WATCHING HIS FINDING DRIFT OUT TO SEA, JUST AS HE FEARED IT WOULD", OIL ON DRIFT, 2026
-          </p>
-        </figcaption>
-      </figure>
+      </div>
 
       {/* ── Family view: alternating full-width sub-sections ── */}
       {mode === "family" && (
@@ -643,25 +658,15 @@ const UsualSuspects = () => {
             }}
           />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-            <figure className="lg:col-span-6">
-              <div className="relative aspect-[4/5] w-full overflow-hidden" style={{ background: "hsl(var(--burgundy))" }}>
-                <img
-                  src={paintingElderRocks.url}
-                  alt="Elder figure seated on red rocks under a deep blue sky"
-                  className="w-full h-full object-cover"
-                  draggable={false}
-                  style={{ filter: "contrast(1.04) brightness(0.95) saturate(0.85)" }}
-                />
-              </div>
-              <figcaption className="mt-5">
-                <p
-                  className="font-heading text-[10.5px] md:text-[11px] uppercase tracking-[0.28em] leading-[1.55] max-w-[36ch]"
-                  style={{ color: "hsl(30 12% 50%)" }}
-                >
-                  "ELDER STATESMAN OF EVIDENCE, STILL WAITING TO BE READ", MIXED MEDIA AND PATIENCE, 2026
-                </p>
-              </figcaption>
-            </figure>
+            <div className="lg:col-span-6">
+              <PaintingFrame
+                url={paintingElderRocks.url}
+                alt="Elder figure seated on red rocks under a deep blue sky"
+                caption='"ELDER STATESMAN OF EVIDENCE, STILL WAITING TO BE READ", MIXED MEDIA AND PATIENCE, 2026'
+                filter="contrast(1.04) brightness(0.95) saturate(0.85)"
+                orientation="portrait"
+              />
+            </div>
             <div className="lg:col-span-6 space-y-6 max-w-[40rem]">
               <p
                 className="font-heading text-[11px] tracking-[0.28em] uppercase font-medium"
