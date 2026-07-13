@@ -178,7 +178,55 @@ const SectionNumeral = ({ n }: { n: string }) => (
   </div>
 );
 
+/* Consistent painting frame — never crops through faces.
+   Portrait: 4:5 shape, object-contain, wine-deep bg letterbox.
+   Landscape: 3:2 shape, object-contain, wine-deep bg. */
+const PaintingFrame = ({
+  url,
+  alt,
+  caption,
+  filter,
+  orientation = "portrait",
+  bg = "hsl(var(--burgundy))",
+  captionColor = "hsl(30 12% 52%)",
+}: {
+  url: string;
+  alt: string;
+  caption: string;
+  filter?: string;
+  orientation?: "portrait" | "landscape";
+  bg?: string;
+  captionColor?: string;
+}) => (
+  <figure className="flex flex-col w-full">
+    <div
+      className={
+        "relative w-full overflow-hidden " +
+        (orientation === "landscape" ? "aspect-[3/2]" : "aspect-[4/5]")
+      }
+      style={{ background: bg }}
+    >
+      <img
+        src={url}
+        alt={alt}
+        draggable={false}
+        className="absolute inset-0 w-full h-full object-contain"
+        style={{ filter }}
+      />
+    </div>
+    <figcaption className="mt-4">
+      <p
+        className="font-heading text-[10.5px] uppercase tracking-[0.22em] leading-[1.55] max-w-[44ch]"
+        style={{ color: captionColor }}
+      >
+        {caption}
+      </p>
+    </figcaption>
+  </figure>
+);
+
 const EditorialSectionBlock = ({ s, i }: { s: EditorialSection; i: number }) => {
+  // Alternating rhythm: only count sections that carry a painting.
   const paintingLeft = i % 2 === 1;
   const textCol = (
     <div className="max-w-[40rem]">
@@ -207,46 +255,65 @@ const EditorialSectionBlock = ({ s, i }: { s: EditorialSection; i: number }) => 
     </div>
   );
 
-  const visualCol = s.painting ? (
-    <figure className="flex flex-col">
-      <div
-        className="relative aspect-[4/5] w-full overflow-hidden"
-        style={{ background: "hsl(var(--burgundy))" }}
-      >
-        <img
-          src={s.painting.url}
-          alt={s.painting.alt}
-          draggable={false}
-          className="w-full h-full object-cover"
-          style={{ filter: s.painting.filter }}
-        />
+  // No painting → clean text-only block with subtle numeral marker.
+  if (!s.painting) {
+    return (
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+        <div className="lg:col-span-2 hidden lg:block">
+          <div
+            aria-hidden
+            className="font-display leading-none select-none"
+            style={{
+              color: "hsl(var(--wine) / 0.22)",
+              fontSize: "clamp(4rem, 8vw, 7rem)",
+              letterSpacing: "-0.02em",
+            }}
+          >
+            {s.index}
+          </div>
+        </div>
+        <div className="lg:col-span-10">{textCol}</div>
       </div>
-      <figcaption className="mt-4">
-        <p
-          className="font-heading text-[10.5px] uppercase tracking-[0.22em] leading-[1.55] max-w-[36ch]"
-          style={{ color: "hsl(30 12% 52%)" }}
-        >
-          {s.painting.caption}
-        </p>
-      </figcaption>
-    </figure>
-  ) : (
-    <div className="flex items-start justify-center">
-      <SectionNumeral n={s.index} />
-    </div>
-  );
+    );
+  }
 
+  // Template B — landscape painting spans reading column, text below.
+  if (s.painting.orientation === "landscape") {
+    return (
+      <div className="max-w-[52rem] mx-auto">
+        <PaintingFrame
+          url={s.painting.url}
+          alt={s.painting.alt}
+          caption={s.painting.caption}
+          filter={s.painting.filter}
+          orientation="landscape"
+        />
+        <div className="mt-12 sm:mt-16">{textCol}</div>
+      </div>
+    );
+  }
+
+  // Template A — portrait, 50/50 split, alternating side.
+  const visualCol = (
+    <PaintingFrame
+      url={s.painting.url}
+      alt={s.painting.alt}
+      caption={s.painting.caption}
+      filter={s.painting.filter}
+      orientation="portrait"
+    />
+  );
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
       {paintingLeft ? (
         <>
-          <div className="lg:col-span-5 order-2 lg:order-1">{visualCol}</div>
-          <div className="lg:col-span-7 order-1 lg:order-2">{textCol}</div>
+          <div className="lg:col-span-6 order-2 lg:order-1">{visualCol}</div>
+          <div className="lg:col-span-6 order-1 lg:order-2 flex lg:justify-start">{textCol}</div>
         </>
       ) : (
         <>
-          <div className="lg:col-span-7 order-1">{textCol}</div>
-          <div className="lg:col-span-5 order-2">{visualCol}</div>
+          <div className="lg:col-span-6 order-1 flex lg:justify-end">{textCol}</div>
+          <div className="lg:col-span-6 order-2">{visualCol}</div>
         </>
       )}
     </div>
