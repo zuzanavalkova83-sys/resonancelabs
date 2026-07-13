@@ -458,9 +458,9 @@ const UsualSuspects = () => {
     <section className="relative overflow-hidden">
       {/* ── Hero header — ivory warm ── */}
       <div className="section-ivory-warm editorial-grain relative">
-        <div className="relative max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-28 sm:py-36">
-          <div className="mb-20 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-            <div className="lg:col-span-5">
+        <div className="relative max-w-[80rem] mx-auto px-6 sm:px-10 lg:px-14 py-28 sm:py-36 lg:py-44">
+          <div className="mb-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            <div className="lg:col-span-6 max-w-[40rem]">
               <div className="mb-6 inline-flex items-center gap-1 p-1 border" style={{ borderColor: "hsl(var(--wine) / 0.25)", background: "hsl(var(--parchment) / 0.5)" }}>
                 <span
                   aria-current="page"
@@ -484,7 +484,7 @@ const UsualSuspects = () => {
                 Living Field Guide · No. 01
               </p>
               <h2
-                className="font-display text-6xl sm:text-7xl md:text-8xl tracking-wider leading-[0.85] mb-10"
+                className="font-display text-6xl sm:text-7xl md:text-8xl tracking-wider leading-[0.88] mb-8"
                 style={{ color: "hsl(340 30% 25%)" }}
               >
                 <span>The usual</span>
@@ -499,16 +499,16 @@ const UsualSuspects = () => {
                   / Obvyklí podezřelí
                 </span>
               </h2>
-              <div className="w-16 h-[1px] mb-8" style={{ background: "hsl(30 15% 70%)" }} />
-              <p className="text-xl leading-relaxed max-w-xl mb-5 text-balance" style={{ color: "hsl(30 10% 42%)" }}>
+              <div className="w-16 h-[1px] mb-10" style={{ background: "hsl(30 15% 70%)" }} />
+              <p className="text-xl md:text-[22px] leading-[1.55] max-w-[38ch] mb-6" style={{ color: "hsl(30 10% 38%)" }}>
                 These are the recurring storylines used to twist science in public. We track them, group them, and study how they turn research into panic, miracle, scandal, ideology, or noise.
               </p>
-              <p className="text-base leading-relaxed max-w-xl text-balance" style={{ color: "hsl(30 10% 58%)" }}>
+              <p className="text-[17px] leading-[1.7] max-w-[38ch]" style={{ color: "hsl(30 10% 55%)" }}>
                 They are not random. They repeat. Which is good news, actually. Repeated nonsense is easier to recognise.
               </p>
             </div>
-            <figure className="lg:col-span-7 flex flex-col">
-              <div className="relative aspect-square w-full overflow-hidden" style={{ background: "hsl(var(--burgundy))" }}>
+            <figure className="lg:col-span-6 flex flex-col">
+              <div className="relative aspect-[3/4] w-full overflow-hidden" style={{ background: "hsl(var(--burgundy))" }}>
                 <img
                   src={paintingTwins.url}
                   alt="Two women, twin portraits in opposing fields of red and blue"
@@ -517,10 +517,9 @@ const UsualSuspects = () => {
                   style={{ filter: "contrast(1.03) brightness(0.96) saturate(0.88)" }}
                 />
               </div>
-              <figcaption className="mt-5 flex flex-col items-center text-center">
-                <div className="h-px w-10 mb-3" style={{ background: "hsl(var(--wine) / 0.35)" }} />
+              <figcaption className="mt-5">
                 <p
-                  className="font-heading text-[11px] md:text-[12px] uppercase tracking-[0.22em] leading-[1.55] max-w-[46ch]"
+                  className="font-heading text-[10.5px] md:text-[11px] uppercase tracking-[0.28em] leading-[1.55]"
                   style={{ color: "hsl(30 12% 50%)" }}
                 >
                   "TWO READERS OF THE SAME PAPER, ARRIVING AT OPPOSITE CONCLUSIONS", OIL ON DISAGREEMENT, 2026
@@ -530,8 +529,8 @@ const UsualSuspects = () => {
           </div>
 
           {/* Stats + browse modes */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-6">
-            <div className="flex flex-wrap gap-6 text-[13px] font-mono tracking-wide" style={{ color: "hsl(30 10% 58%)" }}>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+            <div className="flex flex-wrap gap-6 text-[12px] font-mono tracking-[0.15em] uppercase" style={{ color: "hsl(30 10% 58%)" }}>
               <span>{narrativeFrames.length} frames</span>
               <span>·</span>
               <span>{Object.keys(PATTERN_FAMILIES).length} families</span>
@@ -636,16 +635,16 @@ const UsualSuspects = () => {
 
       {/* ── Coda ── */}
       <div className="section-ivory-warm">
-        <div className="max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-20 sm:py-28">
+        <div className="max-w-[80rem] mx-auto px-6 sm:px-10 lg:px-14 py-28 sm:py-36 lg:py-44">
           <hr
             className="border-0 h-px mb-16"
             style={{
               background: "linear-gradient(90deg, transparent 0%, hsl(30 15% 78% / 0.5) 20%, hsl(30 15% 78% / 0.5) 80%, transparent 100%)",
             }}
           />
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-center">
-            <figure className="md:col-span-5">
-              <div className="relative aspect-square w-full overflow-hidden" style={{ background: "hsl(var(--burgundy))" }}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            <figure className="lg:col-span-6">
+              <div className="relative aspect-[4/5] w-full overflow-hidden" style={{ background: "hsl(var(--burgundy))" }}>
                 <img
                   src={paintingElderRocks.url}
                   alt="Elder figure seated on red rocks under a deep blue sky"
@@ -654,27 +653,26 @@ const UsualSuspects = () => {
                   style={{ filter: "contrast(1.04) brightness(0.95) saturate(0.85)" }}
                 />
               </div>
-              <figcaption className="mt-5 flex flex-col items-center text-center">
-                <div className="h-px w-10 mb-3" style={{ background: "hsl(var(--wine) / 0.35)" }} />
+              <figcaption className="mt-5">
                 <p
-                  className="font-heading text-[11px] md:text-[12px] uppercase tracking-[0.22em] leading-[1.55] max-w-[34ch]"
+                  className="font-heading text-[10.5px] md:text-[11px] uppercase tracking-[0.28em] leading-[1.55] max-w-[36ch]"
                   style={{ color: "hsl(30 12% 50%)" }}
                 >
                   "ELDER STATESMAN OF EVIDENCE, STILL WAITING TO BE READ", MIXED MEDIA AND PATIENCE, 2026
                 </p>
               </figcaption>
             </figure>
-            <div className="md:col-span-7 space-y-6">
+            <div className="lg:col-span-6 space-y-6 max-w-[40rem]">
               <p
-                className="font-heading text-[11px] tracking-[0.22em] uppercase font-medium"
+                className="font-heading text-[11px] tracking-[0.28em] uppercase font-medium"
                 style={{ color: "hsl(var(--wine))" }}
               >
                 A working document
               </p>
-              <p className="text-lg leading-[1.7] max-w-xl" style={{ color: "hsl(30 10% 42%)" }}>
+              <p className="text-[19px] sm:text-[20px] leading-[1.65]" style={{ color: "hsl(30 10% 38%)" }}>
                 This atlas is not exhaustive. It maps the recurring patterns we see most often. New frames emerge when old fears find new topics — but the underlying logic rarely changes.
               </p>
-              <p className="text-base leading-[1.75] max-w-xl" style={{ color: "hsl(30 10% 55%)" }}>
+              <p className="text-[16px] leading-[1.75]" style={{ color: "hsl(30 10% 55%)" }}>
                 The details change. The hooks do not. We keep watching.
               </p>
             </div>
