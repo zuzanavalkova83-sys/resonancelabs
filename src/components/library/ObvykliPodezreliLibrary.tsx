@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import paintingTwins from "@/assets/suspects-twins.png.asset.json";
 import paintingElderSea from "@/assets/suspects-elder-sea.png.asset.json";
