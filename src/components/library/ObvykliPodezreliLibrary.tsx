@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import paintingTwins from "@/assets/suspects-twins.png.asset.json";
 import paintingElderSea from "@/assets/suspects-elder-sea.png.asset.json";
@@ -99,13 +101,14 @@ const EDITORIAL_SECTIONS: { heading: string; body: string }[] = [
 ];
 
 const ObvykliPodezreliLibrary = () => {
+  const [noteOpen, setNoteOpen] = useState(false);
   return (
     <section className="relative overflow-hidden">
       {/* ── Hero header — ivory warm ── */}
       <div className="section-ivory-warm editorial-grain relative">
         <div className="relative max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-28 sm:py-36">
-          <div className="mb-20 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-            <div className="lg:col-span-5">
+          <div className="mb-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="lg:col-span-7">
               <div className="mb-6 inline-flex items-center gap-1 p-1 border" style={{ borderColor: "hsl(var(--wine) / 0.25)", background: "hsl(var(--parchment) / 0.5)" }}>
                 <Link
                   to="/the-usual-suspects"
@@ -129,29 +132,27 @@ const ObvykliPodezreliLibrary = () => {
                 Terénní průvodce · č. 01
               </p>
               <h1
-                className="font-display text-6xl sm:text-7xl md:text-8xl tracking-wider leading-[0.85] mb-10"
+                className="font-display text-5xl sm:text-6xl md:text-7xl tracking-wider leading-[0.9] mb-8"
                 style={{ color: "hsl(340 30% 25%)" }}
               >
-                <span>Obvyklí</span>
-                <br />
-                <span>podezřelí</span>
+                Obvyklí podezřelí
                 <span
-                  className="block font-display text-2xl sm:text-3xl md:text-4xl tracking-wider leading-[1] mt-4 italic"
+                  className="block font-display text-xl sm:text-2xl md:text-3xl tracking-wider leading-[1] mt-4 italic font-normal"
                   style={{ color: "hsl(340 20% 45%)" }}
                 >
                   / The usual suspects
                 </span>
               </h1>
               <div className="w-16 h-[1px] mb-8" style={{ background: "hsl(30 15% 70%)" }} />
-              <p className="text-xl leading-relaxed max-w-xl mb-5 text-balance" style={{ color: "hsl(30 10% 42%)" }}>
+              <p className="text-lg md:text-xl leading-[1.55] max-w-[52ch] mb-5" style={{ color: "hsl(30 10% 42%)" }}>
                 Příběhy a stereotypy, které dokáží pohltit váš výzkum dřív, než si ho lidé vůbec stihnou přečíst (pokud je to vůbec napadne). Sleduji je, třídím a zkoumám, odkud se bere panika, skandál, ideologické hádky, nezřízené nadšení nebo prostě jen hluk.
               </p>
-              <p className="text-base leading-relaxed max-w-xl text-balance" style={{ color: "hsl(30 10% 58%)" }}>
+              <p className="text-base leading-[1.6] max-w-[52ch]" style={{ color: "hsl(30 10% 58%)" }}>
                 Tyhle škatulky nejsou náhodné. Opakují se. To je dobrá zpráva — na zkreslení, které se opakuje, se dá připravit.
               </p>
             </div>
-            <figure className="lg:col-span-7 flex flex-col">
-              <div className="relative aspect-square w-full overflow-hidden" style={{ background: "hsl(var(--burgundy))" }}>
+            <figure className="lg:col-span-5 flex flex-col">
+              <div className="relative aspect-[4/5] w-full overflow-hidden" style={{ background: "hsl(var(--burgundy))" }}>
                 <img
                   src={paintingTwins.url}
                   alt="Dva čtenáři téhož článku"
@@ -199,14 +200,38 @@ const ObvykliPodezreliLibrary = () => {
             >
               Podceňovat veřejnost a její předporozumění tématu je strategická chyba.
             </p>
-            <h2
-              className="font-display text-3xl sm:text-4xl md:text-5xl tracking-wider leading-[0.9] mb-10"
-              style={{ color: "hsl(340 30% 25%)" }}
+            <button
+              type="button"
+              onClick={() => setNoteOpen((v) => !v)}
+              aria-expanded={noteOpen}
+              aria-controls="edicni-poznamka-content"
+              className="group flex items-start gap-5 text-left w-full mb-4 transition-opacity hover:opacity-80"
             >
-              Kde se berou příběhy, které křiví vědu
-            </h2>
+              <h2
+                className="font-display text-3xl sm:text-4xl md:text-5xl tracking-wider leading-[0.95] flex-1"
+                style={{ color: "hsl(340 30% 25%)" }}
+              >
+                Kde se berou příběhy, které křiví vědu
+              </h2>
+              <ChevronDown
+                className="w-7 h-7 mt-2 shrink-0 transition-transform duration-300"
+                style={{
+                  color: "hsl(var(--wine))",
+                  transform: noteOpen ? "rotate(180deg)" : "rotate(0deg)",
+                }}
+                aria-hidden
+              />
+            </button>
+            <p
+              className="font-heading text-[11px] tracking-[0.22em] uppercase font-medium mb-10"
+              style={{ color: "hsl(30 15% 55%)" }}
+            >
+              {noteOpen ? "Sbalit" : "Rozbalit celou poznámku"}
+            </p>
           </div>
 
+          {noteOpen && (
+          <div id="edicni-poznamka-content" className="animate-editorial-in">
           <div className="max-w-xl space-y-6">
             {[
               "Občas to začíná nevinně, jako mírně povýšené divení: proč si lidé neposlechnou tu sympatickou vědkyni, a místo toho předjímají, jak to zase celé dopadne? Copak jsme to zkreslování a podezírání neviděli za pandemie? A nevídáme je čím dál častěji i dnes, kdy se zpochybňuje kdeco od ochrany před sluncem až po očkování proti spalničkám?",
@@ -249,6 +274,8 @@ const ObvykliPodezreliLibrary = () => {
               </p>
             </div>
           </div>
+          </div>
+          )}
         </div>
       </div>
 
