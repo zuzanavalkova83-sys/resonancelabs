@@ -514,36 +514,7 @@ const ObvykliPodezreliLibrary = () => {
         </div>
       </div>
 
-      {/* ── Full-bleed painting interlude ── */}
-      <figure className="relative w-full" style={{ background: "hsl(var(--wine-deep))" }}>
-        <div className="relative w-full overflow-hidden" style={{ maxHeight: "78vh" }}>
-          <img
-            src={paintingElderSea.url}
-            alt="Postava rozjímající nad mořem"
-            className="w-full h-full object-cover"
-            draggable={false}
-            style={{
-              maxHeight: "78vh",
-              filter: "contrast(1.04) brightness(0.92) saturate(0.85) hue-rotate(-10deg)",
-            }}
-          />
-          <div
-            className="absolute inset-0 pointer-events-none mix-blend-color"
-            style={{
-              background:
-                "linear-gradient(135deg, hsl(var(--wine-deep) / 0.35), hsl(var(--burgundy) / 0.2) 60%, hsl(var(--wine) / 0.3))",
-            }}
-          />
-        </div>
-        <figcaption className="max-w-[80rem] mx-auto px-6 sm:px-10 lg:px-14 py-10">
-          <p
-            className="font-heading text-[10.5px] md:text-[11px] uppercase tracking-[0.28em] leading-[1.55] max-w-[44ch]"
-            style={{ color: "hsl(30 15% 62%)" }}
-          >
-            „POSTAVA ROZJÍMAJÍCÍ NAD MOŘEM, ZATÍMCO JEJÍ ZJIŠTĚNÍ ODPLOUVÁ“, OLEJ NA PROUDU, 2026
-          </p>
-        </figcaption>
-      </figure>
+      {/* (Full-bleed interlude removed — painting now lives inline in section 03 as landscape card, no cropping through faces.) */}
 
       {/* ── Frame grid ── */}
       <div style={{ background: "hsl(var(--wine-deep))" }}>
@@ -636,25 +607,15 @@ const ObvykliPodezreliLibrary = () => {
             }}
           />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-            <figure className="lg:col-span-6">
-              <div className="relative aspect-[4/5] w-full overflow-hidden" style={{ background: "hsl(var(--burgundy))" }}>
-                <img
-                  src={paintingElderRocks.url}
-                  alt="Starešina důkazů"
-                  className="w-full h-full object-cover"
-                  draggable={false}
-                  style={{ filter: "contrast(1.04) brightness(0.95) saturate(0.85)" }}
-                />
-              </div>
-              <figcaption className="mt-5">
-                <p
-                  className="font-heading text-[10.5px] md:text-[11px] uppercase tracking-[0.28em] leading-[1.55] max-w-[36ch]"
-                  style={{ color: "hsl(30 12% 50%)" }}
-                >
-                  „STAŘEŠINA DŮKAZŮ, STÁLE ČEKÁ, AŽ SI HO NĚKDO PŘEČTE“, KOMBINOVANÁ TECHNIKA A TRPĚLIVOST, 2026
-                </p>
-              </figcaption>
-            </figure>
+            <div className="lg:col-span-6">
+              <PaintingFrame
+                url={paintingElderRocks.url}
+                alt="Starešina důkazů"
+                caption="„STAŘEŠINA DŮKAZŮ, STÁLE ČEKÁ, AŽ SI HO NĚKDO PŘEČETL“, KOMBINOVANÁ TECHNIKA A TRPĚLIVOST, 2026"
+                filter="contrast(1.04) brightness(0.95) saturate(0.85)"
+                orientation="portrait"
+              />
+            </div>
             <div className="lg:col-span-6 space-y-6 max-w-[40rem]">
               <p
                 className="font-heading text-[11px] tracking-[0.28em] uppercase font-medium"
