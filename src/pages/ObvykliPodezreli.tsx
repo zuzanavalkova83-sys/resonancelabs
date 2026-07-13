@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import ObvykliPodezreliLibrary from "@/components/library/ObvykliPodezreliLibrary";
 
