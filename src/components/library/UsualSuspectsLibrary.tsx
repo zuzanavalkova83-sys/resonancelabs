@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
 import { narrativeFrames, NarrativeFrame } from "@/data/narrativeFrames";
 import NarrativeBiteLayer from "@/components/library/NarrativeBiteLayer";
@@ -445,6 +446,22 @@ const UsualSuspects = () => {
         <div className="relative max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-28 sm:py-36">
           <div className="mb-20 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
             <div className="lg:col-span-5">
+              <div className="mb-6 inline-flex items-center gap-1 p-1 border" style={{ borderColor: "hsl(var(--wine) / 0.25)", background: "hsl(var(--parchment) / 0.5)" }}>
+                <span
+                  aria-current="page"
+                  className="font-heading text-[10.5px] tracking-[0.22em] uppercase font-medium px-3 py-1.5"
+                  style={{ background: "hsl(var(--wine))", color: "hsl(35 30% 92%)" }}
+                >
+                  EN
+                </span>
+                <Link
+                  to="/obvykli-podezreli"
+                  className="font-heading text-[10.5px] tracking-[0.22em] uppercase font-medium px-3 py-1.5 transition-colors hover:text-[hsl(var(--wine))]"
+                  style={{ color: "hsl(30 10% 45%)" }}
+                >
+                  CZ
+                </Link>
+              </div>
               <p
                 className="font-heading text-[11px] tracking-[0.22em] uppercase font-medium mb-6"
                 style={{ color: "hsl(var(--wine))" }}
@@ -459,6 +476,12 @@ const UsualSuspects = () => {
                 <br />
                 <span className="inline-block relative" style={glitchStyle(glitch, "strong")}>
                   suspects
+                </span>
+                <span
+                  className="block font-display text-2xl sm:text-3xl md:text-4xl tracking-wider leading-[1] mt-4 italic"
+                  style={{ color: "hsl(340 20% 45%)" }}
+                >
+                  / Obvyklí podezřelí
                 </span>
               </h2>
               <div className="w-16 h-[1px] mb-8" style={{ background: "hsl(30 15% 70%)" }} />
