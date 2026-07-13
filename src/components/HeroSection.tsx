@@ -110,6 +110,17 @@ const HeroSection = () => {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1.02 }}
+              className="text-base sm:text-lg text-foreground/70 leading-relaxed mt-6 max-w-xl"
+            >
+              We help research and science teams see how their work could be
+              misread or twisted in public — and prepare for it before it
+              happens.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.1 }}
               className="text-[14px] text-foreground/40 leading-relaxed mt-4 max-w-md"
             >
