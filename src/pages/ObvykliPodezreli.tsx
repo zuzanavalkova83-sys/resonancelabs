@@ -46,10 +46,10 @@ const ObvykliPodezreli = () => {
             className="font-display text-[3rem] md:text-[4.5rem] lg:text-[5.5rem] tracking-wider leading-[0.9] mb-10"
             style={{ color: "hsl(35 30% 92%)" }}
           >
-            Chcete se v problému zorientovat?
+            Chcete se v tématu lépe zorientovat?
           </h2>
           <p className="text-[18px] md:text-[19px] leading-[1.7] mb-4 max-w-[40rem] mx-auto" style={{ color: "hsl(30 15% 72%)" }}>
-            Školím vědce, komunikační týmy a vedení institucí v tom, jak rozpoznat narativní pasti dřív, než sklapnou — a jak připravit sdělení, které se hůř zkresluje. Od přednášky přes půldenní workshop až po dvoudenní simulaci.
+            Školím vědce, komunikační týmy i vedení institucí v tom, jak rozpoznat narativní pasti dřív než sklapnou — a jak připravit sdělení, které se hůř zkresluje. Přednášky, půldenní workshopy, kurzy i dvoudenní simulace.
           </p>
           <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-5">
             <a
