@@ -200,14 +200,38 @@ const ObvykliPodezreliLibrary = () => {
             >
               Podceňovat veřejnost a její předporozumění tématu je strategická chyba.
             </p>
-            <h2
-              className="font-display text-3xl sm:text-4xl md:text-5xl tracking-wider leading-[0.9] mb-10"
-              style={{ color: "hsl(340 30% 25%)" }}
+            <button
+              type="button"
+              onClick={() => setNoteOpen((v) => !v)}
+              aria-expanded={noteOpen}
+              aria-controls="edicni-poznamka-content"
+              className="group flex items-start gap-5 text-left w-full mb-4 transition-opacity hover:opacity-80"
             >
-              Kde se berou příběhy, které křiví vědu
-            </h2>
+              <h2
+                className="font-display text-3xl sm:text-4xl md:text-5xl tracking-wider leading-[0.95] flex-1"
+                style={{ color: "hsl(340 30% 25%)" }}
+              >
+                Kde se berou příběhy, které křiví vědu
+              </h2>
+              <ChevronDown
+                className="w-7 h-7 mt-2 shrink-0 transition-transform duration-300"
+                style={{
+                  color: "hsl(var(--wine))",
+                  transform: noteOpen ? "rotate(180deg)" : "rotate(0deg)",
+                }}
+                aria-hidden
+              />
+            </button>
+            <p
+              className="font-heading text-[11px] tracking-[0.22em] uppercase font-medium mb-10"
+              style={{ color: "hsl(30 15% 55%)" }}
+            >
+              {noteOpen ? "Sbalit" : "Rozbalit celou poznámku"}
+            </p>
           </div>
 
+          {noteOpen && (
+          <div id="edicni-poznamka-content" className="animate-editorial-in">
           <div className="max-w-xl space-y-6">
             {[
               "Občas to začíná nevinně, jako mírně povýšené divení: proč si lidé neposlechnou tu sympatickou vědkyni, a místo toho předjímají, jak to zase celé dopadne? Copak jsme to zkreslování a podezírání neviděli za pandemie? A nevídáme je čím dál častěji i dnes, kdy se zpochybňuje kdeco od ochrany před sluncem až po očkování proti spalničkám?",
@@ -250,6 +274,8 @@ const ObvykliPodezreliLibrary = () => {
               </p>
             </div>
           </div>
+          </div>
+          )}
         </div>
       </div>
 
