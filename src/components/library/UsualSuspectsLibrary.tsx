@@ -549,7 +549,7 @@ const UsualSuspects = () => {
                 These are the recurring storylines used to twist science in public. We track them, group them, and study how they turn research into panic, miracle, scandal, ideology, or noise.
               </p>
               <p className="text-[17px] leading-[1.7] max-w-[38ch]" style={{ color: "hsl(30 10% 55%)" }}>
-                They are not random. They repeat. Which is good news, actually. Repeated nonsense is easier to recognise.
+                {"\n"}
               </p>
             </div>
             <div className="lg:col-span-6">
