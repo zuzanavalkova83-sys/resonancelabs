@@ -11,7 +11,9 @@ export type PatternFamily =
   | "institutional-betrayal"
   | "body-purity"
   | "control-surveillance"
-  | "identity-grievance";
+  | "identity-grievance"
+  | "one-cause-one-cure"
+  | "self-blame";
 
 export const PATTERN_FAMILIES: Record<
   PatternFamily,
@@ -47,6 +49,16 @@ export const PATTERN_FAMILIES: Record<
     description:
       "These frames weaponise belonging. Research becomes an attack on a way of life. Evidence becomes ideology. Questions become threats.",
   },
+  "one-cause-one-cure": {
+    label: "One cause, one cure",
+    description:
+      "These frames collapse all of disease into a single villain and a single fix. Name one culprit — sugar, seed oils, inflammation — and sell one protocol as salvation. Discipline becomes virtue, and getting sick becomes a failure of will.",
+  },
+  "self-blame": {
+    label: "It's your own fault",
+    description:
+      "These frames turn illness into a verdict on the patient. Your choices, your character, your unfelt feelings — something you did earned this. It comforts the onlooker and quietly loads the sick with guilt.",
+  },
 };
 
 // ── Browsing dimensions ─────────────────────────────────────
@@ -57,7 +69,10 @@ export type EmotionTag =
   | "Disgust"
   | "Distrust"
   | "Control"
-  | "Identity";
+  | "Identity"
+  | "Virtue"
+  | "Blame"
+  | "Guilt";
 
 export type MechanismTag =
   | "turns uncertainty into proof"
@@ -70,7 +85,12 @@ export type MechanismTag =
   | "turns nature into moral authority"
   | "turns commerce into science"
   | "turns data into surveillance"
-  | "turns pain into plot";
+  | "turns pain into plot"
+  | "turns one substance into the master cause"
+  | "reframes a lifestyle as a moral cure"
+  | "misreads metabolism as a cure"
+  | "converts risk into moral desert"
+  | "turns disease into a psychic verdict";
 
 export type TerrainTag =
   | "health & medicine"
@@ -78,7 +98,12 @@ export type TerrainTag =
   | "systems & technology"
   | "science & society"
   | "bodies & nature"
-  | "politics & identity";
+  | "politics & identity"
+  | "diet & disease"
+  | "diet & discipline"
+  | "cancer & metabolism"
+  | "bodies & blame"
+  | "mind & body";
 
 // ── Per-frame editorial hooks ───────────────────────────────
 export interface FrameEditorial {
@@ -494,6 +519,56 @@ export const FRAME_EDITORIAL: Record<string, FrameEditorial> = {
     terrain: "bodies & nature",
     family: "hope-merchants",
   },
+  F44: {
+    hookLine: "Collapses every disease into one dietary villain you must eliminate.",
+    hostileClaim: "Sugar — or seed oils, or gluten — is what's really making everyone sick.",
+    wantsBelief: "There is one hidden cause behind all illness, and avoiding it keeps you safe.",
+    clarifyFirst: "Single-cause stories are easy to remember, but disease is multi-factorial. One molecule rarely explains everything, and fear of a single food can crowd out the risk factors that actually matter.",
+    emotion: "Control",
+    mechanism: "turns one substance into the master cause",
+    terrain: "diet & disease",
+    family: "one-cause-one-cure",
+  },
+  F45: {
+    hookLine: "Sells one diet or regimen as the fix for everything.",
+    hostileClaim: "Go keto, carnivore, or fasting and your body will heal itself.",
+    wantsBelief: "One lifestyle law can cure what medicine only manages, and discipline is why you'll be spared.",
+    clarifyFirst: "Diet matters, but 'one protocol cures all' overpromises. When health becomes a test of willpower, people who get sick anyway are left feeling they simply didn't try hard enough.",
+    emotion: "Virtue",
+    mechanism: "reframes a lifestyle as a moral cure",
+    terrain: "diet & discipline",
+    family: "one-cause-one-cure",
+  },
+  F46: {
+    hookLine: "Claims you can starve a tumour by cutting sugar or carbs.",
+    hostileClaim: "Cancer feeds on sugar, so keto or fasting will starve it — no need for treatment.",
+    wantsBelief: "Disease is simply metabolic, so the right diet can replace medicine.",
+    clarifyFirst: "Tumour metabolism is a real field of research, but 'sugar feeds cancer, so starve it' is a dangerous oversimplification. Diet is not a substitute for treatment, and delaying care on this belief costs lives.",
+    emotion: "Control",
+    mechanism: "misreads metabolism as a cure",
+    terrain: "cancer & metabolism",
+    family: "one-cause-one-cure",
+  },
+  F47: {
+    hookLine: "Treats illness as the just punishment for how someone lived.",
+    hostileClaim: "They smoked, ate badly, didn't look after themselves — no wonder they got sick.",
+    wantsBelief: "Sick people earned it, so people like me are safe.",
+    clarifyFirst: "Risk factors are real, but blame is not prevention. Plenty of careful people get sick and plenty of careless ones don't, and shaming patients only isolates them when they most need support.",
+    emotion: "Blame",
+    mechanism: "converts risk into moral desert",
+    terrain: "bodies & blame",
+    family: "self-blame",
+  },
+  F48: {
+    hookLine: "Blames cancer on repressed emotions or unhealed trauma.",
+    hostileClaim: "Cancer is your body expressing the feelings you never let yourself feel.",
+    wantsBelief: "Illness is really psychological, so the right mindset could have prevented it.",
+    clarifyFirst: "Stress and wellbeing matter, but there is no 'cancer personality,' and trauma does not cause tumours. This story loads the sick with guilt for a disease they did not summon.",
+    emotion: "Guilt",
+    mechanism: "turns disease into a psychic verdict",
+    terrain: "mind & body",
+    family: "self-blame",
+  },
 };
 
 // ── Browsing views ──────────────────────────────────────────
@@ -505,6 +580,9 @@ export const EMOTION_TAGS: EmotionTag[] = [
   "Distrust",
   "Control",
   "Identity",
+  "Virtue",
+  "Blame",
+  "Guilt",
 ];
 
 export const MECHANISM_TAGS: MechanismTag[] = [
@@ -519,6 +597,11 @@ export const MECHANISM_TAGS: MechanismTag[] = [
   "turns commerce into science",
   "turns data into surveillance",
   "turns pain into plot",
+  "turns one substance into the master cause",
+  "reframes a lifestyle as a moral cure",
+  "misreads metabolism as a cure",
+  "converts risk into moral desert",
+  "turns disease into a psychic verdict",
 ];
 
 export const TERRAIN_TAGS: TerrainTag[] = [
@@ -528,4 +611,9 @@ export const TERRAIN_TAGS: TerrainTag[] = [
   "science & society",
   "bodies & nature",
   "politics & identity",
+  "diet & disease",
+  "diet & discipline",
+  "cancer & metabolism",
+  "bodies & blame",
+  "mind & body",
 ];
