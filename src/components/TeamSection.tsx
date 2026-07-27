@@ -115,12 +115,12 @@ const TeamSection = () => {
 
             <div className="space-y-5 max-w-[48ch]">
               <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: "hsl(30, 8%, 38%)" }}>
-                Her work as science comms strategist sits at the intersection of journalism, science, technology transfer, public commentary, and cultural intuition. She has interviewed voices such as Svetlana Alexievich, Azar Nafisi, Steven Pinker, and Hans-Georg Kräusslich. Zuzana has also worked across pharma, academia, the non-profit sector, FMCG, the arts, and the media, including as spokesperson for the Faculty of Arts at Charles University.
+                Her work as science comms strategist sits at the intersection of journalism, science, technology transfer, public commentary, and cultural intuition. She has given long-form interviews with Steven Pinker, Walter Isaacson, Svetlana Alexievich, Dan Ariely, Azar Nafisi, and Ruth Wodak. Zuzana has also worked across pharma, academia, the non-profit sector, FMCG, the arts, and the media, including as spokesperson for the Faculty of Arts at Charles University.
               </p>
               <p className="font-body text-[15px] md:text-[16px] leading-[1.7] font-normal" style={{ color: "hsl(30, 8%, 38%)" }}>
                 Over the past fifteen years she has written for
-                Hospodářské noviny, Deník N, Respekt, Seznam Zprávy, ČRo Plus
-                and others, and appeared on Czech television and public radio —
+                Hospodářské noviny, Lidové noviny, Právo, Deník N and Respekt,
+                plus columns for Radio Plus and television work for Czech TV —
                 spending a great deal of time thinking about what happens when
                 serious ideas meet minds in search of attention.
               </p>

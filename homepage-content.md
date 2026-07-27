@@ -233,9 +233,9 @@ Who's behind Resonance Labs
 - LinkedIn: https://www.linkedin.com/in/zuzana-valkova-science-comms
 
 **Bio:**
-Her work as science comms strategist sits at the intersection of journalism, science, technology transfer, public commentary, and cultural intuition. She has interviewed voices such as Svetlana Alexievich, Azar Nafisi, Steven Pinker, and Hans-Georg Kräusslich. Zuzana has also worked across pharma, academia, the non-profit sector, FMCG, the arts, and the media, including as spokesperson for the Faculty of Arts at Charles University.
+Her work as science comms strategist sits at the intersection of journalism, science, technology transfer, public commentary, and cultural intuition. She has given long-form interviews with Steven Pinker, Walter Isaacson, Svetlana Alexievich, Dan Ariely, Azar Nafisi, and Ruth Wodak. Zuzana has also worked across pharma, academia, the non-profit sector, FMCG, the arts, and the media, including as spokesperson for the Faculty of Arts at Charles University.
 
-Over the past fifteen years, she has written for major Czech national outlets, appeared on television and public radio, and spent a great deal of time thinking about what happens when serious ideas meet minds in search of attention.
+Over the past fifteen years, she has written for Hospodářské noviny, Lidové noviny, Právo, Deník N and Respekt, plus columns for Radio Plus and television work for Czech TV, and spent a great deal of time thinking about what happens when serious ideas meet minds in search of attention.
 
 She currently consults for IOCB Tech, IOCB Boston, and IOCB Prague, while also running to and fro to the kindergarten.
 
