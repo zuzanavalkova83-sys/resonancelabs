@@ -593,6 +593,36 @@ const UsualSuspects = () => {
               ))}
             </div>
           </div>
+
+          {/* Prominent link to live abstract demo */}
+          <div className="mt-12 sm:mt-14">
+            <a
+              href="https://nobullforscience.lovable.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 font-heading text-[13px] md:text-[14px] tracking-[0.12em] uppercase font-medium transition-colors duration-200 hover:opacity-75"
+              style={{ color: "hsl(var(--wine))" }}
+            >
+              Watch these frames go to work on a real abstract
+              <span className="text-[16px]" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          {/* A working document — moved from bottom */}
+          <div className="mt-16 sm:mt-20 max-w-[40rem]">
+            <p
+              className="font-heading text-[11px] tracking-[0.28em] uppercase font-medium mb-5"
+              style={{ color: "hsl(var(--wine))" }}
+            >
+              A working document
+            </p>
+            <p className="text-[17px] md:text-[18px] leading-[1.65] mb-5" style={{ color: "hsl(30 10% 38%)" }}>
+              This atlas is not exhaustive. It maps the recurring patterns we see most often. New frames emerge when old fears find new topics — but the underlying logic rarely changes.
+            </p>
+            <p className="text-[15px] md:text-[16px] leading-[1.75]" style={{ color: "hsl(30 10% 55%)" }}>
+              The details change. The hooks do not. We keep watching.
+            </p>
+          </div>
         </div>
       </div>
 
