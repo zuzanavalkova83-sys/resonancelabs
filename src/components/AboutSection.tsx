@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
+import trustPaper from "@/assets/Trust_Infrastructure_Gap_v3.pdf.asset.json";
 
 const categories = [
   {
@@ -111,6 +112,15 @@ const AboutSection = () => {
               “activism in a lab coat.” The research didn't change — the story
               around it did. Our job is to see that story coming.
             </p>
+            <a
+              href={trustPaper.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block font-body text-[14px] md:text-[15px] leading-[1.7] font-normal transition-colors duration-300 hover:text-[hsl(var(--brass))]"
+              style={{ color: 'hsl(35, 20%, 72%)' }}
+            >
+              Read the position paper — The Trust Infrastructure Gap →
+            </a>
           </div>
         </motion.div>
 
