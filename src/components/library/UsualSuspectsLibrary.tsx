@@ -549,8 +549,8 @@ const UsualSuspects = () => {
               <p className="text-xl md:text-[22px] leading-[1.55] max-w-[38ch] mb-6" style={{ color: "hsl(30 10% 38%)" }}>
                 These are the recurring storylines used to twist science in public. We track them, group them, and study how they turn research into panic, miracle, scandal, ideology, or noise.
               </p>
-              <p className="text-[17px] leading-[1.7] max-w-[38ch]" style={{ color: "hsl(30 10% 55%)" }}>
-                {"\n"}
+              <p className="text-[15px] md:text-[16px] leading-[1.7] max-w-[38ch]" style={{ color: "hsl(30 10% 55%)" }}>
+                Resonance Labs is a narrative intelligence practice for scientific and research-led organisations. This library is the raw material. Compiled and kept up to date by Zuzana Válková, science communications strategist, in Prague.
               </p>
             </div>
             <div className="lg:col-span-6">
