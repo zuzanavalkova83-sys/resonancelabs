@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
+import trustPaper from "@/assets/Trust_Infrastructure_Gap_v3.pdf.asset.json";
 
 const categories = [
   {
