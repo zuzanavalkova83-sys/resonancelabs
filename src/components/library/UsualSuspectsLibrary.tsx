@@ -549,8 +549,8 @@ const UsualSuspects = () => {
               <p className="text-xl md:text-[22px] leading-[1.55] max-w-[38ch] mb-6" style={{ color: "hsl(30 10% 38%)" }}>
                 These are the recurring storylines used to twist science in public. We track them, group them, and study how they turn research into panic, miracle, scandal, ideology, or noise.
               </p>
-              <p className="text-[17px] leading-[1.7] max-w-[38ch]" style={{ color: "hsl(30 10% 55%)" }}>
-                {"\n"}
+              <p className="text-[15px] md:text-[16px] leading-[1.7] max-w-[38ch]" style={{ color: "hsl(30 10% 55%)" }}>
+                Resonance Labs is a narrative intelligence practice for scientific and research-led organisations. This library is the raw material. Compiled and kept up to date by Zuzana Válková, science communications strategist, in Prague.
               </p>
             </div>
             <div className="lg:col-span-6">
@@ -592,6 +592,36 @@ const UsualSuspects = () => {
                 </button>
               ))}
             </div>
+          </div>
+
+          {/* Prominent link to live abstract demo */}
+          <div className="mt-12 sm:mt-14">
+            <a
+              href="https://nobullforscience.lovable.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 font-heading text-[13px] md:text-[14px] tracking-[0.12em] uppercase font-medium transition-colors duration-200 hover:opacity-75"
+              style={{ color: "hsl(var(--wine))" }}
+            >
+              Watch these frames go to work on a real abstract
+              <span className="text-[16px]" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          {/* A working document — moved from bottom */}
+          <div className="mt-16 sm:mt-20 max-w-[40rem]">
+            <p
+              className="font-heading text-[11px] tracking-[0.28em] uppercase font-medium mb-5"
+              style={{ color: "hsl(var(--wine))" }}
+            >
+              A working document
+            </p>
+            <p className="text-[17px] md:text-[18px] leading-[1.65] mb-5" style={{ color: "hsl(30 10% 38%)" }}>
+              This atlas is not exhaustive. It maps the recurring patterns we see most often. New frames emerge when old fears find new topics — but the underlying logic rarely changes.
+            </p>
+            <p className="text-[15px] md:text-[16px] leading-[1.75]" style={{ color: "hsl(30 10% 55%)" }}>
+              The details change. The hooks do not. We keep watching.
+            </p>
           </div>
         </div>
       </div>
@@ -733,20 +763,6 @@ const UsualSuspects = () => {
                 filter="contrast(1.04) brightness(0.95) saturate(0.85)"
                 orientation="portrait"
               />
-            </div>
-            <div className="lg:col-span-6 space-y-6 max-w-[40rem]">
-              <p
-                className="font-heading text-[11px] tracking-[0.28em] uppercase font-medium"
-                style={{ color: "hsl(var(--wine))" }}
-              >
-                A working document
-              </p>
-              <p className="text-[19px] sm:text-[20px] leading-[1.65]" style={{ color: "hsl(30 10% 38%)" }}>
-                This atlas is not exhaustive. It maps the recurring patterns we see most often. New frames emerge when old fears find new topics — but the underlying logic rarely changes.
-              </p>
-              <p className="text-[16px] leading-[1.75]" style={{ color: "hsl(30 10% 55%)" }}>
-                The details change. The hooks do not. We keep watching.
-              </p>
             </div>
           </div>
         </div>

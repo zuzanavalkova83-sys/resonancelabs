@@ -56,6 +56,12 @@ const NarrativeBiteLayer = () => {
             older human sensitivities: purity, danger, children, fertility,
             betrayal, identity, and control.
           </p>
+          <p
+            className="text-base leading-relaxed mb-8"
+            style={{ color: "hsl(30 10% 55%)" }}
+          >
+            None of this was invented from scratch. It sits on older work — Mary Douglas on purity and danger, moral foundations research, the inoculation literature on prebunking — pointed at the specific business of getting a finding into public without it being rewritten en route.
+          </p>
 
           <button
             onClick={() => setExpanded(!expanded)}
