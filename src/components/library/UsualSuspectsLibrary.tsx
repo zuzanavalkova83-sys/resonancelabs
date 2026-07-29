@@ -938,6 +938,19 @@ const UsualSuspects = () => {
         </div>
       </section>
 
+      {/* ── Painting centrepiece — after CTA, before footer ── */}
+      <div className="section-ivory-warm">
+        <div className="max-w-[68rem] mx-auto px-6 sm:px-10 lg:px-14 py-28 sm:py-36 lg:py-44">
+          <PaintingFrame
+            url={paintingElderRocks.url}
+            alt="Elder figure seated on red rocks under a deep blue sky"
+            caption='"ELDER STATESMAN OF EVIDENCE, STILL WAITING TO BE READ", MIXED MEDIA AND PATIENCE, 2026'
+            filter="contrast(1.04) brightness(0.95) saturate(0.85)"
+            orientation="landscape"
+          />
+        </div>
+      </div>
+
     </section>
   );
 };
