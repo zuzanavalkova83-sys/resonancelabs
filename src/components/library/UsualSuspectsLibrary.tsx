@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
@@ -315,6 +315,142 @@ const FrameTile = ({
 };
 
 /* ── Sub-section (one family group) ────────────────────────── */
+/* ── Carousel ──────────────────────────────────────────────── */
+const FrameCarousel = ({
+  frames,
+  activeId,
+  onSelect,
+  theme,
+  label,
+}: {
+  frames: (NarrativeFrame & { _editorialId?: string })[];
+  activeId: string | null;
+  onSelect: (id: string | null) => void;
+  theme: typeof SECTION_THEMES[number];
+  label: string;
+}) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [index, setIndex] = useState(0);
+  const total = frames.length;
+
+  const scrollToIndex = useCallback((i: number) => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const clamped = Math.max(0, Math.min(total - 1, i));
+    const child = container.children[clamped] as HTMLElement | undefined;
+    if (!child) return;
+    container.scrollTo({
+      left: child.offsetLeft - container.offsetLeft,
+      behavior: "smooth",
+    });
+    setIndex(clamped);
+  }, [total]);
+
+  const onScroll = () => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const children = Array.from(container.children) as HTMLElement[];
+    const base = container.scrollLeft + container.offsetLeft;
+    let closest = 0;
+    let min = Infinity;
+    children.forEach((c, i) => {
+      const d = Math.abs(c.offsetLeft - base);
+      if (d < min) {
+        min = d;
+        closest = i;
+      }
+    });
+    if (closest !== index) setIndex(closest);
+  };
+
+  const onKey = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowRight") {
+      e.preventDefault();
+      scrollToIndex(index + 1);
+    } else if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      scrollToIndex(index - 1);
+    } else if (e.key === "Home") {
+      e.preventDefault();
+      scrollToIndex(0);
+    } else if (e.key === "End") {
+      e.preventDefault();
+      scrollToIndex(total - 1);
+    }
+  };
+
+  return (
+    <div className="relative">
+      <div
+        ref={scrollRef}
+        onScroll={onScroll}
+        onKeyDown={onKey}
+        tabIndex={0}
+        role="region"
+        aria-label={`${label} — frame carousel`}
+        className="no-scrollbar flex overflow-x-auto snap-x snap-mandatory gap-6 sm:gap-8 pb-2 focus:outline-none scroll-smooth pr-16 sm:pr-24"
+      >
+        {frames.map((f) => {
+          const eid = f._editorialId ?? f.id;
+          return (
+            <div
+              key={eid}
+              className="snap-start shrink-0 basis-[86%] sm:basis-[62%] md:basis-[46%] lg:basis-[34%]"
+            >
+              <FrameTile
+                frame={f}
+                editorialId={eid}
+                isActive={activeId === eid}
+                onClick={() => onSelect(activeId === eid ? null : eid)}
+                theme={theme}
+              />
+            </div>
+          );
+        })}
+      </div>
+      <div className="mt-6 flex items-center justify-between gap-4">
+        <span
+          className="font-mono text-[12px] tracking-[0.22em]"
+          style={{ color: theme.meta }}
+          aria-live="polite"
+        >
+          {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+        </span>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => scrollToIndex(index - 1)}
+            disabled={index === 0}
+            aria-label="Previous frame"
+            className="w-10 h-10 flex items-center justify-center transition-opacity disabled:opacity-25 hover:opacity-80"
+            style={{
+              border: `1px solid ${theme.divider}`,
+              color: theme.body,
+              background: "transparent",
+            }}
+          >
+            <span aria-hidden="true" className="text-[18px] leading-none">‹</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToIndex(index + 1)}
+            disabled={index >= total - 1}
+            aria-label="Next frame"
+            className="w-10 h-10 flex items-center justify-center transition-opacity disabled:opacity-25 hover:opacity-80"
+            style={{
+              border: `1px solid ${theme.divider}`,
+              color: theme.body,
+              background: "transparent",
+            }}
+          >
+            <span aria-hidden="true" className="text-[18px] leading-none">›</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const FamilySubSection = ({
   label,
   description,
@@ -370,22 +506,14 @@ const FamilySubSection = ({
           )}
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {frames.map((f) => {
-            const eid = (f as any)._editorialId ?? f.id;
-            return (
-              <FrameTile
-                key={eid}
-                frame={f}
-                editorialId={eid}
-                isActive={activeId === eid}
-                onClick={() => onSelect(activeId === eid ? null : eid)}
-                theme={theme}
-              />
-            );
-          })}
-        </div>
+        {/* Carousel */}
+        <FrameCarousel
+          frames={frames}
+          activeId={activeId}
+          onSelect={onSelect}
+          theme={theme}
+          label={label}
+        />
 
         {/* Detail */}
         {isInThisGroup && activeFrame && (
@@ -434,17 +562,13 @@ const GenericGroupSection = ({
           {description}
         </p>
       )}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        {frames.map((f) => (
-          <FrameTile
-            key={f.id}
-            frame={f}
-            isActive={activeId === f.id}
-            onClick={() => onSelect(activeId === f.id ? null : f.id)}
-            theme={theme}
-          />
-        ))}
-      </div>
+      <FrameCarousel
+        frames={frames}
+        activeId={activeId}
+        onSelect={onSelect}
+        theme={theme}
+        label={label}
+      />
       {isInThisGroup && activeFrame && (
         <div className="mt-5">
           <FrameDetail frame={activeFrame} onClose={() => onSelect(null)} />
