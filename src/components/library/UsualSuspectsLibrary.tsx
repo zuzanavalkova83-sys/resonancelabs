@@ -602,20 +602,41 @@ const UsualSuspects = () => {
                 ))}
               </div>
             </div>
-            <div className="lg:col-span-4 flex lg:justify-end">
-              <a
-                href="https://nobullforscience.lovable.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-6 py-4 font-heading text-[12px] md:text-[13px] tracking-[0.15em] uppercase font-medium transition-colors duration-200 hover:brightness-125"
-                style={{
-                  color: "hsl(30 15% 82%)",
-                  border: "1px solid hsl(var(--wine-glow) / 0.4)",
-                }}
+            <div className="lg:col-span-4 flex flex-col lg:items-end gap-4">
+              <p
+                className="font-heading text-[11px] tracking-[0.22em] uppercase font-medium lg:text-right"
+                style={{ color: "hsl(var(--wine-blush))" }}
               >
                 Watch these frames go to work on a real abstract
-                <span className="text-[15px]" aria-hidden="true">↗</span>
-              </a>
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 lg:justify-end w-full">
+                <a
+                  href="https://nobullforscience.lovable.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 font-heading text-[11.5px] tracking-[0.15em] uppercase font-medium transition-colors duration-200 hover:brightness-125"
+                  style={{
+                    color: "hsl(30 15% 82%)",
+                    border: "1px solid hsl(var(--wine-glow) / 0.4)",
+                  }}
+                >
+                  General edition
+                  <span className="text-[14px]" aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="https://nobull-metabolism-demo.lovable.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 font-heading text-[11.5px] tracking-[0.15em] uppercase font-medium transition-colors duration-200 hover:brightness-125"
+                  style={{
+                    color: "hsl(30 15% 82%)",
+                    border: "1px solid hsl(var(--wine-glow) / 0.4)",
+                  }}
+                >
+                  Oncology & metabolism edition
+                  <span className="text-[14px]" aria-hidden="true">↗</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
