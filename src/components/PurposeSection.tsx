@@ -61,7 +61,7 @@ const PurposeSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="lg:col-span-6 order-2 lg:order-1"
+            className="lg:col-span-5 order-2 lg:order-1"
           >
             <p
               className="font-display text-[24px] md:text-[30px] lg:text-[34px] tracking-wide leading-[1.25]"
