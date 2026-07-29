@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useGlitch, glitchStyle } from "@/hooks/useGlitch";
@@ -866,19 +866,6 @@ const UsualSuspects = () => {
           </div>
         </div>
       )}
-
-      {/* ── Painting centrepiece — before CTA ── */}
-      <div className="section-ivory-warm">
-        <div className="max-w-[68rem] mx-auto px-6 sm:px-10 lg:px-14 py-28 sm:py-36 lg:py-44">
-          <PaintingFrame
-            url={paintingElderRocks.url}
-            alt="Elder figure seated on red rocks under a deep blue sky"
-            caption='"ELDER STATESMAN OF EVIDENCE, STILL WAITING TO BE READ", MIXED MEDIA AND PATIENCE, 2026'
-            filter="contrast(1.04) brightness(0.95) saturate(0.85)"
-            orientation="landscape"
-          />
-        </div>
-      </div>
 
       {/* ── CTA ─── */}
       <section className="py-32 md:py-48 section-padding relative overflow-hidden" style={{ background: "hsl(var(--wine-deep))" }}>
