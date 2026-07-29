@@ -817,22 +817,8 @@ const UsualSuspects = () => {
         </div>
       </div>
 
-      {/* ── Painting interlude — landscape card, contained, no cropping through faces ── */}
-      <div style={{ background: "hsl(var(--wine-deep))" }}>
-        <div className="max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-24 sm:py-32">
-          <PaintingFrame
-            url={paintingElderSea.url}
-            alt="Elder figure contemplating the sea under an orange sky"
-            caption='"MAN WATCHING HIS FINDING DRIFT OUT TO SEA, JUST AS HE FEARED IT WOULD", OIL ON DRIFT, 2026'
-            filter="contrast(1.04) brightness(0.92) saturate(0.85) hue-rotate(-10deg)"
-            orientation="landscape"
-            bg="hsl(var(--wine-deep))"
-            captionColor="hsl(30 15% 62%)"
-          />
-        </div>
-      </div>
-
       {/* ── Family view: alternating full-width sub-sections ── */}
+
       {mode === "family" && (
         <div>
           {groups.map((group, i) => (
@@ -867,8 +853,24 @@ const UsualSuspects = () => {
         </div>
       )}
 
+      {/* ── Painting interlude — landscape card, contained, no cropping through faces ── */}
+      <div style={{ background: "hsl(var(--wine-deep))" }}>
+        <div className="max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-24 sm:py-32">
+          <PaintingFrame
+            url={paintingElderSea.url}
+            alt="Elder figure contemplating the sea under an orange sky"
+            caption='"MAN WATCHING HIS FINDING DRIFT OUT TO SEA, JUST AS HE FEARED IT WOULD", OIL ON DRIFT, 2026'
+            filter="contrast(1.04) brightness(0.92) saturate(0.85) hue-rotate(-10deg)"
+            orientation="landscape"
+            bg="hsl(var(--wine-deep))"
+            captionColor="hsl(30 15% 62%)"
+          />
+        </div>
+      </div>
+
       {/* ── CTA ─── */}
       <section className="py-32 md:py-48 section-padding relative overflow-hidden" style={{ background: "hsl(var(--wine-deep))" }}>
+
         {/* Noise */}
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
