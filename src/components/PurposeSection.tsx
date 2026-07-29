@@ -130,14 +130,14 @@ const PurposeSection = () => {
               legible, credible, and alive in the world it actually enters.
             </p>
             <p
-              className="font-display text-[21px] md:text-[25px] lg:text-[28px] tracking-wide leading-[1.35] mt-8"
-              style={{ color: 'hsl(35, 22%, 82%)' }}
+              className="font-body text-[15px] md:text-[16px] leading-[1.7] mt-8"
+              style={{ color: 'hsl(30, 12%, 52%)' }}
             >
               That includes the parts of science that are easiest to dismiss. When a historian, a linguist or a sociologist is written off as an activist with a dataset, the damage does not stop at one faculty. Those fields supply the context everything else is communicated in — historical awareness, shared values, culture, moral vocabulary, the norms of the language itself. Weaken them and every other conversation gets harder, including the ones about medicine.
             </p>
             <p
-              className="font-display text-[21px] md:text-[25px] lg:text-[28px] tracking-wide leading-[1.35] mt-8"
-              style={{ color: 'hsl(35, 22%, 82%)' }}
+              className="font-body text-[15px] md:text-[16px] leading-[1.7] mt-8"
+              style={{ color: 'hsl(30, 12%, 52%)' }}
             >
               This library started at the other end, with health and biomedicine — deliberately, because it is furthest from my own practice and I wanted to know whether the patterns held somewhere I could not rely on instinct. They did. The humanities and social sciences are where my experience as a communicator is deepest, and they are the least mapped here so far. I know the Czech context, I can abstract from examples abroad, and the data is not there yet. The nervousness is mine, and I am keeping it.
             </p>
