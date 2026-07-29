@@ -54,42 +54,14 @@ const PurposeSection = () => {
           </h2>
         </motion.div>
 
-        {/* Text + triptych — side by side on desktop */}
+        {/* Triptych + text — side by side on desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Text block */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="lg:col-span-5 order-2 lg:order-1"
-          >
-            <p
-              className="font-display text-[24px] md:text-[30px] lg:text-[34px] tracking-wide leading-[1.25]"
-              style={{ color: 'hsl(35, 22%, 82%)' }}
-            >
-              We don't work to make science louder. We work to help it stay
-              legible, credible, and alive in the world it actually enters.
-            </p>
-            <p
-              className="font-display text-[24px] md:text-[30px] lg:text-[34px] tracking-wide leading-[1.25] mt-8"
-              style={{ color: 'hsl(35, 22%, 82%)' }}
-            >
-              That includes the parts of science that are easiest to dismiss. When a historian, a linguist or a sociologist is written off as an activist with a dataset, the damage does not stop at one faculty. Those fields supply the context everything else is communicated in — historical awareness, shared values, culture, moral vocabulary, the norms of the language itself. Weaken them and every other conversation gets harder, including the ones about medicine.
-            </p>
-            <p
-              className="font-display text-[24px] md:text-[30px] lg:text-[34px] tracking-wide leading-[1.25] mt-8"
-              style={{ color: 'hsl(35, 22%, 82%)' }}
-            >
-              This library started at the other end, with health and biomedicine — deliberately, because it is furthest from my own practice and I wanted to know whether the patterns held somewhere I could not rely on instinct. They did. The humanities and social sciences are where my experience as a communicator is deepest, and they are the least mapped here so far. I know the Czech context, I can abstract from examples abroad, and the data is not there yet. The nervousness is mine, and I am keeping it.
-            </p>
-          </motion.div>
-
           {/* Triptych — three paintings side by side, no dividers */}
           <motion.figure
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 1.2 }}
-            className="lg:col-span-7 order-1 lg:order-2"
+            className="lg:col-span-7"
             aria-label="Triptych: why resonance labs exists"
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 lg:gap-5">
@@ -142,6 +114,34 @@ const PurposeSection = () => {
               ))}
             </div>
           </motion.figure>
+
+          {/* Text block */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="lg:col-span-5"
+          >
+            <p
+              className="font-display text-[24px] md:text-[30px] lg:text-[34px] tracking-wide leading-[1.25]"
+              style={{ color: 'hsl(35, 22%, 82%)' }}
+            >
+              We don't work to make science louder. We work to help it stay
+              legible, credible, and alive in the world it actually enters.
+            </p>
+            <p
+              className="font-display text-[24px] md:text-[30px] lg:text-[34px] tracking-wide leading-[1.25] mt-8"
+              style={{ color: 'hsl(35, 22%, 82%)' }}
+            >
+              That includes the parts of science that are easiest to dismiss. When a historian, a linguist or a sociologist is written off as an activist with a dataset, the damage does not stop at one faculty. Those fields supply the context everything else is communicated in — historical awareness, shared values, culture, moral vocabulary, the norms of the language itself. Weaken them and every other conversation gets harder, including the ones about medicine.
+            </p>
+            <p
+              className="font-display text-[24px] md:text-[30px] lg:text-[34px] tracking-wide leading-[1.25] mt-8"
+              style={{ color: 'hsl(35, 22%, 82%)' }}
+            >
+              This library started at the other end, with health and biomedicine — deliberately, because it is furthest from my own practice and I wanted to know whether the patterns held somewhere I could not rely on instinct. They did. The humanities and social sciences are where my experience as a communicator is deepest, and they are the least mapped here so far. I know the Czech context, I can abstract from examples abroad, and the data is not there yet. The nervousness is mine, and I am keeping it.
+            </p>
+          </motion.div>
         </div>
       </div>
     </section>
