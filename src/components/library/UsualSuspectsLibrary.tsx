@@ -504,8 +504,8 @@ const UsualSuspects = () => {
     <section className="relative overflow-hidden">
       {/* ── Hero header — ivory warm ── */}
       <div className="section-ivory-warm editorial-grain relative">
-        <div className="relative max-w-[80rem] mx-auto px-6 sm:px-10 lg:px-14 py-28 sm:py-36 lg:py-44">
-          <div className="mb-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        <div className="relative max-w-[80rem] mx-auto px-6 sm:px-10 lg:px-14 pt-28 sm:pt-36 lg:pt-44 pb-12 sm:pb-16 lg:pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <div className="lg:col-span-6 max-w-[40rem]">
               <div className="mb-6 inline-flex items-center gap-1 p-1 border" style={{ borderColor: "hsl(var(--wine) / 0.25)", background: "hsl(var(--parchment) / 0.5)" }}>
                 <span
