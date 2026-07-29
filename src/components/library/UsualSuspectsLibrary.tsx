@@ -748,19 +748,21 @@ const UsualSuspects = () => {
             className="font-heading text-[11px] tracking-[0.28em] uppercase font-medium mb-8"
             style={{ color: "hsl(var(--wine-blush))" }}
           >
-            For institutions, labs, and teams
+            For institutions, experts, and teams
           </p>
           <h2
             className="font-display text-[3rem] md:text-[4.5rem] lg:text-[5.5rem] tracking-wider leading-[0.9] mb-10"
             style={{ color: "hsl(35 30% 92%)" }}
           >
-            Want this mapped for your own research?
+            Help me make this ready for real life.
           </h2>
           <p className="text-[18px] md:text-[19px] leading-[1.7] mb-4 max-w-[40rem] mx-auto" style={{ color: "hsl(30 15% 72%)" }}>
-            For institutions, labs, and teams working on sensitive science, this library
-            becomes something more practical: narrative intelligence, early warning, and
-            sharper messaging — before the public plot writes itself for you.
+            This library is not a finished product and it is not yet for sale. It is a working instrument, and it only gets sharper on contact with real practice — institutions working on misinformation, individual experts, scientific teams, health communicators.
           </p>
+          <p className="text-[18px] md:text-[19px] leading-[1.7] mb-10 max-w-[40rem] mx-auto" style={{ color: "hsl(30 15% 72%)" }}>
+            If it walks straight past the pattern that actually haunts your field, that is the most useful thing you could tell me. That is the collaboration I am after.
+          </p>
+
           <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-5">
             <a
               href="mailto:hello@resonancelabs.com"
