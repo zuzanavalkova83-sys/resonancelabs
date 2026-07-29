@@ -602,20 +602,41 @@ const UsualSuspects = () => {
                 ))}
               </div>
             </div>
-            <div className="lg:col-span-4 flex lg:justify-end">
-              <a
-                href="https://nobullforscience.lovable.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-6 py-4 font-heading text-[12px] md:text-[13px] tracking-[0.15em] uppercase font-medium transition-colors duration-200 hover:brightness-125"
-                style={{
-                  color: "hsl(30 15% 82%)",
-                  border: "1px solid hsl(var(--wine-glow) / 0.4)",
-                }}
+            <div className="lg:col-span-4 flex flex-col lg:items-end gap-4">
+              <p
+                className="font-heading text-[11px] tracking-[0.22em] uppercase font-medium lg:text-right"
+                style={{ color: "hsl(var(--wine-blush))" }}
               >
                 Watch these frames go to work on a real abstract
-                <span className="text-[15px]" aria-hidden="true">↗</span>
-              </a>
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 lg:justify-end w-full">
+                <a
+                  href="https://nobullforscience.lovable.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 font-heading text-[11.5px] tracking-[0.15em] uppercase font-medium transition-colors duration-200 hover:brightness-125"
+                  style={{
+                    color: "hsl(30 15% 82%)",
+                    border: "1px solid hsl(var(--wine-glow) / 0.4)",
+                  }}
+                >
+                  General edition
+                  <span className="text-[14px]" aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="https://nobull-metabolism-demo.lovable.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 font-heading text-[11.5px] tracking-[0.15em] uppercase font-medium transition-colors duration-200 hover:brightness-125"
+                  style={{
+                    color: "hsl(30 15% 82%)",
+                    border: "1px solid hsl(var(--wine-glow) / 0.4)",
+                  }}
+                >
+                  Oncology & metabolism edition
+                  <span className="text-[14px]" aria-hidden="true">↗</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -722,6 +743,19 @@ const UsualSuspects = () => {
         </div>
       )}
 
+      {/* ── Painting centrepiece — before CTA ── */}
+      <div className="section-ivory-warm">
+        <div className="max-w-[68rem] mx-auto px-6 sm:px-10 lg:px-14 py-28 sm:py-36 lg:py-44">
+          <PaintingFrame
+            url={paintingElderRocks.url}
+            alt="Elder figure seated on red rocks under a deep blue sky"
+            caption='"ELDER STATESMAN OF EVIDENCE, STILL WAITING TO BE READ", MIXED MEDIA AND PATIENCE, 2026'
+            filter="contrast(1.04) brightness(0.95) saturate(0.85)"
+            orientation="landscape"
+          />
+        </div>
+      </div>
+
       {/* ── CTA ─── */}
       <section className="py-32 md:py-48 section-padding relative overflow-hidden" style={{ background: "hsl(var(--wine-deep))" }}>
         {/* Noise */}
@@ -793,28 +827,6 @@ const UsualSuspects = () => {
         </div>
       </section>
 
-      {/* ── Coda ── */}
-      <div className="section-ivory-warm">
-        <div className="max-w-[80rem] mx-auto px-6 sm:px-10 lg:px-14 py-28 sm:py-36 lg:py-44">
-          <hr
-            className="border-0 h-px mb-16"
-            style={{
-              background: "linear-gradient(90deg, transparent 0%, hsl(30 15% 78% / 0.5) 20%, hsl(30 15% 78% / 0.5) 80%, transparent 100%)",
-            }}
-          />
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-            <div className="lg:col-span-6">
-              <PaintingFrame
-                url={paintingElderRocks.url}
-                alt="Elder figure seated on red rocks under a deep blue sky"
-                caption='"ELDER STATESMAN OF EVIDENCE, STILL WAITING TO BE READ", MIXED MEDIA AND PATIENCE, 2026'
-                filter="contrast(1.04) brightness(0.95) saturate(0.85)"
-                orientation="portrait"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };

@@ -84,6 +84,14 @@ const Navbar = () => {
             >
               NoBull Library
             </Link>
+          <a
+            href="https://nobullforscience.lovable.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-heading text-[10.5px] tracking-[0.22em] uppercase font-normal text-foreground/55 hover:text-foreground/90 transition-opacity duration-300"
+          >
+            NoBull Tool
+          </a>
           </div>
 
           {/* Mobile menu toggle */}
@@ -137,6 +145,22 @@ const Navbar = () => {
                   >
                     NoBull Library
                   </Link>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 16 }}
+                  transition={{ duration: 0.25, delay: (navItems.length + 1) * 0.05 }}
+                >
+                  <a
+                    href="https://nobullforscience.lovable.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMenuOpen(false)}
+                    className="font-display text-3xl sm:text-4xl tracking-wider text-foreground/90 hover:text-foreground transition-colors block"
+                  >
+                    NoBull Tool
+                  </a>
                 </motion.div>
               </div>
 
