@@ -806,8 +806,11 @@ const UsualSuspects = () => {
               <p className="text-[17px] md:text-[18px] leading-[1.65] mb-5" style={{ color: "hsl(30 10% 38%)" }}>
                 This atlas is not exhaustive. It maps the recurring patterns we see most often. New frames emerge when old fears find new topics — but the underlying logic rarely changes.
               </p>
-              <p className="text-[15px] md:text-[16px] leading-[1.75]" style={{ color: "hsl(30 10% 55%)" }}>
+              <p className="text-[15px] md:text-[16px] leading-[1.75] mb-5" style={{ color: "hsl(30 10% 55%)" }}>
                 The details change. The hooks do not. We keep watching.
+              </p>
+              <p className="text-[17px] md:text-[18px] leading-[1.65]" style={{ color: "hsl(30 10% 38%)" }}>
+                Coverage is uneven on purpose. Health and biomedicine came first; the humanities and social sciences — where my own practice is deepest — are the thinnest part of the map so far.
               </p>
             </div>
             <div>
