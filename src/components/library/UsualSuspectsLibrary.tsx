@@ -757,10 +757,13 @@ const UsualSuspects = () => {
             Help me make this ready for real life.
           </h2>
           <p className="text-[18px] md:text-[19px] leading-[1.7] mb-4 max-w-[40rem] mx-auto" style={{ color: "hsl(30 15% 72%)" }}>
-            This library is not a finished product and it is not yet for sale. It is a working instrument, and it only gets sharper on contact with real practice — institutions working on misinformation, individual experts, scientific teams, health communicators.
+            This library is not a finished product and will always benefit from data I cannot gather myself. It is a working instrument, and it only gets sharper through practice — institutions working on misinformation, individual experts, scientific teams, health communicators.
           </p>
           <p className="text-[18px] md:text-[19px] leading-[1.7] mb-10 max-w-[40rem] mx-auto" style={{ color: "hsl(30 15% 72%)" }}>
-            If it walks straight past the pattern that actually haunts your field, that is the most useful thing you could tell me. That is the collaboration I am after.
+            If it walks straight past the pattern that actually haunts your field, that is the most useful thing you could tell me. My goal is change and, ideally, impact on actual science communication practice.
+          </p>
+          <p className="text-[15px] md:text-[16px] leading-[1.7] mb-10 max-w-[40rem] mx-auto" style={{ color: "hsl(30 15% 55%)" }}>
+            (And my children not living in an idiocracy. Thank you.)
           </p>
 
           <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-5">
