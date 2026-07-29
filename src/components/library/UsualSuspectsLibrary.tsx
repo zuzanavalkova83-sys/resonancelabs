@@ -564,70 +564,113 @@ const UsualSuspects = () => {
             </div>
           </div>
 
-          {/* Stats + browse modes */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-            <div className="flex flex-wrap gap-6 text-[12px] font-mono tracking-[0.15em] uppercase" style={{ color: "hsl(30 10% 58%)" }}>
-              <span>{narrativeFrames.length} frames</span>
-              <span>·</span>
-              <span>{Object.keys(PATTERN_FAMILIES).length} families</span>
-              <span>·</span>
-              <span>{EMOTION_TAGS.length} triggers</span>
+        </div>
+      </div>
+
+      {/* ── Stats band — dark oxblood, full content width ── */}
+      <div className="relative overflow-hidden" style={{ background: "hsl(var(--wine-deep))" }}>
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)'/%3E%3C/svg%3E")`,
+            backgroundRepeat: "repeat",
+          }}
+        />
+        <div className="relative max-w-[80rem] mx-auto px-6 sm:px-10 lg:px-14 py-14 sm:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            <div className="lg:col-span-8">
+              <div className="grid grid-cols-3 gap-6 sm:gap-10">
+                {[
+                  { n: narrativeFrames.length, l: "Frames" },
+                  { n: Object.keys(PATTERN_FAMILIES).length, l: "Families" },
+                  { n: EMOTION_TAGS.length, l: "Triggers" },
+                ].map((s) => (
+                  <div key={s.l} className="flex flex-col">
+                    <span
+                      className="font-display leading-none text-[64px] sm:text-[88px] md:text-[104px] tracking-wider"
+                      style={{ color: "hsl(35 30% 92%)" }}
+                    >
+                      {s.n}
+                    </span>
+                    <span
+                      className="mt-3 font-mono text-[11px] tracking-[0.28em] uppercase"
+                      style={{ color: "hsl(var(--wine-blush))" }}
+                    >
+                      {s.l}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
-
-            <div className="flex flex-wrap gap-1">
-              {MODES.map((m) => (
-                <button
-                  key={m.key}
-                  onClick={() => handleModeChange(m.key)}
-                  className={`text-[12px] px-5 py-2.5 transition-all duration-200 tracking-[0.1em] uppercase ${
-                    mode === m.key ? "font-medium" : "hover:opacity-80"
-                  }`}
-                  style={
-                    mode === m.key
-                      ? { background: "hsl(var(--wine))", color: "hsl(35 25% 92%)" }
-                      : { color: "hsl(30 10% 50%)" }
-                  }
-                >
-                  {m.label}
-                </button>
-              ))}
+            <div className="lg:col-span-4 flex lg:justify-end">
+              <a
+                href="https://nobullforscience.lovable.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-6 py-4 font-heading text-[12px] md:text-[13px] tracking-[0.15em] uppercase font-medium transition-colors duration-200 hover:brightness-125"
+                style={{
+                  color: "hsl(30 15% 82%)",
+                  border: "1px solid hsl(var(--wine-glow) / 0.4)",
+                }}
+              >
+                Watch these frames go to work on a real abstract
+                <span className="text-[15px]" aria-hidden="true">↗</span>
+              </a>
             </div>
-          </div>
-
-          {/* Prominent link to live abstract demo */}
-          <div className="mt-12 sm:mt-14">
-            <a
-              href="https://nobullforscience.lovable.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 font-heading text-[13px] md:text-[14px] tracking-[0.12em] uppercase font-medium transition-colors duration-200 hover:opacity-75"
-              style={{ color: "hsl(var(--wine))" }}
-            >
-              Watch these frames go to work on a real abstract
-              <span className="text-[16px]" aria-hidden="true">↗</span>
-            </a>
-          </div>
-
-          {/* A working document — moved from bottom */}
-          <div className="mt-16 sm:mt-20 max-w-[40rem]">
-            <p
-              className="font-heading text-[11px] tracking-[0.28em] uppercase font-medium mb-5"
-              style={{ color: "hsl(var(--wine))" }}
-            >
-              A working document
-            </p>
-            <p className="text-[17px] md:text-[18px] leading-[1.65] mb-5" style={{ color: "hsl(30 10% 38%)" }}>
-              This atlas is not exhaustive. It maps the recurring patterns we see most often. New frames emerge when old fears find new topics — but the underlying logic rarely changes.
-            </p>
-            <p className="text-[15px] md:text-[16px] leading-[1.75]" style={{ color: "hsl(30 10% 55%)" }}>
-              The details change. The hooks do not. We keep watching.
-            </p>
           </div>
         </div>
       </div>
 
-      {/* ── Interpretive layer ── */}
-      <NarrativeBiteLayer />
+      {/* ── Filter tabs — full content width on parchment ── */}
+      <div className="section-ivory-warm">
+        <div className="max-w-[80rem] mx-auto px-6 sm:px-10 lg:px-14 py-6 sm:py-7" style={{ borderBottom: "1px solid hsl(30 15% 78% / 0.5)" }}>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            {MODES.map((m) => (
+              <button
+                key={m.key}
+                onClick={() => handleModeChange(m.key)}
+                className="text-[12px] px-5 py-3 transition-all duration-200 tracking-[0.15em] uppercase text-center"
+                style={
+                  mode === m.key
+                    ? { background: "hsl(var(--wine))", color: "hsl(35 25% 92%)", fontWeight: 500 }
+                    : {
+                        color: "hsl(30 10% 45%)",
+                        border: "1px solid hsl(30 15% 78% / 0.6)",
+                        background: "transparent",
+                      }
+                }
+              >
+                {m.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── Working document + editorial note, side by side ── */}
+      <div className="section-ivory-warm editorial-grain">
+        <div className="max-w-[80rem] mx-auto px-6 sm:px-10 lg:px-14 py-20 sm:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+            <div>
+              <p
+                className="font-heading text-[11px] tracking-[0.28em] uppercase font-medium mb-5"
+                style={{ color: "hsl(var(--wine))" }}
+              >
+                A working document
+              </p>
+              <p className="text-[17px] md:text-[18px] leading-[1.65] mb-5" style={{ color: "hsl(30 10% 38%)" }}>
+                This atlas is not exhaustive. It maps the recurring patterns we see most often. New frames emerge when old fears find new topics — but the underlying logic rarely changes.
+              </p>
+              <p className="text-[15px] md:text-[16px] leading-[1.75]" style={{ color: "hsl(30 10% 55%)" }}>
+                The details change. The hooks do not. We keep watching.
+              </p>
+            </div>
+            <div>
+              <NarrativeBiteLayer />
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* ── Painting interlude — landscape card, contained, no cropping through faces ── */}
       <div style={{ background: "hsl(var(--wine-deep))" }}>
