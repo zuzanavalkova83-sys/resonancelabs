@@ -27,10 +27,10 @@ const NarrativeBiteLayer = () => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="section-ivory-warm editorial-grain">
-      <div className="max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-16 sm:py-20">
+    <div>
+      <div>
         {/* Collapsed state */}
-        <div className="max-w-2xl">
+        <div>
           <div className="flex items-center gap-5 mb-8">
             <div className="w-8 h-[1px]" style={{ background: "hsl(30 15% 75%)" }} />
             <span
