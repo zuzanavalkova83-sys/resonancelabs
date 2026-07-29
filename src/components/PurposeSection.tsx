@@ -89,7 +89,7 @@ const PurposeSection = () => {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 1.2 }}
-            className="lg:col-span-6 order-1 lg:order-2"
+            className="lg:col-span-7 order-1 lg:order-2"
             aria-label="Triptych: why resonance labs exists"
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 lg:gap-5">
