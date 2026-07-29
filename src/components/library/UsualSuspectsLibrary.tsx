@@ -817,8 +817,8 @@ const UsualSuspects = () => {
         </div>
       </div>
 
-
       {/* ── Family view: alternating full-width sub-sections ── */}
+
       {mode === "family" && (
         <div>
           {groups.map((group, i) => (
@@ -869,8 +869,8 @@ const UsualSuspects = () => {
       </div>
 
       {/* ── CTA ─── */}
-
       <section className="py-32 md:py-48 section-padding relative overflow-hidden" style={{ background: "hsl(var(--wine-deep))" }}>
+
         {/* Noise */}
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
