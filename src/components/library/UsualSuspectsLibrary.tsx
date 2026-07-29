@@ -743,6 +743,19 @@ const UsualSuspects = () => {
         </div>
       )}
 
+      {/* ── Painting centrepiece — before CTA ── */}
+      <div className="section-ivory-warm">
+        <div className="max-w-[68rem] mx-auto px-6 sm:px-10 lg:px-14 py-28 sm:py-36 lg:py-44">
+          <PaintingFrame
+            url={paintingElderRocks.url}
+            alt="Elder figure seated on red rocks under a deep blue sky"
+            caption='"ELDER STATESMAN OF EVIDENCE, STILL WAITING TO BE READ", MIXED MEDIA AND PATIENCE, 2026'
+            filter="contrast(1.04) brightness(0.95) saturate(0.85)"
+            orientation="landscape"
+          />
+        </div>
+      </div>
+
       {/* ── CTA ─── */}
       <section className="py-32 md:py-48 section-padding relative overflow-hidden" style={{ background: "hsl(var(--wine-deep))" }}>
         {/* Noise */}
@@ -814,28 +827,6 @@ const UsualSuspects = () => {
         </div>
       </section>
 
-      {/* ── Coda ── */}
-      <div className="section-ivory-warm">
-        <div className="max-w-[80rem] mx-auto px-6 sm:px-10 lg:px-14 py-28 sm:py-36 lg:py-44">
-          <hr
-            className="border-0 h-px mb-16"
-            style={{
-              background: "linear-gradient(90deg, transparent 0%, hsl(30 15% 78% / 0.5) 20%, hsl(30 15% 78% / 0.5) 80%, transparent 100%)",
-            }}
-          />
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-            <div className="lg:col-span-6">
-              <PaintingFrame
-                url={paintingElderRocks.url}
-                alt="Elder figure seated on red rocks under a deep blue sky"
-                caption='"ELDER STATESMAN OF EVIDENCE, STILL WAITING TO BE READ", MIXED MEDIA AND PATIENCE, 2026'
-                filter="contrast(1.04) brightness(0.95) saturate(0.85)"
-                orientation="portrait"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };
