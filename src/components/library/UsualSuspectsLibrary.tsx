@@ -281,11 +281,18 @@ const FrameTile = ({
         </span>
       </div>
 
+      <h4
+        className="font-display text-[20px] sm:text-[22px] leading-[1.2] tracking-wide mb-4"
+        style={{ color: isDarkActive ? "hsl(35 30% 92%)" : theme.tileText }}
+      >
+        {frame.frameName}
+      </h4>
+
       <blockquote
-        className="font-display text-[20px] sm:text-[22px] leading-[1.2] tracking-wide mb-8"
+        className="text-[13.5px] leading-[1.6] mb-8"
         style={{
-          color: isDarkActive ? "hsl(35 30% 92%)" : theme.tileText,
-          fontStyle: "normal",
+          color: isDarkActive ? "hsl(35 22% 72%)" : theme.tileTextMuted,
+          fontStyle: "italic",
         }}
       >
         "{ed.hostileClaim}"
@@ -297,12 +304,6 @@ const FrameTile = ({
           borderColor: isDarkActive ? "hsl(var(--wine-glow) / 0.25)" : "hsl(30 15% 78% / 0.5)",
         }}
       >
-        <h4
-          className="text-[13px] font-medium tracking-wide leading-snug mb-3"
-          style={{ color: isDarkActive ? "hsl(35 25% 82%)" : theme.tileText }}
-        >
-          {frame.frameName}
-        </h4>
         <p
           className="text-[13.5px] leading-[1.7] line-clamp-3"
           style={{ color: isDarkActive ? "hsl(30 15% 60%)" : theme.tileTextMuted }}
