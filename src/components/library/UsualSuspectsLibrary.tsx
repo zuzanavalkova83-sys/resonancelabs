@@ -13,8 +13,13 @@ import {
   EMOTION_TAGS,
   MECHANISM_TAGS,
   TERRAIN_TAGS,
+  FAULT_LINES,
+  FAULT_LINE_MAP,
+  FRAME_EXTENSION,
+  TARGET_LABEL,
   type FrameEditorial,
   type PatternFamily,
+  type FaultLineId,
 } from "@/data/frameAtlas";
 
 /* Consistent painting frame — never crops through faces. */
@@ -37,10 +42,7 @@ const PaintingFrame = ({
 }) => (
   <figure className="flex flex-col w-full items-center">
     <div
-      className={
-        "relative w-full overflow-hidden " +
-        (orientation === "landscape" ? "aspect-[3/2]" : "aspect-[4/5]")
-      }
+      className={"relative w-full overflow-hidden " + (orientation === "landscape" ? "aspect-[3/2]" : "aspect-[4/5]")}
       style={{ background: bg }}
     >
       <img
@@ -62,9 +64,8 @@ const PaintingFrame = ({
   </figure>
 );
 
-type BrowseMode = "family" | "emotion" | "mechanism" | "terrain";
-const editorialFor = (id: string): FrameEditorial | undefined =>
-  FRAME_EDITORIAL[id];
+type BrowseMode = "family" | "emotion" | "mechanism" | "terrain" | "faultline";
+const editorialFor = (id: string): FrameEditorial | undefined => FRAME_EDITORIAL[id];
 const frameMap = new Map(narrativeFrames.map((f) => [f.id, f]));
 
 // Resolve virtual editorial IDs (e.g. "F37:cs") back to the base frame
@@ -72,7 +73,7 @@ const resolveFrameId = (id: string): string => id.split(":")[0];
 
 function groupBy<K extends string>(
   key: (e: FrameEditorial) => K,
-  labelMap?: Record<K, { label: string; description: string }>
+  labelMap?: Record<K, { label: string; description: string }>,
 ): { key: K; label: string; description?: string; ids: string[] }[] {
   const groups = new Map<K, string[]>();
   for (const [id, ed] of Object.entries(FRAME_EDITORIAL)) {
@@ -124,13 +125,83 @@ const SECTION_THEMES = [
   },
 ] as const;
 
+/* ── Fault-line footer (fourth axis) ───────────────────────── */
+const scrollToFrame = (id: string) => {
+  const el = document.querySelector<HTMLElement>(`[data-frame-id="${id}"]`);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+};
+
+const FaultLineFooter = ({
+  id,
+  dark,
+  onPair,
+  compact = false,
+}: {
+  id: string;
+  dark: boolean;
+  onPair?: (id: string) => void;
+  compact?: boolean;
+}) => {
+  const x = FRAME_EXTENSION[id];
+  if (!x) return null;
+  const chipBg = dark ? "hsl(var(--wine) / 0.3)" : "hsl(30 15% 82%)";
+  const chipFg = dark ? "hsl(35 22% 78%)" : "hsl(340 25% 30%)";
+  const meta = dark ? "hsl(30 15% 58%)" : "hsl(30 10% 50%)";
+  return (
+    <div className={"flex flex-wrap items-center gap-x-3 gap-y-2 " + (compact ? "mt-4" : "mt-8")}>
+      {x.faultLines.map((fl) => (
+        <span
+          key={fl}
+          className="text-[10px] font-mono tracking-[0.18em] uppercase px-2 py-1"
+          style={{ background: chipBg, color: chipFg }}
+          title={FAULT_LINE_MAP[fl].poles.join(" ↔ ")}
+        >
+          {FAULT_LINE_MAP[fl].short}
+        </span>
+      ))}
+      {x.faultLines.length > 0 && (
+        <span className="text-[10.5px] font-mono tracking-[0.15em]" style={{ color: meta }}>
+          → {x.pole}
+        </span>
+      )}
+      <span className="text-[10.5px] font-mono tracking-[0.15em] uppercase" style={{ color: meta }}>
+        {TARGET_LABEL[x.target]}
+      </span>
+      {x.pair && (
+        <span
+          role="link"
+          tabIndex={0}
+          onClick={(e) => {
+            e.stopPropagation();
+            onPair?.(x.pair!);
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              e.stopPropagation();
+              onPair?.(x.pair!);
+            }
+          }}
+          className="text-[10.5px] font-mono tracking-[0.15em] uppercase underline underline-offset-4 cursor-pointer hover:opacity-70"
+          style={{ color: dark ? "hsl(var(--wine-blush))" : "hsl(var(--wine))" }}
+          title="Opposite pole of the same wedge"
+        >
+          ↔ {x.pair}
+        </span>
+      )}
+    </div>
+  );
+};
+
 /* ── Detail Panel ──────────────────────────────────────────── */
 const FrameDetail = ({
   frame,
   onClose,
+  onPair,
 }: {
   frame: NarrativeFrame;
   onClose: () => void;
+  onPair?: (id: string) => void;
 }) => {
   const ed = editorialFor(frame.id);
   if (!ed) return null;
@@ -146,17 +217,11 @@ const FrameDetail = ({
       <div className="p-8 sm:p-12 md:p-16">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 mb-10">
           <div className="flex items-center gap-5">
-            <span
-              className="text-[13px] font-mono tracking-[0.2em]"
-              style={{ color: "hsl(30 20% 60%)" }}
-            >
+            <span className="text-[13px] font-mono tracking-[0.2em]" style={{ color: "hsl(30 20% 60%)" }}>
               {frame.id}
             </span>
             <div className="w-8 h-px" style={{ background: "hsl(30 20% 40%)" }} />
-            <span
-              className="text-[12px] font-mono tracking-[0.15em] uppercase"
-              style={{ color: "hsl(30 15% 55%)" }}
-            >
+            <span className="text-[12px] font-mono tracking-[0.15em] uppercase" style={{ color: "hsl(30 15% 55%)" }}>
               {ed.terrain}
             </span>
           </div>
@@ -176,19 +241,13 @@ const FrameDetail = ({
           {frame.frameName}
         </h3>
 
-        <p
-          className="text-lg sm:text-xl leading-relaxed max-w-2xl mb-12"
-          style={{ color: "hsl(30 15% 70%)" }}
-        >
+        <p className="text-lg sm:text-xl leading-relaxed max-w-2xl mb-12" style={{ color: "hsl(30 15% 70%)" }}>
           {ed.hookLine}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
           <div className="space-y-10">
-            <div
-              className="border-l-[2px] pl-6 py-3"
-              style={{ borderColor: "hsl(var(--wine-glow) / 0.5)" }}
-            >
+            <div className="border-l-[2px] pl-6 py-3" style={{ borderColor: "hsl(var(--wine-glow) / 0.5)" }}>
               <p className="text-[12px] font-mono tracking-[0.2em] uppercase mb-3" style={{ color: "hsl(30 15% 55%)" }}>
                 What it sounds like
               </p>
@@ -218,15 +277,52 @@ const FrameDetail = ({
             {frame.typicalTopics.length > 0 && (
               <div className="flex flex-wrap gap-2">
                 {frame.typicalTopics.map((t) => (
-                  <span key={t} className="text-[12px] px-3 py-1 tracking-wide" style={{ background: "hsl(var(--wine) / 0.25)", color: "hsl(30 15% 70%)" }}>
+                  <span
+                    key={t}
+                    className="text-[12px] px-3 py-1 tracking-wide"
+                    style={{ background: "hsl(var(--wine) / 0.25)", color: "hsl(30 15% 70%)" }}
+                  >
                     {t}
                   </span>
                 ))}
               </div>
             )}
-            <div className="flex flex-wrap gap-3 text-[11px] tracking-[0.15em] font-mono" style={{ color: "hsl(30 10% 50%)" }}>
-              <span>{ed.emotion}</span><span>·</span><span>{ed.mechanism}</span>
+            <div
+              className="flex flex-wrap gap-3 text-[11px] tracking-[0.15em] font-mono"
+              style={{ color: "hsl(30 10% 50%)" }}
+            >
+              <span>{ed.emotion}</span>
+              <span>·</span>
+              <span>{ed.mechanism}</span>
             </div>
+            {FRAME_EXTENSION[frame.id] && (
+              <div>
+                <p
+                  className="text-[12px] font-mono tracking-[0.2em] uppercase mb-1"
+                  style={{ color: "hsl(30 15% 55%)" }}
+                >
+                  Which fight this lands in
+                </p>
+                <FaultLineFooter id={frame.id} dark onPair={onPair} compact />
+                {FRAME_EXTENSION[frame.id].cuiBono.length > 0 && (
+                  <p className="mt-4 text-[13px] leading-[1.7]" style={{ color: "hsl(30 15% 62%)" }}>
+                    <span
+                      className="font-mono text-[10.5px] tracking-[0.18em] uppercase mr-2"
+                      style={{ color: "hsl(30 15% 50%)" }}
+                    >
+                      Who feeds it
+                    </span>
+                    {FRAME_EXTENSION[frame.id].cuiBono.join(" · ")}
+                  </p>
+                )}
+                {FRAME_EXTENSION[frame.id].evidence && (
+                  <p className="mt-3 text-[12px] leading-[1.7]" style={{ color: "hsl(30 12% 50%)" }}>
+                    <span className="font-mono text-[10.5px] tracking-[0.18em] uppercase mr-2">Evidence</span>
+                    {FRAME_EXTENSION[frame.id].evidence}
+                  </p>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -240,13 +336,15 @@ const FrameTile = ({
   editorialId,
   isActive,
   onClick,
+  onPair,
   theme,
 }: {
   frame: NarrativeFrame;
   editorialId?: string;
   isActive: boolean;
   onClick: () => void;
-  theme: typeof SECTION_THEMES[number];
+  onPair?: (id: string) => void;
+  theme: (typeof SECTION_THEMES)[number];
 }) => {
   const ed = editorialFor(editorialId ?? frame.id);
   if (!ed) return null;
@@ -256,6 +354,7 @@ const FrameTile = ({
   return (
     <button
       onClick={onClick}
+      data-frame-id={frame.id}
       className="w-full text-left p-8 sm:p-9 transition-all duration-300 group relative flex flex-col hover:-translate-y-1"
       style={{
         background: isDarkActive ? theme.tileActiveBg : theme.tileBg,
@@ -310,6 +409,7 @@ const FrameTile = ({
         >
           {ed.hookLine}
         </p>
+        <FaultLineFooter id={frame.id} dark={isDarkActive || theme.mode === "dark"} onPair={onPair} compact />
       </div>
     </button>
   );
@@ -321,31 +421,36 @@ const FrameCarousel = ({
   frames,
   activeId,
   onSelect,
+  onPair,
   theme,
   label,
 }: {
   frames: (NarrativeFrame & { _editorialId?: string })[];
   activeId: string | null;
   onSelect: (id: string | null) => void;
-  theme: typeof SECTION_THEMES[number];
+  onPair?: (id: string) => void;
+  theme: (typeof SECTION_THEMES)[number];
   label: string;
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
   const total = frames.length;
 
-  const scrollToIndex = useCallback((i: number) => {
-    const container = scrollRef.current;
-    if (!container) return;
-    const clamped = Math.max(0, Math.min(total - 1, i));
-    const child = container.children[clamped] as HTMLElement | undefined;
-    if (!child) return;
-    container.scrollTo({
-      left: child.offsetLeft - container.offsetLeft,
-      behavior: "smooth",
-    });
-    setIndex(clamped);
-  }, [total]);
+  const scrollToIndex = useCallback(
+    (i: number) => {
+      const container = scrollRef.current;
+      if (!container) return;
+      const clamped = Math.max(0, Math.min(total - 1, i));
+      const child = container.children[clamped] as HTMLElement | undefined;
+      if (!child) return;
+      container.scrollTo({
+        left: child.offsetLeft - container.offsetLeft,
+        behavior: "smooth",
+      });
+      setIndex(clamped);
+    },
+    [total],
+  );
 
   const onScroll = () => {
     const container = scrollRef.current;
@@ -394,15 +499,13 @@ const FrameCarousel = ({
         {frames.map((f) => {
           const eid = f._editorialId ?? f.id;
           return (
-            <div
-              key={eid}
-              className="snap-start shrink-0 basis-[86%] sm:basis-[62%] md:basis-[46%] lg:basis-[34%]"
-            >
+            <div key={eid} className="snap-start shrink-0 basis-[86%] sm:basis-[62%] md:basis-[46%] lg:basis-[34%]">
               <FrameTile
                 frame={f}
                 editorialId={eid}
                 isActive={activeId === eid}
                 onClick={() => onSelect(activeId === eid ? null : eid)}
+                onPair={onPair}
                 theme={theme}
               />
             </div>
@@ -410,11 +513,7 @@ const FrameCarousel = ({
         })}
       </div>
       <div className="mt-6 flex items-center justify-between gap-4">
-        <span
-          className="font-mono text-[12px] tracking-[0.22em]"
-          style={{ color: theme.meta }}
-          aria-live="polite"
-        >
+        <span className="font-mono text-[12px] tracking-[0.22em]" style={{ color: theme.meta }} aria-live="polite">
           {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
         </span>
         <div className="flex items-center gap-2">
@@ -430,7 +529,9 @@ const FrameCarousel = ({
               background: "transparent",
             }}
           >
-            <span aria-hidden="true" className="text-[18px] leading-none">‹</span>
+            <span aria-hidden="true" className="text-[18px] leading-none">
+              ‹
+            </span>
           </button>
           <button
             type="button"
@@ -444,7 +545,9 @@ const FrameCarousel = ({
               background: "transparent",
             }}
           >
-            <span aria-hidden="true" className="text-[18px] leading-none">›</span>
+            <span aria-hidden="true" className="text-[18px] leading-none">
+              ›
+            </span>
           </button>
         </div>
       </div>
@@ -458,6 +561,7 @@ const FamilySubSection = ({
   ids,
   activeId,
   onSelect,
+  onPair,
   themeIndex,
 }: {
   label: string;
@@ -465,6 +569,7 @@ const FamilySubSection = ({
   ids: string[];
   activeId: string | null;
   onSelect: (id: string | null) => void;
+  onPair?: (id: string) => void;
   themeIndex: number;
 }) => {
   const frames = ids
@@ -481,10 +586,7 @@ const FamilySubSection = ({
   const isInThisGroup = activeId ? ids.includes(activeId) : false;
 
   return (
-    <div
-      className="relative"
-      style={{ background: theme.bg }}
-    >
+    <div className="relative" style={{ background: theme.bg }}>
       <div className="max-w-[var(--editorial-max)] mx-auto px-6 sm:px-10 py-20 sm:py-28">
         {/* Header */}
         <div className="mb-16 max-w-[40rem]">
@@ -512,6 +614,7 @@ const FamilySubSection = ({
           frames={frames}
           activeId={activeId}
           onSelect={onSelect}
+          onPair={onPair}
           theme={theme}
           label={label}
         />
@@ -519,7 +622,7 @@ const FamilySubSection = ({
         {/* Detail */}
         {isInThisGroup && activeFrame && (
           <div className="mt-5">
-            <FrameDetail frame={activeFrame} onClose={() => onSelect(null)} />
+            <FrameDetail frame={activeFrame} onClose={() => onSelect(null)} onPair={onPair} />
           </div>
         )}
       </div>
@@ -534,16 +637,16 @@ const GenericGroupSection = ({
   ids,
   activeId,
   onSelect,
+  onPair,
 }: {
   label: string;
   description?: string;
   ids: string[];
   activeId: string | null;
   onSelect: (id: string | null) => void;
+  onPair?: (id: string) => void;
 }) => {
-  const frames = ids
-    .map((id) => frameMap.get(id))
-    .filter((f): f is NarrativeFrame => !!f);
+  const frames = ids.map((id) => frameMap.get(id)).filter((f): f is NarrativeFrame => !!f);
   if (frames.length === 0) return null;
 
   const theme = SECTION_THEMES[1]; // light
@@ -556,7 +659,9 @@ const GenericGroupSection = ({
         <h3 className="font-display text-2xl sm:text-3xl tracking-wider" style={{ color: theme.heading }}>
           {label}
         </h3>
-        <span className="text-sm font-mono" style={{ color: theme.meta }}>{frames.length}</span>
+        <span className="text-sm font-mono" style={{ color: theme.meta }}>
+          {frames.length}
+        </span>
       </div>
       {description && (
         <p className="text-[15px] leading-relaxed mb-8 max-w-xl" style={{ color: theme.body }}>
@@ -567,12 +672,13 @@ const GenericGroupSection = ({
         frames={frames}
         activeId={activeId}
         onSelect={onSelect}
+        onPair={onPair}
         theme={theme}
         label={label}
       />
       {isInThisGroup && activeFrame && (
         <div className="mt-5">
-          <FrameDetail frame={activeFrame} onClose={() => onSelect(null)} />
+          <FrameDetail frame={activeFrame} onClose={() => onSelect(null)} onPair={onPair} />
         </div>
       )}
     </div>
@@ -584,6 +690,7 @@ const MODES: { key: BrowseMode; label: string }[] = [
   { key: "emotion", label: "By emotion" },
   { key: "mechanism", label: "By distortion" },
   { key: "terrain", label: "By terrain" },
+  { key: "faultline", label: "By fault line" },
 ];
 
 function getGroups(mode: BrowseMode) {
@@ -595,21 +702,36 @@ function getGroups(mode: BrowseMode) {
         key: tag,
         label: tag,
         description: undefined,
-        ids: Object.entries(FRAME_EDITORIAL).filter(([, e]) => e.emotion === tag).map(([id]) => id),
+        ids: Object.entries(FRAME_EDITORIAL)
+          .filter(([, e]) => e.emotion === tag)
+          .map(([id]) => id),
       })).filter((g) => g.ids.length > 0);
     case "mechanism":
       return MECHANISM_TAGS.map((tag) => ({
         key: tag,
         label: tag.charAt(0).toUpperCase() + tag.slice(1),
         description: undefined,
-        ids: Object.entries(FRAME_EDITORIAL).filter(([, e]) => e.mechanism === tag).map(([id]) => id),
+        ids: Object.entries(FRAME_EDITORIAL)
+          .filter(([, e]) => e.mechanism === tag)
+          .map(([id]) => id),
       })).filter((g) => g.ids.length > 0);
     case "terrain":
       return TERRAIN_TAGS.map((tag) => ({
         key: tag,
         label: tag.charAt(0).toUpperCase() + tag.slice(1),
         description: undefined,
-        ids: Object.entries(FRAME_EDITORIAL).filter(([, e]) => e.terrain === tag).map(([id]) => id),
+        ids: Object.entries(FRAME_EDITORIAL)
+          .filter(([, e]) => e.terrain === tag)
+          .map(([id]) => id),
+      })).filter((g) => g.ids.length > 0);
+    case "faultline":
+      return FAULT_LINES.map((fl) => ({
+        key: fl.id as FaultLineId,
+        label: fl.label,
+        description: `${fl.poles[0]} ↔ ${fl.poles[1]}. A frame can sit on more than one fault line; the arrow on each card shows which side it enrols you on.`,
+        ids: Object.keys(FRAME_EDITORIAL).filter((id) =>
+          FRAME_EXTENSION[resolveFrameId(id)]?.faultLines.includes(fl.id as FaultLineId),
+        ),
       })).filter((g) => g.ids.length > 0);
   }
 }
@@ -625,6 +747,13 @@ const UsualSuspects = () => {
     setActiveId(null);
   };
 
+  // Jump to the paired frame on the opposite pole. Family view always contains every frame.
+  const handlePair = (id: string) => {
+    if (mode !== "family") setMode("family");
+    setActiveId(id);
+    window.setTimeout(() => scrollToFrame(id), mode !== "family" ? 250 : 50);
+  };
+
   return (
     <section className="relative overflow-hidden">
       {/* ── Hero header — ivory warm ── */}
@@ -632,7 +761,10 @@ const UsualSuspects = () => {
         <div className="relative max-w-[80rem] mx-auto px-6 sm:px-10 lg:px-14 pt-28 sm:pt-36 lg:pt-44 pb-12 sm:pb-16 lg:pb-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <div className="lg:col-span-6 max-w-[40rem]">
-              <div className="mb-6 inline-flex items-center gap-1 p-1 border" style={{ borderColor: "hsl(var(--wine) / 0.25)", background: "hsl(var(--parchment) / 0.5)" }}>
+              <div
+                className="mb-6 inline-flex items-center gap-1 p-1 border"
+                style={{ borderColor: "hsl(var(--wine) / 0.25)", background: "hsl(var(--parchment) / 0.5)" }}
+              >
                 <span
                   aria-current="page"
                   className="font-heading text-[10.5px] tracking-[0.22em] uppercase font-medium px-3 py-1.5"
@@ -671,11 +803,17 @@ const UsualSuspects = () => {
                 </span>
               </h2>
               <div className="w-16 h-[1px] mb-10" style={{ background: "hsl(30 15% 70%)" }} />
-              <p className="text-xl md:text-[22px] leading-[1.55] max-w-[38ch] mb-6" style={{ color: "hsl(30 10% 38%)" }}>
-                These are the recurring storylines used to twist science in public. We track them, group them, and study how they turn research into panic, miracle, scandal, ideology, or noise.
+              <p
+                className="text-xl md:text-[22px] leading-[1.55] max-w-[38ch] mb-6"
+                style={{ color: "hsl(30 10% 38%)" }}
+              >
+                These are the recurring storylines used to twist science in public. We track them, group them, and study
+                how they turn research into panic, miracle, scandal, ideology, or noise.
               </p>
               <p className="text-[15px] md:text-[16px] leading-[1.7] max-w-[38ch]" style={{ color: "hsl(30 10% 55%)" }}>
-                Resonance Labs is a narrative intelligence practice for scientific and research-led organisations. This library is the raw material. Compiled and kept up to date by Zuzana Válková, science communications strategist, in Prague.
+                Resonance Labs is a narrative intelligence practice for scientific and research-led organisations. This
+                library is the raw material. Compiled and kept up to date by Zuzana Válková, science communications
+                strategist, in Prague.
               </p>
             </div>
             <div className="lg:col-span-6">
@@ -688,7 +826,6 @@ const UsualSuspects = () => {
               />
             </div>
           </div>
-
         </div>
       </div>
 
@@ -704,15 +841,16 @@ const UsualSuspects = () => {
         <div className="relative max-w-[80rem] mx-auto px-6 sm:px-10 lg:px-14 py-14 sm:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             <div className="lg:col-span-8">
-              <div className="grid grid-cols-3 gap-6 sm:gap-10">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10">
                 {[
                   { n: narrativeFrames.length, l: "Frames" },
                   { n: Object.keys(PATTERN_FAMILIES).length, l: "Families" },
                   { n: EMOTION_TAGS.length, l: "Triggers" },
+                  { n: FAULT_LINES.length, l: "Fault lines" },
                 ].map((s) => (
                   <div key={s.l} className="flex flex-col">
                     <span
-                      className="font-display leading-none text-[64px] sm:text-[88px] md:text-[104px] tracking-wider"
+                      className="font-display leading-none text-[64px] sm:text-[80px] md:text-[96px] tracking-wider"
                       style={{ color: "hsl(35 30% 92%)" }}
                     >
                       {s.n}
@@ -746,7 +884,9 @@ const UsualSuspects = () => {
                   }}
                 >
                   General edition
-                  <span className="text-[14px]" aria-hidden="true">↗</span>
+                  <span className="text-[14px]" aria-hidden="true">
+                    ↗
+                  </span>
                 </a>
                 <a
                   href="https://nobull-metabolism-demo.lovable.app"
@@ -759,7 +899,9 @@ const UsualSuspects = () => {
                   }}
                 >
                   Oncology & metabolism edition
-                  <span className="text-[14px]" aria-hidden="true">↗</span>
+                  <span className="text-[14px]" aria-hidden="true">
+                    ↗
+                  </span>
                 </a>
               </div>
             </div>
@@ -769,8 +911,11 @@ const UsualSuspects = () => {
 
       {/* ── Filter tabs — full content width on parchment ── */}
       <div className="section-ivory-warm">
-        <div className="max-w-[80rem] mx-auto px-6 sm:px-10 lg:px-14 py-6 sm:py-7" style={{ borderBottom: "1px solid hsl(30 15% 78% / 0.5)" }}>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+        <div
+          className="max-w-[80rem] mx-auto px-6 sm:px-10 lg:px-14 py-6 sm:py-7"
+          style={{ borderBottom: "1px solid hsl(30 15% 78% / 0.5)" }}
+        >
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
             {MODES.map((m) => (
               <button
                 key={m.key}
@@ -805,13 +950,22 @@ const UsualSuspects = () => {
                 A working document
               </p>
               <p className="text-[17px] md:text-[18px] leading-[1.65] mb-5" style={{ color: "hsl(30 10% 38%)" }}>
-                This atlas is not exhaustive. It maps the recurring patterns we see most often. New frames emerge when old fears find new topics — but the underlying logic rarely changes.
+                This atlas is not exhaustive. It maps the recurring patterns we see most often. New frames emerge when
+                old fears find new topics — but the underlying logic rarely changes.
               </p>
               <p className="text-[15px] md:text-[16px] leading-[1.75] mb-5" style={{ color: "hsl(30 10% 55%)" }}>
                 The details change. The hooks do not. We keep watching.
               </p>
-              <p className="text-[17px] md:text-[18px] leading-[1.65]" style={{ color: "hsl(30 10% 38%)" }}>
-                Coverage is uneven on purpose. Health and biomedicine came first; the humanities and social sciences — where my own practice is deepest — are the thinnest part of the map so far.
+              <p className="text-[17px] md:text-[18px] leading-[1.65] mb-5" style={{ color: "hsl(30 10% 38%)" }}>
+                Coverage is uneven on purpose. Health and biomedicine came first; the humanities and social sciences —
+                where my own practice is deepest — are the thinnest part of the map so far.
+              </p>
+              <p className="text-[15px] md:text-[16px] leading-[1.75]" style={{ color: "hsl(30 10% 55%)" }}>
+                Since September 2026 every frame also carries a fourth reading: the fault line. Emotion, distortion and
+                terrain describe what happens to the finding. The fault line describes what happens to the people who
+                accept the story — which existing quarrel it is filed under, and which side it signs them up for. The
+                frames on the men–women line come in pairs on purpose. The wedge needs both poles. The library maps the
+                wedge; it does not take a side.
               </p>
             </div>
             <div>
@@ -833,6 +987,7 @@ const UsualSuspects = () => {
               ids={group.ids}
               activeId={activeId}
               onSelect={setActiveId}
+              onPair={handlePair}
               themeIndex={i}
             />
           ))}
@@ -851,6 +1006,7 @@ const UsualSuspects = () => {
                 ids={group.ids}
                 activeId={activeId}
                 onSelect={setActiveId}
+                onPair={handlePair}
               />
             ))}
           </div>
@@ -873,8 +1029,10 @@ const UsualSuspects = () => {
       </div>
 
       {/* ── CTA ─── */}
-      <section className="py-32 md:py-48 section-padding relative overflow-hidden" style={{ background: "hsl(var(--wine-deep))" }}>
-
+      <section
+        className="py-32 md:py-48 section-padding relative overflow-hidden"
+        style={{ background: "hsl(var(--wine-deep))" }}
+      >
         {/* Noise */}
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -907,13 +1065,25 @@ const UsualSuspects = () => {
           >
             Help me make this ready for real life.
           </h2>
-          <p className="text-[18px] md:text-[19px] leading-[1.7] mb-4 max-w-[40rem] mx-auto" style={{ color: "hsl(30 15% 72%)" }}>
-            This library is not a finished product and will always benefit from data I cannot gather myself. It is a working instrument, and it only gets sharper through practice — institutions working on misinformation, individual experts, scientific teams, health communicators.
+          <p
+            className="text-[18px] md:text-[19px] leading-[1.7] mb-4 max-w-[40rem] mx-auto"
+            style={{ color: "hsl(30 15% 72%)" }}
+          >
+            This library is not a finished product and will always benefit from data I cannot gather myself. It is a
+            working instrument, and it only gets sharper through practice — institutions working on misinformation,
+            individual experts, scientific teams, health communicators.
           </p>
-          <p className="text-[18px] md:text-[19px] leading-[1.7] mb-10 max-w-[40rem] mx-auto" style={{ color: "hsl(30 15% 72%)" }}>
-            If it walks straight past the pattern that actually haunts your field, that is the most useful thing you could tell me. My goal is change and, ideally, impact on actual science communication practice.
+          <p
+            className="text-[18px] md:text-[19px] leading-[1.7] mb-10 max-w-[40rem] mx-auto"
+            style={{ color: "hsl(30 15% 72%)" }}
+          >
+            If it walks straight past the pattern that actually haunts your field, that is the most useful thing you
+            could tell me. My goal is change and, ideally, impact on actual science communication practice.
           </p>
-          <p className="text-[15px] md:text-[16px] leading-[1.7] mb-10 max-w-[40rem] mx-auto" style={{ color: "hsl(30 15% 55%)" }}>
+          <p
+            className="text-[15px] md:text-[16px] leading-[1.7] mb-10 max-w-[40rem] mx-auto"
+            style={{ color: "hsl(30 15% 55%)" }}
+          >
             (And my children not living in an idiocracy. Thank you.)
           </p>
 
@@ -956,7 +1126,6 @@ const UsualSuspects = () => {
           />
         </div>
       </div>
-
     </section>
   );
 };
